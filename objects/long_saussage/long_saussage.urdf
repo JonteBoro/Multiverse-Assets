@@ -9,31 +9,31 @@
     <visual name="LongSaussage">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/long_saussage/long_saussage/meshes/obj/LongSaussage.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://long_saussage/meshes/obj/LongSaussage.obj" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision name="LongSaussage_001">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/long_saussage/long_saussage/meshes/stl/LongSaussage_001.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://long_saussage/meshes/stl/LongSaussage_001.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="LongSaussage_002">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/long_saussage/long_saussage/meshes/stl/LongSaussage_002.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://long_saussage/meshes/stl/LongSaussage_002.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="LongSaussage_003">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/long_saussage/long_saussage/meshes/stl/LongSaussage_003.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://long_saussage/meshes/stl/LongSaussage_003.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="LongSaussage_004">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/long_saussage/long_saussage/meshes/stl/LongSaussage_004.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://long_saussage/meshes/stl/LongSaussage_004.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>

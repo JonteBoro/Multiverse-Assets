@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <mujoco model="long_saussage">
-	<compiler meshdir="long_saussage/" texturedir="long_saussage/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<compiler meshdir="long_saussage/meshes" texturedir="long_saussage/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
 	<default>
 		<default class="visual">
 			<geom contype="0" conaffinity="0"/>
@@ -10,11 +10,11 @@
 		</default>
 	</default>
 	<asset>
-		<mesh name="LongSaussage" file="meshes/obj/LongSaussage.obj" scale="1.0 1.0 1.0"/>
-		<mesh name="LongSaussage_001" file="meshes/stl/LongSaussage_001.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="LongSaussage_002" file="meshes/stl/LongSaussage_002.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="LongSaussage_003" file="meshes/stl/LongSaussage_003.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="LongSaussage_004" file="meshes/stl/LongSaussage_004.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="LongSaussage" file="obj/LongSaussage.obj" scale="1.0 1.0 1.0"/>
+		<mesh name="LongSaussage_001" file="stl/LongSaussage_001.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="LongSaussage_002" file="stl/LongSaussage_002.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="LongSaussage_003" file="stl/LongSaussage_003.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="LongSaussage_004" file="stl/LongSaussage_004.stl" scale="1.0 1.0 1.0"/>
 		<material name="M_LongSaussage" texture="T_LongSaussage"/>
 		<texture name="T_LongSaussage" type="2d" file="T_LongSaussage.png"/>
 	</asset>

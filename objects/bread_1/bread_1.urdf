@@ -15,43 +15,43 @@
     <visual name="Bread1">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/obj/Bread1.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/obj/Bread1.obj" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision name="Bread1_001">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/stl/Bread1_001.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/stl/Bread1_001.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="Bread1_002">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/stl/Bread1_002.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/stl/Bread1_002.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="Bread1_003">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/stl/Bread1_003.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/stl/Bread1_003.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="Bread1_004">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/stl/Bread1_004.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/stl/Bread1_004.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="Bread1_005">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/stl/Bread1_005.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/stl/Bread1_005.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="Bread1_006">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="file:///media/giangnguyen/Storage/Multiverse/multiverse/modules/multiverse_parser/tests/../../../../multiverse_assets/objects/bread_1/bread_1/meshes/stl/Bread1_006.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://bread_1/meshes/stl/Bread1_006.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
   </link>

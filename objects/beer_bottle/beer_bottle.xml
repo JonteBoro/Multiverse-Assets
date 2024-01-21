@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <mujoco model="beer_bottle">
-	<compiler meshdir="beer_bottle/" texturedir="beer_bottle/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<compiler meshdir="beer_bottle/meshes" texturedir="beer_bottle/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
 	<default>
 		<default class="visual">
 			<geom contype="0" conaffinity="0"/>
@@ -10,77 +10,77 @@
 		</default>
 	</default>
 	<asset>
-		<mesh name="BeerBottleCap" file="meshes/obj/BeerBottleCap.obj" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_001" file="meshes/stl/BeerBottleCap_001.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_002" file="meshes/stl/BeerBottleCap_002.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_003" file="meshes/stl/BeerBottleCap_003.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_004" file="meshes/stl/BeerBottleCap_004.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_005" file="meshes/stl/BeerBottleCap_005.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_006" file="meshes/stl/BeerBottleCap_006.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_007" file="meshes/stl/BeerBottleCap_007.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_008" file="meshes/stl/BeerBottleCap_008.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_009" file="meshes/stl/BeerBottleCap_009.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_010" file="meshes/stl/BeerBottleCap_010.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_011" file="meshes/stl/BeerBottleCap_011.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_012" file="meshes/stl/BeerBottleCap_012.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_013" file="meshes/stl/BeerBottleCap_013.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_014" file="meshes/stl/BeerBottleCap_014.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_015" file="meshes/stl/BeerBottleCap_015.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_016" file="meshes/stl/BeerBottleCap_016.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_017" file="meshes/stl/BeerBottleCap_017.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_018" file="meshes/stl/BeerBottleCap_018.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_019" file="meshes/stl/BeerBottleCap_019.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_020" file="meshes/stl/BeerBottleCap_020.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_021" file="meshes/stl/BeerBottleCap_021.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_022" file="meshes/stl/BeerBottleCap_022.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_023" file="meshes/stl/BeerBottleCap_023.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_024" file="meshes/stl/BeerBottleCap_024.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_025" file="meshes/stl/BeerBottleCap_025.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_026" file="meshes/stl/BeerBottleCap_026.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_027" file="meshes/stl/BeerBottleCap_027.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_028" file="meshes/stl/BeerBottleCap_028.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_029" file="meshes/stl/BeerBottleCap_029.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_030" file="meshes/stl/BeerBottleCap_030.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_031" file="meshes/stl/BeerBottleCap_031.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_032" file="meshes/stl/BeerBottleCap_032.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_033" file="meshes/stl/BeerBottleCap_033.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_034" file="meshes/stl/BeerBottleCap_034.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_035" file="meshes/stl/BeerBottleCap_035.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_036" file="meshes/stl/BeerBottleCap_036.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_037" file="meshes/stl/BeerBottleCap_037.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_038" file="meshes/stl/BeerBottleCap_038.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_039" file="meshes/stl/BeerBottleCap_039.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleCap_040" file="meshes/stl/BeerBottleCap_040.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody" file="meshes/obj/BeerBottleBody.obj" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_001" file="meshes/stl/BeerBottleBody_001.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_002" file="meshes/stl/BeerBottleBody_002.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_003" file="meshes/stl/BeerBottleBody_003.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_004" file="meshes/stl/BeerBottleBody_004.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_005" file="meshes/stl/BeerBottleBody_005.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_006" file="meshes/stl/BeerBottleBody_006.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_007" file="meshes/stl/BeerBottleBody_007.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_008" file="meshes/stl/BeerBottleBody_008.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_009" file="meshes/stl/BeerBottleBody_009.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_010" file="meshes/stl/BeerBottleBody_010.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_011" file="meshes/stl/BeerBottleBody_011.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_012" file="meshes/stl/BeerBottleBody_012.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_013" file="meshes/stl/BeerBottleBody_013.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_014" file="meshes/stl/BeerBottleBody_014.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_015" file="meshes/stl/BeerBottleBody_015.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_016" file="meshes/stl/BeerBottleBody_016.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_017" file="meshes/stl/BeerBottleBody_017.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_018" file="meshes/stl/BeerBottleBody_018.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_019" file="meshes/stl/BeerBottleBody_019.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_020" file="meshes/stl/BeerBottleBody_020.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_021" file="meshes/stl/BeerBottleBody_021.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_022" file="meshes/stl/BeerBottleBody_022.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_023" file="meshes/stl/BeerBottleBody_023.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_024" file="meshes/stl/BeerBottleBody_024.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_025" file="meshes/stl/BeerBottleBody_025.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_026" file="meshes/stl/BeerBottleBody_026.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_027" file="meshes/stl/BeerBottleBody_027.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_028" file="meshes/stl/BeerBottleBody_028.stl" scale="1.0 1.0 1.0"/>
-		<mesh name="BeerBottleBody_029" file="meshes/stl/BeerBottleBody_029.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap" file="obj/BeerBottleCap.obj" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_001" file="stl/BeerBottleCap_001.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_002" file="stl/BeerBottleCap_002.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_003" file="stl/BeerBottleCap_003.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_004" file="stl/BeerBottleCap_004.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_005" file="stl/BeerBottleCap_005.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_006" file="stl/BeerBottleCap_006.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_007" file="stl/BeerBottleCap_007.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_008" file="stl/BeerBottleCap_008.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_009" file="stl/BeerBottleCap_009.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_010" file="stl/BeerBottleCap_010.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_011" file="stl/BeerBottleCap_011.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_012" file="stl/BeerBottleCap_012.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_013" file="stl/BeerBottleCap_013.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_014" file="stl/BeerBottleCap_014.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_015" file="stl/BeerBottleCap_015.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_016" file="stl/BeerBottleCap_016.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_017" file="stl/BeerBottleCap_017.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_018" file="stl/BeerBottleCap_018.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_019" file="stl/BeerBottleCap_019.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_020" file="stl/BeerBottleCap_020.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_021" file="stl/BeerBottleCap_021.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_022" file="stl/BeerBottleCap_022.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_023" file="stl/BeerBottleCap_023.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_024" file="stl/BeerBottleCap_024.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_025" file="stl/BeerBottleCap_025.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_026" file="stl/BeerBottleCap_026.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_027" file="stl/BeerBottleCap_027.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_028" file="stl/BeerBottleCap_028.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_029" file="stl/BeerBottleCap_029.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_030" file="stl/BeerBottleCap_030.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_031" file="stl/BeerBottleCap_031.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_032" file="stl/BeerBottleCap_032.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_033" file="stl/BeerBottleCap_033.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_034" file="stl/BeerBottleCap_034.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_035" file="stl/BeerBottleCap_035.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_036" file="stl/BeerBottleCap_036.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_037" file="stl/BeerBottleCap_037.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_038" file="stl/BeerBottleCap_038.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_039" file="stl/BeerBottleCap_039.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleCap_040" file="stl/BeerBottleCap_040.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody" file="obj/BeerBottleBody.obj" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_001" file="stl/BeerBottleBody_001.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_002" file="stl/BeerBottleBody_002.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_003" file="stl/BeerBottleBody_003.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_004" file="stl/BeerBottleBody_004.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_005" file="stl/BeerBottleBody_005.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_006" file="stl/BeerBottleBody_006.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_007" file="stl/BeerBottleBody_007.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_008" file="stl/BeerBottleBody_008.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_009" file="stl/BeerBottleBody_009.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_010" file="stl/BeerBottleBody_010.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_011" file="stl/BeerBottleBody_011.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_012" file="stl/BeerBottleBody_012.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_013" file="stl/BeerBottleBody_013.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_014" file="stl/BeerBottleBody_014.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_015" file="stl/BeerBottleBody_015.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_016" file="stl/BeerBottleBody_016.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_017" file="stl/BeerBottleBody_017.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_018" file="stl/BeerBottleBody_018.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_019" file="stl/BeerBottleBody_019.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_020" file="stl/BeerBottleBody_020.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_021" file="stl/BeerBottleBody_021.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_022" file="stl/BeerBottleBody_022.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_023" file="stl/BeerBottleBody_023.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_024" file="stl/BeerBottleBody_024.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_025" file="stl/BeerBottleBody_025.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_026" file="stl/BeerBottleBody_026.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_027" file="stl/BeerBottleBody_027.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_028" file="stl/BeerBottleBody_028.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="BeerBottleBody_029" file="stl/BeerBottleBody_029.stl" scale="1.0 1.0 1.0"/>
 		<material name="M_BeerBottleCap" texture="T_BeerBottleCap"/>
 		<material name="M_BeerBottleBody" texture="T_BeerBottleBody"/>
 		<texture name="T_BeerBottleCap" type="2d" file="T_BeerBottleCap.png"/>
