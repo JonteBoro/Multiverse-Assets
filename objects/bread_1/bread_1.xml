@@ -22,16 +22,14 @@
 	</asset>
 	<worldbody>
 		<body name="bread_1" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
-			<body name="bread1" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
-				<inertial mass="0.8408675193786621" pos="-8.59999781823717e-05 -0.0007341864984482527 0.0015975992428138852" quat="-0.7009055018424988 0.7131763100624084 0.006410054862499237 0.008363700471818447" diaginertia="0.0021757064387202263 0.004399170633405447 0.005231454037129879"/>
-				<geom name="Bread1" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1" material="M_Bread1" class="visual"/>
-				<geom name="Bread1_001" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_001" class="collision"/>
-				<geom name="Bread1_002" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_002" class="collision"/>
-				<geom name="Bread1_003" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_003" class="collision"/>
-				<geom name="Bread1_004" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_004" class="collision"/>
-				<geom name="Bread1_005" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_005" class="collision"/>
-				<geom name="Bread1_006" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_006" class="collision"/>
-			</body>
+			<inertial mass="0.8408675193786621" pos="-8.59999781823717e-05 -0.0007341864984482527 0.0015975992428138852" quat="-0.7009055018424988 0.7131763100624084 0.006410054862499237 0.008363700471818447" diaginertia="0.0021757064387202263 0.004399170633405447 0.005231454037129879"/>
+			<geom name="Bread1" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1" material="M_Bread1" class="visual"/>
+			<geom name="Bread1_001" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_001" class="collision"/>
+			<geom name="Bread1_002" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_002" class="collision"/>
+			<geom name="Bread1_003" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_003" class="collision"/>
+			<geom name="Bread1_004" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_004" class="collision"/>
+			<geom name="Bread1_005" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_005" class="collision"/>
+			<geom name="Bread1_006" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="Bread1_006" class="collision"/>
 		</body>
 	</worldbody>
 	<equality/>

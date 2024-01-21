@@ -1,12 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="bread_1" version="1.0">
-  <link name="bread_1"/>
-  <joint name="bread1_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="bread_1"/>
-    <child link="bread1"/>
-  </joint>
-  <link name="bread1">
+  <link name="bread_1">
     <inertial>
       <origin xyz="-8.59999781823717e-05 -0.0007341864984482527 0.0015975992428138852" rpy="-1.5881240367889404 -0.02091679722070694 -0.0025818964932113886"/>
       <mass value="0.8408675193786621"/>
