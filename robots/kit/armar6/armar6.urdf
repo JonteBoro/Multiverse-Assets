@@ -1,0 +1,1335 @@
+<?xml version="1.0" ?>
+<robot name="armar6" version="1.0">
+  <link name="armar6">
+    <collision name="Geom_0">
+      <origin xyz="-0.23908907175064087 0.0011418868089094758 0.30750465393066406" rpy="0.0006050416850484908 0.09536322951316833 0.027437280863523483"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_1">
+      <origin xyz="0.20871004462242126 -3.01525342365494e-05 0.26197001338005066" rpy="-0.0023190188221633434 -0.3327198922634125 -0.0001795608550310135"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="1.1462858440225432e-10 -2.0709350900816048e-10 0.14333148300647736" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="-2.29147053687484e-06 -0.18701200187206268 0.298531174659729" rpy="-0.10218258202075958 -3.706095230882056e-05 2.829333971021697e-05"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_04.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="9.568718724040082e-07 -0.07499920576810837 0.14335519075393677" rpy="2.042046435235534e-05 1.6796115232864395e-05 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_05.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_5">
+      <origin xyz="-3.3380533750460017e-06 0.18701665103435516 0.298539400100708" rpy="0.10216326266527176 -2.950533598777838e-05 -3.263432517996989e-05"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_06.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_6">
+      <origin xyz="-9.565491154717165e-07 0.07499920576810837 0.14335519075393677" rpy="-2.042239975708071e-05 -1.679633896856103e-05 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_07.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_7">
+      <origin xyz="-2.418123222014401e-05 -0.032434575259685516 0.3921465277671814" rpy="0.0001866142119979486 -0.0004964822437614202 -1.571300983428955"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_08.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_8">
+      <origin xyz="-2.453173146932386e-05 0.032434575259685516 0.3921465277671814" rpy="0.00018394012295175344 0.0004964856780134141 -1.5703011751174927"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/platform_09.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="TorsoJoint" type="prismatic">
+    <origin xyz="0.0 0.0 1.1950000524520874" rpy="0.0 0.0 -1.5707963705062866"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="armar6"/>
+    <child link="link0_7"/>
+    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="1000.0"/>
+  </joint>
+  <link name="link0_7">
+    <inertial>
+      <origin xyz="-8.60810268932255e-06 0.003858802607282996 0.03855016827583313" rpy="0.00014857204223517329 -0.05026733875274658 1.5697569847106934"/>
+      <mass value="42.921875"/>
+      <inertia ixx="0.8874343633651733" ixy="0.0" ixz="0.0" iyy="0.7422398328781128" iyz="0.0" izz="0.29746219515800476"/>
+    </inertial>
+    <collision name="Geom_9">
+      <origin xyz="-1.5919291399768554e-05 0.005364307668060064 0.0271476861089468" rpy="0.0007032561115920544 -0.13697224855422974 1.5693386793136597"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/torso_1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_10">
+      <origin xyz="-0.0759999081492424 -0.00012338615488260984 -0.3070000112056732" rpy="-0.0007961537921801209 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/torso_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_11">
+      <origin xyz="1.288784634567719e-10 -0.000238520311540924 -0.2995902895927429" rpy="-0.0007936522015370429 -6.309802120085806e-05 -0.07933647185564041"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/torso_3.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_12">
+      <origin xyz="0.0759999081492424 -0.0003654533647932112 -0.3069998025894165" rpy="-0.0007961554219946265 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/torso_4.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_13">
+      <origin xyz="-0.08103914558887482 -4.165089194430038e-06 0.10412884503602982" rpy="0.0815219059586525 -0.00020752474665641785 1.5752391815185547"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09010_arml_cla.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_14">
+      <origin xyz="0.08103914558887482 4.152416750002885e-06 0.10412884503602982" rpy="0.0815219059586525 -0.0002075217926176265 -1.5663520097732544"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09010_arml_cla.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_15">
+      <origin xyz="5.620399292638467e-07 6.40764710624353e-07 0.24260690808296204" rpy="1.8383411169052124 -1.570778727531433 1.3046058416366577"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_6a11000_halsbasis_t1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR1_Cla1" type="revolute">
+    <origin xyz="0.09000000357627869 3.3058799431273656e-07 0.10000000149011612" rpy="0.0 0.0 -1.5707906484603882"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_7"/>
+    <child link="link0_63"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_63">
+    <inertial>
+      <origin xyz="-1.9983554011560045e-06 0.11062423884868622 0.02188810519874096" rpy="-0.6692721247673035 0.0007687713950872421 0.0005447252769954503"/>
+      <mass value="4.641332149505615"/>
+      <inertia ixx="0.024549242109060287" ixy="0.0" ixz="0.0" iyy="0.01810256391763687" iyz="0.0" izz="0.014694479294121265"/>
+    </inertial>
+    <collision name="Geom_56">
+      <origin xyz="-3.036335328943096e-06 0.1106070727109909 0.02186885103583336" rpy="-0.6696668267250061 0.000736983201932162 0.0005347377737052739"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09020_arml_t12.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR2_Sho1" type="revolute">
+    <origin xyz="3.1763735522036263e-22 0.28977999091148376 0.07765000313520432" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.9659258723258972 0.25881895422935486"/>
+    <parent link="link0_63"/>
+    <child link="link0_65"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_65">
+    <inertial>
+      <origin xyz="-0.0026242216117680073 0.00547403609380126 0.0014532019849866629" rpy="1.59726881980896 -0.2608492076396942 1.5936169624328613"/>
+      <mass value="6.514058589935303"/>
+      <inertia ixx="0.025567620992660522" ixy="0.0" ixz="0.0" iyy="0.022996222600340843" iyz="0.0" izz="0.022928500548005104"/>
+    </inertial>
+    <collision name="Geom_57">
+      <origin xyz="-0.002614328870549798 0.005468958988785744 0.0014506158186122775" rpy="1.6016887426376343 -0.26092344522476196 1.593543529510498"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09030_arml_t23.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR3_Sho2" type="revolute">
+    <origin xyz="3.1763735522036263e-22 0.0 0.0" rpy="-1.570800542831421 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_65"/>
+    <child link="link0_67"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_67">
+    <inertial>
+      <origin xyz="0.0031595618929713964 0.11988010257482529 0.009519310668110847" rpy="-1.1059006452560425 1.4983553886413574 -1.7704832553863525"/>
+      <mass value="4.186227321624756"/>
+      <inertia ixx="0.023510094732046127" ixy="0.0" ixz="0.0" iyy="0.01641996204853058" iyz="0.0" izz="0.01437942311167717"/>
+    </inertial>
+    <collision name="Geom_58">
+      <origin xyz="0.0031447988003492355 0.12003528326749802 0.009525574743747711" rpy="-1.1114132404327393 1.497338056564331 -1.7687119245529175"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09040_arml_t34.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR4_Sho3" type="revolute">
+    <origin xyz="2.6469779601696886e-23 0.0 0.0" rpy="-3.1341874599456787 -1.570792317390442 1.5633870363235474"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_67"/>
+    <child link="link0_69"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_69">
+    <inertial>
+      <origin xyz="-0.0022166140843182802 -0.03205019235610962 0.3651427626609802" rpy="-0.032885901629924774 -0.44190630316734314 1.5824110507965088"/>
+      <mass value="5.494523525238037"/>
+      <inertia ixx="0.033287789672613144" ixy="0.0" ixz="0.0" iyy="0.03231581673026085" iyz="0.0" izz="0.01199717540293932"/>
+    </inertial>
+    <collision name="Geom_59">
+      <origin xyz="-0.0022084475494921207 -0.03203756734728813 0.3651118576526642" rpy="-0.03281465172767639 -0.4417875409126282 1.5826719999313354"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09050_arml_t45.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR5_Elb1" type="revolute">
+    <origin xyz="0.0 -0.054999999701976776 0.4090000092983246" rpy="4.235164483836012e-22 0.0 -3.3276891907285205e-22"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_69"/>
+    <child link="link0_71"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_71">
+    <inertial>
+      <origin xyz="0.0013214589562267065 0.005565263330936432 0.1098216101527214" rpy="1.4711486101150513 -0.19030623137950897 1.5817111730575562"/>
+      <mass value="2.7591729164123535"/>
+      <inertia ixx="0.00866414699703455" ixy="0.0" ixz="0.0" iyy="0.0074538071639835835" iyz="0.0" izz="0.0066077555529773235"/>
+    </inertial>
+    <collision name="Geom_60">
+      <origin xyz="0.0019449525279924273 0.005781132262200117 0.11425575613975525" rpy="-1.6717824935913086 0.9546120762825012 -1.6442790031433105"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09060_arml_t56_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_61">
+      <origin xyz="0.07322466373443604 0.00026982216513715684 -0.0017227567732334137" rpy="1.7058265209197998 0.01317520160228014 0.0001800837490009144"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09060_arml_t56_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_62">
+      <origin xyz="-0.07043138146400452 0.00014143335283733904 0.0009638777119107544" rpy="2.8158364295959473 -0.0009177356259897351 -3.389428820810281e-05"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09060_arml_t56_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR6_Elb2" type="revolute">
+    <origin xyz="0.0 6.938893903907228e-18 0.0" rpy="4.235164736271502e-22 0.0 -3.32768944316401e-22"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_71"/>
+    <child link="link0_73"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_73">
+    <inertial>
+      <origin xyz="-7.264896703418344e-05 0.026484208181500435 0.269603431224823" rpy="-0.6034594774246216 -0.0005221039173193276 -0.0018416822422295809"/>
+      <mass value="1.323380708694458"/>
+      <inertia ixx="0.007656598463654518" ixy="0.0" ixz="0.0" iyy="0.006845767144113779" iyz="0.0" izz="0.003992720041424036"/>
+    </inertial>
+    <collision name="Geom_63">
+      <origin xyz="0.04904818907380104 0.000547527801245451 0.2278057187795639" rpy="-0.06546734273433685 0.13436539471149445 0.000755233399104327"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_64">
+      <origin xyz="-1.3494685369153103e-08 -0.057883650064468384 0.35432007908821106" rpy="2.3162770048656967e-06 0.030022408813238144 1.570796251296997"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_65">
+      <origin xyz="-2.5911535885825288e-06 0.07031302154064178 0.3585358262062073" rpy="0.0011446286225691438 -0.018428243696689606 1.570813775062561"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_66">
+      <origin xyz="0.05108014866709709 -0.038606297224760056 0.296926349401474" rpy="1.44315505027771 -0.09436871111392975 -0.2907901406288147"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_04.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_67">
+      <origin xyz="0.04765205830335617 0.043406277894973755 0.2984026074409485" rpy="1.7642273902893066 -0.3429090976715088 0.3578132092952728"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_05.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_68">
+      <origin xyz="-1.061389411916025e-06 0.06732528656721115 0.25963494181632996" rpy="-0.000248176307650283 0.10242686420679092 1.5707811117172241"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_06.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_69">
+      <origin xyz="5.9854635765077546e-05 -0.05733291059732437 0.24773843586444855" rpy="0.009033212438225746 -0.021673893555998802 1.5711663961410522"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_07.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_70">
+      <origin xyz="-0.04910891503095627 0.0005349636194296181 0.22820699214935303" rpy="-0.057053398340940475 -0.13368631899356842 -0.0005300979828462005"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_08.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_71">
+      <origin xyz="-0.050927359610795975 -0.03914577141404152 0.2969658672809601" rpy="1.4367893934249878 0.08376699686050415 0.303693562746048"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_09.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_72">
+      <origin xyz="-0.04850269854068756 0.042520202696323395 0.29731738567352295" rpy="1.6919257640838623 -0.17391909658908844 -0.4434721767902374"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_10.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR7_Wri1" type="revolute">
+    <origin xyz="0.0 6.938893903907228e-18 0.36399999260902405" rpy="0.0 0.0 -3.32768944316401e-22"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="link0_73"/>
+    <child link="link0_75"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_75">
+    <inertial>
+      <origin xyz="0.0034763282164931297 -0.0012621578061953187 2.2226204237085767e-05" rpy="-0.2640097737312317 -1.5698806047439575 -2.8703057765960693"/>
+      <mass value="1.1816606521606445"/>
+      <inertia ixx="0.0017266924260184169" ixy="0.0" ixz="0.0" iyy="0.0015820622211322188" iyz="0.0" izz="0.0010909022530540824"/>
+    </inertial>
+    <collision name="Geom_73">
+      <origin xyz="0.004275711253285408 -0.0012547892984002829 3.0258206606958993e-05" rpy="-0.05093754455447197 -1.570152759552002 -3.0823819637298584"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09080_arml_t78.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmR8_Wri2" type="revolute">
+    <origin xyz="-5.551115123125783e-17 6.938893903907228e-18 -1.1102230246251565e-16" rpy="0.0 0.0 1.570800542831421"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="link0_75"/>
+    <child link="link0_77"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_77">
+    <inertial>
+      <origin xyz="-0.0015873624943196774 -0.002150126500055194 0.16746027767658234" rpy="-0.03172306716442108 -0.017440205439925194 -0.06112203747034073"/>
+      <mass value="1.64207923412323"/>
+      <inertia ixx="0.009214787743985653" ixy="0.0" ixz="0.0" iyy="0.008054361678659916" iyz="0.0" izz="0.0020288401283323765"/>
+    </inertial>
+    <collision name="Geom_74">
+      <origin xyz="-3.9525308238808066e-05 0.0006876735715195537 0.1218293309211731" rpy="1.5242441892623901 -1.5666489601135254 1.6186400651931763"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_75">
+      <origin xyz="-6.802084584478507e-08 -0.06317408382892609 0.008618472144007683" rpy="1.5005922477939748e-06 0.01336453016847372 1.5707931518554688"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_76">
+      <origin xyz="2.6470817829249427e-05 0.0626370757818222 0.01715272292494774" rpy="-0.0005945437587797642 0.00042304632370360196 1.570723295211792"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_77">
+      <origin xyz="0.00015327708388213068 -0.04166693985462189 0.11673421412706375" rpy="0.0519523061811924 0.26956653594970703 1.5714831352233887"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_04.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_78">
+      <origin xyz="-0.00010127673158422112 0.04261576384305954 0.1163441613316536" rpy="-0.0363846980035305 -0.2701719105243683 1.569759726524353"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_05.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_79">
+      <origin xyz="-1.448170337425836e-06 -0.05752373859286308 0.08827167004346848" rpy="-1.5714761018753052 -0.8915408253669739 -1.5708566904067993"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_06.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_80">
+      <origin xyz="7.302011226784089e-07 0.05815986916422844 0.0874510109424591" rpy="1.5700911283493042 -0.955359697341919 1.570766806602478"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_07.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_81">
+      <origin xyz="-0.0026330642867833376 -0.001821983023546636 0.21224823594093323" rpy="0.047103144228458405 0.005278655793517828 -0.11503168195486069"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/palm_r.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Middle_R_1_Joint" type="revolute">
+    <origin xyz="7.646550059803303e-09 -0.007499440107494593 0.2917200028896332" rpy="-1.5707943439483643 -4.11271867051255e-06 -1.570798397064209"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_88"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_88">
+    <inertial>
+      <origin xyz="-8.225680176110473e-06 -0.030843479558825493 -8.414039621129632e-05" rpy="0.12714755535125732 -1.5644742250442505 1.4442546367645264"/>
+      <mass value="0.02538316138088703"/>
+      <inertia ixx="8.413370778725948e-06" ixy="0.0" ixz="0.0" iyy="8.243548109021503e-06" iyz="0.0" izz="1.0851806564460276e-06"/>
+    </inertial>
+    <collision name="Geom_85">
+      <origin xyz="-8.225800229411107e-06 -0.030843479558825493 -8.414049807470292e-05" rpy="0.12714755535125732 -1.5644742250442505 1.4442546367645264"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/middle_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Middle_R_2_Joint" type="revolute">
+    <origin xyz="0.0 -0.05999999865889549 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_88"/>
+    <child link="link0_90"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_90">
+    <inertial>
+      <origin xyz="-3.4415239497320727e-05 -0.018362386152148247 0.00029420116334222257" rpy="0.5635364651679993 -1.55509614944458 1.0098880529403687"/>
+      <mass value="0.014561756514012814"/>
+      <inertia ixx="2.5808008103922475e-06" ixy="0.0" ixz="0.0" iyy="2.520335328881629e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_86">
+      <origin xyz="-3.880048097926192e-05 -0.01820596680045128 0.0003069269878324121" rpy="0.6492487788200378 -1.5521256923675537 0.9233210682868958"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/middle_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Middle_R_3_Joint" type="revolute">
+    <origin xyz="-1.1102230246251565e-16 -0.039000000804662704 -1.3877787807814457e-17" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_90"/>
+    <child link="link0_92"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_92">
+    <inertial>
+      <origin xyz="-1.4801357792748604e-06 -0.009854770265519619 0.00019601777603384107" rpy="1.451960802078247 1.524223804473877 -0.1189020648598671"/>
+      <mass value="0.007588660344481468"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_87">
+      <origin xyz="-1.4803180192757281e-06 -0.009854770265519619 0.00019601767417043447" rpy="1.451960802078247 1.524223804473877 -0.1189020648598671"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/middle_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Pinky_R_1_Joint" type="revolute">
+    <origin xyz="-5.638520050865736e-08 0.055300500243902206 0.27031999826431274" rpy="-1.5707998275756836 -0.40111038088798523 -1.5707945823669434"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_94"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_94">
+    <inertial>
+      <origin xyz="-1.8761980754788965e-05 -0.02276996523141861 -7.110893056960776e-05" rpy="1.5396984815597534 -1.356332778930664 0.032378654927015305"/>
+      <mass value="0.014701016247272491"/>
+      <inertia ixx="3.0928017622500192e-06" ixy="0.0" ixz="0.0" iyy="3.08664630210842e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_88">
+      <origin xyz="-1.0635124453983735e-05 -0.02267158403992653 -7.633217319380492e-05" rpy="1.5277352333068848 -1.4020452499389648 0.04491906613111496"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/pinky_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Pinky_R_2_Joint" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.04610000178217888 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_94"/>
+    <child link="link0_96"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_96">
+    <inertial>
+      <origin xyz="4.895448000752367e-06 -0.012241008691489697 0.00026062584947794676" rpy="1.5515015125274658 -2.8513948109321063e-06 -0.00014776154421269894"/>
+      <mass value="0.007457030471414328"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_89">
+      <origin xyz="4.895487563771894e-06 -0.012241008691489697 0.00026062573306262493" rpy="1.5515015125274658 -2.8513948109321063e-06 -0.00014776154421269894"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/pinky_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Pinky_R_3_Joint" type="revolute">
+    <origin xyz="0.0 -0.027060000225901604 -6.938893903907228e-18" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_96"/>
+    <child link="link0_98"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_98">
+    <inertial>
+      <origin xyz="-5.06505770658805e-08 -0.00826839730143547 0.00011376729526091367" rpy="-1.569177269935608 -0.0013860403560101986 3.141573190689087"/>
+      <mass value="0.005034840200096369"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_90">
+      <origin xyz="-5.062224772700574e-08 -0.00826839730143547 0.00011376719339750707" rpy="-1.569177269935608 -0.0013860403560101986 3.141573190689087"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/pinky_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightHandFingers" type="revolute">
+    <origin xyz="-5.638520050865736e-08 0.055300500243902206 0.27031999826431274" rpy="-1.5707998275756836 -0.40111038088798523 -1.5707945823669434"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_100"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_100">
+    <inertial>
+      <origin xyz="-5.638520050865736e-08 0.055300500243902206 0.27031999826431274" rpy="-1.5707998275756836 -0.40111038088798523 -1.5707945823669434"/>
+      <mass value="9.999999974752427e-07"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+  </link>
+  <joint name="Ring_R_1_Joint" type="revolute">
+    <origin xyz="-2.6816399767426446e-08 0.026300499215722084 0.28652000427246094" rpy="-1.570800542831421 -0.17463980615139008 -1.5707939863204956"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_104"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_104">
+    <inertial>
+      <origin xyz="-2.5416979951842222e-06 -0.027961574494838715 -8.143818558892235e-05" rpy="0.19928103685379028 -1.5637948513031006 1.3716498613357544"/>
+      <mass value="0.020584987476468086"/>
+      <inertia ixx="5.784392669738736e-06" ixy="0.0" ixz="0.0" iyy="5.654965207213536e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_91">
+      <origin xyz="-2.5417905362701276e-06 -0.027961574494838715 -8.1438003689982e-05" rpy="0.19928103685379028 -1.5637948513031006 1.3716498613357544"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/ring_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Ring_R_2_Joint" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.055059999227523804 -6.938893903907228e-18" rpy="0.0 0.0 1.3877787807814457e-17"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_104"/>
+    <child link="link0_106"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_106">
+    <inertial>
+      <origin xyz="-1.7029418813763186e-05 -0.017273511737585068 0.00020274649432394654" rpy="0.23844924569129944 -1.557215690612793 1.334169864654541"/>
+      <mass value="0.012723562307655811"/>
+      <inertia ixx="2.0468648926907917e-06" ixy="0.0" ixz="0.0" iyy="1.9947437976952642e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_92">
+      <origin xyz="-1.7029627997544594e-05 -0.017273511737585068 0.00020274653797969222" rpy="0.23844924569129944 -1.557215690612793 1.334169864654541"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/ring_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Ring_R_3_Joint" type="revolute">
+    <origin xyz="5.551115123125783e-17 -0.037039998918771744 0.0" rpy="0.0 0.0 1.3877787807814457e-17"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_106"/>
+    <child link="link0_108"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_108">
+    <inertial>
+      <origin xyz="1.8973385522258468e-05 -0.009891333989799023 8.793917368166149e-05" rpy="1.5436314344406128 -1.5535968542099 -3.1157631874084473"/>
+      <mass value="0.006862672511488199"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_93">
+      <origin xyz="1.897338734124787e-05 -0.009891333989799023 8.793909364612773e-05" rpy="1.5436314344406128 -1.5535968542099 -3.1157631874084473"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/ring_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Thumb_R_1_Joint" type="revolute">
+    <origin xyz="-0.04690999910235405 -0.03949970006942749 0.221110001206398" rpy="3.1412293910980225 0.3748120963573456 1.653321623802185"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_110"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_110">
+    <inertial>
+      <origin xyz="-8.096490091702435e-06 -0.023335805162787437 -9.092833352042362e-06" rpy="0.5422769784927368 -1.558563232421875 1.0294901132583618"/>
+      <mass value="0.021300282329320908"/>
+      <inertia ixx="4.795987479155883e-06" ixy="0.0" ixz="0.0" iyy="4.712325335276546e-06" iyz="0.0" izz="1.1131986639156821e-06"/>
+    </inertial>
+    <collision name="Geom_94">
+      <origin xyz="-8.096192686934955e-06 -0.023335805162787437 -9.093030712392647e-06" rpy="0.5422769784927368 -1.558563232421875 1.0294901132583618"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/thumb_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Thumb_R_2_Joint" type="revolute">
+    <origin xyz="-1.9999999494757503e-05 -0.04408000037074089 -4.999999873689376e-05" rpy="1.4365678785432934e-18 0.0 2.303929616531697e-18"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_110"/>
+    <child link="link0_112"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_112">
+    <inertial>
+      <origin xyz="-3.8115447296149796e-06 -0.017068609595298767 0.00010753015521913767" rpy="-2.4689857959747314 1.563652753829956 2.246002197265625"/>
+      <mass value="0.015970006585121155"/>
+      <inertia ixx="2.969749630210572e-06" ixy="0.0" ixz="0.0" iyy="2.9179732337070163e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_95">
+      <origin xyz="-3.8114128528832225e-06 -0.017068609595298767 0.00010752988600870594" rpy="-2.4689857959747314 1.563652753829956 2.246002197265625"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/thumb_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Index_R_1_Joint" type="revolute">
+    <origin xyz="3.998880160338558e-08 -0.03921949863433838 0.2853100001811981" rpy="-1.5707952976226807 0.087312713265419 -1.570797324180603"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_82"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_82">
+    <inertial>
+      <origin xyz="-1.2821446034649853e-05 -0.028760356828570366 -8.401661762036383e-05" rpy="0.07339110970497131 -1.5631204843521118 1.498537302017212"/>
+      <mass value="0.023887978866696358"/>
+      <inertia ixx="7.006298346823314e-06" ixy="0.0" ixz="0.0" iyy="6.845647476438899e-06" iyz="0.0" izz="1.0188663281951449e-06"/>
+    </inertial>
+    <collision name="Geom_82">
+      <origin xyz="-3.0732503546460066e-06 -0.028529001399874687 -9.96219168882817e-05" rpy="0.42632564902305603 -1.563267469406128 1.146162748336792"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/index_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Index_R_2_Joint" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.05595000088214874 0.0" rpy="-4.235164736271502e-22 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_82"/>
+    <child link="link0_84"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_84">
+    <inertial>
+      <origin xyz="-2.1045781977591105e-05 -0.01496494933962822 0.00027842738199979067" rpy="0.019581492990255356 -1.5546940565109253 1.554121494293213"/>
+      <mass value="0.011659549549221992"/>
+      <inertia ixx="1.62892069965892e-06" ixy="0.0" ixz="0.0" iyy="1.5781483853061218e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_83">
+      <origin xyz="-2.104574923578184e-05 -0.01496494933962822 0.00027842746931128204" rpy="0.019581492990255356 -1.5546940565109253 1.554121494293213"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/index_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Index_R_3_Joint" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.03197000175714493 6.938893903907228e-18" rpy="-4.235164736271502e-22 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_84"/>
+    <child link="link0_86"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_86">
+    <inertial>
+      <origin xyz="1.3895119991502725e-05 -0.008136403746902943 0.00019560322107281536" rpy="-0.00029087529401294887 1.561254858970642 -1.5707927942276"/>
+      <mass value="0.007011548150330782"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_84">
+      <origin xyz="1.3895023585064337e-05 -0.008136403746902943 0.0001956030901055783" rpy="-0.00029087529401294887 1.561254858970642 -1.5707927942276"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/index_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightHandThumb" type="revolute">
+    <origin xyz="-0.04690999910235405 -0.03949970006942749 0.221110001206398" rpy="3.1412293910980225 0.3748120963573456 1.653321623802185"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_77"/>
+    <child link="link0_102"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_102">
+    <inertial>
+      <origin xyz="-0.04690999910235405 -0.03949970006942749 0.221110001206398" rpy="3.1412296295166016 0.3748120963573456 1.653321623802185"/>
+      <mass value="9.999999974752427e-07"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+  </link>
+  <joint name="Neck_1_Yaw" type="revolute">
+    <origin xyz="0.0 0.0 0.3684999942779541" rpy="0.0 0.0 1.570800542831421"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_7"/>
+    <child link="link0_115"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_115">
+    <inertial>
+      <origin xyz="-1.5621025113432552e-06 -8.244373361776525e-07 -0.009581021964550018" rpy="1.5708671808242798 0.000689971842803061 0.0006675358163192868"/>
+      <mass value="2.2815744876861572"/>
+      <inertia ixx="0.0056670536287128925" ixy="0.0" ixz="0.0" iyy="0.005523578263819218" iyz="0.0" izz="0.004320218227803707"/>
+    </inertial>
+    <collision name="Geom_96">
+      <origin xyz="-3.2287146041198866e-06 -4.558747605187818e-06 -0.009543928317725658" rpy="1.5712283849716187 0.001820115838199854 0.0016980256186798215"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_6a12000_halsmitte_t12.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Neck_2_Pitch" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="1.5708004236221313 5.959643090136524e-08 1.5708004236221313"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_115"/>
+    <child link="link0_117"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_117">
+    <inertial>
+      <origin xyz="-0.0008058120729401708 0.17242081463336945 0.07313021272420883" rpy="0.11732909828424454 -1.250216007232666 1.4310085773468018"/>
+      <mass value="31.465810775756836"/>
+      <inertia ixx="0.29873722791671753" ixy="0.0" ixz="0.0" iyy="0.28915438055992126" iyz="0.0" izz="0.26994428038597107"/>
+    </inertial>
+    <collision name="Geom_97">
+      <origin xyz="-0.0008088083704933524 0.17238478362560272 0.07307440042495728" rpy="0.1164763793349266 -1.247666597366333 1.4316997528076172"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_6a13000_halsoben_v13.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="VirtualCentralGaze" type="prismatic">
+    <origin xyz="-5.293955920339377e-23 0.17299999296665192 0.16050000488758087" rpy="3.141592264175415 -1.5707920789718628 -2.356763388888794e-06"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_117"/>
+    <child link="link0_124"/>
+    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="1000.0"/>
+  </joint>
+  <link name="link0_124">
+    <inertial>
+      <origin xyz="0.0 0.17299999296665192 0.16050000488758087" rpy="3.141592264175415 -1.5707920789718628 -2.337689920750563e-06"/>
+      <mass value="9.999999974752427e-07"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+  </link>
+  <joint name="VirtualCentralGazeDepthCamera" type="prismatic">
+    <origin xyz="0.032999999821186066 0.24779999256134033 0.19300000369548798" rpy="-3.1415927410125732 -1.5707920789718628 3.1415927410125732"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_117"/>
+    <child link="link0_120"/>
+    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="1000.0"/>
+  </joint>
+  <link name="link0_120">
+    <inertial>
+      <origin xyz="0.032999999821186066 0.24779999256134033 0.19300000369548798" rpy="3.1415927410125732 -1.5707920789718628 3.1415927410125732"/>
+      <mass value="9.999999974752427e-07"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+  </link>
+  <joint name="ArmL1_Cla1" type="revolute">
+    <origin xyz="-0.09000000357627869 -3.3058799431273656e-07 0.10000000149011612" rpy="0.0 0.0 1.570800542831421"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_7"/>
+    <child link="link0_11"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_11">
+    <inertial>
+      <origin xyz="-1.9983554011560045e-06 0.11062423884868622 0.02188810519874096" rpy="-0.6692721247673035 0.0007687713950872421 0.0005447252769954503"/>
+      <mass value="4.641332149505615"/>
+      <inertia ixx="0.024549242109060287" ixy="0.0" ixz="0.0" iyy="0.01810256391763687" iyz="0.0" izz="0.014694479294121265"/>
+    </inertial>
+    <collision name="Geom_16">
+      <origin xyz="-3.036335328943096e-06 0.1106070727109909 0.02186885103583336" rpy="-0.6696668267250061 0.000736983201932162 0.0005347377737052739"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09020_arml_t12.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL2_Sho1" type="revolute">
+    <origin xyz="8.602678370551488e-23 0.28977999091148376 0.07765000313520432" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.9659258723258972 0.25881895422935486"/>
+    <parent link="link0_11"/>
+    <child link="link0_13"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_13">
+    <inertial>
+      <origin xyz="-0.0026242216117680073 0.00547403609380126 0.0014532019849866629" rpy="1.59726881980896 -0.2608492076396942 1.5936169624328613"/>
+      <mass value="6.514058589935303"/>
+      <inertia ixx="0.025567620992660522" ixy="0.0" ixz="0.0" iyy="0.022996222600340843" iyz="0.0" izz="0.022928500548005104"/>
+    </inertial>
+    <collision name="Geom_17">
+      <origin xyz="-0.002614328870549798 0.005468958988785744 0.0014506158186122775" rpy="1.6016887426376343 -0.26092344522476196 1.593543529510498"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09030_arml_t23.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL3_Sho2" type="revolute">
+    <origin xyz="-1.9852334701272664e-23 0.0 0.0" rpy="-1.570800542831421 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_13"/>
+    <child link="link0_15"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_15">
+    <inertial>
+      <origin xyz="0.0031595618929713964 0.11988010257482529 0.009519310668110847" rpy="-1.1059006452560425 1.4983553886413574 -1.7704832553863525"/>
+      <mass value="4.186227321624756"/>
+      <inertia ixx="0.023510094732046127" ixy="0.0" ixz="0.0" iyy="0.01641996204853058" iyz="0.0" izz="0.01437942311167717"/>
+    </inertial>
+    <collision name="Geom_18">
+      <origin xyz="0.0031447988003492355 0.12003528326749802 0.009525574743747711" rpy="-1.1114132404327393 1.497338056564331 -1.7687119245529175"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09040_arml_t34.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL4_Sho3" type="revolute">
+    <origin xyz="-2.6469779601696886e-23 0.0 0.0" rpy="-2.8257908821105957 1.5707931518554688 -1.2550015449523926"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_15"/>
+    <child link="link0_17"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_17">
+    <inertial>
+      <origin xyz="-0.0022166140843182802 -0.03205019235610962 0.3651427626609802" rpy="-0.032885901629924774 -0.44190630316734314 1.5824110507965088"/>
+      <mass value="5.494523525238037"/>
+      <inertia ixx="0.033287789672613144" ixy="0.0" ixz="0.0" iyy="0.03231581673026085" iyz="0.0" izz="0.01199717540293932"/>
+    </inertial>
+    <collision name="Geom_19">
+      <origin xyz="-0.0022084475494921207 -0.03203756734728813 0.3651118576526642" rpy="-0.03281465172767639 -0.4417875409126282 1.5826719999313354"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09050_arml_t45.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL5_Elb1" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.054999999701976776 0.4090000092983246" rpy="4.235164736271502e-22 0.0 -2.5597362549394864e-23"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_17"/>
+    <child link="link0_19"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_19">
+    <inertial>
+      <origin xyz="0.0013214589562267065 0.005565263330936432 0.1098216101527214" rpy="1.4711486101150513 -0.19030623137950897 1.5817111730575562"/>
+      <mass value="2.7591729164123535"/>
+      <inertia ixx="0.00866414699703455" ixy="0.0" ixz="0.0" iyy="0.0074538071639835835" iyz="0.0" izz="0.0066077555529773235"/>
+    </inertial>
+    <collision name="Geom_20">
+      <origin xyz="0.0019449525279924273 0.005781132262200117 0.11425575613975525" rpy="-1.6717824935913086 0.9546120762825012 -1.6442790031433105"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09060_arml_t56_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_21">
+      <origin xyz="0.07322466373443604 0.00026982216513715684 -0.0017227567732334137" rpy="1.7058265209197998 0.01317520160228014 0.0001800837490009144"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09060_arml_t56_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_22">
+      <origin xyz="-0.07043138146400452 0.00014143335283733904 0.0009638777119107544" rpy="2.8158364295959473 -0.0009177356259897351 -3.389428820810281e-05"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09060_arml_t56_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL6_Elb2" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -6.938893903907228e-18 0.0" rpy="4.235164736271502e-22 0.0 -2.5597362549394864e-23"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link0_19"/>
+    <child link="link0_21"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_21">
+    <inertial>
+      <origin xyz="-7.264896703418344e-05 0.026484208181500435 0.269603431224823" rpy="-0.6034594774246216 -0.0005221039173193276 -0.0018416822422295809"/>
+      <mass value="1.323380708694458"/>
+      <inertia ixx="0.007656598463654518" ixy="0.0" ixz="0.0" iyy="0.006845767144113779" iyz="0.0" izz="0.003992720041424036"/>
+    </inertial>
+    <collision name="Geom_23">
+      <origin xyz="0.04904818907380104 0.000547527801245451 0.2278057187795639" rpy="-0.06546734273433685 0.13436539471149445 0.000755233399104327"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_24">
+      <origin xyz="-1.3494685369153103e-08 -0.057883650064468384 0.35432007908821106" rpy="2.3162770048656967e-06 0.030022408813238144 1.570796251296997"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_25">
+      <origin xyz="-2.5911535885825288e-06 0.07031302154064178 0.3585358262062073" rpy="0.0011446286225691438 -0.018428243696689606 1.570813775062561"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_26">
+      <origin xyz="0.05108014866709709 -0.038606297224760056 0.296926349401474" rpy="1.44315505027771 -0.09436871111392975 -0.2907901406288147"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_04.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_27">
+      <origin xyz="0.04765205830335617 0.043406277894973755 0.2984026074409485" rpy="1.7642273902893066 -0.3429090976715088 0.3578132092952728"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_05.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_28">
+      <origin xyz="-1.061389411916025e-06 0.06732528656721115 0.25963494181632996" rpy="-0.000248176307650283 0.10242686420679092 1.5707811117172241"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_06.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_29">
+      <origin xyz="5.9854635765077546e-05 -0.05733291059732437 0.24773843586444855" rpy="0.009033212438225746 -0.021673893555998802 1.5711663961410522"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_07.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_30">
+      <origin xyz="-0.04910891503095627 0.0005349636194296181 0.22820699214935303" rpy="-0.057053398340940475 -0.13368631899356842 -0.0005300979828462005"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_08.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_31">
+      <origin xyz="-0.050927359610795975 -0.03914577141404152 0.2969658672809601" rpy="1.4367893934249878 0.08376699686050415 0.303693562746048"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_09.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_32">
+      <origin xyz="-0.04850269854068756 0.042520202696323395 0.29731738567352295" rpy="1.6919257640838623 -0.17391909658908844 -0.4434721767902374"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09070_arml_t67_10.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL7_Wri1" type="revolute">
+    <origin xyz="-1.1102230246251565e-16 -6.938893903907228e-18 0.36399999260902405" rpy="0.0 0.0 -2.5597364127116675e-23"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="link0_21"/>
+    <child link="link0_23"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_23">
+    <inertial>
+      <origin xyz="0.0034763282164931297 -0.0012621578061953187 2.2226204237085767e-05" rpy="-0.2640097737312317 -1.5698806047439575 -2.8703057765960693"/>
+      <mass value="1.1816606521606445"/>
+      <inertia ixx="0.0017266924260184169" ixy="0.0" ixz="0.0" iyy="0.0015820622211322188" iyz="0.0" izz="0.0010909022530540824"/>
+    </inertial>
+    <collision name="Geom_33">
+      <origin xyz="0.004275711253285408 -0.0012547892984002829 3.0258206606958993e-05" rpy="-0.05093754455447197 -1.570152759552002 -3.0823819637298584"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09080_arml_t78.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmL8_Wri2" type="revolute">
+    <origin xyz="-5.551115123125783e-17 0.0 0.0" rpy="0.0 0.0 1.570800542831421"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="link0_23"/>
+    <child link="link0_25"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_25">
+    <inertial>
+      <origin xyz="-0.0015881105791777372 3.55767369910609e-05 0.1674589365720749" rpy="-0.06952769309282303 -0.012413452379405499 0.05852368474006653"/>
+      <mass value="1.6421962976455688"/>
+      <inertia ixx="0.009221725165843964" ixy="0.0" ixz="0.0" iyy="0.008076636120676994" iyz="0.0" izz="0.0020144644659012556"/>
+    </inertial>
+    <collision name="Geom_34">
+      <origin xyz="-3.9525308238808066e-05 0.0006876735715195537 0.1218293309211731" rpy="1.5242441892623901 -1.5666489601135254 1.6186400651931763"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_35">
+      <origin xyz="-6.802084584478507e-08 -0.06317408382892609 0.008618472144007683" rpy="1.5005922477939748e-06 0.01336453016847372 1.5707931518554688"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_36">
+      <origin xyz="2.6470817829249427e-05 0.0626370757818222 0.01715272292494774" rpy="-0.0005945437587797642 0.00042304632370360196 1.570723295211792"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_37">
+      <origin xyz="0.00015327708388213068 -0.04166693985462189 0.11673421412706375" rpy="0.0519523061811924 0.26956653594970703 1.5714831352233887"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_04.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_38">
+      <origin xyz="-0.00010127673158422112 0.04261576384305954 0.1163441613316536" rpy="-0.0363846980035305 -0.2701719105243683 1.569759726524353"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_05.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_39">
+      <origin xyz="-1.448170337425836e-06 -0.05752373859286308 0.08827167004346848" rpy="-1.5714761018753052 -0.8915408253669739 -1.5708566904067993"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_06.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_40">
+      <origin xyz="7.302011226784089e-07 0.05815986916422844 0.0874510109424591" rpy="1.5700911283493042 -0.955359697341919 1.570766806602478"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/Mesh_2h09090_arml_t8_07.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_41">
+      <origin xyz="-0.002634358126670122 0.0018236975884065032 0.212237149477005" rpy="-0.04622112959623337 0.0051249065436422825 0.11516931653022766"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/palm_l.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftHandFingers" type="revolute">
+    <origin xyz="-5.638520050865736e-08 0.055300500243902206 0.27031999826431274" rpy="-1.5707998275756836 -0.40111038088798523 -1.5707945823669434"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_36"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_36">
+    <inertial>
+      <origin xyz="-5.638520050865736e-08 0.055300500243902206 0.27031999826431274" rpy="-1.5707998275756836 -0.40111038088798523 -1.5707945823669434"/>
+      <mass value="9.999999974752427e-07"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+  </link>
+  <joint name="Middle_L_1_Joint" type="revolute">
+    <origin xyz="-7.647679822753162e-09 0.007500560022890568 0.2917200028896332" rpy="-1.5707943439483643 -4.11271867051255e-06 -1.570798397064209"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_40"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_40">
+    <inertial>
+      <origin xyz="-8.225680176110473e-06 -0.030843479558825493 -8.414039621129632e-05" rpy="0.12714755535125732 -1.5644742250442505 1.4442546367645264"/>
+      <mass value="0.02538316138088703"/>
+      <inertia ixx="8.413370778725948e-06" ixy="0.0" ixz="0.0" iyy="8.243548109021503e-06" iyz="0.0" izz="1.0851806564460276e-06"/>
+    </inertial>
+    <collision name="Geom_45">
+      <origin xyz="-8.225800229411107e-06 -0.030843479558825493 -8.414049807470292e-05" rpy="0.12714755535125732 -1.5644742250442505 1.4442546367645264"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/middle_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Middle_L_2_Joint" type="revolute">
+    <origin xyz="0.0 -0.05999999865889549 -6.938893903907228e-18" rpy="-1.6940658945086007e-21 0.0 4.2351642314005224e-22"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_40"/>
+    <child link="link0_42"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_42">
+    <inertial>
+      <origin xyz="-3.4415239497320727e-05 -0.018362386152148247 0.00029420116334222257" rpy="0.5635364651679993 -1.55509614944458 1.0098880529403687"/>
+      <mass value="0.014561756514012814"/>
+      <inertia ixx="2.5808008103922475e-06" ixy="0.0" ixz="0.0" iyy="2.520335328881629e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_46">
+      <origin xyz="-3.880048097926192e-05 -0.01820596680045128 0.0003069269878324121" rpy="0.6492487788200378 -1.5521256923675537 0.9233210682868958"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/middle_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Middle_L_3_Joint" type="revolute">
+    <origin xyz="5.551115123125783e-17 -0.039000000804662704 -6.938893903907228e-18" rpy="-1.6940658945086007e-21 0.0 4.2351642314005224e-22"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_42"/>
+    <child link="link0_44"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_44">
+    <inertial>
+      <origin xyz="-1.427834945388895e-06 -0.009854770265519619 0.00019601777603384107" rpy="1.4519619941711426 1.524223804473877 -0.11889565736055374"/>
+      <mass value="0.007588660344481468"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_47">
+      <origin xyz="-1.4280171853897627e-06 -0.009854770265519619 0.00019601767417043447" rpy="1.4519619941711426 1.524223804473877 -0.11889565736055374"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/middle_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Pinky_L_1_Joint" type="revolute">
+    <origin xyz="5.638419864339994e-08 -0.05529949814081192 0.27031999826431274" rpy="-1.5707899332046509 0.4011033773422241 -1.5707950592041016"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_46"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_46">
+    <inertial>
+      <origin xyz="-1.8761980754788965e-05 -0.02276996523141861 -7.110893056960776e-05" rpy="1.5396984815597534 -1.356332778930664 0.032378654927015305"/>
+      <mass value="0.014701016247272491"/>
+      <inertia ixx="3.0928017622500192e-06" ixy="0.0" ixz="0.0" iyy="3.08664630210842e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_48">
+      <origin xyz="-1.0635124453983735e-05 -0.02267158403992653 -7.633217319380492e-05" rpy="1.5277352333068848 -1.4020452499389648 0.04491906613111496"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/pinky_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Pinky_L_2_Joint" type="revolute">
+    <origin xyz="0.0 -0.04610000178217888 -6.938893903907228e-18" rpy="0.0 0.0 2.7755575615628914e-17"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_46"/>
+    <child link="link0_48"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_48">
+    <inertial>
+      <origin xyz="4.895448000752367e-06 -0.012241008691489697 0.00026062584947794676" rpy="1.5515015125274658 -2.8513948109321063e-06 -0.00014776154421269894"/>
+      <mass value="0.007457030471414328"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_49">
+      <origin xyz="4.895487563771894e-06 -0.012241008691489697 0.00026062573306262493" rpy="1.5515015125274658 -2.8513948109321063e-06 -0.00014776154421269894"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/pinky_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Pinky_L_3_Joint" type="revolute">
+    <origin xyz="2.7755575615628914e-17 -0.027060000225901604 6.938893903907228e-18" rpy="0.0 0.0 2.7755575615628914e-17"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_48"/>
+    <child link="link0_50"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_50">
+    <inertial>
+      <origin xyz="-9.453228244638012e-08 -0.008268396370112896 0.00011381117656128481" rpy="-1.5691720247268677 -0.0013860402395948768 3.1415677070617676"/>
+      <mass value="0.005034840200096369"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_50">
+      <origin xyz="-9.450395310750537e-08 -0.008268396370112896 0.00011381107469787821" rpy="-1.5691720247268677 -0.0013860402395948768 3.1415677070617676"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/pinky_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Ring_L_1_Joint" type="revolute">
+    <origin xyz="2.6815300202542858e-08 -0.026299500837922096 0.28652000427246094" rpy="-1.5707892179489136 0.17463281750679016 -1.5707948207855225"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_52"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_52">
+    <inertial>
+      <origin xyz="-2.5416979951842222e-06 -0.027961574494838715 -8.143818558892235e-05" rpy="0.19928103685379028 -1.5637948513031006 1.3716498613357544"/>
+      <mass value="0.020584987476468086"/>
+      <inertia ixx="5.784392669738736e-06" ixy="0.0" ixz="0.0" iyy="5.654965207213536e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_51">
+      <origin xyz="-2.5417905362701276e-06 -0.027961574494838715 -8.1438003689982e-05" rpy="0.19928103685379028 -1.5637948513031006 1.3716498613357544"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/ring_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Ring_L_2_Joint" type="revolute">
+    <origin xyz="5.551115123125783e-17 -0.055059999227523804 0.0" rpy="1.6940658945086007e-21 0.0 1.3877787807814457e-17"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_52"/>
+    <child link="link0_54"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_54">
+    <inertial>
+      <origin xyz="-1.7029418813763186e-05 -0.017273511737585068 0.00020274649432394654" rpy="0.23844924569129944 -1.557215690612793 1.334169864654541"/>
+      <mass value="0.012723562307655811"/>
+      <inertia ixx="2.0468648926907917e-06" ixy="0.0" ixz="0.0" iyy="1.9947437976952642e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_52">
+      <origin xyz="-1.7029627997544594e-05 -0.017273511737585068 0.00020274653797969222" rpy="0.23844924569129944 -1.557215690612793 1.334169864654541"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/ring_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Ring_L_3_Joint" type="revolute">
+    <origin xyz="0.0 -0.037039998918771744 0.0" rpy="1.6940658945086007e-21 0.0 1.3877787807814457e-17"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_54"/>
+    <child link="link0_56"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_56">
+    <inertial>
+      <origin xyz="1.8973385522258468e-05 -0.009891333989799023 8.793917368166149e-05" rpy="1.5436314344406128 -1.5535968542099 -3.1157631874084473"/>
+      <mass value="0.006862672511488199"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_53">
+      <origin xyz="1.897338734124787e-05 -0.009891333989799023 8.793909364612773e-05" rpy="1.5436314344406128 -1.5535968542099 -3.1157631874084473"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/ring_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Thumb_L_1_Joint" type="revolute">
+    <origin xyz="-0.04690999910235405 0.03950029984116554 0.221110001206398" rpy="3.141280174255371 -0.3758140504360199 1.4876083135604858"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_58"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_58">
+    <inertial>
+      <origin xyz="-8.096490091702435e-06 -0.023335805162787437 -9.092833352042362e-06" rpy="0.5422769784927368 -1.558563232421875 1.0294901132583618"/>
+      <mass value="0.021300282329320908"/>
+      <inertia ixx="4.795987479155883e-06" ixy="0.0" ixz="0.0" iyy="4.712325335276546e-06" iyz="0.0" izz="1.1131986639156821e-06"/>
+    </inertial>
+    <collision name="Geom_54">
+      <origin xyz="-8.096192686934955e-06 -0.023335805162787437 -9.093030712392647e-06" rpy="0.5422769784927368 -1.558563232421875 1.0294901132583618"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/thumb_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Thumb_L_2_Joint" type="revolute">
+    <origin xyz="1.9999999494757503e-05 -0.04408000037074089 -4.999999873689376e-05" rpy="-1.5991979976209659e-18 0.0 7.176063129138432e-18"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_58"/>
+    <child link="link0_60"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_60">
+    <inertial>
+      <origin xyz="-2.3720958779449575e-05 -0.017068609595298767 0.00013753015082329512" rpy="-2.468989133834839 1.563652753829956 2.246004104614258"/>
+      <mass value="0.015970006585121155"/>
+      <inertia ixx="2.969749630210572e-06" ixy="0.0" ixz="0.0" iyy="2.9179732337070163e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_55">
+      <origin xyz="-2.3720825993223116e-05 -0.017068609595298767 0.00013752987433690578" rpy="-2.468989133834839 1.563652753829956 2.246004104614258"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/thumb_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Index_L_1_Joint" type="revolute">
+    <origin xyz="-3.998989939191233e-08 0.039220500737428665 0.2853100001811981" rpy="-1.570798397064209 -0.08731963485479355 -1.5707961320877075"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_30"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_30">
+    <inertial>
+      <origin xyz="-1.2821446034649853e-05 -0.028760356828570366 -8.401661762036383e-05" rpy="0.07339110970497131 -1.5631204843521118 1.498537302017212"/>
+      <mass value="0.023887978866696358"/>
+      <inertia ixx="7.006298346823314e-06" ixy="0.0" ixz="0.0" iyy="6.845647476438899e-06" iyz="0.0" izz="1.0188663281951449e-06"/>
+    </inertial>
+    <collision name="Geom_42">
+      <origin xyz="-3.0732503546460066e-06 -0.028529001399874687 -9.96219168882817e-05" rpy="0.42632564902305603 -1.563267469406128 1.146162748336792"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/index_prox.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Index_L_2_Joint" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.05595000088214874 -6.938893903907228e-18" rpy="-8.470329472543003e-22 0.0 6.938893903907228e-18"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_30"/>
+    <child link="link0_32"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_32">
+    <inertial>
+      <origin xyz="-2.1045781977591105e-05 -0.01496494933962822 0.00027842738199979067" rpy="0.019581492990255356 -1.5546940565109253 1.554121494293213"/>
+      <mass value="0.011659549549221992"/>
+      <inertia ixx="1.62892069965892e-06" ixy="0.0" ixz="0.0" iyy="1.5781483853061218e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_43">
+      <origin xyz="-2.104574923578184e-05 -0.01496494933962822 0.00027842746931128204" rpy="0.019581492990255356 -1.5546940565109253 1.554121494293213"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/index_inter.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Index_L_3_Joint" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.03197000175714493 0.0" rpy="-8.470329472543003e-22 0.0 6.938893903907228e-18"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_32"/>
+    <child link="link0_34"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_34">
+    <inertial>
+      <origin xyz="1.3895119991502725e-05 -0.008136403746902943 0.00019560322107281536" rpy="-0.00029087529401294887 1.561254858970642 -1.5707927942276"/>
+      <mass value="0.007011548150330782"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <collision name="Geom_44">
+      <origin xyz="1.3895023585064337e-05 -0.008136403746902943 0.0001956030901055783" rpy="-0.00029087529401294887 1.561254858970642 -1.5707927942276"/>
+      <geometry>
+        <mesh filename="file://armar6/meshes/stl/index_dist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftHandThumb" type="revolute">
+    <origin xyz="-0.04690999910235405 -0.03949970006942749 0.221110001206398" rpy="3.1412293910980225 0.3748120963573456 1.653321623802185"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link0_25"/>
+    <child link="link0_38"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link0_38">
+    <inertial>
+      <origin xyz="-0.04690999910235405 -0.03949970006942749 0.221110001206398" rpy="3.1412296295166016 0.3748120963573456 1.653321623802185"/>
+      <mass value="9.999999974752427e-07"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+  </link>
+</robot>
