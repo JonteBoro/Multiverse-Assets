@@ -42,6 +42,12 @@
         <mesh filename="file://green_grape/meshes/obj/GreenGrapeSeed002.obj" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
+    <collision name="GreenGrapeSeed002_001">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://green_grape/meshes/stl/GreenGrapeSeed002_001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
     <collision name="GreenGrapeSeed002_002">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
