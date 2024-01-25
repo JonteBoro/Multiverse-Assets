@@ -1,0 +1,22 @@
+#usda 1.0
+(
+    defaultPrim = "Cameras_Gray"
+    upAxis = "Z"
+)
+
+def Material "Cameras_Gray"
+{
+    token outputs:surface.connect = </Cameras_Gray/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.296138, 0.296138, 0.296138)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 1
+        color3f inputs:specularColor = (0, 0, 0)
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

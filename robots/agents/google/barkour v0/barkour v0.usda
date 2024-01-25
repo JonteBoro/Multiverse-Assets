@@ -1,0 +1,1451 @@
+#usda 1.0
+(
+    defaultPrim = "barkour_v0"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Mujoco "mujoco" (
+    prepend apiSchemas = ["MujocoOptionAPI"]
+)
+{
+    string mujoco:model = "barkour v0"
+    float mujoco:option:timestep = 0.001
+
+    def MujocoAsset "asset"
+    {
+        def MujocoMesh "meshes"
+        {
+            def MujocoMesh "head"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/head.stl@
+            }
+
+            def MujocoMesh "powercable"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/powercable.stl@
+            }
+
+            def MujocoMesh "handle"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/handle.stl@
+            }
+
+            def MujocoMesh "head_mount"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/head_mount.stl@
+            }
+
+            def MujocoMesh "body"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/body.stl@
+            }
+
+            def MujocoMesh "abduction"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/abduction.stl@
+            }
+
+            def MujocoMesh "upper_right_2"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/upper_right_2.stl@
+            }
+
+            def MujocoMesh "upper_right_3"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/upper_right_3.stl@
+            }
+
+            def MujocoMesh "upper_right_1"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/upper_right_1.stl@
+            }
+
+            def MujocoMesh "lower_leg_1to1"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/lower_leg_1to1.stl@
+            }
+
+            def MujocoMesh "foot"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/foot.stl@
+            }
+
+            def MujocoMesh "upper_left_2"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/upper_left_2.stl@
+            }
+
+            def MujocoMesh "upper_left_1"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/upper_left_1.stl@
+            }
+
+            def MujocoMesh "upper_left_3"
+            {
+                asset mujoco:mesh:file = @barkour v0/meshes/stl/upper_left_3.stl@
+            }
+        }
+
+        def MujocoMaterial "materials"
+        {
+        }
+
+        def MujocoTexture "textures"
+        {
+        }
+    }
+
+    def MujocoEquality "equality"
+    {
+    }
+}
+
+def Xform "barkour_v0" (
+    prepend apiSchemas = ["MujocoBodyAPI"]
+)
+{
+    point3f mujoco:body:pos = (0, 0, 0)
+    quatf mujoco:body:quat = (1, 0, 0, 0)
+
+    def Xform "chassis" (
+        prepend apiSchemas = ["MujocoBodyAPI"]
+    )
+    {
+        point3f mujoco:body:pos = (0, 0, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+
+        def Mesh "Geom_0" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/head.usda@</head>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/head>
+            point3f mujoco:geom:pos = (0.25309026, 0.000083347, 0.09028946)
+            quatf mujoco:geom:quat = (0.70535284, 0.70600474, 0.044904627, -0.044924796)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.647059, 0.647059, 0.647059)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.571722, 0.12712356, 0.000030339032)
+            point3f urdf:collision:origin:xyz = (0.25309026, 0.000083347, 0.09028946)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/head.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9919306745589107, 0.000030094216820888975, -0.12678144960301796, 0), (0.12678142330515946, -0.0009218941345316978, 0.9919302499752299, 0), (-0.0000870277107425238, -0.9999995746026807, -0.0009182704583796664, 0), (0.2530902657935418, 0.00008334699458424874, 0.0902894600603914, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_1" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/powercable.usda@</powercable>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/powercable>
+            point3f mujoco:geom:pos = (-0.02485466, 0.00014442178, 0.11115658)
+            quatf mujoco:geom:quat = (-0.0005914939, 0.7188303, -0.000814503, 0.6951849)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.768627, 0.886275, 0.952941)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-3.0823586, -1.537296, -0.059549514)
+            point3f urdf:collision:origin:xyz = (-0.02485466, 0.00014442178, 0.11115658)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/powercable.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.03343465173337912, -0.001993374069988878, 0.9994389178550561, 0), (-0.00034858356992739864, -0.9999979734396738, -0.001982827789304648, 0), (0.9994408449492963, -0.0002820928293276237, -0.033435278833490845, 0), (-0.024854659512574956, 0.00014442178317670092, 0.11115658184780258, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_2" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/handle.usda@</handle>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/handle>
+            point3f mujoco:geom:pos = (0.037045922, -0.0015246682, 0.11666313)
+            quatf mujoco:geom:quat = (-0.13158101, 0.69923854, 0.11509702, 0.6931844)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.917647, 0.917647, 0.917647)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.7474389, -1.5459613, -1.0434773)
+            point3f urdf:collision:origin:xyz = (0.037045922, -0.0015246682, 0.11666313)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/handle.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.012496181629133352, -0.02145925520562489, 0.999691625357896, 0), (0.34338036124795523, -0.9388782217358289, -0.024446109289467333, 0), (0.9391132907982487, 0.34357995447375667, -0.00436370598182978, 0), (0.037045923641888516, -0.0015246681704760225, 0.11666312779310613, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_3" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/head_mount.usda@</head_mount>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/head_mount>
+            point3f mujoco:geom:pos = (0.14102285, -0.00008848851, 0.07858498)
+            quatf mujoco:geom:quat = (0.5589753, 0.43497586, 0.43389556, 0.55684584)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.231373, 0.380392, 0.705882)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.3232133, 0.000644783, 1.5674816)
+            point3f urdf:collision:origin:xyz = (0.14102285, -0.00008848851, 0.07858498)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/head_mount.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.0033147333967045167, 0.9999942983824653, -0.0006447829632667545, 0), (-0.2450579303442001, 0.0014374317378198498, 0.9695073721047285, 0), (0.969502771175991, -0.0030556492861675832, 0.24506129782059416, 0), (0.1410228439953221, -0.00008848850882963851, 0.07858497500544451, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_4" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/body.usda@</body>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/body>
+            point3f mujoco:geom:pos = (-0.002219931, -0.0000066883454, 0.050624795)
+            quatf mujoco:geom:quat = (-0.0006346179, 0.70800585, 0.00036710573, 0.7062062)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.984314, 0.517647, 0.862745)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-2.993315, -1.5682234, -0.14686091)
+            point3f urdf:collision:origin:xyz = (-0.002219931, -0.0000066883454, 0.050624795)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/body.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.002545302425506213, -0.00037651626166366504, 0.999996689830055, 0), (0.0014161682942597565, -0.9999989249868526, -0.0003801216917654372, 0), (0.9999957579424648, 0.00141713113116607, -0.002544766478880245, 0), (-0.0022199310081976085, -0.000006688345214055395, 0.05062479661013024, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "abduction_front_right" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (-0.94805986, 0, 0.31809196)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.0472, 1.0472)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/chassis>
+            rel physics:body1 = </barkour_v0/abduction_1>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.130533, -0.056, 0.0508)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.70710707, -9.3818346e-7, -0.70710653, 9.3818284e-7)
+            quatf physics:localRot1 = (0, -0.5839127, 0, 0.81181645)
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+            vector3f urdf:joint:axis = (-0.94805986, 0, 0.31809196)
+            prepend rel urdf:joint:child = </barkour_v0/abduction_1>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.0472
+            float urdf:joint:limit:upper = 1.0472
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-1.9103152e-12, -0.32371548, 3.14159)
+            point3f urdf:joint:origin:xyz = (0.130533, -0.056, 0.0508)
+            prepend rel urdf:joint:parent = </barkour_v0/chassis>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "abduction_front_left" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0.94805986, 0, -0.31809196)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.0472, 1.0472)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/chassis>
+            rel physics:body1 = </barkour_v0/abduction_2>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.130533, 0.056, 0.0508)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.0000015292161, 0.70710653, 2.497004e-7, -0.70710707)
+            quatf physics:localRot1 = (0, 0.81181645, 0, 0.5839127)
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+            vector3f urdf:joint:axis = (0.94805986, 0, -0.31809196)
+            prepend rel urdf:joint:child = </barkour_v0/abduction_2>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.0472
+            float urdf:joint:limit:upper = 1.0472
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (3.14159, 0.32371548, 3.14159)
+            point3f urdf:joint:origin:xyz = (0.130533, 0.056, 0.0508)
+            prepend rel urdf:joint:parent = </barkour_v0/chassis>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "abduction_hind_right" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0.94805986, 0, -0.31809196)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.0472, 1.0472)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/chassis>
+            rel physics:body1 = </barkour_v0/abduction_3>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.134667, -0.056, 0.0508)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.70710707, 0.0000011878825, -0.70710653, 5.910249e-7)
+            quatf physics:localRot1 = (0, 0.81181645, 0, 0.5839127)
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+            vector3f urdf:joint:axis = (0.94805986, 0, -0.31809196)
+            prepend rel urdf:joint:child = </barkour_v0/abduction_3>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.0472
+            float urdf:joint:limit:upper = 1.0472
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (3.14159, 0.32371548, 1.9900138e-12)
+            point3f urdf:joint:origin:xyz = (-0.134667, -0.056, 0.0508)
+            prepend rel urdf:joint:parent = </barkour_v0/chassis>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "abduction_hind_left" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (-0.94805986, 0, 0.31809196)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.0472, 1.0472)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/chassis>
+            rel physics:body1 = </barkour_v0/abduction_4>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.134667, 0.056, 0.0508)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -0.70710653, 0, 0.70710707)
+            quatf physics:localRot1 = (0, -0.5839127, 0, 0.81181645)
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+            vector3f urdf:joint:axis = (-0.94805986, 0, 0.31809196)
+            prepend rel urdf:joint:child = </barkour_v0/abduction_4>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.0472
+            float urdf:joint:limit:upper = 1.0472
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, -0.32371548, 0)
+            point3f urdf:joint:origin:xyz = (-0.134667, 0.056, 0.0508)
+            prepend rel urdf:joint:parent = </barkour_v0/chassis>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "abduction_1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000866008, 0.000565866, 0.000479767)
+        float mujoco:body:inertial:mass = 0.639437
+        point3f mujoco:body:inertial:pos = (-0.0521152, 0.00350917, 0.0171912)
+        quatf mujoco:body:inertial:quat = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        point3f mujoco:body:pos = (0.130533, -0.056, 0.0508)
+        quatf mujoco:body:quat = (0.0000013094494, 0.16115193, -2.1381591e-7, 0.9869296)
+        point3f physics:centerOfMass = (-0.0521152, 0.00350917, 0.0171912)
+        float3 physics:diagonalInertia = (0.000866008, 0.000565866, 0.000479767)
+        float physics:mass = 0.639437
+        quatf physics:principalAxes = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000866008
+        float urdf:link:inertial:inertia:iyy = 0.000565866
+        float urdf:link:inertial:inertia:izz = 0.000479767
+        float urdf:link:inertial:mass = 0.639437
+        float3 urdf:link:inertial:origin:rpy = (1.9862936, 0.004346785, 1.5683513)
+        point3f urdf:link:inertial:origin:xyz = (-0.0521152, 0.00350917, 0.0171912)
+        matrix4d xformOp:transform = ( (-0.9480601069252654, 0.0000025157552324433645, 0.31809123479046975, 0), (-0.000002653582627411274, -0.9999999999964795, -1.876958513417577e-12, 0), (0.31809123478934986, -8.440831540412799e-7, 0.9480601069286031, 0), (0.130533, -0.056, 0.0508, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_5" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/abduction.usda@</abduction>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/abduction>
+            point3f mujoco:geom:pos = (-0.050889857, -0.0035264858, 0.016803786)
+            quatf mujoco:geom:quat = (0.38029552, 0.5720897, 0.6017098, 0.40747276)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.537255, 0.854902, 0.827451)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.9591837, -0.008566934, 1.6270055)
+            point3f urdf:collision:origin:xyz = (-0.050889857, -0.0035264858, 0.016803786)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/abduction.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.05617747528442285, 0.9983840447046333, 0.008566828461290421, 0), (0.3785437897638592, 0.013358733339484896, 0.9254869763939306, 0), (0.9238769888366544, 0.055234441454418914, -0.37868253983427236, 0), (-0.05088985645113531, -0.003526485750904671, 0.016803786228828877, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "hip_front_right" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, -1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.22173, 3.24631)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/abduction_1>
+            rel physics:body1 = </barkour_v0/upper_right_asm_1>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.0540394, 0.0217, 0.0181312)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.6472923, 0.64728934, -0.28463215, -0.28462914)
+            quatf physics:localRot1 = (0, 0, 1, 0)
+            float physics:lowerLimit = -69.99997
+            float physics:upperLimit = 185.99986
+            vector3f urdf:joint:axis = (0, 0, -1)
+            prepend rel urdf:joint:child = </barkour_v0/upper_right_asm_1>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.22173
+            float urdf:joint:limit:upper = 3.24631
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-1.5707995, -0.8285547, 3.1415894)
+            point3f urdf:joint:origin:xyz = (-0.0540394, 0.0217, 0.0181312)
+            prepend rel urdf:joint:parent = </barkour_v0/abduction_1>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "upper_right_asm_1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00539403, 0.00519403, 0.000795298)
+        float mujoco:body:inertial:mass = 0.942155
+        point3f mujoco:body:inertial:pos = (-0.0253655, -0.0179374, -0.0465027)
+        quatf mujoco:body:inertial:quat = (-0.24568903, 0.6390071, 0.15335102, 0.7125941)
+        point3f mujoco:body:pos = (-0.0540394, 0.0217, 0.0181312)
+        quatf mujoco:body:quat = (0.28463215, 0.28462914, -0.6472923, 0.64728934)
+        point3f physics:centerOfMass = (-0.0253655, -0.0179374, -0.0465027)
+        float3 physics:diagonalInertia = (0.00539403, 0.00519403, 0.000795298)
+        float physics:mass = 0.942155
+        quatf physics:principalAxes = (-0.24568903, 0.6390071, 0.15335102, 0.7125941)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00539403
+        float urdf:link:inertial:inertia:iyy = 0.00519403
+        float urdf:link:inertial:inertia:izz = 0.000795298
+        float urdf:link:inertial:mass = 0.942155
+        float3 urdf:link:inertial:origin:rpy = (-0.6108501, -1.4036206, -1.9565834)
+        point3f urdf:link:inertial:origin:xyz = (-0.0253655, -0.0179374, -0.0465027)
+        matrix4d xformOp:transform = ( (0.8752522510322687, -0.00000449851719543492, 0.4836667210411626, 0), (0.48366672100755725, -0.000006874979412614694, -0.8752522510353987, 0), (0.000007262536051374713, 0.9999999999662491, -0.000003841558145157558, 0), (0.18753291755564683, -0.0777001512540674, 0.050800007937367046, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_6" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_right_2.usda@</upper_right_2>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_right_2>
+            point3f mujoco:geom:pos = (-0.02156837, -0.02205776, -0.06744058)
+            quatf mujoco:geom:quat = (-0.24542068, 0.6742171, 0.20137303, 0.66682)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.972549, 0.529412, 0.00392157)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.4155744, -1.5076208, -1.0828106)
+            point3f urdf:collision:origin:xyz = (-0.02156837, -0.02205776, -0.06744058)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_right_2.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.029600015224958143, -0.055764544961075024, 0.99800508747399, 0), (0.598841098529507, -0.7984351939198746, -0.06237451260014332, 0), (0.8003206718626324, 0.5994927494435744, 0.009760407467317544, 0), (-0.021568369687491904, -0.022057759868588864, -0.06744057636581947, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_7" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_right_3.usda@</upper_right_3>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_right_3>
+            point3f mujoco:geom:pos = (-0.17723383, -0.11110071, -0.0672514)
+            quatf mujoco:geom:quat = (-0.19026902, 0.67798316, 0.19170897, 0.683655)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.972549, 0.529412, 0.00392157)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.52212346, -1.5625207, -3.1167192)
+            point3f urdf:collision:origin:xyz = (-0.17723383, -0.11110071, -0.0672514)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_right_3.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.008272984078018686, -0.00020582053312279136, 0.9999657570998886, 0), (0.5201076563207856, -0.8540907399708266, 0.004127194275262647, 0), (0.8540606439656055, 0.520123990538789, 0.007172927928066786, 0), (-0.17723382744427693, -0.1111007142323923, -0.06725139833614033, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_8" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_right_1.usda@</upper_right_1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_right_1>
+            point3f mujoco:geom:pos = (0.0005172314, -0.0014694919, -0.024606628)
+            quatf mujoco:geom:quat = (0.2697412, 0.64524144, -0.2455633, 0.6712688)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.768627, 0.886275, 0.952941)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.3754901, -1.5205517, 2.0199318)
+            point3f urdf:collision:origin:xyz = (0.0005172314, -0.0014694919, -0.024606628)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_right_1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.021806395529030187, 0.045242499201793296, 0.9987380023709957, 0), (-0.6790329437579306, -0.7338767088914637, 0.018418399443837608, 0), (0.7337838526469975, -0.6777743668896082, 0.04672435319959001, 0), (0.0005172314390712572, -0.0014694918263200227, -0.024606628468287223, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "knee_front_right" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, -0.077500924, 0.9969923)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 2.5132)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/upper_right_asm_1>
+            rel physics:body1 = </barkour_v0/lower_leg_1to1_front_right>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.193523, -0.104637, -0.0792)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.94976056, -4.0855628e-8, 4.9175895e-8, -0.31297746)
+            quatf physics:localRot1 = (0, 0, -0.03877963, 0.9992478)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 143.99576
+            vector3f urdf:joint:axis = (0, -0.077500924, 0.9969923)
+            prepend rel urdf:joint:child = </barkour_v0/lower_leg_1to1_front_right>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 2.5132
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-0.07757876, 1.1870269e-7, -2.50494)
+            point3f urdf:joint:origin:xyz = (-0.193523, -0.104637, -0.0792)
+            prepend rel urdf:joint:parent = </barkour_v0/upper_right_asm_1>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "lower_leg_1to1_front_right" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000828741, 0.000813964, 0.0000349901)
+        float mujoco:body:inertial:mass = 0.169623
+        point3f mujoco:body:inertial:pos = (-0.0577509, -0.0097034, 0.0114624)
+        quatf mujoco:body:inertial:quat = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        point3f mujoco:body:pos = (-0.193523, -0.104637, -0.0792)
+        quatf mujoco:body:quat = (0.31274205, -0.012137102, 0.036831405, -0.94904613)
+        point3f physics:centerOfMass = (-0.0577509, -0.0097034, 0.0114624)
+        float3 physics:diagonalInertia = (0.000828741, 0.000813964, 0.0000349901)
+        float physics:mass = 0.169623
+        quatf physics:principalAxes = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000828741
+        float urdf:link:inertial:inertia:iyy = 0.000813964
+        float urdf:link:inertial:inertia:izz = 0.0000349901
+        float urdf:link:inertial:mass = 0.169623
+        float3 urdf:link:inertial:origin:rpy = (-1.5124454, -1.4896274, -1.5769755)
+        point3f urdf:link:inertial:origin:xyz = (-0.0577509, -0.0097034, 0.0114624)
+        matrix4d xformOp:transform = ( (-0.9913251648898515, 0.000007585454670480829, 0.13143217794196843, 0), (0.13103631263610688, -0.0774981233562988, 0.9883438296701123, 0), (0.010193244176452504, 0.99699249787484, 0.0768248459448275, 0), (-0.03245853369979393, -0.15689856130763033, 0.04878344712431424, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_9" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/lower_leg_1to1.usda@</lower_leg_1to1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/lower_leg_1to1>
+            point3f mujoco:geom:pos = (-0.07021877, -0.009942793, 0.011464185)
+            quatf mujoco:geom:quat = (-0.053995706, 0.7050222, -0.0074192383, 0.70708776)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.32549, 0.529412, 0.980392)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.5042052, -1.483866, -1.5714442)
+            point3f urdf:collision:origin:xyz = (-0.07021877, -0.009942793, 0.011464185)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/lower_leg_1to1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.00005624753895450141, -0.08682086129736924, 0.9962239381182314, 0), (0.06589795022323522, -0.9940588370033674, -0.08662845220762917, 0), (0.9978263661542477, 0.06564424284807045, 0.005777230159269453, 0), (-0.07021876913331514, -0.009942793207425308, 0.011464184945911372, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_10" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/foot.usda@</foot>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/foot>
+            point3f mujoco:geom:pos = (-0.19568971, -0.021809189, 0.010466543)
+            quatf mujoco:geom:quat = (0.94593245, -0.26307687, -0.06483011, 0.178324)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.301961, 0.301961, 0.301961)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-0.54807353, -0.028827965, 0.3807641)
+            point3f urdf:collision:origin:xyz = (-0.19568971, -0.021809189, 0.010466543)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/foot.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9279952107482833, 0.3714755274184323, 0.028823971923501376, 0), (-0.3032543192432556, 0.7979822310404251, -0.520827396364722, 0), (-0.21647564918151618, 0.4745843354694117, 0.8531752468505507, 0), (-0.19568970253227594, -0.021809188850188937, 0.01046654339925501, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Xform "abduction_2" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000866008, 0.000565866, 0.000479767)
+        float mujoco:body:inertial:mass = 0.639437
+        point3f mujoco:body:inertial:pos = (-0.0521152, 0.00350917, 0.0171912)
+        quatf mujoco:body:inertial:quat = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        point3f mujoco:body:pos = (0.130533, 0.056, 0.0508)
+        quatf mujoco:body:quat = (0.16115193, 0.0000010956396, 0.9869296, 0.0000010956396)
+        point3f physics:centerOfMass = (-0.0521152, 0.00350917, 0.0171912)
+        float3 physics:diagonalInertia = (0.000866008, 0.000565866, 0.000479767)
+        float physics:mass = 0.639437
+        quatf physics:principalAxes = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000866008
+        float urdf:link:inertial:inertia:iyy = 0.000565866
+        float urdf:link:inertial:inertia:izz = 0.000479767
+        float urdf:link:inertial:mass = 0.639437
+        float3 urdf:link:inertial:origin:rpy = (1.9862936, 0.004346785, 1.5683513)
+        point3f urdf:link:inertial:origin:xyz = (-0.0521152, 0.00350917, 0.0171912)
+        matrix4d xformOp:transform = ( (-0.9480601069263275, 0.0000025157671324563287, -0.3180912347873052, 0), (0.0000018095093826969871, 0.9999999999951983, 0.0000025157671324563287, 0), (0.31809123479210694, 0.0000018095093826969871, -0.9480601069263275, 0), (0.130533, 0.056, 0.0508, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_11" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/abduction.usda@</abduction>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/abduction>
+            point3f mujoco:geom:pos = (-0.050889857, -0.0035264858, 0.016803786)
+            quatf mujoco:geom:quat = (0.38029552, 0.5720897, 0.6017098, 0.40747276)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.537255, 0.854902, 0.827451)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.9591837, -0.008566934, 1.6270055)
+            point3f urdf:collision:origin:xyz = (-0.050889857, -0.0035264858, 0.016803786)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/abduction.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.05617747528442285, 0.9983840447046333, 0.008566828461290421, 0), (0.3785437897638592, 0.013358733339484896, 0.9254869763939306, 0), (0.9238769888366544, 0.055234441454418914, -0.37868253983427236, 0), (-0.05088985645113531, -0.003526485750904671, 0.016803786228828877, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "hip_front_left" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.22173, 3.24631)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/abduction_2>
+            rel physics:body1 = </barkour_v0/upper_left_asm_1>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.0540394, 0.0217, 0.0181312)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.6718178, 0.6718208, 0.22058694, -0.22058794)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -69.99997
+            float physics:upperLimit = 185.99986
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </barkour_v0/upper_left_asm_1>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.22173
+            float urdf:joint:limit:upper = 3.24631
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5708009, 0.63450587, -4.461048e-10)
+            point3f urdf:joint:origin:xyz = (-0.0540394, 0.0217, 0.0181312)
+            prepend rel urdf:joint:parent = </barkour_v0/abduction_2>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "upper_left_asm_1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00538157, 0.00518445, 0.000790347)
+        float mujoco:body:inertial:mass = 0.938791
+        point3f mujoco:body:inertial:pos = (0.0306562, 0.00629189, -0.0466005)
+        quatf mujoco:body:inertial:quat = (-0.113341965, 0.7512938, 0.055564083, 0.6477838)
+        point3f mujoco:body:pos = (-0.0540394, 0.0217, 0.0181312)
+        quatf mujoco:body:quat = (0.6718178, 0.6718208, 0.22058694, -0.22058794)
+        point3f physics:centerOfMass = (0.0306562, 0.00629189, -0.0466005)
+        float3 physics:diagonalInertia = (0.00538157, 0.00518445, 0.000790347)
+        float physics:mass = 0.938791
+        quatf physics:principalAxes = (-0.113341965, 0.7512938, 0.055564083, 0.6477838)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00538157
+        float urdf:link:inertial:inertia:iyy = 0.00518445
+        float urdf:link:inertial:inertia:izz = 0.000790347
+        float urdf:link:inertial:mass = 0.938791
+        float3 urdf:link:inertial:origin:rpy = (-2.5123405, -1.4029534, -0.38896155)
+        point3f urdf:link:inertial:origin:xyz = (0.0306562, 0.00629189, -0.0466005)
+        matrix4d xformOp:transform = ( (-0.9520921666017128, 9.333558875973331e-7, 0.30581122656761, 0), (-0.30581122656874227, -0.0000015234789804905923, -0.9520921666005879, 0), (-4.227438535372871e-7, -0.9999999999984039, 0.000001735923112170075, 0), (0.18753301440485085, 0.07769989685792594, 0.05080004665460924, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_12" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_left_2.usda@</upper_left_2>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_left_2>
+            point3f mujoco:geom:pos = (0.031292632, 0.0005465516, -0.067816995)
+            quatf mujoco:geom:quat = (-0.08005487, 0.7073343, 0.04431643, 0.70093185)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.980392, 0.713725, 0.00392157)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.6599768, -1.5194442, -1.3054425)
+            point3f urdf:collision:origin:xyz = (0.031292632, 0.0005465516, -0.067816995)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_left_2.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.013461199666987334, -0.049532952067825764, 0.9986817725196407, 0), (0.17491907637656914, -0.9832545440252773, -0.051125515872316334, 0), (0.9844907885923021, 0.1753767040204855, -0.004571527514687368, 0), (0.03129263211089908, 0.0005465515955433415, -0.06781699759719435, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_13" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_left_1.usda@</upper_left_1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_left_1>
+            point3f mujoco:geom:pos = (0.0004683269, -0.0013757735, -0.02472985)
+            quatf mujoco:geom:quat = (0.2645555, 0.6478133, -0.24149635, 0.6723301)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.498039, 0.498039, 0.498039)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.38871568, -1.5231936, 2.020768)
+            point3f urdf:collision:origin:xyz = (0.0004683269, -0.0013757735, -0.02472985)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_left_1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.020696527127908038, 0.04284816189651924, 0.9988672027786946, 0), (-0.6686263968285855, -0.7433797771946697, 0.018034642276095025, 0), (0.7433104299206806, -0.6674957242410571, 0.04403479182464498, 0), (0.00046832690862134524, -0.0013757734789132331, -0.024729849542213037, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_14" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_left_3.usda@</upper_left_3>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_left_3>
+            point3f mujoco:geom:pos = (0.20238028, 0.052930746, -0.06724871)
+            quatf mujoco:geom:quat = (-0.092958294, 0.7030816, 0.09636818, 0.6983897)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(1, 0.756863, 0.054902)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (2.6474044, -1.5625938, 0.7627449)
+            point3f urdf:collision:origin:xyz = (0.20238028, 0.052930746, -0.06724871)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_left_3.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.005929911757894479, 0.005667155523882833, 0.9999663591815534, 0), (0.2653516198574911, -0.9641438592271854, 0.003890572389107172, 0), (0.9641334731174668, 0.26531962246086793, -0.007221076905379542, 0), (0.20238028564792146, 0.052930746450001856, -0.06724871019506805, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "knee_front_left" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, -0.077500924, 0.9969923)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 2.5132)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/upper_left_asm_1>
+            rel physics:body1 = </barkour_v0/lower_leg_1to1_front_left>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.208835, 0.0691954, -0.0792)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-1.7874754e-7, 0.089369655, -0.9959985, 0.000001955323)
+            quatf physics:localRot1 = (0, 0, -0.03877963, 0.9992478)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 143.99576
+            vector3f urdf:joint:axis = (0, -0.077500924, 0.9969923)
+            prepend rel urdf:joint:child = </barkour_v0/lower_leg_1to1_front_left>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 2.5132
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (3.06401, -7.0979436e-9, 0.1789781)
+            point3f urdf:joint:origin:xyz = (0.208835, 0.0691954, -0.0792)
+            prepend rel urdf:joint:parent = </barkour_v0/upper_left_asm_1>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "lower_leg_1to1_front_left" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000828741, 0.000813964, 0.0000349901)
+        float mujoco:body:inertial:mass = 0.169623
+        point3f mujoco:body:inertial:pos = (-0.0577509, -0.00780463, -0.0129639)
+        quatf mujoco:body:inertial:quat = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        point3f mujoco:body:pos = (0.208835, 0.0691954, -0.0792)
+        quatf mujoco:body:quat = (0.03862641, 0.9952493, 0.08930242, 0.003465901)
+        point3f physics:centerOfMass = (-0.0577509, -0.00780463, -0.0129639)
+        float3 physics:diagonalInertia = (0.000828741, 0.000813964, 0.0000349901)
+        float physics:mass = 0.169623
+        quatf physics:principalAxes = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000828741
+        float urdf:link:inertial:inertia:iyy = 0.000813964
+        float urdf:link:inertial:inertia:izz = 0.0000349901
+        float urdf:link:inertial:mass = 0.169623
+        float3 urdf:link:inertial:origin:rpy = (-1.5124454, -1.4896274, -1.5769755)
+        point3f urdf:link:inertial:origin:xyz = (-0.0577509, -0.00780463, -0.0129639)
+        matrix4d xformOp:transform = ( (-0.9913253345726837, 6.406591428381715e-7, 0.13143089832283425, 0), (0.131035518770355, -0.0775031766359156, 0.9883435386706012, 0), (0.010186945319455992, 0.9969921050895691, 0.07683077855994168, 0), (-0.03245784987301939, 0.15689998635743888, 0.04878359836495127, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_15" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/foot.usda@</foot>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/foot>
+            point3f mujoco:geom:pos = (-0.19568971, -0.019910488, -0.013959757)
+            quatf mujoco:geom:quat = (0.94593245, -0.26307687, -0.06483011, 0.178324)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.301961, 0.301961, 0.301961)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-0.54807353, -0.028827965, 0.3807641)
+            point3f urdf:collision:origin:xyz = (-0.19568971, -0.019910488, -0.013959757)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/foot.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9279952107482833, 0.3714755274184323, 0.028823971923501376, 0), (-0.3032543192432556, 0.7979822310404251, -0.520827396364722, 0), (-0.21647564918151618, 0.4745843354694117, 0.8531752468505507, 0), (-0.19568970253227594, -0.019910488850188937, -0.013959756600744989, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_16" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/lower_leg_1to1.usda@</lower_leg_1to1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/lower_leg_1to1>
+            point3f mujoco:geom:pos = (-0.07021877, -0.008044093, -0.012962115)
+            quatf mujoco:geom:quat = (-0.053995706, 0.7050222, -0.0074192383, 0.70708776)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.32549, 0.529412, 0.980392)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.5042052, -1.483866, -1.5714442)
+            point3f urdf:collision:origin:xyz = (-0.07021877, -0.008044093, -0.012962115)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/lower_leg_1to1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.00005624753895450141, -0.08682086129736924, 0.9962239381182314, 0), (0.06589795022323522, -0.9940588370033674, -0.08662845220762917, 0), (0.9978263661542477, 0.06564424284807045, 0.005777230159269453, 0), (-0.07021876913331514, -0.008044093207425308, -0.012962115054088626, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Xform "abduction_3" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000866008, 0.000565866, 0.000479767)
+        float mujoco:body:inertial:mass = 0.639437
+        point3f mujoco:body:inertial:pos = (-0.0521152, 0.00350917, 0.0171912)
+        quatf mujoco:body:inertial:quat = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        point3f mujoco:body:pos = (-0.134667, -0.056, 0.0508)
+        quatf mujoco:body:quat = (0.0000013094494, 0.9869296, 2.1381591e-7, -0.16115193)
+        point3f physics:centerOfMass = (-0.0521152, 0.00350917, 0.0171912)
+        float3 physics:diagonalInertia = (0.000866008, 0.000565866, 0.000479767)
+        float physics:mass = 0.639437
+        quatf physics:principalAxes = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000866008
+        float urdf:link:inertial:inertia:iyy = 0.000565866
+        float urdf:link:inertial:inertia:izz = 0.000479767
+        float urdf:link:inertial:mass = 0.639437
+        float3 urdf:link:inertial:origin:rpy = (1.9862936, 0.004346785, 1.5683513)
+        point3f urdf:link:inertial:origin:xyz = (-0.0521152, 0.00350917, 0.0171912)
+        matrix4d xformOp:transform = ( (0.9480601069286031, 1.876958513417577e-12, -0.31809123479046975, 0), (8.440831540412799e-7, -0.9999999999964795, 0.0000025157552324433645, 0), (-0.31809123478934986, -0.000002653582627411274, -0.9480601069252654, 0), (-0.134667, -0.056, 0.0508, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_17" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/abduction.usda@</abduction>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/abduction>
+            point3f mujoco:geom:pos = (-0.050889857, -0.0035264858, 0.016803786)
+            quatf mujoco:geom:quat = (0.38029552, 0.5720897, 0.6017098, 0.40747276)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.537255, 0.854902, 0.827451)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.9591837, -0.008566934, 1.6270055)
+            point3f urdf:collision:origin:xyz = (-0.050889857, -0.0035264858, 0.016803786)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/abduction.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.05617747528442285, 0.9983840447046333, 0.008566828461290421, 0), (0.3785437897638592, 0.013358733339484896, 0.9254869763939306, 0), (0.9238769888366544, 0.055234441454418914, -0.37868253983427236, 0), (-0.05088985645113531, -0.003526485750904671, 0.016803786228828877, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "hip_hind_right" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, -1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.98968, 2.46091)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/abduction_3>
+            rel physics:body1 = </barkour_v0/upper_right_asm_2>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.0540394, 0.0217, 0.0181312)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.28462994, 0.28463095, 0.6472899, 0.6472919)
+            quatf physics:localRot1 = (0, 0, 1, 0)
+            float physics:lowerLimit = -114.00027
+            float physics:upperLimit = 140.99976
+            vector3f urdf:joint:axis = (0, 0, -1)
+            prepend rel urdf:joint:child = </barkour_v0/upper_right_asm_2>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.98968
+            float urdf:joint:limit:upper = 2.46091
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707994, 0.8285541, -2.3394358e-7)
+            point3f urdf:joint:origin:xyz = (-0.0540394, 0.0217, 0.0181312)
+            prepend rel urdf:joint:parent = </barkour_v0/abduction_3>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "upper_right_asm_2" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00539403, 0.00519403, 0.000795298)
+        float mujoco:body:inertial:mass = 0.942155
+        point3f mujoco:body:inertial:pos = (-0.0253655, -0.0179374, -0.0465027)
+        quatf mujoco:body:inertial:quat = (-0.24568903, 0.6390071, 0.15335102, 0.7125941)
+        point3f mujoco:body:pos = (-0.0540394, 0.0217, 0.0181312)
+        quatf mujoco:body:quat = (0.6472899, 0.6472919, 0.28462994, -0.28463095)
+        point3f physics:centerOfMass = (-0.0253655, -0.0179374, -0.0465027)
+        float3 physics:diagonalInertia = (0.00539403, 0.00519403, 0.000795298)
+        float physics:mass = 0.942155
+        quatf physics:principalAxes = (-0.24568903, 0.6390071, 0.15335102, 0.7125941)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00539403
+        float urdf:link:inertial:inertia:iyy = 0.00519403
+        float urdf:link:inertial:inertia:izz = 0.000795298
+        float urdf:link:inertial:mass = 0.942155
+        float3 urdf:link:inertial:origin:rpy = (-0.6108501, -1.4036206, -1.9565834)
+        point3f urdf:link:inertial:origin:xyz = (-0.0253655, -0.0179374, -0.0465027)
+        matrix4d xformOp:transform = ( (0.8752525263776014, 0.0000021116316938060005, 0.4836662227871274, 0), (0.4836662227852328, 0.0000013647573753458653, -0.8752525263801316, 0), (-0.0000025082980197935626, 0.9999999999968392, 1.7318241533614623e-7, 0), (-0.19166695682196577, -0.07770004811266237, 0.050800046654541284, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_18" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_right_2.usda@</upper_right_2>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_right_2>
+            point3f mujoco:geom:pos = (-0.02156837, -0.02205776, -0.06744058)
+            quatf mujoco:geom:quat = (-0.24542068, 0.6742171, 0.20137303, 0.66682)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.972549, 0.529412, 0.00392157)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.4155744, -1.5076208, -1.0828106)
+            point3f urdf:collision:origin:xyz = (-0.02156837, -0.02205776, -0.06744058)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_right_2.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.029600015224958143, -0.055764544961075024, 0.99800508747399, 0), (0.598841098529507, -0.7984351939198746, -0.06237451260014332, 0), (0.8003206718626324, 0.5994927494435744, 0.009760407467317544, 0), (-0.021568369687491904, -0.022057759868588864, -0.06744057636581947, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_19" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_right_3.usda@</upper_right_3>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_right_3>
+            point3f mujoco:geom:pos = (-0.17723383, -0.11110071, -0.0672514)
+            quatf mujoco:geom:quat = (-0.19026902, 0.67798316, 0.19170897, 0.683655)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.972549, 0.529412, 0.00392157)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.52212346, -1.5625207, -3.1167192)
+            point3f urdf:collision:origin:xyz = (-0.17723383, -0.11110071, -0.0672514)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_right_3.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.008272984078018686, -0.00020582053312279136, 0.9999657570998886, 0), (0.5201076563207856, -0.8540907399708266, 0.004127194275262647, 0), (0.8540606439656055, 0.520123990538789, 0.007172927928066786, 0), (-0.17723382744427693, -0.1111007142323923, -0.06725139833614033, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_20" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_right_1.usda@</upper_right_1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_right_1>
+            point3f mujoco:geom:pos = (0.0005172314, -0.0014694919, -0.024606628)
+            quatf mujoco:geom:quat = (0.2697412, 0.64524144, -0.2455633, 0.6712688)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.768627, 0.886275, 0.952941)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.3754901, -1.5205517, 2.0199318)
+            point3f urdf:collision:origin:xyz = (0.0005172314, -0.0014694919, -0.024606628)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_right_1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.021806395529030187, 0.045242499201793296, 0.9987380023709957, 0), (-0.6790329437579306, -0.7338767088914637, 0.018418399443837608, 0), (0.7337838526469975, -0.6777743668896082, 0.04672435319959001, 0), (0.0005172314390712572, -0.0014694918263200227, -0.024606628468287223, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "knee_hind_right" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, -0.077500924, 0.9969923)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 2.5132)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/upper_right_asm_2>
+            rel physics:body1 = </barkour_v0/lower_leg_1to1_hind_right>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.193523, -0.104637, -0.0792)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.94976056, -4.0855628e-8, 4.9175895e-8, -0.31297746)
+            quatf physics:localRot1 = (0, 0, -0.03877963, 0.9992478)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 143.99576
+            vector3f urdf:joint:axis = (0, -0.077500924, 0.9969923)
+            prepend rel urdf:joint:child = </barkour_v0/lower_leg_1to1_hind_right>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 2.5132
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-0.07757876, 1.1870269e-7, -2.50494)
+            point3f urdf:joint:origin:xyz = (-0.193523, -0.104637, -0.0792)
+            prepend rel urdf:joint:parent = </barkour_v0/upper_right_asm_2>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "lower_leg_1to1_hind_right" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000828741, 0.000813964, 0.0000349901)
+        float mujoco:body:inertial:mass = 0.169623
+        point3f mujoco:body:inertial:pos = (-0.0577509, -0.0097034, 0.0114624)
+        quatf mujoco:body:inertial:quat = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        point3f mujoco:body:pos = (-0.193523, -0.104637, -0.0792)
+        quatf mujoco:body:quat = (0.31274205, -0.012137102, 0.036831405, -0.94904613)
+        point3f physics:centerOfMass = (-0.0577509, -0.0097034, 0.0114624)
+        float3 physics:diagonalInertia = (0.000828741, 0.000813964, 0.0000349901)
+        float physics:mass = 0.169623
+        quatf physics:principalAxes = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000828741
+        float urdf:link:inertial:inertia:iyy = 0.000813964
+        float urdf:link:inertial:inertia:izz = 0.0000349901
+        float urdf:link:inertial:mass = 0.169623
+        float3 urdf:link:inertial:origin:rpy = (-1.5124454, -1.4896274, -1.5769755)
+        point3f urdf:link:inertial:origin:xyz = (-0.0577509, -0.0097034, 0.0114624)
+        matrix4d xformOp:transform = ( (-0.991325090094366, -0.000002628285032122753, 0.13143274227713758, 0), (0.13103763249842484, -0.07750081096054365, 0.9883434439351867, 0), (0.010183546464965748, 0.9969922889839972, 0.07682884281209548, 0), (-0.4116576353805136, -0.1569005995658298, 0.04878329310889856, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_21" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/lower_leg_1to1.usda@</lower_leg_1to1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/lower_leg_1to1>
+            point3f mujoco:geom:pos = (-0.07021877, -0.009942793, 0.011464185)
+            quatf mujoco:geom:quat = (-0.053995706, 0.7050222, -0.0074192383, 0.70708776)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.32549, 0.529412, 0.980392)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.5042052, -1.483866, -1.5714442)
+            point3f urdf:collision:origin:xyz = (-0.07021877, -0.009942793, 0.011464185)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/lower_leg_1to1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.00005624753895450141, -0.08682086129736924, 0.9962239381182314, 0), (0.06589795022323522, -0.9940588370033674, -0.08662845220762917, 0), (0.9978263661542477, 0.06564424284807045, 0.005777230159269453, 0), (-0.07021876913331514, -0.009942793207425308, 0.011464184945911372, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_22" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/foot.usda@</foot>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/foot>
+            point3f mujoco:geom:pos = (-0.19568971, -0.021809189, 0.010466543)
+            quatf mujoco:geom:quat = (0.94593245, -0.26307687, -0.06483011, 0.178324)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.301961, 0.301961, 0.301961)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-0.54807353, -0.028827965, 0.3807641)
+            point3f urdf:collision:origin:xyz = (-0.19568971, -0.021809189, 0.010466543)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/foot.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9279952107482833, 0.3714755274184323, 0.028823971923501376, 0), (-0.3032543192432556, 0.7979822310404251, -0.520827396364722, 0), (-0.21647564918151618, 0.4745843354694117, 0.8531752468505507, 0), (-0.19568970253227594, -0.021809188850188937, 0.01046654339925501, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Xform "abduction_4" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000866008, 0.000565866, 0.000479767)
+        float mujoco:body:inertial:mass = 0.639437
+        point3f mujoco:body:inertial:pos = (-0.0521152, 0.00350917, 0.0171912)
+        quatf mujoco:body:inertial:quat = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        point3f mujoco:body:pos = (-0.134667, 0.056, 0.0508)
+        quatf mujoco:body:quat = (0.9869296, 0, -0.16115193, 0)
+        point3f physics:centerOfMass = (-0.0521152, 0.00350917, 0.0171912)
+        float3 physics:diagonalInertia = (0.000866008, 0.000565866, 0.000479767)
+        float physics:mass = 0.639437
+        quatf physics:principalAxes = (0.38787687, 0.5922618, 0.5924918, 0.38435787)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000866008
+        float urdf:link:inertial:inertia:iyy = 0.000565866
+        float urdf:link:inertial:inertia:izz = 0.000479767
+        float urdf:link:inertial:mass = 0.639437
+        float3 urdf:link:inertial:origin:rpy = (1.9862936, 0.004346785, 1.5683513)
+        point3f urdf:link:inertial:origin:xyz = (-0.0521152, 0.00350917, 0.0171912)
+        matrix4d xformOp:transform = ( (0.9480601069286031, 0, 0.31809123479046975, 0), (0, 1, 0, 0), (-0.31809123479046975, 0, 0.9480601069286031, 0), (-0.134667, 0.056, 0.0508, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_23" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/abduction.usda@</abduction>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/abduction>
+            point3f mujoco:geom:pos = (-0.050889857, -0.0035264858, 0.016803786)
+            quatf mujoco:geom:quat = (0.38029552, 0.5720897, 0.6017098, 0.40747276)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.537255, 0.854902, 0.827451)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.9591837, -0.008566934, 1.6270055)
+            point3f urdf:collision:origin:xyz = (-0.050889857, -0.0035264858, 0.016803786)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/abduction.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.05617747528442285, 0.9983840447046333, 0.008566828461290421, 0), (0.3785437897638592, 0.013358733339484896, 0.9254869763939306, 0), (0.9238769888366544, 0.055234441454418914, -0.37868253983427236, 0), (-0.05088985645113531, -0.003526485750904671, 0.016803786228828877, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "hip_hind_left" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.98968, 2.46091)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/abduction_4>
+            rel physics:body1 = </barkour_v0/upper_left_asm_2>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.0540394, 0.0217, 0.0181312)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.22058709, -0.22058809, 0.6718203, -0.67181826)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -114.00027
+            float physics:upperLimit = 140.99976
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </barkour_v0/upper_left_asm_2>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.98968
+            float urdf:joint:limit:upper = 2.46091
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-1.5708003, -0.6345063, -3.1415899)
+            point3f urdf:joint:origin:xyz = (-0.0540394, 0.0217, 0.0181312)
+            prepend rel urdf:joint:parent = </barkour_v0/abduction_4>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "upper_left_asm_2" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00538157, 0.00518445, 0.000790347)
+        float mujoco:body:inertial:mass = 0.938791
+        point3f mujoco:body:inertial:pos = (0.0306562, 0.00629189, -0.0466005)
+        quatf mujoco:body:inertial:quat = (-0.113341965, 0.7512938, 0.055564083, 0.6477838)
+        point3f mujoco:body:pos = (-0.0540394, 0.0217, 0.0181312)
+        quatf mujoco:body:quat = (-0.22058709, -0.22058809, 0.6718203, -0.67181826)
+        point3f physics:centerOfMass = (0.0306562, 0.00629189, -0.0466005)
+        float3 physics:diagonalInertia = (0.00538157, 0.00518445, 0.000790347)
+        float physics:mass = 0.938791
+        quatf physics:principalAxes = (-0.113341965, 0.7512938, 0.055564083, 0.6477838)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00538157
+        float urdf:link:inertial:inertia:iyy = 0.00518445
+        float urdf:link:inertial:inertia:izz = 0.000790347
+        float urdf:link:inertial:mass = 0.938791
+        float3 urdf:link:inertial:origin:rpy = (-2.5123405, -1.4029534, -0.38896155)
+        point3f urdf:link:inertial:origin:xyz = (0.0306562, 0.00629189, -0.0466005)
+        matrix4d xformOp:transform = ( (-0.9520920316845842, -0.0000022259897187737465, 0.3058116466025544, 0), (-0.305811646607301, 0.000002246102734249078, -0.9520920316830125, 0), (0.0000014324626982552649, -0.999999999995, -0.0000028192300969575986, 0), (-0.19166697513859055, 0.0777, 0.05080000793740778, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_24" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_left_1.usda@</upper_left_1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_left_1>
+            point3f mujoco:geom:pos = (0.0004683269, -0.0013757735, -0.02472985)
+            quatf mujoco:geom:quat = (0.2645555, 0.6478133, -0.24149635, 0.6723301)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.498039, 0.498039, 0.498039)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.38871568, -1.5231936, 2.020768)
+            point3f urdf:collision:origin:xyz = (0.0004683269, -0.0013757735, -0.02472985)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_left_1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.020696527127908038, 0.04284816189651924, 0.9988672027786946, 0), (-0.6686263968285855, -0.7433797771946697, 0.018034642276095025, 0), (0.7433104299206806, -0.6674957242410571, 0.04403479182464498, 0), (0.00046832690862134524, -0.0013757734789132331, -0.024729849542213037, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_25" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_left_3.usda@</upper_left_3>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_left_3>
+            point3f mujoco:geom:pos = (0.20238028, 0.052930746, -0.06724871)
+            quatf mujoco:geom:quat = (-0.092958294, 0.7030816, 0.09636818, 0.6983897)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(1, 0.756863, 0.054902)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (2.6474044, -1.5625938, 0.7627449)
+            point3f urdf:collision:origin:xyz = (0.20238028, 0.052930746, -0.06724871)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_left_3.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.005929911757894479, 0.005667155523882833, 0.9999663591815534, 0), (0.2653516198574911, -0.9641438592271854, 0.003890572389107172, 0), (0.9641334731174668, 0.26531962246086793, -0.007221076905379542, 0), (0.20238028564792146, 0.052930746450001856, -0.06724871019506805, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_26" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/upper_left_2.usda@</upper_left_2>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/upper_left_2>
+            point3f mujoco:geom:pos = (0.031292632, 0.0005465516, -0.067816995)
+            quatf mujoco:geom:quat = (-0.08005487, 0.7073343, 0.04431643, 0.70093185)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.980392, 0.713725, 0.00392157)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.6599768, -1.5194442, -1.3054425)
+            point3f urdf:collision:origin:xyz = (0.031292632, 0.0005465516, -0.067816995)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/upper_left_2.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.013461199666987334, -0.049532952067825764, 0.9986817725196407, 0), (0.17491907637656914, -0.9832545440252773, -0.051125515872316334, 0), (0.9844907885923021, 0.1753767040204855, -0.004571527514687368, 0), (0.03129263211089908, 0.0005465515955433415, -0.06781699759719435, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "knee_hind_left" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, -0.077500924, 0.9969923)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 2.5132)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </barkour_v0/upper_left_asm_2>
+            rel physics:body1 = </barkour_v0/lower_leg_1to1_hind_left>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.208835, 0.0691954, -0.0792)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-1.7874754e-7, 0.089369655, -0.9959985, 0.000001955323)
+            quatf physics:localRot1 = (0, 0, -0.03877963, 0.9992478)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 143.99576
+            vector3f urdf:joint:axis = (0, -0.077500924, 0.9969923)
+            prepend rel urdf:joint:child = </barkour_v0/lower_leg_1to1_hind_left>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 2.5132
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (3.06401, -7.0979436e-9, 0.1789781)
+            point3f urdf:joint:origin:xyz = (0.208835, 0.0691954, -0.0792)
+            prepend rel urdf:joint:parent = </barkour_v0/upper_left_asm_2>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "lower_leg_1to1_hind_left" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000828741, 0.000813964, 0.0000349901)
+        float mujoco:body:inertial:mass = 0.169623
+        point3f mujoco:body:inertial:pos = (-0.0577509, -0.00780463, -0.0129639)
+        quatf mujoco:body:inertial:quat = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        point3f mujoco:body:pos = (0.208835, 0.0691954, -0.0792)
+        quatf mujoco:body:quat = (0.03862641, 0.9952493, 0.08930242, 0.003465901)
+        point3f physics:centerOfMass = (-0.0577509, -0.00780463, -0.0129639)
+        float3 physics:diagonalInertia = (0.000828741, 0.000813964, 0.0000349901)
+        float physics:mass = 0.169623
+        quatf physics:principalAxes = (-0.047102977, 0.7053586, -0.010246495, 0.70720965)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000828741
+        float urdf:link:inertial:inertia:iyy = 0.000813964
+        float urdf:link:inertial:inertia:izz = 0.0000349901
+        float urdf:link:inertial:mass = 0.169623
+        float3 urdf:link:inertial:origin:rpy = (-1.5124454, -1.4896274, -1.5769755)
+        point3f urdf:link:inertial:origin:xyz = (-0.0577509, -0.00780463, -0.0129639)
+        matrix4d xformOp:transform = ( (-0.9913252765876729, -0.000001797143141013043, 0.13143133566674334, 0), (0.13103609858970072, -0.07750743559247937, 0.9883431278125361, 0), (0.01018512958995053, 0.9969917740004913, 0.07683531551694177, 0), (-0.4116579872381372, 0.15689969055501823, 0.04878401746955718, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_27" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/foot.usda@</foot>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/foot>
+            point3f mujoco:geom:pos = (-0.19568971, -0.019910488, -0.013959757)
+            quatf mujoco:geom:quat = (0.94593245, -0.26307687, -0.06483011, 0.178324)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.301961, 0.301961, 0.301961)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-0.54807353, -0.028827965, 0.3807641)
+            point3f urdf:collision:origin:xyz = (-0.19568971, -0.019910488, -0.013959757)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/foot.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9279952107482833, 0.3714755274184323, 0.028823971923501376, 0), (-0.3032543192432556, 0.7979822310404251, -0.520827396364722, 0), (-0.21647564918151618, 0.4745843354694117, 0.8531752468505507, 0), (-0.19568970253227594, -0.019910488850188937, -0.013959756600744989, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_28" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./barkour v0/meshes/usd/lower_leg_1to1.usda@</lower_leg_1to1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/lower_leg_1to1>
+            point3f mujoco:geom:pos = (-0.07021877, -0.008044093, -0.012962115)
+            quatf mujoco:geom:quat = (-0.053995706, 0.7050222, -0.0074192383, 0.70708776)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.32549, 0.529412, 0.980392)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-1.5042052, -1.483866, -1.5714442)
+            point3f urdf:collision:origin:xyz = (-0.07021877, -0.008044093, -0.012962115)
+            asset urdf:geometry:mesh:filename = @./barkour v0/meshes/stl/lower_leg_1to1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.00005624753895450141, -0.08682086129736924, 0.9962239381182314, 0), (0.06589795022323522, -0.9940588370033674, -0.08662845220762917, 0), (0.9978263661542477, 0.06564424284807045, 0.005777230159269453, 0), (-0.07021876913331514, -0.008044093207425308, -0.012962115054088626, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+
+def Urdf "urdf"
+{
+    string urdf:name = "barkour_v0"
+}
+

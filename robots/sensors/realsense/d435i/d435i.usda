@@ -1,0 +1,441 @@
+#usda 1.0
+(
+    defaultPrim = "d435i"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Mujoco "mujoco" (
+    prepend apiSchemas = ["MujocoOptionAPI"]
+)
+{
+    string mujoco:model = "d435i"
+    float mujoco:option:timestep = 0.002
+
+    def MujocoAsset "asset"
+    {
+        def MujocoMesh "meshes"
+        {
+            def MujocoMesh "d435i_0"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_0.stl@
+            }
+
+            def MujocoMesh "d435i_1"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_1.stl@
+            }
+
+            def MujocoMesh "d435i_2"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_2.stl@
+            }
+
+            def MujocoMesh "d435i_3"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_3.stl@
+            }
+
+            def MujocoMesh "d435i_4"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_4.stl@
+            }
+
+            def MujocoMesh "d435i_5"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_5.stl@
+            }
+
+            def MujocoMesh "d435i_6"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_6.stl@
+            }
+
+            def MujocoMesh "d435i_7"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_7.stl@
+            }
+
+            def MujocoMesh "d435i_8"
+            {
+                asset mujoco:mesh:file = @d435i/meshes/stl/d435i_8.stl@
+            }
+        }
+
+        def MujocoMaterial "materials"
+        {
+            def MujocoMaterial "IR_Lens"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.035601, 0.035601, 0.035601, 1)
+                float mujoco:material:specular = 0
+            }
+
+            def MujocoMaterial "IR_Emitter_Lens"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.28744, 0.665387, 0.327778, 1)
+                float mujoco:material:specular = 0
+            }
+
+            def MujocoMaterial "IR_Rim"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.799102, 0.806952, 0.799103, 1)
+                float mujoco:material:specular = 0
+            }
+
+            def MujocoMaterial "Cameras_Gray"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.296138, 0.296138, 0.296138, 1)
+                float mujoco:material:specular = 0
+            }
+
+            def MujocoMaterial "Black_Acrylic"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.07036, 0.07036, 0.07036, 1)
+                float mujoco:material:specular = 0
+            }
+
+            def MujocoMaterial "RGB_Pupil"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.08714, 0.002866, 0.009346, 1)
+                float mujoco:material:specular = 0
+            }
+
+            def MujocoMaterial "Metal_Casing"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (1, 1, 1, 1)
+                float mujoco:material:specular = 0
+            }
+        }
+
+        def MujocoTexture "textures"
+        {
+        }
+    }
+
+    def MujocoEquality "equality"
+    {
+    }
+}
+
+def Xform "d435i" (
+    prepend apiSchemas = ["MujocoBodyAPI"]
+)
+{
+    point3f mujoco:body:pos = (0, 0, 0)
+    quatf mujoco:body:quat = (1, 0, 0, 0)
+
+    def Mesh "Geom_0" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_0.usda@</d435i_0>
+    )
+    {
+        rel material:binding = </d435i/Geom_0/Materials/IR_Lens>
+        rel mujoco:geom:material = </mujoco/asset/materials/IR_Lens>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_0>
+        point3f mujoco:geom:pos = (-0.007502287, 3.000551e-7, -0.0013673949)
+        quatf mujoco:geom:quat = (0, 0.70710677, 0, 0.70710677)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_0.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (3.1415927, -1.5707964, 0)
+        point3f urdf:visual:origin:xyz = (-0.007502287, 3.000551e-7, -0.0013673949)
+        matrix4d xformOp:transform = ( (-2.220446049250313e-16, 0, 1.0000000000000002, 0), (0, -1.0000000000000004, 0, 0), (1.0000000000000002, 0, -2.220446049250313e-16, 0), (-0.007502287323788545, 3.0005508763874497e-7, -0.0013673948796411991, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "IR_Lens" (
+                prepend references = @./d435i/materials/usd/IR_Lens.usda@</IR_Lens>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_1" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_1.usda@</d435i_1>
+    )
+    {
+        rel material:binding = </d435i/Geom_1/Materials/IR_Emitter_Lens>
+        rel mujoco:geom:material = </mujoco/asset/materials/IR_Emitter_Lens>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_1>
+        point3f mujoco:geom:pos = (-0.011499967, -2.546633e-8, -0.003978611)
+        quatf mujoco:geom:quat = (0.5, 0.5, -0.5, 0.5)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_1.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (1.5707964, -1.5707964, 0)
+        point3f urdf:visual:origin:xyz = (-0.011499967, -2.546633e-8, -0.003978611)
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (-1, 0, 0, 0), (0, -1, 0, 0), (-0.011499967618063702, -2.5466330329643412e-8, -0.003978610932321857, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "IR_Emitter_Lens" (
+                prepend references = @./d435i/materials/usd/IR_Emitter_Lens.usda@</IR_Emitter_Lens>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_2" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_2.usda@</d435i_2>
+    )
+    {
+        rel material:binding = </d435i/Geom_2/Materials/IR_Rim>
+        rel mujoco:geom:material = </mujoco/asset/materials/IR_Rim>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_2>
+        point3f mujoco:geom:pos = (-0.006740902, 0.00009621788, -0.0028698824)
+        quatf mujoco:geom:quat = (0.073397465, 0.7039982, 0.08108198, 0.70173)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_2.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (1.5909448, -1.3518689, 1.5615809)
+        point3f urdf:visual:origin:xyz = (-0.006740902, 0.00009621788, -0.0028698824)
+        matrix4d xformOp:transform = ( (0.0020013963363880727, 0.21717355543397224, 0.9761309549608969, 0), (0.011152729248685544, -0.9760770480314731, 0.21713869516157575, 0), (0.9999358034609075, 0.010451943662955224, -0.004375594891692591, 0), (-0.006740902082927329, 0.00009621788091553945, -0.002869882318486055, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "IR_Rim" (
+                prepend references = @./d435i/materials/usd/IR_Rim.usda@</IR_Rim>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_3" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_3.usda@</d435i_3>
+    )
+    {
+        rel material:binding = </d435i/Geom_3/Materials/IR_Lens>
+        rel mujoco:geom:material = </mujoco/asset/materials/IR_Lens>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_3>
+        point3f mujoco:geom:pos = (-0.0075088195, -0.000001048028, -0.0011700159)
+        quatf mujoco:geom:quat = (0, 0.70710677, 0, 0.70710677)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_3.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (3.1415927, -1.5707964, 0)
+        point3f urdf:visual:origin:xyz = (-0.0075088195, -0.000001048028, -0.0011700159)
+        matrix4d xformOp:transform = ( (-2.220446049250313e-16, 0, 1.0000000000000002, 0), (0, -1.0000000000000004, 0, 0), (1.0000000000000002, 0, -2.220446049250313e-16, 0), (-0.007508819633473903, -0.000001048028024602221, -0.0011700158943132035, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "IR_Lens" (
+                prepend references = @./d435i/materials/usd/IR_Lens.usda@</IR_Lens>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_4" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_4.usda@</d435i_4>
+    )
+    {
+        rel material:binding = </d435i/Geom_4/Materials/Cameras_Gray>
+        rel mujoco:geom:material = </mujoco/asset/materials/Cameras_Gray>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_4>
+        point3f mujoco:geom:pos = (-0.005241831, 0.0002548413, -0.0070938775)
+        quatf mujoco:geom:quat = (-0.003270274, 0.69815284, 0.0046527553, 0.7159262)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_4.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (0.08323072, -1.5455844, 3.0695677)
+        point3f urdf:visual:origin:xyz = (-0.005241831, 0.0002548413, -0.0070938775)
+        matrix4d xformOp:transform = ( (-0.025143819818639557, 0.0018141194361415399, 0.999682198148791, 0), (0.011179218015502493, -0.999935314352788, 0.002095756367400025, 0), (0.9996213350111577, 0.011228360559807773, 0.025121912937699054, 0), (-0.005241830708849777, 0.0002548412830941167, -0.007093877744591685, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "Cameras_Gray" (
+                prepend references = @./d435i/materials/usd/Cameras_Gray.usda@</Cameras_Gray>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_5" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_5.usda@</d435i_5>
+    )
+    {
+        rel material:binding = </d435i/Geom_5/Materials/Black_Acrylic>
+        rel mujoco:geom:material = </mujoco/asset/materials/Black_Acrylic>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_5>
+        point3f mujoco:geom:pos = (-0.0028610611, -0.00008261778, -0.0016461958)
+        quatf mujoco:geom:quat = (-0.0026616603, 0.7065869, -0.0018906768, 0.7076187)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_5.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (-1.3473582, -1.564195, -1.7931441)
+        point3f urdf:visual:origin:xyz = (-0.0028610611, -0.00008261778, -0.0016461958)
+        matrix4d xformOp:transform = ( (-0.0014557073978473944, -0.006438736398537087, 0.9999782115574132, 0), (0.0010950265980319632, -0.9999786818109926, -0.006437145353389932, 0), (0.9999983409149846, 0.0010856321389958543, 0.0014627269524154496, 0), (-0.0028610612363454426, -0.00008261777537953463, -0.0016461957198015743, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "Black_Acrylic" (
+                prepend references = @./d435i/materials/usd/Black_Acrylic.usda@</Black_Acrylic>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_6" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_6.usda@</d435i_6>
+    )
+    {
+        rel material:binding = </d435i/Geom_6/Materials/Black_Acrylic>
+        rel mujoco:geom:material = </mujoco/asset/materials/Black_Acrylic>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_6>
+        point3f mujoco:geom:pos = (0.032494266, 0.000004749366, -0.0051918174)
+        quatf mujoco:geom:quat = (0.004027467, 0.7070953, -0.004027467, 0.7070953)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_6.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (3.130201, -1.5707964, 0)
+        point3f urdf:visual:origin:xyz = (0.032494266, 0.000004749366, -0.0051918174)
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (-0.011391212244318164, -0.999935118036968, 0, 0), (0.9999351180369679, -0.011391212244318164, 0, 0), (0.03249426520107115, 0.0000047493657758214, -0.0051918172363593015, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "Black_Acrylic" (
+                prepend references = @./d435i/materials/usd/Black_Acrylic.usda@</Black_Acrylic>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_7" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_7.usda@</d435i_7>
+    )
+    {
+        rel material:binding = </d435i/Geom_7/Materials/RGB_Pupil>
+        rel mujoco:geom:material = </mujoco/asset/materials/RGB_Pupil>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_7>
+        point3f mujoco:geom:pos = (0.032499928, 6.196557e-7, -0.0036345688)
+        quatf mujoco:geom:quat = (1, 0, 0, 0)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_7.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (0, 0, 0)
+        point3f urdf:visual:origin:xyz = (0.032499928, 6.196557e-7, -0.0036345688)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.032499927055554816, 6.196556999013861e-7, -0.0036345687064755767, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "RGB_Pupil" (
+                prepend references = @./d435i/materials/usd/RGB_Pupil.usda@</RGB_Pupil>
+            )
+            {
+            }
+        }
+    }
+
+    def Mesh "Geom_8" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+        prepend references = @./d435i/meshes/usd/d435i_8.usda@</d435i_8>
+    )
+    {
+        rel material:binding = </d435i/Geom_8/Materials/Metal_Casing>
+        rel mujoco:geom:material = </mujoco/asset/materials/Metal_Casing>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/d435i_8>
+        point3f mujoco:geom:pos = (0.0014511348, -0.00031932676, -0.01354119)
+        quatf mujoco:geom:quat = (0.029023988, 0.7083119, 0.027552668, 0.70476425)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        asset urdf:geometry:mesh:filename = @./d435i/meshes/obj/d435i_8.obj@
+        float3 urdf:geometry:mesh:scale = (1, 1, 1)
+        float3 urdf:visual:origin:rpy = (1.6323782, -1.4906062, 1.507132)
+        point3f urdf:visual:origin:xyz = (0.0014511348, -0.00031932676, -0.01354119)
+        matrix4d xformOp:transform = ( (0.005096333891890459, 0.07994190638711113, 0.9967864961886558, 0), (-0.0018783723458607668, -0.996796917187738, 0.07995234582145404, 0), (0.9999852494403071, -0.002279800038914259, -0.004929849246163576, 0), (0.0014511348017872574, -0.0003193267750761583, -0.01354119004097661, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "Metal_Casing" (
+                prepend references = @./d435i/materials/usd/Metal_Casing.usda@</Metal_Casing>
+            )
+            {
+            }
+        }
+    }
+
+    def Cylinder "Geom_9" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+    )
+    {
+        float3[] extent = [(-0.015892727, -0.015892727, -0.03242), (0.015892727, 0.015892727, 0.03242)]
+        double height = 0.06483999645770046
+        point3f mujoco:geom:pos = (0.0025600453, -0.00073631835, -0.014923967)
+        quatf mujoco:geom:quat = (0.029023988, 0.7083119, 0.027552668, 0.70476425)
+        vector3f mujoco:geom:size = (0.015892727, 0.03242, 0)
+        uniform token mujoco:geom:type = "capsule"
+        bool physics:collisionEnabled = 1
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [0]
+        double radius = 0.015892727334863115
+        float3 urdf:collision:origin:rpy = (1.6323782, -1.4906062, 1.507132)
+        point3f urdf:collision:origin:xyz = (0.0025600453, -0.00073631835, -0.014923967)
+        float urdf:geometry:cylinder:length = 0.06484
+        float urdf:geometry:cylinder:radius = 0.015892727
+        token visibility = "invisible"
+        matrix4d xformOp:transform = ( (0.005096333891890459, 0.07994190638711113, 0.9967864961886558, 0), (-0.0018783723458607668, -0.996796917187738, 0.07995234582145404, 0), (0.9999852494403071, -0.002279800038914259, -0.004929849246163576, 0), (0.002560045445905821, -0.0007363183820562107, -0.014923967223984294, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+
+def Urdf "urdf"
+{
+    string urdf:name = "d435i"
+}
+

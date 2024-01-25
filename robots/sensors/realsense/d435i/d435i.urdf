@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<robot name="d435i" version="1.0">
+  <link name="d435i">
+    <visual name="Geom_0">
+      <origin xyz="-0.007502287160605192 3.000550918841327e-07 -0.0013673949288204312" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_1">
+      <origin xyz="-0.01149996742606163 -2.546632948963179e-08 -0.003978610970079899" rpy="1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_2">
+      <origin xyz="-0.006740902084857225 9.621788194635883e-05 -0.0028698823880404234" rpy="1.590944766998291 -1.3518688678741455 1.5615808963775635"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_3">
+      <origin xyz="-0.007508819457143545 -1.048028025252279e-06 -0.0011700158938765526" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_4">
+      <origin xyz="-0.005241830833256245 0.0002548412885516882 -0.0070938775315880775" rpy="0.08323071897029877 -1.5455844402313232 3.0695676803588867"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_5">
+      <origin xyz="-0.0028610611334443092 -8.2617778389249e-05 -0.0016461957711726427" rpy="-1.347358226776123 -1.5641950368881226 -1.7931441068649292"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_6">
+      <origin xyz="0.03249426558613777 4.749365871248301e-06 -0.0051918174140155315" rpy="3.1302011013031006 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_7">
+      <origin xyz="0.032499928027391434 6.196556796567165e-07 -0.0036345687694847584" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_7.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_8">
+      <origin xyz="0.001451134798116982 -0.0003193267621099949 -0.013541189953684807" rpy="1.6323782205581665 -1.4906061887741089 1.5071320533752441"/>
+      <geometry>
+        <mesh filename="file://d435i/meshes/obj/d435i_8.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_9">
+      <origin xyz="0.002560045337304473 -0.0007363183540292084 -0.01492396742105484" rpy="1.6323782205581665 -1.4906061887741089 1.5071320533752441"/>
+      <geometry>
+        <cylinder radius="0.01589272730052471" length="0.06483999639749527"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

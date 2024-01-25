@@ -1,0 +1,22 @@
+#usda 1.0
+(
+    defaultPrim = "Mtl3"
+    upAxis = "Z"
+)
+
+def Material "Mtl3"
+{
+    token outputs:surface.connect = </Mtl3/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.168627, 0.152941, 0.141176)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 1
+        color3f inputs:specularColor = (0.5, 0.5, 0.5)
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

@@ -1,0 +1,591 @@
+<?xml version="1.0" ?>
+<robot name="robotis_op3" version="1.0">
+  <link name="robotis_op3"/>
+  <joint name="body_link_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="robotis_op3"/>
+    <child link="body_link"/>
+  </joint>
+  <link name="body_link">
+    <visual name="Geom_0">
+      <origin xyz="-0.015062353573739529 0.00010709041089285165 0.07382681220769882" rpy="-1.5496505498886108 -0.9489732980728149 -3.1290040016174316"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/body.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="-0.01547978911548853 8.47600517772662e-07 0.06837675720453262" rpy="2.8903512429678813e-05 0.03796006366610527 -0.00022456786246038973"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/bodyc.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="-0.08686629682779312 0.052499834448099136 0.07599484175443649" rpy="0.00037526030791923404 2.098454842780484e-06 1.5708346366882324"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/body1c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="-0.0868721529841423 -0.05250003933906555 0.07600828260183334" rpy="-0.0006445126491598785 -4.147625440964475e-05 1.5708162784576416"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/body2c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="0.05340399965643883 0.05198853462934494 0.08048465102910995" rpy="-0.0015913060633465648 0.00047105152043513954 1.5691546201705933"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/body3c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_5">
+      <origin xyz="0.053379133343696594 -0.05200115218758583 0.0805167555809021" rpy="0.0001964344846783206 1.9166700440109707e-05 1.570710301399231"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/body4c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_pan" type="revolute">
+    <origin xyz="-0.0010000000474974513 0.0 0.13650000095367432" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="body_link"/>
+    <child link="head_pan_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="head_pan_link">
+    <inertial>
+      <origin xyz="0.0023300000466406345 0.0 0.008229999803006649" rpy="1.5707963705062866 0.7054420113563538 0.0"/>
+      <mass value="0.011760000139474869"/>
+      <inertia ixx="4.234009793435689e-06" ixy="0.0" ixz="0.0" iyy="3.6059900594409555e-06" iyz="0.0" izz="1.6499999446750735e-06"/>
+    </inertial>
+    <visual name="Geom_6">
+      <origin xyz="0.002973126480355859 4.0903142206616394e-08 0.010566436685621738" rpy="1.5707966089248657 0.6511924266815186 -3.83817678084597e-06"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/h1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_7">
+      <origin xyz="0.0043823751620948315 -1.181606307909533e-06 0.014936410821974277" rpy="1.5711355209350586 0.624950110912323 4.190686740912497e-05"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/h1c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_tilt" type="revolute">
+    <origin xyz="0.009999999776482582 0.01899999938905239 0.02850000001490116" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="head_pan_link"/>
+    <child link="head_tilt_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="head_tilt_link">
+    <inertial>
+      <origin xyz="0.002300000051036477 -0.018629999831318855 0.027699999511241913" rpy="0.01948169805109501 0.14536729454994202 -0.0006410311907529831"/>
+      <mass value="0.13630999624729156"/>
+      <inertia ixx="0.00010745199688244611" ixy="0.0" ixz="0.0" iyy="8.722660277271643e-05" iyz="0.0" izz="4.3941301555605605e-05"/>
+    </inertial>
+    <visual name="Geom_8">
+      <origin xyz="0.0029126012232154608 -0.01905038394033909 0.03745144605636597" rpy="-0.007028650958091021 0.12352762371301651 0.0005840234225615859"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/h2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_9">
+      <origin xyz="0.0005553366499952972 -0.01900036446750164 0.031976763159036636" rpy="-0.0009781243279576302 0.016335923224687576 -3.547645246726461e-05"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/h2c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_10">
+      <origin xyz="0.022246643900871277 0.0030046773608773947 0.05925098434090614" rpy="0.18885567784309387 -0.010909962467849255 0.0010056066093966365"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/h21c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_11">
+      <origin xyz="0.022246643900871277 -0.04099532216787338 0.05925098434090614" rpy="0.18885286152362823 -0.010910202749073505 0.0010056330356746912"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/h22c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_sho_pitch" type="revolute">
+    <origin xyz="-0.0010000000474974513 0.05999999865889549 0.11100000143051147" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="body_link"/>
+    <child link="l_sho_pitch_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_sho_pitch_link">
+    <inertial>
+      <origin xyz="0.0 0.008229999803006649 -0.0023300000466406345" rpy="1.5707963705062866 -0.8653543591499329 1.5707963705062866"/>
+      <mass value="0.011760000139474869"/>
+      <inertia ixx="4.234009793435689e-06" ixy="0.0" ixz="0.0" iyy="3.6059900594409555e-06" iyz="0.0" izz="1.6499999446750735e-06"/>
+    </inertial>
+    <visual name="Geom_12">
+      <origin xyz="-4.0903142206616394e-08 0.010566436685621738 -0.002973126480355859" rpy="1.5707896947860718 -0.9196038842201233 1.5708013772964478"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/la1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_13">
+      <origin xyz="-5.168489991547176e-08 0.014937390573322773 -0.004382733721286058" rpy="1.5708032846450806 -0.9458351731300354 1.5708003044128418"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/la1c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_sho_roll" type="revolute">
+    <origin xyz="0.01899999938905239 0.02850000001490116 -0.009999999776482582" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="l_sho_pitch_link"/>
+    <child link="l_sho_roll_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_sho_roll_link">
+    <inertial>
+      <origin xyz="-0.01844000071287155 0.04513999819755554 0.0002800000074785203" rpy="0.9973587989807129 -1.5654728412628174 0.5733794569969177"/>
+      <mass value="0.17757999897003174"/>
+      <inertia ixx="0.00023474199406336993" ixy="0.0" ixz="0.0" iyy="0.00022803999308962375" iyz="0.0" izz="3.041829950234387e-05"/>
+    </inertial>
+    <visual name="Geom_14">
+      <origin xyz="-0.019178275018930435 0.04488653689622879 0.0007386953802779317" rpy="-0.2041439712047577 -1.5656657218933105 1.775141954421997"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/la2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_15">
+      <origin xyz="-0.017953641712665558 0.04512150213122368 0.0003643354866653681" rpy="1.268581509590149 -1.5639430284500122 0.30225563049316406"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/la2c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_el" type="revolute">
+    <origin xyz="0.0 0.09040000289678574 -9.999999747378752e-05" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="l_sho_roll_link"/>
+    <child link="l_el_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_el_link">
+    <inertial>
+      <origin xyz="-0.01899999938905239 0.07033000141382217 0.003800000064074993" rpy="3.1415927410125732 -1.505022406578064 -1.5707963705062866"/>
+      <mass value="0.041269998997449875"/>
+      <inertia ixx="6.878499698359519e-05" ixy="0.0" ixz="0.0" iyy="6.196000322233886e-05" iyz="0.0" izz="1.2065000191796571e-05"/>
+    </inertial>
+    <visual name="Geom_16">
+      <origin xyz="-0.018999997526407242 0.07777010649442673 0.003117768792435527" rpy="-3.1415927410125732 -1.541170597076416 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/la3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_17">
+      <origin xyz="-0.018999997526407242 0.0671701654791832 0.00045586045598611236" rpy="-3.1411244869232178 -1.5634750127792358 -1.5712645053863525"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/la3c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_sho_pitch" type="revolute">
+    <origin xyz="-0.0010000000474974513 -0.05999999865889549 0.11100000143051147" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="body_link"/>
+    <child link="r_sho_pitch_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_sho_pitch_link">
+    <inertial>
+      <origin xyz="0.0 -0.008229999803006649 -0.0023300000466406345" rpy="-1.5707963705062866 -0.8653543591499329 -1.5707963705062866"/>
+      <mass value="0.011760000139474869"/>
+      <inertia ixx="4.234009793435689e-06" ixy="0.0" ixz="0.0" iyy="3.6059900594409555e-06" iyz="0.0" izz="1.6499999446750735e-06"/>
+    </inertial>
+    <visual name="Geom_18">
+      <origin xyz="4.0903142206616394e-08 -0.010566436685621738 -0.002973126480355859" rpy="-1.570802927017212 -0.9196038842201233 -1.570791244506836"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ra1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_19">
+      <origin xyz="1.7024168741386347e-08 -0.01493731141090393 -0.004382750019431114" rpy="-1.570799708366394 -0.9458460211753845 -1.5707921981811523"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ra1c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_sho_roll" type="revolute">
+    <origin xyz="0.01899999938905239 -0.02850000001490116 -0.009999999776482582" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="r_sho_pitch_link"/>
+    <child link="r_sho_roll_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_sho_roll_link">
+    <inertial>
+      <origin xyz="-0.01844000071287155 -0.04513999819755554 0.0002800000074785203" rpy="2.1442339420318604 -1.5654728412628174 -0.5733794569969177"/>
+      <mass value="0.17757999897003174"/>
+      <inertia ixx="0.00023474199406336993" ixy="0.0" ixz="0.0" iyy="0.00022803999308962375" iyz="0.0" izz="3.041829950234387e-05"/>
+    </inertial>
+    <visual name="Geom_20">
+      <origin xyz="-0.019178282469511032 -0.04488654434680939 0.0007386964280158281" rpy="-2.9374918937683105 -1.565667748451233 -1.7750985622406006"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ra2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_21">
+      <origin xyz="-0.017953014001250267 -0.04512038454413414 0.0003643217496573925" rpy="1.872607707977295 -1.5639351606369019 -0.30187690258026123"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ra2c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_el" type="revolute">
+    <origin xyz="0.0 -0.09040000289678574 -9.999999747378752e-05" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="r_sho_roll_link"/>
+    <child link="r_el_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_el_link">
+    <inertial>
+      <origin xyz="-0.01899999938905239 -0.07033000141382217 0.003800000064074993" rpy="0.0 -1.505022406578064 1.5707963705062866"/>
+      <mass value="0.041269998997449875"/>
+      <inertia ixx="6.878499698359519e-05" ixy="0.0" ixz="0.0" iyy="6.196000322233886e-05" iyz="0.0" izz="1.2065000191796571e-05"/>
+    </inertial>
+    <visual name="Geom_22">
+      <origin xyz="-0.01900000311434269 -0.07777010649442673 0.003117768792435527" rpy="-7.49609589353363e-15 -1.541170597076416 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ra3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_23">
+      <origin xyz="-0.018999941647052765 -0.0671704038977623 0.00045584727195091546" rpy="0.0007622978300787508 -1.5634757280349731 1.5700372457504272"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ra3c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_hip_yaw" type="revolute">
+    <origin xyz="0.0 0.03500000014901161 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <parent link="body_link"/>
+    <child link="l_hip_yaw_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_hip_yaw_link">
+    <inertial>
+      <origin xyz="-0.0015699999639764428 0.0 -0.007739999797195196" rpy="1.5746283531188965 0.0 1.5707963705062866"/>
+      <mass value="0.01181000005453825"/>
+      <inertia ixx="4.300000000512227e-06" ixy="0.0" ixz="0.0" iyy="4.120040102861822e-06" iyz="0.0" izz="1.509960043222236e-06"/>
+    </inertial>
+    <visual name="Geom_24">
+      <origin xyz="-0.0014929076423868537 -1.3410697899396418e-11 -0.010288386605679989" rpy="1.570628046989441 2.220446049250313e-16 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ll1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_25">
+      <origin xyz="-0.00150005123578012 -4.39843219623981e-08 -0.01487430278211832" rpy="1.5708116292953491 -1.8656275642570108e-05 1.570792317390442"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ll1c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_hip_roll" type="revolute">
+    <origin xyz="-0.024000000208616257 0.0 -0.02850000001490116" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="l_hip_yaw_link"/>
+    <child link="l_hip_roll_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_hip_roll_link">
+    <inertial>
+      <origin xyz="0.0038799999747425318 0.0002800000074785203 -0.012140000239014626" rpy="1.549659013748169 0.0025924709625542164 1.5835967063903809"/>
+      <mass value="0.17885999381542206"/>
+      <inertia ixx="0.00012524299381766468" ixy="0.0" ixz="0.0" iyy="0.00010859799658646807" iyz="0.0" izz="4.656930104829371e-05"/>
+    </inertial>
+    <visual name="Geom_26">
+      <origin xyz="0.007365824654698372 5.1177201385144144e-05 -0.01213391125202179" rpy="1.5134799480438232 -0.0030539254657924175 1.5743513107299805"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ll2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_27">
+      <origin xyz="0.004096889402717352 0.000626525143161416 -0.011638031341135502" rpy="1.5426831245422363 0.023824525997042656 1.5785412788391113"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ll2c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_hip_pitch" type="revolute">
+    <origin xyz="0.02410000003874302 0.01899999938905239 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="l_hip_roll_link"/>
+    <child link="l_hip_pitch_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.000590000010561198 -0.019009999930858612 -0.08408000320196152" rpy="0.04936714842915535 0.009076345711946487 -0.004741485230624676"/>
+      <mass value="0.11542999744415283"/>
+      <inertia ixx="0.0001049959973897785" ixy="0.0" ixz="0.0" iyy="9.630440035834908e-05" iyz="0.0" izz="2.4749200747464783e-05"/>
+    </inertial>
+    <visual name="Geom_28">
+      <origin xyz="0.0009626309620216489 -0.019421827048063278 -0.07083793729543686" rpy="0.01528007723391056 -0.00010884542280109599 -0.0025752237997949123"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ll3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_29">
+      <origin xyz="0.00022433706908486784 -0.01883688010275364 -0.061354782432317734" rpy="0.014777172356843948 -0.004183659330010414 0.000949591223616153"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ll3c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_knee" type="revolute">
+    <origin xyz="0.0 0.0 -0.11015000194311142" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="l_hip_pitch_link"/>
+    <child link="l_knee_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_knee_link">
+    <inertial>
+      <origin xyz="0.0 -0.02150999940931797 -0.054999999701976776" rpy="0.0 0.0 0.0"/>
+      <mass value="0.040150001645088196"/>
+      <inertia ixx="3.7149999116081744e-05" ixy="0.0" ixz="0.0" iyy="2.750999919953756e-05" iyz="0.0" izz="1.5110000276763458e-05"/>
+    </inertial>
+    <visual name="Geom_30">
+      <origin xyz="1.133239877805503e-12 -0.01982726715505123 -0.054999999701976776" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ll4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_31">
+      <origin xyz="-1.9772162573872265e-08 -0.01967543177306652 -0.055000144988298416" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ll4c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_ank_pitch" type="revolute">
+    <origin xyz="0.0 0.0 -0.10999999940395355" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="l_knee_link"/>
+    <child link="l_ank_pitch_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_ank_pitch_link">
+    <inertial>
+      <origin xyz="-0.02022000029683113 -0.018719999119639397 0.012140000239014626" rpy="1.5919336080551147 -0.0025924709625542164 1.5835967063903809"/>
+      <mass value="0.17885999381542206"/>
+      <inertia ixx="0.00012524299381766468" ixy="0.0" ixz="0.0" iyy="0.00010859799658646807" iyz="0.0" izz="4.656930104829371e-05"/>
+    </inertial>
+    <visual name="Geom_32">
+      <origin xyz="-0.016888968646526337 -0.018948335200548172 0.012196226045489311" rpy="1.623579978942871 0.003012029454112053 1.574400782585144"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ll5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_33">
+      <origin xyz="-0.020036710426211357 -0.018372967839241028 0.011648035608232021" rpy="1.5977013111114502 -0.023973852396011353 1.578644871711731"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/ll5c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_ank_roll" type="revolute">
+    <origin xyz="-0.02410000003874302 -0.01899999938905239 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="l_ank_pitch_link"/>
+    <child link="l_ank_roll_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="l_ank_roll_link">
+    <inertial>
+      <origin xyz="0.023730000481009483 0.010370000265538692 -0.02759999968111515" rpy="1.6316308975219727 -1.5435283184051514 1.514975666999817"/>
+      <mass value="0.06933999806642532"/>
+      <inertia ixx="0.00011581800208659843" ixy="0.0" ixz="0.0" iyy="7.871349953347817e-05" iyz="0.0" izz="4.033889854326844e-05"/>
+    </inertial>
+    <visual name="Geom_34">
+      <origin xyz="0.02351418510079384 0.010033032856881618 -0.025106150656938553" rpy="1.708107590675354 -1.5375502109527588 1.4503026008605957"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/ll6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_35">
+      <origin xyz="0.024000000208616257 0.013000000268220901 -0.026499999687075615" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.12700000405311584 0.0560000017285347 0.00800000037997961"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_36">
+      <origin xyz="0.024000000208616257 0.012500000186264515 -0.026499999687075615" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.11400000005960464 0.07800000160932541 0.00800000037997961"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_hip_yaw" type="revolute">
+    <origin xyz="0.0 -0.03500000014901161 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <parent link="body_link"/>
+    <child link="r_hip_yaw_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_hip_yaw_link">
+    <inertial>
+      <origin xyz="-0.0015699999639764428 0.0 -0.007739999797195196" rpy="1.5746283531188965 0.0 1.5707963705062866"/>
+      <mass value="0.01181000005453825"/>
+      <inertia ixx="4.300000000512227e-06" ixy="0.0" ixz="0.0" iyy="4.120040102861822e-06" iyz="0.0" izz="1.509960043222236e-06"/>
+    </inertial>
+    <visual name="Geom_37">
+      <origin xyz="-0.0014929076423868537 -1.3410697899396418e-11 -0.010288386605679989" rpy="1.570628046989441 2.220446049250313e-16 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/rl1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_38">
+      <origin xyz="-0.00150005123578012 -4.39843219623981e-08 -0.01487430278211832" rpy="1.5708116292953491 -1.8656275642570108e-05 1.570792317390442"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/rl1c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_hip_roll" type="revolute">
+    <origin xyz="-0.024000000208616257 0.0 -0.02850000001490116" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="r_hip_yaw_link"/>
+    <child link="r_hip_roll_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_hip_roll_link">
+    <inertial>
+      <origin xyz="0.0038799999747425318 -0.0002800000074785203 -0.012140000239014626" rpy="1.549659013748169 -0.0025924709625542164 1.5579959154129028"/>
+      <mass value="0.17885999381542206"/>
+      <inertia ixx="0.00012524299381766468" ixy="0.0" ixz="0.0" iyy="0.00010859799658646807" iyz="0.0" izz="4.656930104829371e-05"/>
+    </inertial>
+    <visual name="Geom_39">
+      <origin xyz="0.007365823723375797 -5.1178114517824724e-05 -0.012133914977312088" rpy="1.5134801864624023 0.003053409280255437 1.5672413110733032"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/rl2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_40">
+      <origin xyz="0.004096920136362314 -0.0006264956318773329 -0.011638014577329159" rpy="1.5426849126815796 -0.023830991238355637 1.5630526542663574"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/rl2c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_hip_pitch" type="revolute">
+    <origin xyz="0.02410000003874302 -0.01899999938905239 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="r_hip_roll_link"/>
+    <child link="r_hip_pitch_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.000590000010561198 0.019009999930858612 -0.08408000320196152" rpy="-0.04936714842915535 0.009076345711946487 0.004741485230624676"/>
+      <mass value="0.11542999744415283"/>
+      <inertia ixx="0.0001049959973897785" ixy="0.0" ixz="0.0" iyy="9.630440035834908e-05" iyz="0.0" izz="2.4749200747464783e-05"/>
+    </inertial>
+    <visual name="Geom_41">
+      <origin xyz="0.0009626252576708794 0.019421830773353577 -0.07083792984485626" rpy="-0.015279988758265972 -0.00010892775753745809 0.002574990037828684"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/rl3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_42">
+      <origin xyz="0.00022432378318626434 0.018836867064237595 -0.06135456636548042" rpy="-0.014773622155189514 -0.00418442627415061 -0.0009461259469389915"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/rl3c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_knee" type="revolute">
+    <origin xyz="0.0 0.0 -0.11015000194311142" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="r_hip_pitch_link"/>
+    <child link="r_knee_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_knee_link">
+    <inertial>
+      <origin xyz="0.0 0.02150999940931797 -0.054999999701976776" rpy="0.0 0.0 0.0"/>
+      <mass value="0.040150001645088196"/>
+      <inertia ixx="3.7149999116081744e-05" ixy="0.0" ixz="0.0" iyy="2.750999919953756e-05" iyz="0.0" izz="1.5110000276763458e-05"/>
+    </inertial>
+    <visual name="Geom_43">
+      <origin xyz="-1.133239877805503e-12 0.01982726715505123 -0.054999999701976776" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/rl4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_44">
+      <origin xyz="4.632620953515243e-09 0.019675450399518013 -0.05499984323978424" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/rl4c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_ank_pitch" type="revolute">
+    <origin xyz="0.0 0.0 -0.10999999940395355" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="r_knee_link"/>
+    <child link="r_ank_pitch_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_ank_pitch_link">
+    <inertial>
+      <origin xyz="-0.02022000029683113 0.018719999119639397 0.012140000239014626" rpy="1.5919336080551147 0.0025924709625542164 1.5579959154129028"/>
+      <mass value="0.17885999381542206"/>
+      <inertia ixx="0.00012524299381766468" ixy="0.0" ixz="0.0" iyy="0.00010859799658646807" iyz="0.0" izz="4.656930104829371e-05"/>
+    </inertial>
+    <visual name="Geom_45">
+      <origin xyz="-0.016734184697270393 0.01894882321357727 0.012133914045989513" rpy="1.6281124353408813 -0.0030539394356310368 1.5672411918640137"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/rl5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_46">
+      <origin xyz="-0.02000303380191326 0.01837349869310856 0.011638008989393711" rpy="1.598909616470337 0.023819461464881897 1.5630578994750977"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/stl/rl5c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_ank_roll" type="revolute">
+    <origin xyz="-0.02410000003874302 0.01899999938905239 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="r_ank_pitch_link"/>
+    <child link="r_ank_roll_link"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="r_ank_roll_link">
+    <inertial>
+      <origin xyz="0.023730000481009483 -0.010370000265538692 -0.02759999968111515" rpy="-1.6316308975219727 -1.5435283184051514 -1.514975666999817"/>
+      <mass value="0.06933999806642532"/>
+      <inertia ixx="0.00011581800208659843" ixy="0.0" ixz="0.0" iyy="7.871349953347817e-05" iyz="0.0" izz="4.033889854326844e-05"/>
+    </inertial>
+    <visual name="Geom_47">
+      <origin xyz="0.023514186963438988 -0.010033032856881618 -0.025106150656938553" rpy="-1.7081074714660645 -1.5375502109527588 -1.4503027200698853"/>
+      <geometry>
+        <mesh filename="file://robotis_op3/meshes/obj/rl6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_48">
+      <origin xyz="0.024000000208616257 -0.013000000268220901 -0.026499999687075615" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.12700000405311584 0.0560000017285347 0.00800000037997961"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_49">
+      <origin xyz="0.024000000208616257 -0.012500000186264515 -0.026499999687075615" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.11400000005960464 0.07800000160932541 0.00800000037997961"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

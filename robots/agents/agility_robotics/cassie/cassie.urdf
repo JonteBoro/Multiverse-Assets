@@ -1,0 +1,603 @@
+<?xml version="1.0" ?>
+<robot name="cassie" version="1.0">
+  <link name="cassie"/>
+  <joint name="cassie_pelvis_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="cassie"/>
+    <child link="cassie_pelvis"/>
+  </joint>
+  <link name="cassie_pelvis">
+    <visual name="Geom_0">
+      <origin xyz="0.015332476235926151 -4.5823806431144476e-05 0.03643164783716202" rpy="1.568629264831543 -1.4324653148651123 0.0022436094004660845"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/cassie-pelvis.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="0.029999999329447746 0.0 0.029999999329447746" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.15000000596046448"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="-0.009999999776482582 0.14000000059604645 0.009999999776482582" rpy="0.0 -1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.0949999988079071" length="0.05999999865889549"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="-0.009999999776482582 -0.14000000059604645 0.009999999776482582" rpy="0.0 -1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.0949999988079071" length="0.05999999865889549"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_hip_roll" type="revolute">
+    <origin xyz="0.020999999716877937 0.13500000536441803 0.0" rpy="-0.0 1.570796251296997 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="cassie_pelvis"/>
+    <child link="left_hip_roll"/>
+    <limit effort="1000.0" lower="-0.2617993950843811" upper="0.39269909262657166" velocity="1000.0"/>
+  </joint>
+  <link name="left_hip_roll">
+    <inertial>
+      <origin xyz="-0.01792999915778637 9.999999747378752e-05 -0.044280000030994415" rpy="-0.021102549508213997 0.45640823245048523 -0.05145016685128212"/>
+      <mass value="1.8200000524520874"/>
+      <inertia ixx="0.00384400668554008" ixy="0.0" ixz="0.0" iyy="0.0037928964011371136" iyz="0.0" izz="0.0017220970476046205"/>
+    </inertial>
+    <visual name="Geom_4">
+      <origin xyz="-0.030032241716980934 0.0027302380185574293 -0.06367003172636032" rpy="-0.4292469918727875 -1.0347436666488647 -2.828946828842163"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-hip-roll.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_hip_yaw" type="revolute">
+    <origin xyz="7.703719777548943e-34 0.0 -0.07000000029802322" rpy="0.0 -1.570796251296997 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_hip_roll"/>
+    <child link="left_hip_yaw"/>
+    <limit effort="1000.0" lower="-0.39269909262657166" upper="0.39269909262657166" velocity="1000.0"/>
+  </joint>
+  <link name="left_hip_yaw">
+    <inertial>
+      <origin xyz="0.0 -9.999999747378752e-06 -0.03427699953317642" rpy="-0.00015377887757495046 1.3833428965881467e-05 1.570907473564148"/>
+      <mass value="1.1710000038146973"/>
+      <inertia ixx="0.0028029999230057" ixy="0.0" ixz="0.0" iyy="0.0024429999757558107" iyz="0.0" izz="0.0008419999503530562"/>
+    </inertial>
+    <visual name="Geom_5">
+      <origin xyz="6.462473265855806e-06 1.143508870882215e-05 -0.07286112010478973" rpy="3.1410515308380127 -0.00020129910262767226 -1.5709254741668701"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-hip-yaw.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_hip_pitch" type="revolute">
+    <origin xyz="0.0 0.0 -0.09000000357627869" rpy="1.5707963705062866 1.5707963705062866 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_hip_yaw"/>
+    <child link="left_hip_pitch"/>
+    <limit effort="1000.0" lower="-0.8726646304130554" upper="1.3962633609771729" velocity="1000.0"/>
+  </joint>
+  <link name="left_hip_pitch">
+    <inertial>
+      <origin xyz="0.059459999203681946 4.999999873689376e-05 -0.03581000119447708" rpy="1.4127380847930908 -1.5520682334899902 1.743006706237793"/>
+      <mass value="5.519999980926514"/>
+      <inertia ixx="0.03025735355913639" ixy="0.0" ixz="0.0" iyy="0.029717599973082542" iyz="0.0" izz="0.010894046165049076"/>
+    </inertial>
+    <visual name="Geom_6">
+      <origin xyz="0.06051911786198616 0.0006756202201358974 -0.055080264806747437" rpy="-1.5845564603805542 0.01480912510305643 -1.4745622873306274"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-hip-pitch.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_7">
+      <origin xyz="0.05999999865889549 0.0 -0.05000000074505806" rpy="0.0 -1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.07999999821186066" length="0.11999999731779099"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_achilles_rod_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.04500000178813934" rpy="-0.055093634873628616 0.07215851545333862 -0.6529979109764099"/>
+    <parent link="cassie"/>
+    <child link="left_achilles_rod"/>
+  </joint>
+  <link name="left_achilles_rod">
+    <inertial>
+      <origin xyz="0.24718999862670898 0.0 0.0" rpy="-9.774019105179832e-08 -1.5707927942276 -3.1415841579437256"/>
+      <mass value="0.156700000166893"/>
+      <inertia ixx="0.004488000180572271" ixy="0.0" ixz="0.0" iyy="0.004486999940127134" iyz="0.0" izz="3.7539996355917538e-06"/>
+    </inertial>
+    <visual name="Geom_8">
+      <origin xyz="0.2505268156528473 9.135077334576636e-07 -1.7718090248308727e-06" rpy="-1.5783623456954956 -1.5694822072982788 -1.563236951828003"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-achilles-rod.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_knee" type="revolute">
+    <origin xyz="0.11999999731779099 0.0 0.0044999998062849045" rpy="0.0 0.0 -0.7853981852531433"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_hip_pitch"/>
+    <child link="left_knee"/>
+    <limit effort="1000.0" lower="-2.862339973449707" upper="-0.6457718014717102" velocity="1000.0"/>
+  </joint>
+  <link name="left_knee">
+    <inertial>
+      <origin xyz="0.023000000044703484 0.03206999972462654 -0.0021810000762343407" rpy="-2.964557647705078 -1.521786093711853 -2.3302714824676514"/>
+      <mass value="0.7577999830245972"/>
+      <inertia ixx="0.0021669911220669746" ixy="0.0" ixz="0.0" iyy="0.0016374749829992652" iyz="0.0" izz="0.0007687339675612748"/>
+    </inertial>
+    <visual name="Geom_9">
+      <origin xyz="0.019954698160290718 0.03638797253370285 -0.0024124563205987215" rpy="-3.1279003620147705 -1.5228840112686157 -2.0456418991088867"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-knee.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_knee_spring_joint" type="fixed">
+    <origin xyz="0.06068 0.08241 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="left_knee"/>
+    <child link="left_knee_spring"/>
+  </joint>
+  <link name="left_knee_spring">
+    <inertial>
+      <origin xyz="0.0835999995470047 0.0034000000450760126 0.0" rpy="1.5707963705062866 0.0 1.551716923713684"/>
+      <mass value="0.1860000044107437"/>
+      <inertia ixx="0.00041218107799068093" ixy="0.0" ixz="0.0" iyy="0.00036689999978989363" iyz="0.0" izz="5.201890962780453e-05"/>
+    </inertial>
+    <visual name="Geom_10">
+      <origin xyz="0.09774612635374069 0.0020233020186424255 -3.4393210626149084e-06" rpy="-1.570821762084961 -8.87974147190107e-06 -1.6108659505844116"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-knee-spring.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_shin" type="revolute">
+    <origin xyz="0.060679998248815536 0.04741000011563301 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_knee"/>
+    <child link="left_shin"/>
+    <limit effort="1000.0" lower="-0.3490658402442932" upper="0.3490658402442932" velocity="1000.0"/>
+  </joint>
+  <link name="left_shin">
+    <inertial>
+      <origin xyz="0.18337999284267426 0.0011690000537782907 0.00021230000129435211" rpy="1.5723752975463867 0.01875164359807968 1.5854238271713257"/>
+      <mass value="0.5770000219345093"/>
+      <inertia ixx="0.014731071889400482" ixy="0.0" ixz="0.0" iyy="0.01470702700316906" iyz="0.0" izz="0.0003562912461347878"/>
+    </inertial>
+    <visual name="Geom_11">
+      <origin xyz="0.15889368951320648 0.00558572169393301 0.0006726673454977572" rpy="1.6324150562286377 -1.4696426391601562 1.4860258102416992"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-shin.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_12">
+      <origin xyz="0.054999999701976776 -0.004999999888241291 0.0" rpy="-1.5707963705062866 -1.5273454189300537 1.5273454189300537"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.23021729290485382"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_13">
+      <origin xyz="0.2750000059604645 -0.011500000022351742 0.0" rpy="1.5707963705062866 -1.461707353591919 -1.461707353591919"/>
+      <geometry>
+        <cylinder radius="0.027000000700354576" length="0.2112557739019394"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_14">
+      <origin xyz="0.19487999379634857 0.02250000089406967 0.0" rpy="-1.5707963705062866 -1.4772731065750122 1.4772731065750122"/>
+      <geometry>
+        <cylinder radius="0.02500000037252903" length="0.4818658232688904"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_tarsus" type="revolute">
+    <origin xyz="0.4347600042819977 0.019999999552965164 0.0" rpy="0.0 0.0 1.0122913122177124"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_shin"/>
+    <child link="left_tarsus"/>
+    <limit effort="1000.0" lower="0.8726646304130554" upper="2.96705961227417" velocity="1000.0"/>
+  </joint>
+  <link name="left_tarsus">
+    <inertial>
+      <origin xyz="0.11045999825000763 -0.030579999089241028 -0.0013099999632686377" rpy="-1.521249771118164 -1.4950745105743408 -1.6381057500839233"/>
+      <mass value="0.7820000052452087"/>
+      <inertia ixx="0.013674619607627392" ixy="0.0" ixz="0.0" iyy="0.013598802499473095" iyz="0.0" izz="0.0003879580763168633"/>
+    </inertial>
+    <visual name="Geom_15">
+      <origin xyz="0.1457228809595108 -0.037279460579156876 -0.0011771516874432564" rpy="1.4667495489120483 -1.517380952835083 1.6712595224380493"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-tarsus.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_16">
+      <origin xyz="0.11999999731779099 -0.035294998437166214 0.0004600000102072954" rpy="-1.4733377695083618 -1.527846097946167 1.4306803941726685"/>
+      <geometry>
+        <cylinder radius="0.02800000086426735" length="0.22020307183265686"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_17">
+      <origin xyz="0.12399999797344208 -0.054999999701976776 0.0004600000102072954" rpy="1.5401393175125122 -1.3940061330795288 -1.3639079332351685"/>
+      <geometry>
+        <cylinder radius="0.032999999821186066" length="0.17066003382205963"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_18">
+      <origin xyz="0.3190000057220459 -0.03999999910593033 0.0" rpy="0.0 -1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.019999999552965164" length="0.22200000286102295"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_heel_spring" type="revolute">
+    <origin xyz="-0.012690000236034393 -0.03058999963104725 0.0009200000204145908" rpy="-0.06894265860319138 -0.036956217139959335 2.7207093238830566"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_tarsus"/>
+    <child link="left_heel_spring"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="left_heel_spring">
+    <inertial>
+      <origin xyz="0.08100000023841858 0.002199999988079071 0.0" rpy="1.567276120185852 -0.003553063375875354 1.5337748527526855"/>
+      <mass value="0.12600000202655792"/>
+      <inertia ixx="0.0002225751813966781" ixy="0.0" ixz="0.0" iyy="0.0002007018483709544" iyz="0.0" izz="2.9322971386136487e-05"/>
+    </inertial>
+    <visual name="Geom_19">
+      <origin xyz="0.08624786883592606 0.001640240428969264 -0.00019321887521073222" rpy="-1.5750776529312134 -0.010248973034322262 -1.6140414476394653"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-heel-spring.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_foot_crank" type="revolute">
+    <origin xyz="0.057999998331069946 -0.03400000184774399 0.022749999538064003" rpy="0.0 0.0 -2.7755575615628914e-17"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_tarsus"/>
+    <child link="left_foot_crank"/>
+    <limit effort="1000.0" lower="-2.4434609413146973" upper="-0.5235987901687622" velocity="1000.0"/>
+  </joint>
+  <link name="left_foot_crank">
+    <inertial>
+      <origin xyz="0.0049299998208880424 1.9999999494757503e-05 -0.00215000007301569" rpy="-0.006825555581599474 -1.4636716842651367 -3.1345860958099365"/>
+      <mass value="0.12610000371932983"/>
+      <inertia ixx="6.378808757290244e-05" ixy="0.0" ixz="0.0" iyy="4.9620994104770944e-05" iyz="0.0" izz="2.6514919227338396e-05"/>
+    </inertial>
+    <visual name="Geom_20">
+      <origin xyz="0.017089499160647392 4.9604455853113905e-05 0.0044750855304300785" rpy="3.1335370540618896 -1.4559398889541626 0.0068290564231574535"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-foot-crank.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_plantar_rod" type="revolute">
+    <origin xyz="0.054999999701976776 0.0 -0.007910000160336494" rpy="0.0 0.0 -2.7755575615628914e-17"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_foot_crank"/>
+    <child link="left_plantar_rod"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="left_plantar_rod">
+    <inertial>
+      <origin xyz="0.17791999876499176 0.0 0.0" rpy="-3.478807641954518e-08 -1.5707917213439941 -3.1415793895721436"/>
+      <mass value="0.11860000342130661"/>
+      <inertia ixx="0.0017750000115484" ixy="0.0" ixz="0.0" iyy="0.0017740000039339066" iyz="0.0" izz="2.7789997147920076e-06"/>
+    </inertial>
+    <visual name="Geom_21">
+      <origin xyz="0.17513571679592133 4.08341804813972e-07 -1.9616099677932652e-07" rpy="1.6923270225524902 -1.5706814527511597 1.4492706060409546"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-plantar-rod.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_foot" type="revolute">
+    <origin xyz="0.40799999237060547 -0.03999999910593033 0.0" rpy="0.0 0.0 -2.7755575615628914e-17"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="left_tarsus"/>
+    <child link="left_foot"/>
+    <limit effort="1000.0" lower="-2.4434609413146973" upper="-0.5235987901687622" velocity="1000.0"/>
+  </joint>
+  <link name="left_foot">
+    <inertial>
+      <origin xyz="0.004739999771118164 0.027480000630021095 -0.00014000000373926014" rpy="1.8409541845321655 -1.5542500019073486 0.50270015001297"/>
+      <mass value="0.14980000257492065"/>
+      <inertia ixx="0.0003326265432406217" ixy="0.0" ixz="0.0" iyy="0.0002890713803935796" iyz="0.0" izz="5.272209091344848e-05"/>
+    </inertial>
+    <visual name="Geom_22">
+      <origin xyz="0.008884768933057785 0.027471691370010376 0.00010202053817920387" rpy="-1.139245867729187 -1.5662628412246704 -2.7819032669067383"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/left-foot.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_23">
+      <origin xyz="0.00846249982714653 0.04119899868965149 0.0" rpy="-1.5707963705062866 -0.8726642727851868 0.8726642727851868"/>
+      <geometry>
+        <cylinder radius="0.019999999552965164" length="0.15999990701675415"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_hip_roll" type="revolute">
+    <origin xyz="0.020999999716877937 -0.13500000536441803 0.0" rpy="-0.0 1.570796251296997 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="cassie_pelvis"/>
+    <child link="right_hip_roll"/>
+    <limit effort="1000.0" lower="-0.39269909262657166" upper="0.2617993950843811" velocity="1000.0"/>
+  </joint>
+  <link name="right_hip_roll">
+    <inertial>
+      <origin xyz="-0.01792999915778637 9.999999747378752e-05 -0.044280000030994415" rpy="0.021102549508213997 0.45640823245048523 0.05145016685128212"/>
+      <mass value="1.8200000524520874"/>
+      <inertia ixx="0.00384400668554008" ixy="0.0" ixz="0.0" iyy="0.0037928964011371136" iyz="0.0" izz="0.0017220970476046205"/>
+    </inertial>
+    <visual name="Geom_24">
+      <origin xyz="-0.030032241716980934 -0.0027302380185574293 -0.06367003172636032" rpy="-0.42924702167510986 1.0347435474395752 -0.3126458525657654"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-hip-roll.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_hip_yaw" type="revolute">
+    <origin xyz="7.703719777548943e-34 0.0 -0.07000000029802322" rpy="0.0 -1.570796251296997 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_hip_roll"/>
+    <child link="right_hip_yaw"/>
+    <limit effort="1000.0" lower="-0.39269909262657166" upper="0.39269909262657166" velocity="1000.0"/>
+  </joint>
+  <link name="right_hip_yaw">
+    <inertial>
+      <origin xyz="0.0 9.999999747378752e-06 -0.03427699953317642" rpy="-0.00015377887757495046 -1.3833428965881467e-05 1.5706852674484253"/>
+      <mass value="1.1710000038146973"/>
+      <inertia ixx="0.0028029999230057" ixy="0.0" ixz="0.0" iyy="0.0024429999757558107" iyz="0.0" izz="0.0008419999503530562"/>
+    </inertial>
+    <visual name="Geom_25">
+      <origin xyz="6.4623468460922595e-06 -1.1435130545578431e-05 -0.07286112010478973" rpy="0.0005412127356976271 -0.00020129844779148698 1.5709254741668701"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-hip-yaw.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_hip_pitch" type="revolute">
+    <origin xyz="0.0 0.0 -0.09000000357627869" rpy="1.5707963705062866 1.5707963705062866 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_hip_yaw"/>
+    <child link="right_hip_pitch"/>
+    <limit effort="1000.0" lower="-0.8726646304130554" upper="1.3962633609771729" velocity="1000.0"/>
+  </joint>
+  <link name="right_hip_pitch">
+    <inertial>
+      <origin xyz="0.059459999203681946 4.999999873689376e-05 0.03581000119447708" rpy="-1.7288545370101929 -1.5520682334899902 -1.3985859155654907"/>
+      <mass value="5.519999980926514"/>
+      <inertia ixx="0.03025735355913639" ixy="0.0" ixz="0.0" iyy="0.029717599973082542" iyz="0.0" izz="0.010894046165049076"/>
+    </inertial>
+    <visual name="Geom_26">
+      <origin xyz="0.06051911786198616 0.0006756202201358974 0.055080264806747437" rpy="1.5570361614227295 0.014809124171733856 1.6670303344726562"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-hip-pitch.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_27">
+      <origin xyz="0.05999999865889549 0.0 0.05000000074505806" rpy="0.0 -1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.07999999821186066" length="0.11999999731779099"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_achilles_rod_joint" type="fixed">
+    <origin xyz="0.0 0.0 -0.04500000178813934" rpy="0.055093634873628616 -0.07215851545333862 -0.6529979109764099"/>
+    <parent link="cassie"/>
+    <child link="right_achilles_rod"/>
+  </joint>
+  <link name="right_achilles_rod">
+    <inertial>
+      <origin xyz="0.24718999862670898 0.0 0.0" rpy="3.141592502593994 -1.5707927942276 8.439915291091893e-06"/>
+      <mass value="0.156700000166893"/>
+      <inertia ixx="0.004488000180572271" ixy="0.0" ixz="0.0" iyy="0.004486999940127134" iyz="0.0" izz="3.7539996355917538e-06"/>
+    </inertial>
+    <visual name="Geom_28">
+      <origin xyz="0.2505268156528473 9.135010827776568e-07 1.7718425624480005e-06" rpy="-1.563230276107788 1.5694822072982788 -1.5632368326187134"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-achilles-rod.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_knee" type="revolute">
+    <origin xyz="0.11999999731779099 0.0 -0.0044999998062849045" rpy="0.0 0.0 -0.7853981852531433"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_hip_pitch"/>
+    <child link="right_knee"/>
+    <limit effort="1000.0" lower="-2.862339973449707" upper="-0.6457718014717102" velocity="1000.0"/>
+  </joint>
+  <link name="right_knee">
+    <inertial>
+      <origin xyz="0.023000000044703484 0.03206999972462654 0.0021810000762343407" rpy="0.17703507840633392 -1.521786093711853 0.8113212585449219"/>
+      <mass value="0.7577999830245972"/>
+      <inertia ixx="0.0021669911220669746" ixy="0.0" ixz="0.0" iyy="0.0016374749829992652" iyz="0.0" izz="0.0007687339675612748"/>
+    </inertial>
+    <visual name="Geom_29">
+      <origin xyz="0.019954698160290718 0.03638797253370285 0.0024124563205987215" rpy="3.1279006004333496 1.5228840112686157 -2.0456418991088867"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-knee.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_knee_spring_joint" type="fixed">
+    <origin xyz="0.06068 0.08241 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="right_knee"/>
+    <child link="right_knee_spring"/>
+  </joint>
+  <link name="right_knee_spring">
+    <inertial>
+      <origin xyz="0.0835999995470047 0.0034000000450760126 0.0" rpy="1.5707963705062866 0.0 1.551716923713684"/>
+      <mass value="0.1860000044107437"/>
+      <inertia ixx="0.00041218107799068093" ixy="0.0" ixz="0.0" iyy="0.00036689999978989363" iyz="0.0" izz="5.201890962780453e-05"/>
+    </inertial>
+    <visual name="Geom_30">
+      <origin xyz="0.09774613380432129 0.0020233020186424255 3.4393519854347687e-06" rpy="1.5707709789276123 -8.88036720425589e-06 1.530726671218872"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-knee-spring.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_shin" type="revolute">
+    <origin xyz="0.060679998248815536 0.04741000011563301 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_knee"/>
+    <child link="right_shin"/>
+    <limit effort="1000.0" lower="-0.3490658402442932" upper="0.3490658402442932" velocity="1000.0"/>
+  </joint>
+  <link name="right_shin">
+    <inertial>
+      <origin xyz="0.18337999284267426 0.0011690000537782907 -0.00021230000129435211" rpy="1.569217324256897 -0.01875164359807968 1.5854238271713257"/>
+      <mass value="0.5770000219345093"/>
+      <inertia ixx="0.014731071889400482" ixy="0.0" ixz="0.0" iyy="0.01470702700316906" iyz="0.0" izz="0.0003562912461347878"/>
+    </inertial>
+    <visual name="Geom_31">
+      <origin xyz="0.15889368951320648 0.00558572169393301 -0.0006726673454977572" rpy="1.509177565574646 1.4696426391601562 1.4860258102416992"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-shin.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_32">
+      <origin xyz="0.054999999701976776 -0.004999999888241291 0.0" rpy="-1.5707963705062866 -1.5273454189300537 1.5273454189300537"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.23021729290485382"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_33">
+      <origin xyz="0.2750000059604645 -0.011500000022351742 0.0" rpy="1.5707963705062866 -1.461707353591919 -1.461707353591919"/>
+      <geometry>
+        <cylinder radius="0.027000000700354576" length="0.2112557739019394"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_34">
+      <origin xyz="0.19487999379634857 0.02250000089406967 0.0" rpy="-1.5707963705062866 -1.4772731065750122 1.4772731065750122"/>
+      <geometry>
+        <cylinder radius="0.02500000037252903" length="0.4818658232688904"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_tarsus" type="revolute">
+    <origin xyz="0.4347600042819977 0.019999999552965164 0.0" rpy="0.0 0.0 1.0122913122177124"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_shin"/>
+    <child link="right_tarsus"/>
+    <limit effort="1000.0" lower="0.8726646304130554" upper="2.96705961227417" velocity="1000.0"/>
+  </joint>
+  <link name="right_tarsus">
+    <inertial>
+      <origin xyz="0.11045999825000763 -0.030579999089241028 0.0013099999632686377" rpy="1.6203428506851196 -1.4950745105743408 1.50348699092865"/>
+      <mass value="0.7820000052452087"/>
+      <inertia ixx="0.013674619607627392" ixy="0.0" ixz="0.0" iyy="0.013598802499473095" iyz="0.0" izz="0.0003879580763168633"/>
+    </inertial>
+    <visual name="Geom_35">
+      <origin xyz="0.1457228660583496 -0.037279460579156876 0.0011771515710279346" rpy="1.6748430728912354 1.517380952835083 1.6712595224380493"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-tarsus.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_36">
+      <origin xyz="0.11999999731779099 -0.035294998437166214 0.0004600000102072954" rpy="-1.4733377695083618 -1.527846097946167 1.4306803941726685"/>
+      <geometry>
+        <cylinder radius="0.02800000086426735" length="0.22020307183265686"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_37">
+      <origin xyz="0.12399999797344208 -0.054999999701976776 0.0004600000102072954" rpy="1.5401393175125122 -1.3940061330795288 -1.3639079332351685"/>
+      <geometry>
+        <cylinder radius="0.032999999821186066" length="0.17066003382205963"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_38">
+      <origin xyz="0.3190000057220459 -0.03999999910593033 0.0" rpy="0.0 -1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.019999999552965164" length="0.22200000286102295"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_heel_spring" type="revolute">
+    <origin xyz="-0.012690000236034393 -0.03058999963104725 -0.0009200000204145908" rpy="0.06894265860319138 0.036956217139959335 2.7207093238830566"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_tarsus"/>
+    <child link="right_heel_spring"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="right_heel_spring">
+    <inertial>
+      <origin xyz="0.08100000023841858 0.002199999988079071 0.0" rpy="1.5743166208267212 0.003553063375875354 1.5337748527526855"/>
+      <mass value="0.12600000202655792"/>
+      <inertia ixx="0.0002225751813966781" ixy="0.0" ixz="0.0" iyy="0.0002007018483709544" iyz="0.0" izz="2.9322971386136487e-05"/>
+    </inertial>
+    <visual name="Geom_39">
+      <origin xyz="0.08624786883592606 0.001640240428969264 0.0001932189188664779" rpy="1.5665150880813599 -0.010248974896967411 1.5275511741638184"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-heel-spring.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_foot_crank" type="revolute">
+    <origin xyz="0.057999998331069946 -0.03400000184774399 -0.022749999538064003" rpy="0.0 0.0 -2.7755575615628914e-17"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_tarsus"/>
+    <child link="right_foot_crank"/>
+    <limit effort="1000.0" lower="-2.4434609413146973" upper="-0.5235987901687622" velocity="1000.0"/>
+  </joint>
+  <link name="right_foot_crank">
+    <inertial>
+      <origin xyz="0.0049299998208880424 1.9999999494757503e-05 0.00215000007301569" rpy="3.1347670555114746 -1.4636716842651367 0.007006519474089146"/>
+      <mass value="0.12610000371932983"/>
+      <inertia ixx="6.378808757290244e-05" ixy="0.0" ixz="0.0" iyy="4.9620994104770944e-05" iyz="0.0" izz="2.6514919227338396e-05"/>
+    </inertial>
+    <visual name="Geom_40">
+      <origin xyz="0.017089499160647392 4.9604419473325834e-05 -0.0044750855304300785" rpy="0.008055560290813446 1.4559398889541626 0.006829055491834879"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-foot-crank.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_plantar_rod" type="revolute">
+    <origin xyz="0.054999999701976776 0.0 0.007910000160336494" rpy="0.0 0.0 -2.7755575615628914e-17"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_foot_crank"/>
+    <child link="right_plantar_rod"/>
+    <limit effort="1000.0" lower="0.0" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="right_plantar_rod">
+    <inertial>
+      <origin xyz="0.17791999876499176 0.0 0.0" rpy="3.141592502593994 -1.5707917213439941 1.3246009984868579e-05"/>
+      <mass value="0.11860000342130661"/>
+      <inertia ixx="0.0017750000115484" ixy="0.0" ixz="0.0" iyy="0.0017740000039339066" iyz="0.0" izz="2.7789997147920076e-06"/>
+    </inertial>
+    <visual name="Geom_41">
+      <origin xyz="0.17513571679592133 4.083452154191036e-07 1.9617338864463818e-07" rpy="1.4492641687393188 1.5706814527511597 1.44926917552948"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-plantar-rod.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_foot" type="revolute">
+    <origin xyz="0.40799999237060547 -0.03999999910593033 0.0" rpy="0.0 0.0 -2.7755575615628914e-17"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_tarsus"/>
+    <child link="right_foot"/>
+    <limit effort="1000.0" lower="-2.4434609413146973" upper="-0.5235987901687622" velocity="1000.0"/>
+  </joint>
+  <link name="right_foot">
+    <inertial>
+      <origin xyz="0.004739999771118164 0.027480000630021095 0.00014000000373926014" rpy="-1.3006384372711182 -1.5542500019073486 -2.638892412185669"/>
+      <mass value="0.14980000257492065"/>
+      <inertia ixx="0.0003326265432406217" ixy="0.0" ixz="0.0" iyy="0.0002890713803935796" iyz="0.0" izz="5.272209091344848e-05"/>
+    </inertial>
+    <visual name="Geom_42">
+      <origin xyz="0.008884768933057785 0.027471691370010376 -0.00010202051635133103" rpy="-2.0023467540740967 1.5662628412246704 -2.7819032669067383"/>
+      <geometry>
+        <mesh filename="file://cassie/meshes/obj/right-foot.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_43">
+      <origin xyz="0.00846249982714653 0.04119899868965149 0.0" rpy="-1.5707963705062866 -0.8726642727851868 0.8726642727851868"/>
+      <geometry>
+        <cylinder radius="0.019999999552965164" length="0.15999990701675415"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

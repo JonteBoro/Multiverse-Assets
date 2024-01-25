@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<mujoco model="d435i">
+	<compiler meshdir="d435i/meshes" texturedir="d435i/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<default>
+		<default class="visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="collision">
+			<geom rgba="1.0 0.0 0.0 0.0"/>
+		</default>
+	</default>
+	<asset>
+		<mesh name="d435i_0" file="stl/d435i_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_1" file="stl/d435i_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_2" file="stl/d435i_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_3" file="stl/d435i_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_4" file="stl/d435i_4.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_5" file="stl/d435i_5.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_6" file="stl/d435i_6.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_7" file="stl/d435i_7.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="d435i_8" file="stl/d435i_8.stl" scale="1.0 1.0 1.0"/>
+		<material name="IR_Lens" rgba="0.03560100123286247 0.03560100123286247 0.03560100123286247 1.0" emission="0.0" specular="0.0"/>
+		<material name="IR_Emitter_Lens" rgba="0.2874400019645691 0.665386974811554 0.32777801156044006 1.0" emission="0.0" specular="0.0"/>
+		<material name="IR_Rim" rgba="0.7991020083427429 0.8069519996643066 0.7991030216217041 1.0" emission="0.0" specular="0.0"/>
+		<material name="Cameras_Gray" rgba="0.2961379885673523 0.2961379885673523 0.2961379885673523 1.0" emission="0.0" specular="0.0"/>
+		<material name="Black_Acrylic" rgba="0.07035999745130539 0.07035999745130539 0.07035999745130539 1.0" emission="0.0" specular="0.0"/>
+		<material name="RGB_Pupil" rgba="0.08714000135660172 0.002865999937057495 0.009345999918878078 1.0" emission="0.0" specular="0.0"/>
+		<material name="Metal_Casing" rgba="1.0 1.0 1.0 1.0" emission="0.0" specular="0.0"/>
+	</asset>
+	<worldbody>
+		<body name="d435i" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+			<geom name="Geom_0" type="mesh" pos="-0.007502287160605192 3.000550918841327e-07 -0.0013673949288204312" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" mesh="d435i_0" material="IR_Lens" class="visual"/>
+			<geom name="Geom_1" type="mesh" pos="-0.01149996742606163 -2.546632948963179e-08 -0.003978610970079899" quat="0.5 0.5 -0.5 0.5" mesh="d435i_1" material="IR_Emitter_Lens" class="visual"/>
+			<geom name="Geom_2" type="mesh" pos="-0.006740902084857225 9.621788194635883e-05 -0.0028698823880404234" quat="0.07339746505022049 0.7039982080459595 0.08108197897672653 0.7017300128936768" mesh="d435i_2" material="IR_Rim" class="visual"/>
+			<geom name="Geom_3" type="mesh" pos="-0.007508819457143545 -1.048028025252279e-06 -0.0011700158938765526" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" mesh="d435i_3" material="IR_Lens" class="visual"/>
+			<geom name="Geom_4" type="mesh" pos="-0.005241830833256245 0.0002548412885516882 -0.0070938775315880775" quat="-0.0032702740281820297 0.6981528401374817 0.004652755334973335 0.7159261703491211" mesh="d435i_4" material="Cameras_Gray" class="visual"/>
+			<geom name="Geom_5" type="mesh" pos="-0.0028610611334443092 -8.2617778389249e-05 -0.0016461957711726427" quat="-0.002661660313606262 0.7065868973731995 -0.0018906767945736647 0.7076187133789062" mesh="d435i_5" material="Black_Acrylic" class="visual"/>
+			<geom name="Geom_6" type="mesh" pos="0.03249426558613777 4.749365871248301e-06 -0.0051918174140155315" quat="0.004027467221021652 0.7070953249931335 -0.004027467221021652 0.7070953249931335" mesh="d435i_6" material="Black_Acrylic" class="visual"/>
+			<geom name="Geom_7" type="mesh" pos="0.032499928027391434 6.196556796567165e-07 -0.0036345687694847584" quat="1.0 0.0 0.0 0.0" mesh="d435i_7" material="RGB_Pupil" class="visual"/>
+			<geom name="Geom_8" type="mesh" pos="0.001451134798116982 -0.0003193267621099949 -0.013541189953684807" quat="0.02902398817241192 0.708311915397644 0.027552668005228043 0.7047642469406128" mesh="d435i_8" material="Metal_Casing" class="visual"/>
+			<geom name="Geom_9" type="capsule" pos="0.002560045337304473 -0.0007363183540292084 -0.01492396742105484" quat="0.02902398817241192 0.708311915397644 0.027552668005228043 0.7047642469406128" size="0.01589272730052471 0.032419998198747635 0.0" class="collision"/>
+		</body>
+	</worldbody>
+	<equality/>
+</mujoco>

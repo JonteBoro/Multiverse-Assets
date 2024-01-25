@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<mujoco model="iiwa14">
+	<compiler meshdir="iiwa14/meshes" texturedir="iiwa14/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<default>
+		<default class="visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="collision">
+			<geom rgba="1.0 0.0 0.0 0.0"/>
+		</default>
+	</default>
+	<asset>
+		<mesh name="link_0" file="stl/link_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_1" file="stl/link_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_2_orange" file="stl/link_2_orange.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_2_grey" file="stl/link_2_grey.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_3" file="stl/link_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="band" file="stl/band.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="kuka" file="stl/kuka.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_4_orange" file="stl/link_4_orange.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_4_grey" file="stl/link_4_grey.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_5" file="stl/link_5.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_6_orange" file="stl/link_6_orange.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_6_grey" file="stl/link_6_grey.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="link_7" file="stl/link_7.stl" scale="1.0 1.0 1.0"/>
+		<material name="gray" rgba="0.4000000059604645 0.4000000059604645 0.4000000059604645 1.0" emission="0.0" specular="0.5"/>
+		<material name="orange" rgba="1.0 0.4235289990901947 0.03921569883823395 1.0" emission="0.0" specular="0.5"/>
+		<material name="light_gray" rgba="0.6000000238418579 0.6000000238418579 0.6000000238418579 1.0" emission="0.0" specular="0.5"/>
+		<material name="black" rgba="0.0 0.0 0.0 1.0" emission="0.0" specular="0.5"/>
+	</asset>
+	<worldbody>
+		<body name="iiwa14" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+			<body name="base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+				<geom name="Geom_0" type="mesh" pos="-0.012611671350896358 -3.254423290854902e-07 0.07039070874452591" quat="-5.004489503335208e-05 0.7340425252914429 -7.331180427172512e-07 0.6791034936904907" mesh="link_0" material="gray" class="visual"/>
+				<geom name="Geom_1" type="sphere" pos="0.0 0.0 0.029999999329447746" quat="1.0 0.0 0.0 0.0" size="0.11999999731779099 0.0 0.0" class="collision"/>
+				<geom name="Geom_2" type="sphere" pos="-0.07999999821186066 0.0 0.10300000011920929" quat="1.0 0.0 0.0 0.0" size="0.07999999821186066 0.0 0.0" class="collision"/>
+				<geom name="Geom_3" type="sphere" pos="-0.07999999821186066 0.0 0.03999999910593033" quat="1.0 0.0 0.0 0.0" size="0.07999999821186066 0.0 0.0" class="collision"/>
+				<geom name="Geom_4" type="sphere" pos="0.0 0.0 0.14000000059604645" quat="1.0 0.0 0.0 0.0" size="0.10000000149011612 0.0 0.0" class="collision"/>
+				<body name="link1" pos="0.0 0.0 0.1574999988079071" quat="1.0 0.0 0.0 0.0">
+					<inertial mass="5.760000228881836" pos="0.0 -0.029999999329447746 0.11999999731779099" quat="1.0 0.0 0.0 0.0" diaginertia="0.0333000011742115 0.032999999821186066 0.012299999594688416"/>
+					<geom name="Geom_5" type="mesh" pos="-1.9467224774416536e-06 -0.0335107184946537 0.1230739951133728" quat="0.702965259552002 0.07586953043937683 -0.07589659094810486 0.7030813694000244" mesh="link_1" material="gray" class="visual"/>
+					<geom name="Geom_6" type="sphere" pos="0.0 0.0 -0.0005000000237487257" quat="1.0 0.0 0.0 0.0" size="0.07999999821186066 0.0 0.0" class="collision"/>
+					<geom name="Geom_7" type="sphere" pos="0.009999999776482582 -0.02500000037252903 0.042500000447034836" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+					<geom name="Geom_8" type="sphere" pos="-0.009999999776482582 -0.02500000037252903 0.042500000447034836" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+					<geom name="Geom_9" type="sphere" pos="0.009999999776482582 -0.04500000178813934 0.10249999910593033" quat="1.0 0.0 0.0 0.0" size="0.07000000029802322 0.0 0.0" class="collision"/>
+					<geom name="Geom_10" type="sphere" pos="-0.009999999776482582 -0.04500000178813934 0.10249999910593033" quat="1.0 0.0 0.0 0.0" size="0.07000000029802322 0.0 0.0" class="collision"/>
+					<joint name="joint1" type="hinge" pos="0.0 0.0 0.0" range="-2.967060089111328 2.967060089111328" axis="0.0 0.0 1.0"/>
+					<body name="link2" pos="0.0 0.0 0.20250000059604645" quat="0.0 0.0 0.7071067690849304 0.7071067690849304">
+						<inertial mass="6.349999904632568" pos="0.0003000000142492354 0.05900000035762787 0.041999999433755875" quat="0.0 0.0 0.7071067690849304 0.7071067690849304" diaginertia="0.030500000342726707 0.030400000512599945 0.010999999940395355"/>
+						<geom name="Geom_11" type="mesh" pos="5.833200248162029e-06 -0.0013649110915139318 0.08664810657501221" quat="0.44626760482788086 0.5484779477119446 -0.5484436750411987 0.4463481605052948" mesh="link_2_orange" material="orange" class="visual"/>
+						<geom name="Geom_12" type="mesh" pos="0.0004379349120426923 0.10289616882801056 0.015210239216685295" quat="0.5095700025558472 0.4902762472629547 -0.4902554154396057 0.5095264911651611" mesh="link_2_grey" material="gray" class="visual"/>
+						<geom name="Geom_13" type="sphere" pos="0.0 0.0 -0.009999999776482582" quat="1.0 0.0 0.0 0.0" size="0.0949999988079071 0.0 0.0" class="collision"/>
+						<geom name="Geom_14" type="sphere" pos="0.0 0.0 0.04500000178813934" quat="1.0 0.0 0.0 0.0" size="0.09000000357627869 0.0 0.0" class="collision"/>
+						<geom name="Geom_15" type="sphere" pos="-0.009999999776482582 0.03999999910593033 0.05400000140070915" quat="1.0 0.0 0.0 0.0" size="0.07000000029802322 0.0 0.0" class="collision"/>
+						<geom name="Geom_16" type="sphere" pos="-0.009999999776482582 0.09000000357627869 0.03999999910593033" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+						<geom name="Geom_17" type="sphere" pos="-0.009999999776482582 0.12999999523162842 0.019999999552965164" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+						<geom name="Geom_18" type="sphere" pos="0.009999999776482582 0.03999999910593033 0.05400000140070915" quat="1.0 0.0 0.0 0.0" size="0.07000000029802322 0.0 0.0" class="collision"/>
+						<geom name="Geom_19" type="sphere" pos="0.009999999776482582 0.09000000357627869 0.03999999910593033" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+						<geom name="Geom_20" type="sphere" pos="0.009999999776482582 0.12999999523162842 0.019999999552965164" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+						<geom name="Geom_21" type="sphere" pos="0.0 0.18000000715255737 0.0" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+						<joint name="joint2" type="hinge" pos="0.0 0.0 0.0" range="-2.094399929046631 2.094399929046631" axis="0.0 0.0 1.0"/>
+						<body name="link3" pos="0.0 0.2045000046491623 0.0" quat="0.0 0.0 0.7071067690849304 0.7071067690849304">
+							<inertial mass="3.5" pos="0.0 0.029999999329447746 0.12999999523162842" quat="1.0 0.0 0.0 0.0" diaginertia="0.02500000037252903 0.023800000548362732 0.007600000128149986"/>
+							<geom name="Geom_22" type="mesh" pos="1.407883019055589e-06 0.03297119960188866 0.13639560341835022" quat="0.6979047656059265 -0.0827929750084877 0.08380381017923355 0.7064355611801147" mesh="link_3" material="gray" class="visual"/>
+							<geom name="Geom_23" type="mesh" pos="-3.5052686143899336e-05 -1.8385724615654908e-05 0.016549965366721153" quat="-0.02164478413760662 0.706791877746582 0.02163795754313469 0.7067591547966003" mesh="band" material="light_gray" class="visual"/>
+							<geom name="Geom_24" type="mesh" pos="1.0515899475649348e-06 -2.8647250474023167e-06 0.01613546535372734" quat="0.48493528366088867 0.5145955085754395 -0.4849644899368286 0.5146247744560242" mesh="kuka" material="black" class="visual"/>
+							<geom name="Geom_25" type="sphere" pos="0.0 0.0 0.03550000116229057" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+							<geom name="Geom_26" type="sphere" pos="0.009999999776482582 0.023000000044703484 0.08550000190734863" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+							<geom name="Geom_27" type="sphere" pos="0.009999999776482582 0.04800000041723251 0.12549999356269836" quat="1.0 0.0 0.0 0.0" size="0.054999999701976776 0.0 0.0" class="collision"/>
+							<geom name="Geom_28" type="sphere" pos="0.009999999776482582 0.0560000017285347 0.17550000548362732" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+							<geom name="Geom_29" type="sphere" pos="-0.009999999776482582 0.023000000044703484 0.08550000190734863" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+							<geom name="Geom_30" type="sphere" pos="-0.009999999776482582 0.04800000041723251 0.12549999356269836" quat="1.0 0.0 0.0 0.0" size="0.054999999701976776 0.0 0.0" class="collision"/>
+							<geom name="Geom_31" type="sphere" pos="-0.009999999776482582 0.0560000017285347 0.17550000548362732" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+							<geom name="Geom_32" type="sphere" pos="0.0 0.04500000178813934 0.21549999713897705" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+							<geom name="Geom_33" type="sphere" pos="0.0 0.0 0.21549999713897705" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+							<joint name="joint3" type="hinge" pos="0.0 0.0 0.0" range="-2.967060089111328 2.967060089111328" axis="0.0 0.0 1.0"/>
+							<body name="link4" pos="0.0 0.0 0.21549999713897705" quat="0.7071067690849304 0.7071067690849304 0.0 0.0">
+								<inertial mass="3.5" pos="0.0 0.06700000166893005 0.03400000184774399" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" diaginertia="0.017000000923871994 0.01640000008046627 0.006000000052154064"/>
+								<geom name="Geom_34" type="mesh" pos="4.824970801564632e-06 0.00796885509043932 0.07976153492927551" quat="0.4424828588962555 0.5515479445457458 -0.5516470074653625 0.44236791133880615" mesh="link_4_orange" material="orange" class="visual"/>
+								<geom name="Geom_35" type="mesh" pos="-7.19085733180691e-07 0.09924633800983429 0.012969840317964554" quat="0.5156792402267456 0.48389121890068054 -0.48382964730262756 0.5155900716781616" mesh="link_4_grey" material="gray" class="visual"/>
+								<geom name="Geom_36" type="sphere" pos="0.0 0.009999999776482582 0.04600000008940697" quat="1.0 0.0 0.0 0.0" size="0.07800000160932541 0.0 0.0" class="collision"/>
+								<geom name="Geom_37" type="sphere" pos="0.009999999776482582 0.05999999865889549 0.052000001072883606" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+								<geom name="Geom_38" type="sphere" pos="0.009999999776482582 0.11999999731779099 0.03400000184774399" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+								<geom name="Geom_39" type="sphere" pos="-0.009999999776482582 0.05999999865889549 0.052000001072883606" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+								<geom name="Geom_40" type="sphere" pos="-0.009999999776482582 0.11999999731779099 0.03400000184774399" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+								<geom name="Geom_41" type="sphere" pos="0.0 0.18400000035762787 0.0" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+								<joint name="joint4" type="hinge" pos="0.0 0.0 0.0" range="-2.094399929046631 2.094399929046631" axis="0.0 0.0 1.0"/>
+								<body name="link5" pos="0.0 0.18449999392032623 0.0" quat="0.0 0.0 0.7071067690849304 0.7071067690849304">
+									<inertial mass="3.5" pos="9.999999747378752e-05 0.020999999716877937 0.07599999755620956" quat="1.0 0.0 0.0 0.0" diaginertia="0.009999999776482582 0.008700000122189522 0.004490000195801258"/>
+									<geom name="Geom_42" type="mesh" pos="0.0038119491655379534 0.02870779298245907 0.09361015260219574" quat="0.7097618579864502 -0.1587982326745987 0.12745581567287445 0.6743709444999695" mesh="link_5" material="gray" class="visual"/>
+									<geom name="Geom_43" type="mesh" pos="-3.5052686143899336e-05 -1.8385724615654908e-05 0.016549965366721153" quat="-0.02164478413760662 0.706791877746582 0.02163795754313469 0.7067591547966003" mesh="band" material="light_gray" class="visual"/>
+									<geom name="Geom_44" type="mesh" pos="1.0515899475649348e-06 -2.8647250474023167e-06 0.01613546535372734" quat="0.48493528366088867 0.5145955085754395 -0.4849644899368286 0.5146247744560242" mesh="kuka" material="black" class="visual"/>
+									<geom name="Geom_45" type="sphere" pos="0.0 0.0 0.03350000083446503" quat="1.0 0.0 0.0 0.0" size="0.07500000298023224 0.0 0.0" class="collision"/>
+									<geom name="Geom_46" type="sphere" pos="-0.012000000104308128 0.03099999949336052 0.0754999965429306" quat="1.0 0.0 0.0 0.0" size="0.05000000074505806 0.0 0.0" class="collision"/>
+									<geom name="Geom_47" type="sphere" pos="0.012000000104308128 0.03099999949336052 0.0754999965429306" quat="1.0 0.0 0.0 0.0" size="0.05000000074505806 0.0 0.0" class="collision"/>
+									<geom name="Geom_48" type="sphere" pos="-0.012000000104308128 0.05999999865889549 0.11550000309944153" quat="1.0 0.0 0.0 0.0" size="0.03999999910593033 0.0 0.0" class="collision"/>
+									<geom name="Geom_49" type="sphere" pos="0.012000000104308128 0.05999999865889549 0.11550000309944153" quat="1.0 0.0 0.0 0.0" size="0.03999999910593033 0.0 0.0" class="collision"/>
+									<geom name="Geom_50" type="sphere" pos="-0.009999999776482582 0.06499999761581421 0.1655000001192093" quat="1.0 0.0 0.0 0.0" size="0.03999999910593033 0.0 0.0" class="collision"/>
+									<geom name="Geom_51" type="sphere" pos="0.009999999776482582 0.06499999761581421 0.1655000001192093" quat="1.0 0.0 0.0 0.0" size="0.03999999910593033 0.0 0.0" class="collision"/>
+									<geom name="Geom_52" type="sphere" pos="-0.012000000104308128 0.06499999761581421 0.18549999594688416" quat="1.0 0.0 0.0 0.0" size="0.03500000014901161 0.0 0.0" class="collision"/>
+									<geom name="Geom_53" type="sphere" pos="0.012000000104308128 0.06499999761581421 0.18549999594688416" quat="1.0 0.0 0.0 0.0" size="0.03500000014901161 0.0 0.0" class="collision"/>
+									<joint name="joint5" type="hinge" pos="0.0 0.0 0.0" range="-2.967060089111328 2.967060089111328" axis="0.0 0.0 1.0"/>
+									<body name="link6" pos="0.0 0.0 0.21549999713897705" quat="0.7071067690849304 0.7071067690849304 0.0 0.0">
+										<inertial mass="1.7999999523162842" pos="0.0 0.0006000000284984708 0.00039999998989515007" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" diaginertia="0.004900000058114529 0.004699999932199717 0.003599999938160181"/>
+										<geom name="Geom_54" type="mesh" pos="-1.1731925724234316e-06 -0.032810576260089874 0.025841152295470238" quat="0.3552939295768738 0.6113311052322388 -0.6118375062942505 0.35453543066978455" mesh="link_6_orange" material="orange" class="visual"/>
+										<geom name="Geom_55" type="mesh" pos="-4.166903636360075e-06 0.029530277475714684 -0.02136475406587124" quat="0.3245398700237274 0.6282565593719482 -0.6282598972320557 0.3244335353374481" mesh="link_6_grey" material="gray" class="visual"/>
+										<geom name="Geom_56" type="sphere" pos="0.0 0.0 -0.05900000035762787" quat="1.0 0.0 0.0 0.0" size="0.054999999701976776 0.0 0.0" class="collision"/>
+										<geom name="Geom_57" type="sphere" pos="0.0 -0.029999999329447746 0.010999999940395355" quat="1.0 0.0 0.0 0.0" size="0.06499999761581421 0.0 0.0" class="collision"/>
+										<geom name="Geom_58" type="sphere" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" size="0.07999999821186066 0.0 0.0" class="collision"/>
+										<joint name="joint6" type="hinge" pos="0.0 0.0 0.0" range="-2.094399929046631 2.094399929046631" axis="0.0 0.0 1.0"/>
+										<body name="link7" pos="0.0 0.08100000023841858 0.0" quat="0.0 0.0 0.7071067690849304 0.7071067690849304">
+											<inertial mass="1.2000000476837158" pos="0.0 0.0 0.019999999552965164" quat="1.0 0.0 0.0 0.0" diaginertia="0.0010000000474974513 0.0010000000474974513 0.0010000000474974513"/>
+											<geom name="Geom_59" type="mesh" pos="-9.661049261922017e-06 -9.153581572718394e-07 0.01686968095600605" quat="0.4999147951602936 0.500280499458313 -0.4997194707393646 0.5000850558280945" mesh="link_7" material="gray" class="visual"/>
+											<geom name="Geom_60" type="sphere" pos="0.0 0.0 0.0010000000474974513" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.0 0.0" class="collision"/>
+											<joint name="joint7" type="hinge" pos="0.0 0.0 0.0" range="-3.0543301105499268 3.0543301105499268" axis="0.0 0.0 1.0"/>
+										</body>
+									</body>
+								</body>
+							</body>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+	</worldbody>
+	<equality/>
+</mujoco>

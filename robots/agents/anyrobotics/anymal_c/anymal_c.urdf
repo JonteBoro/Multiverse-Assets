@@ -1,0 +1,743 @@
+<?xml version="1.0" ?>
+<robot name="anymal_c" version="1.0">
+  <link name="anymal_c"/>
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="anymal_c"/>
+    <child link="base"/>
+  </joint>
+  <link name="base">
+    <visual name="Geom_0">
+      <origin xyz="-0.011599770747125149 0.01999977044761181 0.08447550982236862" rpy="1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/base_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_1">
+      <origin xyz="-0.011599785648286343 0.019999781623482704 0.07711783796548843" rpy="1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/base_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_2">
+      <origin xyz="-0.011599860154092312 0.01999989151954651 0.0938289538025856" rpy="0.8883302211761475 -1.5707848072052002 2.253262519836426"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/base_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_3">
+      <origin xyz="-0.011599920690059662 -0.034999456256628036 0.06816615164279938" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/base_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_4">
+      <origin xyz="-0.011599943973124027 -0.034999407827854156 0.07339996844530106" rpy="1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/base_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_5">
+      <origin xyz="0.036819808185100555 -2.975935053939338e-09 0.021578945219516754" rpy="3.1415927410125732 -1.5240817070007324 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/base_5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.5799999833106995 0.14000000059604645 0.18000000715255737"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_7">
+      <origin xyz="0.2175000011920929 0.07000000029802322 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.14499999582767487"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_8">
+      <origin xyz="-0.2175000011920929 0.07000000029802322 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.14499999582767487"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_9">
+      <origin xyz="0.2175000011920929 -0.07000000029802322 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.14499999582767487"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_10">
+      <origin xyz="-0.2175000011920929 -0.07000000029802322 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.14499999582767487"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_11">
+      <origin xyz="-0.0026326263323426247 0.00041710055666044354 0.06210428848862648" rpy="-3.1401853561401367 -1.5503751039505005 -0.0014196091797202826"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/top_shell.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_12">
+      <origin xyz="-0.0006547375814989209 4.4404549726095865e-07 -0.06612871587276459" rpy="3.090212821960449 -1.5705584287643433 0.051423247903585434"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/bottom_shell.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_13">
+      <origin xyz="-0.16322645545005798 1.217122417074279e-06 0.09824134409427643" rpy="1.2017772197723389 -0.0003345583099871874 1.5708717107772827"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/remote.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_14">
+      <origin xyz="0.3647890090942383 2.5179431872857094e-09 0.11878526210784912" rpy="1.5707963705062866 0.2588278353214264 8.613585243236367e-17"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/handle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_15">
+      <origin xyz="0.45985445380210876 -1.9454962966847233e-05 -0.006234311033040285" rpy="1.5708662271499634 0.2254752665758133 -0.00016555360343772918"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/face.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_16">
+      <origin xyz="0.46950000524520874 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10999999940395355 0.14000000059604645 0.18000000715255737"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_17">
+      <origin xyz="0.46950000524520874 0.07000000029802322 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.10999999940395355"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_18">
+      <origin xyz="0.46950000524520874 -0.07000000029802322 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.10999999940395355"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_19">
+      <origin xyz="0.4747720956802368 0.0 -0.03687187656760216" rpy="1.5707963705062866 0.5235986113548279 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/depth_camera.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_20">
+      <origin xyz="0.5005862712860107 -2.7428591238276567e-06 0.008976703509688377" rpy="-0.00019865675130859017 0.12693262100219727 0.0005940597620792687"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/wide_angle_camera.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_21">
+      <origin xyz="-0.45985445380210876 1.9454962966847233e-05 -0.006234311033040285" rpy="1.5708662271499634 0.2254752665758133 3.1414270401000977"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/face.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_22">
+      <origin xyz="-0.46950000524520874 0.0 0.0" rpy="0.0 0.0 3.1415927410125732"/>
+      <geometry>
+        <box size="0.10999999940395355 0.14000000059604645 0.18000000715255737"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_23">
+      <origin xyz="-0.46950000524520874 -0.07000000029802322 0.0" rpy="-3.1415927410125732 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.10999999940395355"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_24">
+      <origin xyz="-0.46950000524520874 0.07000000029802322 0.0" rpy="-3.1415927410125732 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.09000000357627869" length="0.10999999940395355"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_25">
+      <origin xyz="-0.4747720956802368 0.0 -0.03687187656760216" rpy="1.5707963705062866 0.5235986113548279 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/depth_camera.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_26">
+      <origin xyz="-0.5005862712860107 2.7428591238276567e-06 0.008976703509688377" rpy="-0.00019865675130859017 0.12693262100219727 -3.140998601913452"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/wide_angle_camera.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_27">
+      <origin xyz="0.00316600501537323 -5.988961859800439e-19 -0.03308949992060661" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/battery.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_28">
+      <origin xyz="-8.437695129426255e-19 0.08958207815885544 0.021378111094236374" rpy="1.5707963705062866 0.52359938621521 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/depth_camera.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_29">
+      <origin xyz="-8.437695129426255e-19 -0.08958207815885544 0.021378111094236374" rpy="1.5707963705062866 0.52359938621521 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/depth_camera.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_30">
+      <origin xyz="-0.36216145753860474 6.294024205999449e-05 0.1638614982366562" rpy="-0.0012244265526533127 -0.03133658692240715 -0.0009958192240446806"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/lidar_cage.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_31">
+      <origin xyz="-0.36399999260902405 0.0 0.13349999487400055" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.07000000029802322" length="0.11999999731779099"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_32">
+      <origin xyz="-0.36399999260902405 0.0003928735386580229 0.14043888449668884" rpy="-0.6778279542922974 -1.5707930326461792 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/lidar.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_33">
+      <origin xyz="0.23129335045814514 0.10364477336406708 -0.0006153398426249623" rpy="-1.5724538564682007 -0.523544430732727 -1.570826768875122"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_34">
+      <origin xyz="0.23129335045814514 -0.1036447137594223 -0.0006153053836897016" rpy="-1.5724843740463257 0.5236527919769287 -1.570826768875122"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_35">
+      <origin xyz="-0.23129335045814514 0.1036447137594223 -0.0006153053836897016" rpy="-1.5724843740463257 0.5236527919769287 1.5707658529281616"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_36">
+      <origin xyz="-0.23129335045814514 -0.10364477336406708 -0.0006153398426249623" rpy="-1.5724538564682007 -0.523544430732727 1.5707658529281616"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_37">
+      <origin xyz="0.11599999666213989 -2.804344647125423e-12 0.07641233503818512" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/hatch.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="LF_HAA" type="revolute">
+    <origin xyz="0.29989999532699585 0.10400000214576721 0.0" rpy="2.6179940700531006 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="base"/>
+    <child link="LF_HIP"/>
+    <limit effort="1000.0" lower="-0.7199999690055847" upper="0.49000000953674316" velocity="1000.0"/>
+  </joint>
+  <link name="LF_HIP">
+    <inertial>
+      <origin xyz="0.05666060000658035 -0.015293999575078487 -0.008297840133309364" rpy="-1.6911089420318604 -1.1937892436981201 -1.4609936475753784"/>
+      <mass value="2.7809998989105225"/>
+      <inertia ixx="0.005857289768755436" ixy="0.0" ixz="0.0" iyy="0.004918680060654879" iyz="0.0" izz="0.0032908099237829447"/>
+    </inertial>
+    <visual name="Geom_38">
+      <origin xyz="0.07955124229192734 0.0013034289004281163 -0.0015909208450466394" rpy="-1.544067144393921 0.5238567590713501 -1.5762200355529785"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/hip_l.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_39">
+      <origin xyz="0.059900034219026566 -0.01281125657260418 -0.008216958492994308" rpy="-2.0960683822631836 3.3714699384290725e-05 3.141542673110962"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_40">
+      <origin xyz="0.05990000069141388 -0.011959799565374851 -0.006905000191181898" rpy="3.1415927410125732 -1.0471972227096558 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LF_HFE" type="revolute">
+    <origin xyz="0.05990000069141388 -0.07258159667253494 -0.0419050008058548" rpy="3.1415927410125732 0.52359938621521 -1.5707963705062866"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="LF_HIP"/>
+    <child link="LF_THIGH"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="LF_THIGH">
+    <inertial>
+      <origin xyz="0.030814699828624725 4.649949914892204e-05 -0.24569599330425262" rpy="-0.02412891760468483 -0.1600303202867508 0.17108356952667236"/>
+      <mass value="3.071000099182129"/>
+      <inertia ixx="0.030249999836087227" ixy="0.0" ixz="0.0" iyy="0.029894299805164337" iyz="0.0" izz="0.004184649791568518"/>
+    </inertial>
+    <visual name="Geom_41">
+      <origin xyz="0.019896067678928375 -3.135157749056816e-05 -0.1903664767742157" rpy="-5.641230700348387e-07 0.060769613832235336 0.000512889411766082"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_42">
+      <origin xyz="0.03999999910593033 0.0 0.0" rpy="1.5707963705062866 0.0 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.06499999761581421" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_43">
+      <origin xyz="0.029999999329447746 0.0 -0.14131399989128113" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <box size="0.07500000298023224 0.05999999865889549 0.28262799978256226"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_44">
+      <origin xyz="0.031693343073129654 -3.448225882607403e-08 -0.28428947925567627" rpy="1.5691235065460205 -5.416394196799956e-05 1.5708227157592773"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_45">
+      <origin xyz="0.030300000682473183 0.0 -0.2849999964237213" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LF_KFE" type="revolute">
+    <origin xyz="0.10029999911785126 5.551115123125783e-17 -0.2849999964237213" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="LF_THIGH"/>
+    <child link="LF_SHANK"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="LF_SHANK">
+    <inertial>
+      <origin xyz="0.005462000146508217 -0.06125279888510704 -0.08065979927778244" rpy="-0.23220479488372803 -0.007992599159479141 -0.050302937626838684"/>
+      <mass value="0.5884199738502502"/>
+      <inertia ixx="0.010163700208067894" ixy="0.0" ixz="0.0" iyy="0.009238380007445812" iyz="0.0" izz="0.0011192699894309044"/>
+    </inertial>
+    <visual name="Geom_46">
+      <origin xyz="0.006487672682851553 -0.034592606127262115 0.0008805167744867504" rpy="1.576756238937378 0.002205981407314539 -0.0027410979382693768"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/shank_l.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_47">
+      <origin xyz="0.019999999552965164 0.0 0.0" rpy="1.5707963705062866 0.0 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05999999865889549" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_48">
+      <origin xyz="0.019999999552965164 -0.057498998939991 0.0" rpy="1.5707963705062866 0.0 -1.5707963705062866"/>
+      <geometry>
+        <box size="0.114997997879982 0.06750000268220901 0.03799999877810478"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_49">
+      <origin xyz="0.0019006143556907773 -0.09909621626138687 -0.19530461728572845" rpy="0.04055338352918625 0.0 -0.785399317741394"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/foot.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_50">
+      <origin xyz="0.013050000183284283 -0.08794999867677689 -0.16898499429225922" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.017500000074505806" length="0.28250399231910706"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_51">
+      <origin xyz="0.013050000183284283 -0.08794999867677689 -0.31547001004219055" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <sphere radius="0.029999999329447746"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_HAA" type="revolute">
+    <origin xyz="0.29989999532699585 -0.10400000214576721 0.0" rpy="-2.6179940700531006 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="base"/>
+    <child link="RF_HIP"/>
+    <limit effort="1000.0" lower="-0.49000000953674316" upper="0.7199999690055847" velocity="1000.0"/>
+  </joint>
+  <link name="RF_HIP">
+    <inertial>
+      <origin xyz="0.05676329880952835 0.015293999575078487 -0.008297840133309364" rpy="1.4483699798583984 -1.1937389373779297 1.6827774047851562"/>
+      <mass value="2.7809998989105225"/>
+      <inertia ixx="0.005859280005097389" ixy="0.0" ixz="0.0" iyy="0.004920499864965677" iyz="0.0" izz="0.0032906399574130774"/>
+    </inertial>
+    <visual name="Geom_52">
+      <origin xyz="0.07955124974250793 -0.0013034200528636575 -0.0015909073408693075" rpy="-1.5440669059753418 -0.5238618850708008 -1.5653727054595947"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/hip_r.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_53">
+      <origin xyz="0.05989996716380119 0.01281125657260418 -0.008216958492994308" rpy="-2.0960683822631836 3.3714699384290725e-05 -4.993228139937855e-05"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_54">
+      <origin xyz="0.05990000069141388 0.011959799565374851 -0.006905000191181898" rpy="3.1415927410125732 -1.0471972227096558 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_HFE" type="revolute">
+    <origin xyz="0.05990000069141388 0.07258159667253494 -0.0419050008058548" rpy="3.1415927410125732 0.52359938621521 1.5707963705062866"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="RF_HIP"/>
+    <child link="RF_THIGH"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="RF_THIGH">
+    <inertial>
+      <origin xyz="0.030814699828624725 4.649949914892204e-05 -0.24569599330425262" rpy="-0.024807289242744446 -0.15994296967983246 0.1801682710647583"/>
+      <mass value="3.071000099182129"/>
+      <inertia ixx="0.030251100659370422" ixy="0.0" ixz="0.0" iyy="0.0298932995647192" iyz="0.0" izz="0.004184499848634005"/>
+    </inertial>
+    <visual name="Geom_55">
+      <origin xyz="0.019896067678928375 -3.135157749056816e-05 -0.1903664767742157" rpy="-5.641230700348387e-07 0.060769613832235336 0.000512889411766082"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_56">
+      <origin xyz="0.03999999910593033 0.0 0.0" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.06499999761581421" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_57">
+      <origin xyz="0.029999999329447746 0.0 -0.14131399989128113" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <box size="0.07500000298023224 0.05999999865889549 0.28262799978256226"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_58">
+      <origin xyz="0.031693343073129654 -3.448225882607403e-08 -0.28428947925567627" rpy="1.5691235065460205 -5.416394196799956e-05 1.5708227157592773"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_59">
+      <origin xyz="0.030300000682473183 0.0 -0.2849999964237213" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_KFE" type="revolute">
+    <origin xyz="0.10029999911785126 -5.551115123125783e-17 -0.2849999964237213" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="RF_THIGH"/>
+    <child link="RF_SHANK"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="RF_SHANK">
+    <inertial>
+      <origin xyz="0.005462000146508217 0.06125279888510704 -0.08065979927778244" rpy="0.23220479488372803 -0.007992599159479141 0.050302937626838684"/>
+      <mass value="0.5884199738502502"/>
+      <inertia ixx="0.010163700208067894" ixy="0.0" ixz="0.0" iyy="0.009238380007445812" iyz="0.0" izz="0.0011192699894309044"/>
+    </inertial>
+    <visual name="Geom_60">
+      <origin xyz="0.006487637292593718 0.034592535346746445 0.0008805529796518385" rpy="1.5767571926116943 -0.002204755786806345 -3.138852119445801"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/shank_r.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_61">
+      <origin xyz="0.019999999552965164 0.0 0.0" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05999999865889549" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_62">
+      <origin xyz="0.019999999552965164 0.057498998939991 0.0" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <box size="0.114997997879982 0.06750000268220901 0.03799999877810478"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_63">
+      <origin xyz="0.0019037557067349553 0.09909936040639877 -0.19530461728572845" rpy="0.04055338352918625 0.0 -2.3561933040618896"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/foot.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_64">
+      <origin xyz="0.013050000183284283 0.08794999867677689 -0.16898499429225922" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.017500000074505806" length="0.28250399231910706"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_65">
+      <origin xyz="0.013050000183284283 0.08794999867677689 -0.31547001004219055" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <sphere radius="0.029999999329447746"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_HAA" type="revolute">
+    <origin xyz="-0.29989999532699585 0.10400000214576721 0.0" rpy="-2.6179940700531006 0.0 3.1415927410125732"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="base"/>
+    <child link="LH_HIP"/>
+    <limit effort="1000.0" lower="-0.7199999690055847" upper="0.49000000953674316" velocity="1000.0"/>
+  </joint>
+  <link name="LH_HIP">
+    <inertial>
+      <origin xyz="0.05676329880952835 0.015293999575078487 -0.008297840133309364" rpy="1.4483699798583984 -1.1937389373779297 1.6827774047851562"/>
+      <mass value="2.7809998989105225"/>
+      <inertia ixx="0.005859280005097389" ixy="0.0" ixz="0.0" iyy="0.004920499864965677" iyz="0.0" izz="0.0032906399574130774"/>
+    </inertial>
+    <visual name="Geom_66">
+      <origin xyz="0.07955124974250793 -0.0013034200528636575 -0.0015909073408693075" rpy="-1.5440669059753418 -0.5238618850708008 -1.5653727054595947"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/hip_r.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_67">
+      <origin xyz="0.05989996716380119 0.01281125657260418 -0.008216958492994308" rpy="-2.0960683822631836 3.3714699384290725e-05 -4.993228139937855e-05"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_68">
+      <origin xyz="0.05990000069141388 0.011959799565374851 -0.006905000191181898" rpy="3.1415927410125732 -1.0471972227096558 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_HFE" type="revolute">
+    <origin xyz="0.05990000069141388 0.07258159667253494 -0.0419050008058548" rpy="3.1415927410125732 0.52359938621521 1.5707963705062866"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="LH_HIP"/>
+    <child link="LH_THIGH"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="LH_THIGH">
+    <inertial>
+      <origin xyz="0.030814699828624725 4.649949914892204e-05 -0.24569599330425262" rpy="-0.024807289242744446 -0.15994296967983246 0.1801682710647583"/>
+      <mass value="3.071000099182129"/>
+      <inertia ixx="0.030251100659370422" ixy="0.0" ixz="0.0" iyy="0.0298932995647192" iyz="0.0" izz="0.004184499848634005"/>
+    </inertial>
+    <visual name="Geom_69">
+      <origin xyz="0.019896067678928375 -3.135157749056816e-05 -0.1903664767742157" rpy="-5.641230700348387e-07 0.060769613832235336 0.000512889411766082"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_70">
+      <origin xyz="0.03999999910593033 0.0 0.0" rpy="1.5707963705062866 0.0 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.06499999761581421" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_71">
+      <origin xyz="0.029999999329447746 0.0 -0.14131399989128113" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <box size="0.07500000298023224 0.05999999865889549 0.28262799978256226"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_72">
+      <origin xyz="0.031693343073129654 -3.448225882607403e-08 -0.28428947925567627" rpy="1.5691235065460205 -5.416394196799956e-05 1.5708227157592773"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_73">
+      <origin xyz="0.030300000682473183 0.0 -0.2849999964237213" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_KFE" type="revolute">
+    <origin xyz="0.10029999911785126 -5.551115123125783e-17 -0.2849999964237213" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="LH_THIGH"/>
+    <child link="LH_SHANK"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="LH_SHANK">
+    <inertial>
+      <origin xyz="0.005462000146508217 0.06125279888510704 -0.08065979927778244" rpy="0.23220479488372803 -0.007992599159479141 0.050302937626838684"/>
+      <mass value="0.5884199738502502"/>
+      <inertia ixx="0.010163700208067894" ixy="0.0" ixz="0.0" iyy="0.009238380007445812" iyz="0.0" izz="0.0011192699894309044"/>
+    </inertial>
+    <visual name="Geom_74">
+      <origin xyz="0.006487637292593718 0.034592535346746445 0.0008805529796518385" rpy="1.5767571926116943 -0.002204755786806345 -3.138852119445801"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/shank_r.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_75">
+      <origin xyz="0.019999999552965164 0.0 0.0" rpy="1.5707963705062866 0.0 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05999999865889549" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_76">
+      <origin xyz="0.019999999552965164 0.057498998939991 0.0" rpy="1.5707963705062866 0.0 -1.5707963705062866"/>
+      <geometry>
+        <box size="0.114997997879982 0.06750000268220901 0.03799999877810478"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_77">
+      <origin xyz="0.0019037557067349553 0.09909936040639877 -0.19530461728572845" rpy="0.04055338352918625 0.0 -2.3561933040618896"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/foot.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_78">
+      <origin xyz="0.013050000183284283 0.08794999867677689 -0.16898499429225922" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.017500000074505806" length="0.28250399231910706"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_79">
+      <origin xyz="0.013050000183284283 0.08794999867677689 -0.31547001004219055" rpy="0.0 0.0 -1.5707963705062866"/>
+      <geometry>
+        <sphere radius="0.029999999329447746"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_HAA" type="revolute">
+    <origin xyz="-0.29989999532699585 -0.10400000214576721 0.0" rpy="2.6179940700531006 0.0 3.1415927410125732"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="base"/>
+    <child link="RH_HIP"/>
+    <limit effort="1000.0" lower="-0.49000000953674316" upper="0.7199999690055847" velocity="1000.0"/>
+  </joint>
+  <link name="RH_HIP">
+    <inertial>
+      <origin xyz="0.05666060000658035 -0.015293999575078487 -0.008297840133309364" rpy="-1.6911089420318604 -1.1937892436981201 -1.4609936475753784"/>
+      <mass value="2.7809998989105225"/>
+      <inertia ixx="0.005857289768755436" ixy="0.0" ixz="0.0" iyy="0.004918680060654879" iyz="0.0" izz="0.0032908099237829447"/>
+    </inertial>
+    <visual name="Geom_80">
+      <origin xyz="0.07955124229192734 0.0013034289004281163 -0.0015909208450466394" rpy="-1.544067144393921 0.5238567590713501 -1.5762200355529785"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/hip_l.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_81">
+      <origin xyz="0.059900034219026566 -0.01281125657260418 -0.008216958492994308" rpy="-2.0960683822631836 3.3714699384290725e-05 3.141542673110962"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_82">
+      <origin xyz="0.05990000069141388 -0.011959799565374851 -0.006905000191181898" rpy="3.1415927410125732 -1.0471972227096558 -1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_HFE" type="revolute">
+    <origin xyz="0.05990000069141388 -0.07258159667253494 -0.0419050008058548" rpy="3.1415927410125732 0.52359938621521 -1.5707963705062866"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="RH_HIP"/>
+    <child link="RH_THIGH"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="RH_THIGH">
+    <inertial>
+      <origin xyz="0.030814699828624725 4.649949914892204e-05 -0.24569599330425262" rpy="-0.02412891760468483 -0.1600303202867508 0.17108356952667236"/>
+      <mass value="3.071000099182129"/>
+      <inertia ixx="0.030249999836087227" ixy="0.0" ixz="0.0" iyy="0.029894299805164337" iyz="0.0" izz="0.004184649791568518"/>
+    </inertial>
+    <visual name="Geom_83">
+      <origin xyz="0.019896067678928375 -3.135157749056816e-05 -0.1903664767742157" rpy="-5.641230700348387e-07 0.060769613832235336 0.000512889411766082"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_84">
+      <origin xyz="0.03999999910593033 0.0 0.0" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.06499999761581421" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_85">
+      <origin xyz="0.029999999329447746 0.0 -0.14131399989128113" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <box size="0.07500000298023224 0.05999999865889549 0.28262799978256226"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_86">
+      <origin xyz="0.031693343073129654 -3.448225882607403e-08 -0.28428947925567627" rpy="1.5691235065460205 -5.416394196799956e-05 1.5708227157592773"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/drive.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_87">
+      <origin xyz="0.030300000682473183 0.0 -0.2849999964237213" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.05000000074505806" length="0.14000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_KFE" type="revolute">
+    <origin xyz="0.10029999911785126 5.551115123125783e-17 -0.2849999964237213" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="RH_THIGH"/>
+    <child link="RH_SHANK"/>
+    <limit effort="1000.0" lower="-9.424779891967773" upper="9.424779891967773" velocity="1000.0"/>
+  </joint>
+  <link name="RH_SHANK">
+    <inertial>
+      <origin xyz="0.005462000146508217 -0.06125279888510704 -0.08065979927778244" rpy="-0.23220479488372803 -0.007992599159479141 -0.050302937626838684"/>
+      <mass value="0.5884199738502502"/>
+      <inertia ixx="0.010163700208067894" ixy="0.0" ixz="0.0" iyy="0.009238380007445812" iyz="0.0" izz="0.0011192699894309044"/>
+    </inertial>
+    <visual name="Geom_88">
+      <origin xyz="0.006487672682851553 -0.034592606127262115 0.0008805167744867504" rpy="1.576756238937378 0.002205981407314539 -0.0027410979382693768"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/shank_l.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_89">
+      <origin xyz="0.019999999552965164 0.0 0.0" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.05999999865889549" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_90">
+      <origin xyz="0.019999999552965164 -0.057498998939991 0.0" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <box size="0.114997997879982 0.06750000268220901 0.03799999877810478"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_91">
+      <origin xyz="0.0019006143556907773 -0.09909621626138687 -0.19530461728572845" rpy="0.04055338352918625 0.0 -0.785399317741394"/>
+      <geometry>
+        <mesh filename="file://anymal_c/meshes/obj/foot.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_92">
+      <origin xyz="0.013050000183284283 -0.08794999867677689 -0.16898499429225922" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <cylinder radius="0.017500000074505806" length="0.28250399231910706"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_93">
+      <origin xyz="0.013050000183284283 -0.08794999867677689 -0.31547001004219055" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <sphere radius="0.029999999329447746"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

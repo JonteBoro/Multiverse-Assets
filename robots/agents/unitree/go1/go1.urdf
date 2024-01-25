@@ -1,0 +1,509 @@
+<?xml version="1.0" ?>
+<robot name="go1" version="1.0">
+  <link name="go1"/>
+  <joint name="trunk_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="go1"/>
+    <child link="trunk"/>
+  </joint>
+  <link name="trunk">
+    <visual name="Geom_0">
+      <origin xyz="0.06456613540649414 -1.7892060100166418e-07 0.0008886185241863132" rpy="3.6359444948175224e-06 -1.5565590858459473 -3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/trunk.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.25 0.07999999821186066 0.11400000005960464"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="0.0 -0.03999999910593033 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.057999998331069946" length="0.25"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="0.0 0.03999999910593033 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.057999998331069946" length="0.25"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="0.25 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.009999999776482582 0.11999999731779099 0.10000000149011612"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_5">
+      <origin xyz="0.25 0.05999999865889549 -0.009999999776482582" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.07000000029802322"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_6">
+      <origin xyz="0.25 -0.05999999865889549 -0.009999999776482582" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.07000000029802322"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_7">
+      <origin xyz="0.25 0.0 -0.05000000074505806" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.11999999731779099"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_8">
+      <origin xyz="0.2549999952316284 0.0 0.03550000116229057" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.020999999716877937" length="0.10400000214576721"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_hip_joint" type="revolute">
+    <origin xyz="0.18809999525547028 -0.04675000160932541 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="FR_hip"/>
+    <limit effort="1000.0" lower="-0.8630000352859497" upper="0.8630000352859497" velocity="1000.0"/>
+  </joint>
+  <link name="FR_hip">
+    <inertial>
+      <origin xyz="-0.004916599951684475 0.00762614980340004 -8.864999836077914e-05" rpy="1.5896406173706055 0.005719854962080717 1.5272526741027832"/>
+      <mass value="0.6800000071525574"/>
+      <inertia ixx="0.0007340639713220298" ixy="0.0" ixz="0.0" iyy="0.00046843799646012485" iyz="0.0" izz="0.0003987190139014274"/>
+    </inertial>
+    <visual name="Geom_9">
+      <origin xyz="-0.01287506427615881 -0.0017777803586795926 -1.960473952067332e-07" rpy="9.43012346397154e-05 6.97447558195563e-06 1.5793713331222534"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_10">
+      <origin xyz="0.0 -0.04500000178813934 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04600000008940697" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_11">
+      <origin xyz="0.0 -0.06499999761581421 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03099999949336052" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_thigh_joint" type="revolute">
+    <origin xyz="0.0 -0.07999999821186066 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FR_hip"/>
+    <child link="FR_thigh"/>
+    <limit effort="1000.0" lower="-0.6859999895095825" upper="4.500999927520752" velocity="1000.0"/>
+  </joint>
+  <link name="FR_thigh">
+    <inertial>
+      <origin xyz="-0.003047219943255186 0.019315000623464584 -0.030500400811433792" rpy="0.08218669891357422 0.1426575779914856 1.720047950744629"/>
+      <mass value="1.0089999437332153"/>
+      <inertia ixx="0.004787169862538576" ixy="0.0" ixz="0.0" iyy="0.004609030205756426" iyz="0.0" izz="0.00070926797343418"/>
+    </inertial>
+    <visual name="Geom_12">
+      <origin xyz="-0.004290462005883455 0.022090628743171692 -0.04642722010612488" rpy="0.11965037137269974 0.15897075831890106 1.9248303174972534"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/thigh_mirror.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_13">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_14">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_15">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FR_thigh"/>
+    <child link="FR_calf"/>
+    <limit effort="1000.0" lower="-2.817999839782715" upper="-0.887999951839447" velocity="1000.0"/>
+  </joint>
+  <link name="FR_calf">
+    <inertial>
+      <origin xyz="0.0042986199259757996 0.0009766760049387813 -0.14619700610637665" rpy="0.01232889387756586 0.0019001123728230596 1.6151424646377563"/>
+      <mass value="0.19586199522018433"/>
+      <inertia ixx="0.00149766996037215" ixy="0.0" ixz="0.0" iyy="0.001484679989516735" iyz="0.0" izz="3.584269870771095e-05"/>
+    </inertial>
+    <visual name="Geom_16">
+      <origin xyz="0.006786840967833996 -9.16954718377383e-07 -0.12472491711378098" rpy="-0.012432179413735867 -1.3656769624503795e-05 1.5708098411560059"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_17">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_18">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="FR">
+      <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.023000000044703484"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_hip_joint" type="revolute">
+    <origin xyz="0.18809999525547028 0.04675000160932541 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="FL_hip"/>
+    <limit effort="1000.0" lower="-0.8630000352859497" upper="0.8630000352859497" velocity="1000.0"/>
+  </joint>
+  <link name="FL_hip">
+    <inertial>
+      <origin xyz="-0.004916599951684475 -0.00762614980340004 -8.864999836077914e-05" rpy="1.5896406173706055 -0.005719854962080717 1.6143399477005005"/>
+      <mass value="0.6800000071525574"/>
+      <inertia ixx="0.0007340639713220298" ixy="0.0" ixz="0.0" iyy="0.00046843799646012485" iyz="0.0" izz="0.0003987190139014274"/>
+    </inertial>
+    <visual name="Geom_20">
+      <origin xyz="-0.01287506427615881 -0.0017777803586795926 -1.960473952067332e-07" rpy="9.43012346397154e-05 6.97447558195563e-06 1.5793713331222534"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_21">
+      <origin xyz="0.0 0.04500000178813934 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04600000008940697" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_22">
+      <origin xyz="0.0 0.06499999761581421 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03099999949336052" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_thigh_joint" type="revolute">
+    <origin xyz="0.0 0.07999999821186066 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FL_hip"/>
+    <child link="FL_thigh"/>
+    <limit effort="1000.0" lower="-0.6859999895095825" upper="4.500999927520752" velocity="1000.0"/>
+  </joint>
+  <link name="FL_thigh">
+    <inertial>
+      <origin xyz="-0.003047219943255186 -0.019315000623464584 -0.030500400811433792" rpy="0.08218669891357422 -0.1426575779914856 1.4215446710586548"/>
+      <mass value="1.0089999437332153"/>
+      <inertia ixx="0.004787169862538576" ixy="0.0" ixz="0.0" iyy="0.004609030205756426" iyz="0.0" izz="0.00070926797343418"/>
+    </inertial>
+    <visual name="Geom_23">
+      <origin xyz="-0.0035736847203224897 -0.02361164800822735 -0.04103037714958191" rpy="0.10192705690860748 -0.15200600028038025 1.254479169845581"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_24">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_25">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_26">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FL_thigh"/>
+    <child link="FL_calf"/>
+    <limit effort="1000.0" lower="-2.817999839782715" upper="-0.887999951839447" velocity="1000.0"/>
+  </joint>
+  <link name="FL_calf">
+    <inertial>
+      <origin xyz="0.0042986199259757996 0.0009766760049387813 -0.14619700610637665" rpy="0.01232889387756586 0.0019001123728230596 1.6151424646377563"/>
+      <mass value="0.19586199522018433"/>
+      <inertia ixx="0.00149766996037215" ixy="0.0" ixz="0.0" iyy="0.001484679989516735" iyz="0.0" izz="3.584269870771095e-05"/>
+    </inertial>
+    <visual name="Geom_27">
+      <origin xyz="0.006786840967833996 -9.16954718377383e-07 -0.12472491711378098" rpy="-0.012432179413735867 -1.3656769624503795e-05 1.5708098411560059"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_28">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_29">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="FL">
+      <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.023000000044703484"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_hip_joint" type="revolute">
+    <origin xyz="-0.18809999525547028 -0.04675000160932541 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="RR_hip"/>
+    <limit effort="1000.0" lower="-0.8630000352859497" upper="0.8630000352859497" velocity="1000.0"/>
+  </joint>
+  <link name="RR_hip">
+    <inertial>
+      <origin xyz="0.004916599951684475 0.00762614980340004 -8.864999836077914e-05" rpy="1.5519520044326782 0.005719854962080717 1.6143399477005005"/>
+      <mass value="0.6800000071525574"/>
+      <inertia ixx="0.0007340639713220298" ixy="0.0" ixz="0.0" iyy="0.00046843799646012485" iyz="0.0" izz="0.0003987190139014274"/>
+    </inertial>
+    <visual name="Geom_31">
+      <origin xyz="0.01287506427615881 0.0017777803586795926 -1.960473952067332e-07" rpy="9.43012346397154e-05 6.97447558195563e-06 -1.5622212886810303"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_32">
+      <origin xyz="0.0 -0.04500000178813934 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04600000008940697" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_33">
+      <origin xyz="0.0 -0.06499999761581421 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03099999949336052" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_34">
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04600000008940697" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_thigh_joint" type="revolute">
+    <origin xyz="0.0 -0.07999999821186066 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RR_hip"/>
+    <child link="RR_thigh"/>
+    <limit effort="1000.0" lower="-0.6859999895095825" upper="4.500999927520752" velocity="1000.0"/>
+  </joint>
+  <link name="RR_thigh">
+    <inertial>
+      <origin xyz="-0.003047219943255186 0.019315000623464584 -0.030500400811433792" rpy="0.08218669891357422 0.1426575779914856 1.720047950744629"/>
+      <mass value="1.0089999437332153"/>
+      <inertia ixx="0.004787169862538576" ixy="0.0" ixz="0.0" iyy="0.004609030205756426" iyz="0.0" izz="0.00070926797343418"/>
+    </inertial>
+    <visual name="Geom_35">
+      <origin xyz="-0.004290462005883455 0.022090628743171692 -0.04642722010612488" rpy="0.11965037137269974 0.15897075831890106 1.9248303174972534"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/thigh_mirror.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_36">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_37">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_38">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RR_thigh"/>
+    <child link="RR_calf"/>
+    <limit effort="1000.0" lower="-2.817999839782715" upper="-0.887999951839447" velocity="1000.0"/>
+  </joint>
+  <link name="RR_calf">
+    <inertial>
+      <origin xyz="0.0042986199259757996 0.0009766760049387813 -0.14619700610637665" rpy="0.01232889387756586 0.0019001123728230596 1.6151424646377563"/>
+      <mass value="0.19586199522018433"/>
+      <inertia ixx="0.00149766996037215" ixy="0.0" ixz="0.0" iyy="0.001484679989516735" iyz="0.0" izz="3.584269870771095e-05"/>
+    </inertial>
+    <visual name="Geom_39">
+      <origin xyz="0.006786840967833996 -9.16954718377383e-07 -0.12472491711378098" rpy="-0.012432179413735867 -1.3656769624503795e-05 1.5708098411560059"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_40">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_41">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="RR">
+      <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.023000000044703484"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_hip_joint" type="revolute">
+    <origin xyz="-0.18809999525547028 0.04675000160932541 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="RL_hip"/>
+    <limit effort="1000.0" lower="-0.8630000352859497" upper="0.8630000352859497" velocity="1000.0"/>
+  </joint>
+  <link name="RL_hip">
+    <inertial>
+      <origin xyz="0.004916599951684475 -0.00762614980340004 -8.864999836077914e-05" rpy="1.5519520044326782 -0.005719854962080717 1.5272526741027832"/>
+      <mass value="0.6800000071525574"/>
+      <inertia ixx="0.0007340639713220298" ixy="0.0" ixz="0.0" iyy="0.00046843799646012485" iyz="0.0" izz="0.0003987190139014274"/>
+    </inertial>
+    <visual name="Geom_43">
+      <origin xyz="0.01287506427615881 -0.0017777803586795926 1.960473952067332e-07" rpy="-3.141498327255249 -6.97447558195563e-06 1.5622212886810303"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_44">
+      <origin xyz="0.0 0.04500000178813934 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04600000008940697" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_45">
+      <origin xyz="0.0 0.06499999761581421 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03099999949336052" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_46">
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04600000008940697" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_thigh_joint" type="revolute">
+    <origin xyz="0.0 0.07999999821186066 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RL_hip"/>
+    <child link="RL_thigh"/>
+    <limit effort="1000.0" lower="-0.6859999895095825" upper="4.500999927520752" velocity="1000.0"/>
+  </joint>
+  <link name="RL_thigh">
+    <inertial>
+      <origin xyz="-0.003047219943255186 -0.019315000623464584 -0.030500400811433792" rpy="0.08218669891357422 -0.1426575779914856 1.4215446710586548"/>
+      <mass value="1.0089999437332153"/>
+      <inertia ixx="0.004787169862538576" ixy="0.0" ixz="0.0" iyy="0.004609030205756426" iyz="0.0" izz="0.00070926797343418"/>
+    </inertial>
+    <visual name="Geom_47">
+      <origin xyz="-0.0035736847203224897 -0.02361164800822735 -0.04103037714958191" rpy="0.10192705690860748 -0.15200600028038025 1.254479169845581"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_48">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_49">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_50">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RL_thigh"/>
+    <child link="RL_calf"/>
+    <limit effort="1000.0" lower="-2.817999839782715" upper="-0.887999951839447" velocity="1000.0"/>
+  </joint>
+  <link name="RL_calf">
+    <inertial>
+      <origin xyz="0.0042986199259757996 0.0009766760049387813 -0.14619700610637665" rpy="0.01232889387756586 0.0019001123728230596 1.6151424646377563"/>
+      <mass value="0.19586199522018433"/>
+      <inertia ixx="0.00149766996037215" ixy="0.0" ixz="0.0" iyy="0.001484679989516735" iyz="0.0" izz="3.584269870771095e-05"/>
+    </inertial>
+    <visual name="Geom_51">
+      <origin xyz="0.006786840967833996 -9.16954718377383e-07 -0.12472491711378098" rpy="-0.012432179413735867 -1.3656769624503795e-05 1.5708098411560059"/>
+      <geometry>
+        <mesh filename="file://go1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_52">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_53">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="RL">
+      <origin xyz="0.0 0.0 -0.21299999952316284" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.023000000044703484"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

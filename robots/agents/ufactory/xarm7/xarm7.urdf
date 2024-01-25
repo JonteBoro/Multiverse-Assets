@@ -1,0 +1,295 @@
+<?xml version="1.0" ?>
+<robot name="xarm7" version="1.0">
+  <link name="xarm7"/>
+  <joint name="link_base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="xarm7"/>
+    <child link="link_base"/>
+  </joint>
+  <link name="link_base">
+    <collision name="Geom_0">
+      <origin xyz="-0.0023309208918362856 7.635034125996754e-05 0.06466086208820343" rpy="0.051864344626665115 -0.0004097027122043073 1.5199536085128784"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link_base.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <origin xyz="0.0 0.0 0.2669999897480011" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link_base"/>
+    <child link="link1"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link1">
+    <inertial>
+      <origin xyz="-0.00019999999494757503 0.02905000001192093 -0.012330000288784504" rpy="-0.4080989956855774 -0.017863811925053596 -0.042725034058094025"/>
+      <mass value="2.381999969482422"/>
+      <inertia ixx="0.005691269878298044" ixy="0.0" ixz="0.0" iyy="0.005333839915692806" iyz="0.0" izz="0.002938650082796812"/>
+    </inertial>
+    <collision name="Geom_1">
+      <origin xyz="-0.00014185543113853782 0.007463847286999226 -0.02711421065032482" rpy="-0.3335973024368286 0.0043034334667027 -0.0013704278971999884"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <limit effort="1000.0" lower="-2.059000015258789" upper="2.094399929046631" velocity="1000.0"/>
+  </joint>
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.00022000000171829015 -0.12856000661849976 0.017349999397993088" rpy="2.0898396968841553 -0.0161791630089283 -0.008620558306574821"/>
+      <mass value="1.86899995803833"/>
+      <inertia ixx="0.009598979726433754" ixy="0.0" ixz="0.0" iyy="0.009377170354127884" iyz="0.0" izz="0.002013149904087186"/>
+    </inertial>
+    <collision name="Geom_2">
+      <origin xyz="-8.518074173480272e-05 -0.09124548733234406 0.0484553687274456" rpy="2.1639535427093506 -0.002072664676234126 -0.0016331238439306617"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3" type="revolute">
+    <origin xyz="0.0 -0.2930000126361847 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link3">
+    <inertial>
+      <origin xyz="0.04659999907016754 -0.024630000814795494 -0.007679999805986881" rpy="0.6444127559661865 0.5687516927719116 0.10346250981092453"/>
+      <mass value="1.6382999420166016"/>
+      <inertia ixx="0.003517210017889738" ixy="0.0" ixz="0.0" iyy="0.0029408899135887623" iyz="0.0" izz="0.0019586801063269377"/>
+    </inertial>
+    <collision name="Geom_3">
+      <origin xyz="0.031160490587353706 0.0020180908031761646 -0.022566212341189384" rpy="0.40910184383392334 0.6031275987625122 0.2614808678627014"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4" type="revolute">
+    <origin xyz="0.05249999836087227 1.232595164407831e-32 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <limit effort="1000.0" lower="-0.19197998940944672" upper="3.926999807357788" velocity="1000.0"/>
+  </joint>
+  <link name="link4">
+    <inertial>
+      <origin xyz="0.07046999782323837 -0.11574999988079071 0.012000000104308128" rpy="2.2119791507720947 -0.6290203928947449 0.02970757521688938"/>
+      <mass value="1.7268999814987183"/>
+      <inertia ixx="0.006571370176970959" ixy="0.0" ixz="0.0" iyy="0.006479479838162661" iyz="0.0" izz="0.0018676300533115864"/>
+    </inertial>
+    <collision name="Geom_4">
+      <origin xyz="0.0589485689997673 -0.07610493153333664 0.04029048979282379" rpy="2.138364791870117 0.1740691363811493 0.6641344428062439"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5" type="revolute">
+    <origin xyz="0.07750000059604645 -0.3425000011920929 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link5">
+    <inertial>
+      <origin xyz="-0.00031999999191612005 0.016039999201893806 -0.026000000536441803" rpy="-0.06086274981498718 0.002444739453494549 0.042364854365587234"/>
+      <mass value="1.3202999830245972"/>
+      <inertia ixx="0.005347290076315403" ixy="0.0" ixz="0.0" iyy="0.004990759771317244" iyz="0.0" izz="0.001348900026641786"/>
+    </inertial>
+    <collision name="Geom_5">
+      <origin xyz="-0.0001655187807045877 0.03179182857275009 -0.07229184359312057" rpy="-0.28983911871910095 0.003733067074790597 0.01607046276330948"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint6" type="revolute">
+    <origin xyz="0.0 -4.930380657631324e-32 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link5"/>
+    <child link="link6"/>
+    <limit effort="1000.0" lower="-1.6929700374603271" upper="3.141589879989624" velocity="1000.0"/>
+  </joint>
+  <link name="link6">
+    <inertial>
+      <origin xyz="0.064690001308918 0.0327799990773201 0.021409999579191208" rpy="-2.5954346656799316 -1.2786298990249634 0.004313023295253515"/>
+      <mass value="1.3250000476837158"/>
+      <inertia ixx="0.0024542100727558136" ixy="0.0" ixz="0.0" iyy="0.0022164599504321814" iyz="0.0" izz="0.0010727300541475415"/>
+    </inertial>
+    <collision name="Geom_6">
+      <origin xyz="0.048996806144714355 0.011248594149947166 0.00904772151261568" rpy="-2.9280362129211426 -1.2794502973556519 0.0850152000784874"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/link6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint7" type="revolute">
+    <origin xyz="0.07599999755620956 0.09700000286102295 0.0" rpy="-1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link6"/>
+    <child link="link7"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link7">
+    <inertial>
+      <origin xyz="0.0 -0.006769999861717224 -0.010979999788105488" rpy="3.1415927410125732 -1.5218393802642822 -1.5707963705062866"/>
+      <mass value="0.17000000178813934"/>
+      <inertia ixx="0.0001321760064456612" ixy="0.0" ixz="0.0" iyy="9.300000237999484e-05" iyz="0.0" izz="5.852360118296929e-05"/>
+    </inertial>
+    <collision name="Geom_7">
+      <origin xyz="3.4268701654127653e-08 -0.0014353044098243117 -0.013516015373170376" rpy="-3.141576051712036 -1.5687955617904663 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/end_tool.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="xarm_gripper_base_link_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.1415927410125732"/>
+    <parent link="link7"/>
+    <child link="xarm_gripper_base_link"/>
+  </joint>
+  <link name="xarm_gripper_base_link">
+    <inertial>
+      <origin xyz="-0.0006548900273628533 -0.0018496999982744455 0.04802799969911575" rpy="-0.1436399221420288 -0.01226687803864479 0.0018399800173938274"/>
+      <mass value="0.5415599942207336"/>
+      <inertia ixx="0.0004710929933935404" ixy="0.0" ixz="0.0" iyy="0.0003323070122860372" iyz="0.0" izz="0.00025479900068603456"/>
+    </inertial>
+    <collision name="Geom_8">
+      <origin xyz="-0.0013675233349204063 0.00018071029626298696 0.04590832069516182" rpy="0.03567861020565033 -0.06311111897230148 -0.00044563793926499784"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/base_link.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_driver_joint" type="revolute">
+    <origin xyz="0.0 0.03500000014901161 0.059098001569509506" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="xarm_gripper_base_link"/>
+    <child link="left_outer_knuckle"/>
+    <limit effort="1000.0" lower="0.0" upper="0.8499999642372131" velocity="1000.0"/>
+  </joint>
+  <link name="left_outer_knuckle">
+    <inertial>
+      <origin xyz="0.0 0.02155900001525879 0.015181000344455242" rpy="2.1450908184051514 0.0 0.0"/>
+      <mass value="0.03361799940466881"/>
+      <inertia ixx="1.9110999346594326e-05" ixy="0.0" ixz="0.0" iyy="1.7908900190377608e-05" iyz="0.0" izz="1.9016699752683053e-06"/>
+    </inertial>
+    <collision name="Geom_9">
+      <origin xyz="2.459128733978133e-11 0.017327455803751945 0.01510738953948021" rpy="2.1355316638946533 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/left_outer_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_finger_joint" type="revolute">
+    <origin xyz="0.0 0.035464998334646225 0.04203899949789047" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="left_outer_knuckle"/>
+    <child link="left_finger"/>
+    <limit effort="1000.0" lower="0.0" upper="0.8499999642372131" velocity="1000.0"/>
+  </joint>
+  <link name="left_finger">
+    <inertial>
+      <origin xyz="0.0 -0.016412999480962753 0.0292579997330904" rpy="0.0 -0.32773247361183167 1.5707963705062866"/>
+      <mass value="0.0483039990067482"/>
+      <inertia ixx="1.880369927675929e-05" ixy="0.0" ixz="0.0" iyy="1.749299917719327e-05" iyz="0.0" izz="3.5679199754667934e-06"/>
+    </inertial>
+    <collision name="Geom_10">
+      <origin xyz="1.480761966377031e-05 -0.015549806877970695 0.028040098026394844" rpy="-0.0019124852260574698 -0.36514341831207275 1.5726925134658813"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/left_finger.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_inner_knuckle_joint" type="revolute">
+    <origin xyz="0.0 0.019999999552965164 0.07409799844026566" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="xarm_gripper_base_link"/>
+    <child link="left_inner_knuckle"/>
+    <limit effort="1000.0" lower="0.0" upper="0.8499999642372131" velocity="1000.0"/>
+  </joint>
+  <link name="left_inner_knuckle">
+    <inertial>
+      <origin xyz="1.8660100522538414e-06 0.022046800702810287 0.026133500039577484" rpy="-2.8549709895742126e-05 0.7007746696472168 1.5707964897155762"/>
+      <mass value="0.02301260083913803"/>
+      <inertia ixx="8.342160072061233e-06" ixy="0.0" ixz="0.0" iyy="6.094900072639575e-06" iyz="0.0" izz="2.7560099624679424e-06"/>
+    </inertial>
+    <collision name="Geom_11">
+      <origin xyz="2.847784708137624e-05 0.02092375047504902 0.024802643805742264" rpy="0.00279591279104352 0.7007662057876587 1.5706785917282104"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/left_inner_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_driver_joint" type="revolute">
+    <origin xyz="0.0 -0.03500000014901161 0.059098001569509506" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="xarm_gripper_base_link"/>
+    <child link="right_outer_knuckle"/>
+    <limit effort="1000.0" lower="0.0" upper="0.8499999642372131" velocity="1000.0"/>
+  </joint>
+  <link name="right_outer_knuckle">
+    <inertial>
+      <origin xyz="0.0 -0.02155900001525879 0.015181000344455242" rpy="0.9965019226074219 0.0 0.0"/>
+      <mass value="0.03361799940466881"/>
+      <inertia ixx="1.9110999346594326e-05" ixy="0.0" ixz="0.0" iyy="1.7908900190377608e-05" iyz="0.0" izz="1.9016699752683053e-06"/>
+    </inertial>
+    <collision name="Geom_12">
+      <origin xyz="-2.459128733978133e-11 -0.017327455803751945 0.01510738953948021" rpy="1.00606107711792 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/right_outer_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_finger_joint" type="revolute">
+    <origin xyz="0.0 -0.035464998334646225 0.04203899949789047" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="right_outer_knuckle"/>
+    <child link="right_finger"/>
+    <limit effort="1000.0" lower="0.0" upper="0.8499999642372131" velocity="1000.0"/>
+  </joint>
+  <link name="right_finger">
+    <inertial>
+      <origin xyz="0.0 0.016412999480962753 0.0292579997330904" rpy="0.0 0.3277408182621002 1.5707963705062866"/>
+      <mass value="0.0483039990067482"/>
+      <inertia ixx="1.8803799321176484e-05" ixy="0.0" ixz="0.0" iyy="1.749299917719327e-05" iyz="0.0" izz="3.56778991772444e-06"/>
+    </inertial>
+    <collision name="Geom_13">
+      <origin xyz="2.8375270630931482e-05 0.015532153658568859 0.028008582070469856" rpy="-0.003660787595435977 0.36544302105903625 1.5671143531799316"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/right_finger.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_inner_knuckle_joint" type="revolute">
+    <origin xyz="0.0 -0.019999999552965164 0.07409799844026566" rpy="0.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="xarm_gripper_base_link"/>
+    <child link="right_inner_knuckle"/>
+    <limit effort="1000.0" lower="0.0" upper="0.8499999642372131" velocity="1000.0"/>
+  </joint>
+  <link name="right_inner_knuckle">
+    <inertial>
+      <origin xyz="1.866000047812122e-06 -0.022047000005841255 0.02613300085067749" rpy="-2.9192809961386956e-05 -0.7007411122322083 1.5707979202270508"/>
+      <mass value="0.023012999445199966"/>
+      <inertia ixx="8.342090040969197e-06" ixy="0.0" ixz="0.0" iyy="6.094900072639575e-06" iyz="0.0" izz="2.7560099624679424e-06"/>
+    </inertial>
+    <collision name="Geom_14">
+      <origin xyz="-3.434382279010606e-06 -0.020921964198350906 0.02480097860097885" rpy="-0.0003842496080324054 -0.7007279992103577 1.5708075761795044"/>
+      <geometry>
+        <mesh filename="file://xarm7/meshes/obj/right_inner_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

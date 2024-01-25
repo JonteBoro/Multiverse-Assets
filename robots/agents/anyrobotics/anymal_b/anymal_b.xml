@@ -1,0 +1,259 @@
+<?xml version="1.0" ?>
+<mujoco model="anymal_b">
+	<compiler meshdir="anymal_b/meshes" texturedir="anymal_b/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<default>
+		<default class="visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="collision">
+			<geom rgba="1.0 0.0 0.0 0.0"/>
+		</default>
+	</default>
+	<asset>
+		<mesh name="anymal_base_0" file="stl/anymal_base_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_1" file="stl/anymal_base_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_2" file="stl/anymal_base_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_3" file="stl/anymal_base_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_4" file="stl/anymal_base_4.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_5" file="obj/anymal_base_5.obj" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_6" file="stl/anymal_base_6.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_base_7" file="stl/anymal_base_7.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_0" file="stl/anymal_hip_l_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_1" file="stl/anymal_hip_l_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_2" file="stl/anymal_hip_l_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_3" file="stl/anymal_hip_l_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_4" file="stl/anymal_hip_l_4.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_5" file="stl/anymal_hip_l_5.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_l_6" file="stl/anymal_hip_l_6.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_l_0" file="stl/anymal_thigh_l_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_l_1" file="stl/anymal_thigh_l_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_l_2" file="stl/anymal_thigh_l_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_l_3" file="stl/anymal_thigh_l_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_l_4" file="stl/anymal_thigh_l_4.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_l_5" file="stl/anymal_thigh_l_5.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_l_0" file="stl/anymal_shank_l_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_l_1" file="stl/anymal_shank_l_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_l_2" file="stl/anymal_shank_l_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_l_3" file="stl/anymal_shank_l_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_foot_0" file="obj/anymal_foot_0.obj" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_foot_1" file="stl/anymal_foot_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_foot_2" file="stl/anymal_foot_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_foot_3" file="stl/anymal_foot_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_0" file="stl/anymal_hip_r_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_1" file="stl/anymal_hip_r_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_2" file="stl/anymal_hip_r_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_3" file="stl/anymal_hip_r_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_4" file="stl/anymal_hip_r_4.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_5" file="stl/anymal_hip_r_5.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_hip_r_6" file="stl/anymal_hip_r_6.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_r_0" file="stl/anymal_thigh_r_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_r_1" file="stl/anymal_thigh_r_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_r_2" file="stl/anymal_thigh_r_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_r_3" file="stl/anymal_thigh_r_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_r_4" file="stl/anymal_thigh_r_4.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_thigh_r_5" file="stl/anymal_thigh_r_5.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_r_0" file="stl/anymal_shank_r_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_r_1" file="stl/anymal_shank_r_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_r_2" file="stl/anymal_shank_r_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="anymal_shank_r_3" file="stl/anymal_shank_r_3.stl" scale="1.0 1.0 1.0"/>
+		<material name="yellow_emcy" rgba="0.5986999869346619 0.46070000529289246 0.24420000612735748 1.0" emission="0.0" specular="0.5"/>
+		<material name="rot_emcy" rgba="0.26109999418258667 0.09645000100135803 0.07349999994039536 1.0" emission="0.0" specular="0.5"/>
+		<material name="dark_gray" rgba="0.6399999856948853 0.6399999856948853 0.6399999856948853 1.0" emission="0.0" specular="0.5"/>
+		<material name="any_blau" rgba="0.23989999294281006 0.3499000072479248 0.589900016784668 1.0" emission="0.0" specular="0.5"/>
+		<material name="alu_eloxiert" rgba="0.11389999836683273 0.11389999836683273 0.11389999836683273 1.0" emission="0.0" specular="0.5"/>
+		<material name="carbon_fibre_logo" texture="base_uv_texture"/>
+		<material name="foam_dark" rgba="0.10000000149011612 0.10000000149011612 0.10000000149011612 1.0" emission="0.0" specular="0.5"/>
+		<material name="light_gray" rgba="0.800000011920929 0.800000011920929 0.800000011920929 1.0" emission="0.0" specular="0.5"/>
+		<material name="copper" rgba="0.800000011920929 0.4672999978065491 0.2840000092983246 1.0" emission="0.0" specular="0.5"/>
+		<material name="carbon_fibre" texture="carbon_uv_texture"/>
+		<texture name="base_uv_texture" type="2d" file="base_uv_texture.png"/>
+		<texture name="carbon_uv_texture" type="2d" file="carbon_uv_texture.png"/>
+	</asset>
+	<worldbody>
+		<body name="anymal_b" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+			<body name="base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+				<geom name="Geom_0" type="mesh" pos="-0.02500010095536709 -0.01902609132230282 0.20533224940299988" quat="0.5 0.5 -0.5 0.5" mesh="anymal_base_0" material="yellow_emcy" class="visual"/>
+				<geom name="Geom_1" type="mesh" pos="-0.025001391768455505 -0.019026298075914383 0.21979154646396637" quat="7.063155862852e-06 0.7070227861404419 7.0614782998745795e-06 0.707190752029419" mesh="anymal_base_1" material="rot_emcy" class="visual"/>
+				<geom name="Geom_2" type="mesh" pos="-0.012953606434166431 0.0002022681583184749 0.04913913831114769" quat="-0.0037985178641974926 0.741011917591095 -0.004600313492119312 0.6714653372764587" mesh="anymal_base_2" material="dark_gray" class="visual"/>
+				<geom name="Geom_3" type="mesh" pos="0.0013654765207320452 7.010246918071061e-05 0.08830773085355759" quat="0.5080240964889526 0.4919752776622772 0.49699166417121887 0.5028629302978516" mesh="anymal_base_3" material="any_blau" class="visual"/>
+				<geom name="Geom_4" type="mesh" pos="-0.016928276047110558 0.0009044088656082749 0.24196922779083252" quat="1.063728632288985e-05 0.7039043307304382 0.00012931453238707036 0.710294783115387" mesh="anymal_base_4" material="alu_eloxiert" class="visual"/>
+				<geom name="Geom_5" type="mesh" pos="-4.6152144932420924e-06 0.00010038659820565954 0.043633587658405304" quat="0.5004603266716003 0.49952930212020874 0.5004978775978088 0.4995115399360657" mesh="anymal_base_5" material="carbon_fibre_logo" class="visual"/>
+				<geom name="Geom_6" type="mesh" pos="6.461741298285917e-12 -5.439227627329624e-12 0.13090980052947998" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" mesh="anymal_base_6" material="foam_dark" class="visual"/>
+				<geom name="Geom_7" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_base_7" material="light_gray" class="visual"/>
+				<geom name="Geom_8" type="box" pos="0.0 0.0 0.07999999821186066" quat="1.0 0.0 0.0 0.0" size="0.265500009059906 0.13500000536441803 0.11999999731779099" class="collision"/>
+				<geom name="Geom_9" type="cylinder" pos="0.22699999809265137 0.11599999666213989 0.0" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.05000000074505806 0.05000000074505806 0.0" class="collision"/>
+				<geom name="Geom_10" type="cylinder" pos="0.22699999809265137 -0.11599999666213989 0.0" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.05000000074505806 0.05000000074505806 0.0" class="collision"/>
+				<geom name="Geom_11" type="cylinder" pos="-0.22699999809265137 0.11599999666213989 0.0" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.05000000074505806 0.05000000074505806 0.0" class="collision"/>
+				<geom name="Geom_12" type="cylinder" pos="-0.22699999809265137 -0.11599999666213989 0.0" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.05000000074505806 0.05000000074505806 0.0" class="collision"/>
+				<geom name="Geom_13" type="box" pos="0.21549999713897705 0.0 -0.09000000357627869" quat="1.0 0.0 0.0 0.0" size="0.05000000074505806 0.05000000074505806 0.03500000014901161" class="collision"/>
+				<geom name="Geom_14" type="box" pos="-0.21549999713897705 0.0 -0.09000000357627869" quat="1.0 0.0 0.0 0.0" size="0.05000000074505806 0.05000000074505806 0.03500000014901161" class="collision"/>
+				<geom name="Geom_15" type="box" pos="0.0 0.0 -0.09000000357627869" quat="1.0 0.0 0.0 0.0" size="0.265500009059906 0.009999999776482582 0.03500000014901161" class="collision"/>
+				<body name="RF_HIP" pos="0.2770000100135803 -0.11599999666213989 0.0" quat="1.0 0.0 0.0 0.0">
+					<inertial mass="1.4246200323104858" pos="0.06451629847288132 0.0037871000822633505 -0.00015218400221783668" quat="0.9968661069869995 -0.03798220306634903 0.02520090341567993 0.06465480476617813" diaginertia="0.0024334099143743515 0.0023024899419397116 0.001977579900994897"/>
+					<geom name="Geom_45" type="mesh" pos="0.07038701325654984 0.0504397489130497 -0.011985517106950283" quat="0.5963669419288635 0.3780491054058075 0.3879773020744324 0.5923672318458557" mesh="anymal_hip_r_0" material="light_gray" class="visual"/>
+					<geom name="Geom_46" type="mesh" pos="0.08951122313737869 0.045294467359781265 -0.007016143761575222" quat="0.5974352359771729 0.6768726706504822 0.3753262758255005 0.20986828207969666" mesh="anymal_hip_r_1" material="copper" class="visual"/>
+					<geom name="Geom_47" type="mesh" pos="0.11853527277708054 -0.009749230928719044 -0.014746660366654396" quat="0.9862706065177917 -0.013317905366420746 0.12984493374824524 -0.10115956515073776" mesh="anymal_hip_r_2" material="foam_dark" class="visual"/>
+					<geom name="Geom_48" type="mesh" pos="0.046326782554388046 0.00719370087608695 9.412499224481508e-08" quat="-0.06992868334054947 0.7032954692840576 0.06998438388109207 0.7039798498153687" mesh="anymal_hip_r_3" material="alu_eloxiert" class="visual"/>
+					<geom name="Geom_49" type="mesh" pos="0.06468286365270615 0.05493597686290741 0.0009895556140691042" quat="0.6552032232284546 0.2671184837818146 0.2663118243217468 0.6545490622520447" mesh="anymal_hip_r_4" material="any_blau" class="visual"/>
+					<geom name="Geom_50" type="mesh" pos="0.06605415046215057 0.0210937038064003 0.0017769662663340569" quat="0.6308619379997253 0.6199052333831787 -0.3493484556674957 0.3093321621417999" mesh="anymal_hip_r_5" material="dark_gray" class="visual"/>
+					<geom name="Geom_51" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_hip_r_6" material="light_gray" class="visual"/>
+					<geom name="Geom_52" type="cylinder" pos="0.06350000202655792 0.008999999612569809 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.07999999821186066 0.05000000074505806 0.0" class="collision"/>
+					<geom name="Geom_53" type="cylinder" pos="0.06350000202655792 0.07400000095367432 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.04500000178813934 0.014999999664723873 0.0" class="collision"/>
+					<joint name="RF_HAA" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="1.0 0.0 0.0"/>
+					<body name="RF_THIGH" pos="0.06350000202655792 -0.04100000113248825 0.0" quat="1.0 0.0 0.0 0.0">
+						<inertial mass="1.6349799633026123" pos="-0.003897970076650381 -0.054226599633693695 -0.21458299458026886" quat="0.6642369627952576 0.03627069666981697 -0.06334139406681061 0.7439499497413635" diaginertia="0.012269699946045876 0.012042700313031673 0.002283019945025444"/>
+						<geom name="Geom_54" type="mesh" pos="0.0012385569280013442 -0.013865061104297638 -0.2473861277103424" quat="0.6863187551498413 0.1703396439552307 0.17018534243106842 0.6862856149673462" mesh="anymal_thigh_r_0" material="any_blau" class="visual"/>
+						<geom name="Geom_55" type="mesh" pos="-0.00010387069778516889 -0.06788378953933716 -0.24126821756362915" quat="0.9945435523986816 -0.10396155714988708 -0.001222882536239922 -0.008577214553952217" mesh="anymal_thigh_r_1" material="dark_gray" class="visual"/>
+						<geom name="Geom_56" type="mesh" pos="-0.00016747950576245785 -0.03833750635385513 -0.15959669649600983" quat="0.7046944499015808 -0.0587063729763031 0.05830030143260956 0.7046704292297363" mesh="anymal_thigh_r_2" material="copper" class="visual"/>
+						<geom name="Geom_57" type="mesh" pos="-0.00016500822675880045 -0.03574921563267708 -0.15083928406238556" quat="0.7064000368118286 -0.029565688222646713 0.029232624918222427 0.7065906524658203" mesh="anymal_thigh_r_3" material="alu_eloxiert" class="visual"/>
+						<geom name="Geom_58" type="mesh" pos="-0.0001664275914663449 -0.03821144625544548 -0.12757916748523712" quat="0.7070134878158569 -0.01554944273084402 0.015319711528718472 0.7068631052970886" mesh="anymal_thigh_r_4" material="foam_dark" class="visual"/>
+						<geom name="Geom_59" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_thigh_r_5" material="light_gray" class="visual"/>
+						<geom name="Geom_60" type="box" pos="0.0 -0.03500000014901161 -0.125" quat="0.9973730444908142 -0.07243650406599045 0.0 0.0" size="0.03999999910593033 0.019999999552965164 0.125" class="collision"/>
+						<geom name="Geom_61" type="cylinder" pos="0.0 -0.0689999982714653 -0.25" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.05999999865889549 0.05999999865889549 0.0" class="collision"/>
+						<geom name="Geom_62" type="cylinder" pos="0.0 0.004999999888241291 0.0" quat="0.6540287137031555 -0.7564697265625 0.0 0.0" size="0.06599999964237213 0.05999999865889549 0.0" class="collision"/>
+						<joint name="RF_HFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						<body name="RF_SHANK" pos="0.0 -0.10899999737739563 -0.25" quat="1.0 0.0 0.0 0.0">
+							<inertial mass="0.47216299176216125" pos="0.06963960081338882 0.013249400071799755 -0.15090499818325043" quat="0.7266359329223633 -0.05781039223074913 -0.09506139159202576 0.6779538989067078" diaginertia="0.011603400111198425 0.011066599749028683 0.0007237609825097024"/>
+							<geom name="Geom_63" type="mesh" pos="0.03345903381705284 0.00193187000695616 0.0029184597078710794" quat="0.49047988653182983 0.4490649402141571 0.5125956535339355 0.5431535840034485" mesh="anymal_shank_r_0" material="foam_dark" class="visual"/>
+							<geom name="Geom_64" type="mesh" pos="0.03210606426000595 0.011398191563785076 0.0005259554018266499" quat="0.4835468530654907 0.47878575325012207 0.5159361362457275 0.5203427076339722" mesh="anymal_shank_r_1" material="dark_gray" class="visual"/>
+							<geom name="Geom_65" type="mesh" pos="0.1116630956530571 0.012961235828697681 0.0011870678281411529" quat="0.9765681028366089 0.0015841219574213028 -0.004419539123773575 -0.21515749394893646" mesh="anymal_shank_r_2" material="light_gray" class="visual"/>
+							<geom name="Geom_66" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_shank_r_3" material="light_gray" class="visual"/>
+							<geom name="Geom_67" type="box" pos="0.06499999761581421 0.014999999664723873 0.009999999776482582" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.03999999910593033 0.03400000184774399 0.06499999761581421" class="collision"/>
+							<geom name="Geom_68" type="mesh" pos="0.10001163184642792 0.019970787689089775 -0.1130211353302002" quat="0.5996879935264587 -1.1865022315760143e-05 -7.427438504237216e-06 0.8002339005470276" mesh="anymal_foot_0" material="carbon_fibre" class="visual"/>
+							<geom name="Geom_69" type="mesh" pos="0.09997981041669846 0.019993513822555542 -0.2951372265815735" quat="0.7229586243629456 0.0015402176650241017 -0.0027780511882156134 0.690883994102478" mesh="anymal_foot_1" material="foam_dark" class="visual"/>
+							<geom name="Geom_70" type="mesh" pos="0.09995251893997192 0.01998291164636612 -0.0912998840212822" quat="0.9993923902511597 4.832047852687538e-05 0.00021866326278541237 0.034854739904403687" mesh="anymal_foot_2" material="dark_gray" class="visual"/>
+							<geom name="Geom_71" type="mesh" pos="0.10000000149011612 0.019999999552965164 0.03200000151991844" quat="1.0 0.0 0.0 0.0" mesh="anymal_foot_3" material="light_gray" class="visual"/>
+							<geom name="Geom_72" type="cylinder" pos="0.10000000149011612 0.019999999552965164 -0.16062499582767487" quat="1.0 0.0 0.0 0.0" size="0.014999999664723873 0.14000000059604645 0.0" class="collision"/>
+							<geom name="Geom_73" type="sphere" pos="0.10000000149011612 0.019999999552965164 -0.2980000078678131" quat="1.0 0.0 0.0 0.0" size="0.03099999949336052 0.0 0.0" class="collision"/>
+							<joint name="RF_KFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						</body>
+					</body>
+				</body>
+				<body name="LH_HIP" pos="-0.2770000100135803 0.11599999666213989 0.0" quat="1.0 0.0 0.0 0.0">
+					<inertial mass="1.4246200323104858" pos="-0.06451629847288132 -0.0037871000822633505 -0.00015218400221783668" quat="0.9968661069869995 0.03798220306634903 -0.02520090341567993 0.06465480476617813" diaginertia="0.0024334099143743515 0.0023024899419397116 0.001977579900994897"/>
+					<geom name="Geom_74" type="mesh" pos="-0.07038701325654984 -0.0504397489130497 -0.011985517106950283" quat="-0.5923672318458557 -0.3879773020744324 0.3780491054058075 0.5963669419288635" mesh="anymal_hip_r_0" material="light_gray" class="visual"/>
+					<geom name="Geom_75" type="mesh" pos="-0.08951122313737869 -0.045294467359781265 -0.007016143761575222" quat="-0.20986828207969666 -0.3753262758255005 0.6768726706504822 0.5974352359771729" mesh="anymal_hip_r_1" material="copper" class="visual"/>
+					<geom name="Geom_76" type="mesh" pos="-0.11853527277708054 0.009749230928719044 -0.014746660366654396" quat="0.10115956515073776 -0.12984493374824524 -0.013317905366420746 0.9862706065177917" mesh="anymal_hip_r_2" material="foam_dark" class="visual"/>
+					<geom name="Geom_77" type="mesh" pos="-0.046326782554388046 -0.00719370087608695 9.412499224481508e-08" quat="-0.7039798498153687 -0.06998438388109207 0.7032954692840576 -0.06992868334054947" mesh="anymal_hip_r_3" material="alu_eloxiert" class="visual"/>
+					<geom name="Geom_78" type="mesh" pos="-0.06468286365270615 -0.05493597686290741 0.0009895556140691042" quat="-0.6545490622520447 -0.2663118243217468 0.2671184837818146 0.6552032232284546" mesh="anymal_hip_r_4" material="any_blau" class="visual"/>
+					<geom name="Geom_79" type="mesh" pos="-0.06605415046215057 -0.0210937038064003 0.0017769662663340569" quat="-0.3093321621417999 0.3493484556674957 0.6199052333831787 0.6308619379997253" mesh="anymal_hip_r_5" material="dark_gray" class="visual"/>
+					<geom name="Geom_80" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="0.0 0.0 0.0 1.0" mesh="anymal_hip_r_6" material="light_gray" class="visual"/>
+					<geom name="Geom_81" type="cylinder" pos="-0.06350000202655792 -0.008999999612569809 0.0" quat="0.7071067690849304 -0.7071067690849304 0.0 0.0" size="0.07999999821186066 0.05000000074505806 0.0" class="collision"/>
+					<geom name="Geom_82" type="cylinder" pos="-0.06350000202655792 -0.07400000095367432 0.0" quat="0.7071067690849304 -0.7071067690849304 0.0 0.0" size="0.04500000178813934 0.014999999664723873 0.0" class="collision"/>
+					<joint name="LH_HAA" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="1.0 0.0 0.0"/>
+					<body name="LH_THIGH" pos="-0.06350000202655792 0.04100000113248825 0.0" quat="1.0 0.0 0.0 0.0">
+						<inertial mass="1.6349799633026123" pos="0.003897970076650381 0.054226599633693695 -0.21458299458026886" quat="0.6642369627952576 -0.03627069666981697 0.06334139406681061 0.7439499497413635" diaginertia="0.012269699946045876 0.012042700313031673 0.002283019945025444"/>
+						<geom name="Geom_83" type="mesh" pos="-0.0012385569280013442 0.013865061104297638 -0.2473861277103424" quat="-0.6862856149673462 -0.17018534243106842 0.1703396439552307 0.6863187551498413" mesh="anymal_thigh_r_0" material="any_blau" class="visual"/>
+						<geom name="Geom_84" type="mesh" pos="0.00010387069778516889 0.06788378953933716 -0.24126821756362915" quat="0.008577214553952217 0.001222882536239922 -0.10396155714988708 0.9945435523986816" mesh="anymal_thigh_r_1" material="dark_gray" class="visual"/>
+						<geom name="Geom_85" type="mesh" pos="0.00016747950576245785 0.03833750635385513 -0.15959669649600983" quat="-0.7046704292297363 -0.05830030143260956 -0.0587063729763031 0.7046944499015808" mesh="anymal_thigh_r_2" material="copper" class="visual"/>
+						<geom name="Geom_86" type="mesh" pos="0.00016500822675880045 0.03574921563267708 -0.15083928406238556" quat="-0.7065906524658203 -0.029232624918222427 -0.029565688222646713 0.7064000368118286" mesh="anymal_thigh_r_3" material="alu_eloxiert" class="visual"/>
+						<geom name="Geom_87" type="mesh" pos="0.0001664275914663449 0.03821144625544548 -0.12757916748523712" quat="-0.7068631052970886 -0.015319711528718472 -0.01554944273084402 0.7070134878158569" mesh="anymal_thigh_r_4" material="foam_dark" class="visual"/>
+						<geom name="Geom_88" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="0.0 0.0 0.0 1.0" mesh="anymal_thigh_r_5" material="light_gray" class="visual"/>
+						<geom name="Geom_89" type="box" pos="0.0 0.03500000014901161 -0.125" quat="0.9973730444908142 0.07243650406599045 0.0 0.0" size="0.03999999910593033 0.019999999552965164 0.125" class="collision"/>
+						<geom name="Geom_90" type="cylinder" pos="0.0 0.0689999982714653 -0.25" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.05999999865889549 0.05999999865889549 0.0" class="collision"/>
+						<geom name="Geom_91" type="cylinder" pos="0.0 -0.004999999888241291 0.0" quat="0.6540287137031555 0.7564697265625 0.0 0.0" size="0.06599999964237213 0.05999999865889549 0.0" class="collision"/>
+						<joint name="LH_HFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						<body name="LH_SHANK" pos="0.0 0.10899999737739563 -0.25" quat="1.0 0.0 0.0 0.0">
+							<inertial mass="0.47216299176216125" pos="-0.06963960081338882 -0.013249400071799755 -0.15090499818325043" quat="0.7266359329223633 0.05781039223074913 0.09506148844957352 0.6779538989067078" diaginertia="0.011603400111198425 0.011066599749028683 0.0007237609825097024"/>
+							<geom name="Geom_92" type="mesh" pos="-0.03345903381705284 -0.00193187000695616 0.0029184597078710794" quat="-0.5431535840034485 -0.5125956535339355 0.4490649402141571 0.49047988653182983" mesh="anymal_shank_r_0" material="foam_dark" class="visual"/>
+							<geom name="Geom_93" type="mesh" pos="-0.03210606426000595 -0.011398191563785076 0.0005259554018266499" quat="-0.5203427076339722 -0.5159361362457275 0.47878575325012207 0.4835468530654907" mesh="anymal_shank_r_1" material="dark_gray" class="visual"/>
+							<geom name="Geom_94" type="mesh" pos="-0.1116630956530571 -0.012961235828697681 0.0011870678281411529" quat="0.21515749394893646 0.004419539123773575 0.0015841219574213028 0.9765681028366089" mesh="anymal_shank_r_2" material="light_gray" class="visual"/>
+							<geom name="Geom_95" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="0.0 0.0 0.0 1.0" mesh="anymal_shank_r_3" material="light_gray" class="visual"/>
+							<geom name="Geom_96" type="box" pos="-0.06499999761581421 -0.014999999664723873 0.009999999776482582" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.03999999910593033 0.03400000184774399 0.06499999761581421" class="collision"/>
+							<geom name="Geom_97" type="mesh" pos="-0.10001163184642792 -0.019970787689089775 -0.1130211353302002" quat="-0.8002339005470276 7.427438504237216e-06 -1.1865022315760143e-05 0.5996879935264587" mesh="anymal_foot_0" material="carbon_fibre" class="visual"/>
+							<geom name="Geom_98" type="mesh" pos="-0.09997981041669846 -0.019993513822555542 -0.2951372265815735" quat="-0.690883994102478 0.0027780511882156134 0.0015402176650241017 0.7229586243629456" mesh="anymal_foot_1" material="foam_dark" class="visual"/>
+							<geom name="Geom_99" type="mesh" pos="-0.09995251893997192 -0.01998291164636612 -0.0912998840212822" quat="-0.034854739904403687 -0.00021866326278541237 4.832047852687538e-05 0.9993923902511597" mesh="anymal_foot_2" material="dark_gray" class="visual"/>
+							<geom name="Geom_100" type="mesh" pos="-0.10000000149011612 -0.019999999552965164 0.03200000151991844" quat="0.0 0.0 0.0 1.0" mesh="anymal_foot_3" material="light_gray" class="visual"/>
+							<geom name="Geom_101" type="cylinder" pos="-0.10000000149011612 -0.019999999552965164 -0.16062499582767487" quat="1.0 0.0 0.0 0.0" size="0.014999999664723873 0.14000000059604645 0.0" class="collision"/>
+							<geom name="Geom_102" type="sphere" pos="-0.10000000149011612 -0.019999999552965164 -0.2980000078678131" quat="1.0 0.0 0.0 0.0" size="0.03099999949336052 0.0 0.0" class="collision"/>
+							<joint name="LH_KFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						</body>
+					</body>
+				</body>
+				<body name="RH_HIP" pos="-0.2770000100135803 -0.11599999666213989 0.0" quat="1.0 0.0 0.0 0.0">
+					<inertial mass="1.4246200323104858" pos="-0.06451629847288132 0.0037871000822633505 -0.00015218400221783668" quat="0.9968661069869995 -0.03798220306634903 -0.02520090341567993 -0.06465480476617813" diaginertia="0.0024334099143743515 0.0023024899419397116 0.001977579900994897"/>
+					<geom name="Geom_103" type="mesh" pos="-0.07038701325654984 0.0504397489130497 -0.011985517106950283" quat="-0.5963669419288635 -0.3780491054058075 0.38797727227211 0.5923672318458557" mesh="anymal_hip_l_0" material="light_gray" class="visual"/>
+					<geom name="Geom_104" type="mesh" pos="-0.08951122313737869 0.045294467359781265 -0.007016143761575222" quat="-0.5974352359771729 -0.676872730255127 0.3753262758255005 0.20986828207969666" mesh="anymal_hip_l_1" material="copper" class="visual"/>
+					<geom name="Geom_105" type="mesh" pos="-0.11853527277708054 -0.009749230928719044 -0.014746660366654396" quat="-0.10115955770015717 -0.12984491884708405 0.013317901641130447 0.9862706065177917" mesh="anymal_hip_l_2" material="foam_dark" class="visual"/>
+					<geom name="Geom_106" type="mesh" pos="-0.046326782554388046 0.00719370087608695 9.416741164613995e-08" quat="-0.7039798498153687 0.06998439133167267 0.7032954692840576 0.06992869824171066" mesh="anymal_hip_l_3" material="alu_eloxiert" class="visual"/>
+					<geom name="Geom_107" type="mesh" pos="-0.06468286365270615 0.05493597686290741 0.0009895554976537824" quat="-0.6552032232284546 -0.2671184837818146 0.2663118243217468 0.6545490622520447" mesh="anymal_hip_l_4" material="any_blau" class="visual"/>
+					<geom name="Geom_108" type="mesh" pos="-0.06605415046215057 0.0210937038064003 0.0017769662663340569" quat="-0.3493484854698181 0.3093321919441223 0.6308619379997253 0.6199052333831787" mesh="anymal_hip_l_5" material="dark_gray" class="visual"/>
+					<geom name="Geom_109" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="0.0 0.0 0.0 1.0" mesh="anymal_hip_l_6" material="light_gray" class="visual"/>
+					<geom name="Geom_110" type="cylinder" pos="-0.06350000202655792 0.008999999612569809 0.0" quat="0.7071067690849304 -0.7071067690849304 0.0 0.0" size="0.07999999821186066 0.05000000074505806 0.0" class="collision"/>
+					<geom name="Geom_111" type="cylinder" pos="-0.06350000202655792 0.07400000095367432 0.0" quat="0.7071067690849304 -0.7071067690849304 0.0 0.0" size="0.04500000178813934 0.014999999664723873 0.0" class="collision"/>
+					<joint name="RH_HAA" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="1.0 0.0 0.0"/>
+					<body name="RH_THIGH" pos="-0.06350000202655792 -0.04100000113248825 0.0" quat="1.0 0.0 0.0 0.0">
+						<inertial mass="1.6349799633026123" pos="0.003897970076650381 -0.054226599633693695 -0.21458299458026886" quat="0.7439499497413635 0.06334139406681061 -0.03627069666981697 0.6642369627952576" diaginertia="0.012269699946045876 0.012042700313031673 0.002283019945025444"/>
+						<geom name="Geom_112" type="mesh" pos="-0.0012385566951707006 -0.013865061104297638 -0.2473861277103424" quat="-0.6863187551498413 -0.1703396439552307 0.17018534243106842 0.6862856149673462" mesh="anymal_thigh_l_0" material="any_blau" class="visual"/>
+						<geom name="Geom_113" type="mesh" pos="0.00010387077782070264 -0.06788378953933716 -0.24126821756362915" quat="-0.008577248081564903 0.001222885330207646 0.10396155714988708 0.9945435523986816" mesh="anymal_thigh_l_1" material="dark_gray" class="visual"/>
+						<geom name="Geom_114" type="mesh" pos="0.0001674786617513746 -0.03833750635385513 -0.15959669649600983" quat="-0.7046944499015808 0.0587063767015934 0.05830029398202896 0.7046704292297363" mesh="anymal_thigh_l_2" material="copper" class="visual"/>
+						<geom name="Geom_115" type="mesh" pos="0.00016428907110821456 -0.03573816269636154 -0.1508786827325821" quat="-0.7063344717025757 0.02950367145240307 0.029162729158997536 0.7066616415977478" mesh="anymal_thigh_l_3" material="alu_eloxiert" class="visual"/>
+						<geom name="Geom_116" type="mesh" pos="0.0001664274459471926 -0.03821144998073578 -0.12757916748523712" quat="-0.7070134878158569 0.015549441799521446 0.015319710597395897 0.7068631052970886" mesh="anymal_thigh_l_4" material="foam_dark" class="visual"/>
+						<geom name="Geom_117" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="0.0 0.0 0.0 1.0" mesh="anymal_thigh_l_5" material="light_gray" class="visual"/>
+						<geom name="Geom_118" type="box" pos="0.0 -0.03500000014901161 -0.125" quat="0.9973730444908142 -0.07243650406599045 0.0 0.0" size="0.03999999910593033 0.019999999552965164 0.125" class="collision"/>
+						<geom name="Geom_119" type="cylinder" pos="0.0 -0.0689999982714653 -0.25" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.05999999865889549 0.05999999865889549 0.0" class="collision"/>
+						<geom name="Geom_120" type="cylinder" pos="0.0 0.004999999888241291 0.0" quat="0.6540287137031555 -0.7564697265625 0.0 0.0" size="0.06599999964237213 0.05999999865889549 0.0" class="collision"/>
+						<joint name="RH_HFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						<body name="RH_SHANK" pos="0.0 -0.10899999737739563 -0.25" quat="1.0 0.0 0.0 0.0">
+							<inertial mass="0.47216299176216125" pos="-0.06963960081338882 0.013249400071799755 -0.15090499818325043" quat="0.6779538989067078 0.09506139159202576 0.05781039223074913 0.7266359329223633" diaginertia="0.011603400111198425 0.011066599749028683 0.0007237609825097024"/>
+							<geom name="Geom_121" type="mesh" pos="-0.03345903381705284 0.0019318722188472748 0.0029184597078710794" quat="-0.49047988653182983 -0.4490649104118347 0.5125957131385803 0.5431535840034485" mesh="anymal_shank_l_0" material="foam_dark" class="visual"/>
+							<geom name="Geom_122" type="mesh" pos="-0.03210606426000595 0.011398193426430225 0.0005259552854113281" quat="-0.4835468530654907 -0.4787857234477997 0.5159361362457275 0.5203427076339722" mesh="anymal_shank_l_1" material="dark_gray" class="visual"/>
+							<geom name="Geom_123" type="mesh" pos="-0.1116630956530571 0.012961243279278278 0.0011870680609717965" quat="-0.21515750885009766 0.004419531673192978 -0.0015841128770262003 0.9765681028366089" mesh="anymal_shank_l_2" material="light_gray" class="visual"/>
+							<geom name="Geom_124" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="0.0 0.0 0.0 1.0" mesh="anymal_shank_l_3" material="light_gray" class="visual"/>
+							<geom name="Geom_125" type="box" pos="-0.06499999761581421 0.014999999664723873 0.009999999776482582" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.03999999910593033 0.03400000184774399 0.06499999761581421" class="collision"/>
+							<geom name="Geom_126" type="mesh" pos="-0.10001163184642792 0.020029213279485703 -0.1130211353302002" quat="-0.8002339005470276 7.427438504237216e-06 -1.1865022315760143e-05 0.5996879935264587" mesh="anymal_foot_0" material="carbon_fibre" class="visual"/>
+							<geom name="Geom_127" type="mesh" pos="-0.09997981041669846 0.020006485283374786 -0.2951372265815735" quat="-0.690883994102478 0.0027780511882156134 0.0015402176650241017 0.7229586243629456" mesh="anymal_foot_1" material="foam_dark" class="visual"/>
+							<geom name="Geom_128" type="mesh" pos="-0.09995251893997192 0.020017089322209358 -0.0912998840212822" quat="-0.034854739904403687 -0.00021866326278541237 4.832047852687538e-05 0.9993923902511597" mesh="anymal_foot_2" material="dark_gray" class="visual"/>
+							<geom name="Geom_129" type="mesh" pos="-0.10000000149011612 0.019999999552965164 0.03200000151991844" quat="0.0 0.0 0.0 1.0" mesh="anymal_foot_3" material="light_gray" class="visual"/>
+							<geom name="Geom_130" type="cylinder" pos="-0.10000000149011612 0.019999999552965164 -0.16062499582767487" quat="1.0 0.0 0.0 0.0" size="0.014999999664723873 0.14000000059604645 0.0" class="collision"/>
+							<geom name="Geom_131" type="sphere" pos="-0.10000000149011612 0.019999999552965164 -0.2980000078678131" quat="1.0 0.0 0.0 0.0" size="0.03099999949336052 0.0 0.0" class="collision"/>
+							<joint name="RH_KFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						</body>
+					</body>
+				</body>
+				<body name="LF_HIP" pos="0.2770000100135803 0.11599999666213989 0.0" quat="1.0 0.0 0.0 0.0">
+					<inertial mass="1.4246200323104858" pos="0.06451629847288132 -0.0037871000822633505 -0.00015218400221783668" quat="0.9968661069869995 0.03798220306634903 0.02520090341567993 -0.06465480476617813" diaginertia="0.0024334099143743515 0.0023024899419397116 0.001977579900994897"/>
+					<geom name="Geom_16" type="mesh" pos="0.07038701325654984 -0.0504397489130497 -0.011985517106950283" quat="0.5923672318458557 0.38797727227211 0.3780491054058075 0.5963669419288635" mesh="anymal_hip_l_0" material="light_gray" class="visual"/>
+					<geom name="Geom_17" type="mesh" pos="0.08951122313737869 -0.045294467359781265 -0.007016143761575222" quat="0.20986828207969666 0.3753262758255005 0.676872730255127 0.5974352359771729" mesh="anymal_hip_l_1" material="copper" class="visual"/>
+					<geom name="Geom_18" type="mesh" pos="0.11853527277708054 0.009749230928719044 -0.014746660366654396" quat="0.9862706065177917 0.013317901641130447 0.12984491884708405 0.10115955770015717" mesh="anymal_hip_l_2" material="foam_dark" class="visual"/>
+					<geom name="Geom_19" type="mesh" pos="0.046326782554388046 -0.00719370087608695 9.416741164613995e-08" quat="0.06992869824171066 0.7032954692840576 -0.06998439133167267 0.7039798498153687" mesh="anymal_hip_l_3" material="alu_eloxiert" class="visual"/>
+					<geom name="Geom_20" type="mesh" pos="0.06468286365270615 -0.05493597686290741 0.0009895554976537824" quat="0.6545490622520447 0.2663118243217468 0.2671184837818146 0.6552032232284546" mesh="anymal_hip_l_4" material="any_blau" class="visual"/>
+					<geom name="Geom_21" type="mesh" pos="0.06605415046215057 -0.0210937038064003 0.0017769662663340569" quat="0.6199052333831787 0.6308619379997253 -0.3093321919441223 0.3493484854698181" mesh="anymal_hip_l_5" material="dark_gray" class="visual"/>
+					<geom name="Geom_22" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_hip_l_6" material="light_gray" class="visual"/>
+					<geom name="Geom_23" type="cylinder" pos="0.06350000202655792 -0.008999999612569809 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.07999999821186066 0.05000000074505806 0.0" class="collision"/>
+					<geom name="Geom_24" type="cylinder" pos="0.06350000202655792 -0.07400000095367432 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.04500000178813934 0.014999999664723873 0.0" class="collision"/>
+					<joint name="LF_HAA" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="1.0 0.0 0.0"/>
+					<body name="LF_THIGH" pos="0.06350000202655792 0.04100000113248825 0.0" quat="1.0 0.0 0.0 0.0">
+						<inertial mass="1.6349799633026123" pos="-0.003897970076650381 0.054226599633693695 -0.21458299458026886" quat="0.7439499497413635 -0.06334139406681061 0.03627069666981697 0.6642369627952576" diaginertia="0.012269699946045876 0.012042700313031673 0.002283019945025444"/>
+						<geom name="Geom_25" type="mesh" pos="0.0012385566951707006 0.013865061104297638 -0.2473861277103424" quat="0.6862856149673462 0.17018534243106842 0.1703396439552307 0.6863187551498413" mesh="anymal_thigh_l_0" material="any_blau" class="visual"/>
+						<geom name="Geom_26" type="mesh" pos="-0.00010387077782070264 0.06788378953933716 -0.24126821756362915" quat="0.9945435523986816 0.10396155714988708 -0.001222885330207646 0.008577248081564903" mesh="anymal_thigh_l_1" material="dark_gray" class="visual"/>
+						<geom name="Geom_27" type="mesh" pos="-0.0001674786617513746 0.03833750635385513 -0.15959669649600983" quat="0.7046704292297363 0.05830029398202896 -0.0587063767015934 0.7046944499015808" mesh="anymal_thigh_l_2" material="copper" class="visual"/>
+						<geom name="Geom_28" type="mesh" pos="-0.00016428907110821456 0.03573816269636154 -0.1508786827325821" quat="0.7066616415977478 0.029162729158997536 -0.02950367145240307 0.7063344717025757" mesh="anymal_thigh_l_3" material="alu_eloxiert" class="visual"/>
+						<geom name="Geom_29" type="mesh" pos="-0.0001664274459471926 0.03821144998073578 -0.12757916748523712" quat="0.7068631052970886 0.015319710597395897 -0.015549441799521446 0.7070134878158569" mesh="anymal_thigh_l_4" material="foam_dark" class="visual"/>
+						<geom name="Geom_30" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_thigh_l_5" material="light_gray" class="visual"/>
+						<geom name="Geom_31" type="box" pos="0.0 0.03500000014901161 -0.125" quat="0.9973730444908142 0.07243650406599045 0.0 0.0" size="0.03999999910593033 0.019999999552965164 0.125" class="collision"/>
+						<geom name="Geom_32" type="cylinder" pos="0.0 0.0689999982714653 -0.25" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.05999999865889549 0.05999999865889549 0.0" class="collision"/>
+						<geom name="Geom_33" type="cylinder" pos="0.0 -0.004999999888241291 0.0" quat="0.6540287137031555 0.7564697265625 0.0 0.0" size="0.06599999964237213 0.05999999865889549 0.0" class="collision"/>
+						<joint name="LF_HFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						<body name="LF_SHANK" pos="0.0 0.10899999737739563 -0.25" quat="1.0 0.0 0.0 0.0">
+							<inertial mass="0.47216299176216125" pos="0.06963960081338882 -0.013249400071799755 -0.15090499818325043" quat="0.6779538989067078 -0.09506139159202576 -0.05781039223074913 0.7266359329223633" diaginertia="0.011603400111198425 0.011066599749028683 0.0007237609825097024"/>
+							<geom name="Geom_34" type="mesh" pos="0.03345903381705284 -0.0019318722188472748 0.0029184597078710794" quat="0.5431535840034485 0.5125957131385803 0.4490649104118347 0.49047988653182983" mesh="anymal_shank_l_0" material="foam_dark" class="visual"/>
+							<geom name="Geom_35" type="mesh" pos="0.03210606426000595 -0.011398193426430225 0.0005259552854113281" quat="0.5203427076339722 0.5159361362457275 0.4787857234477997 0.4835468530654907" mesh="anymal_shank_l_1" material="dark_gray" class="visual"/>
+							<geom name="Geom_36" type="mesh" pos="0.1116630956530571 -0.012961243279278278 0.0011870680609717965" quat="0.9765681028366089 -0.0015841128770262003 -0.004419531673192978 0.21515750885009766" mesh="anymal_shank_l_2" material="light_gray" class="visual"/>
+							<geom name="Geom_37" type="mesh" pos="0.0 0.0 1.2621772867949055e-20" quat="1.0 0.0 0.0 0.0" mesh="anymal_shank_l_3" material="light_gray" class="visual"/>
+							<geom name="Geom_38" type="box" pos="0.06499999761581421 -0.014999999664723873 0.009999999776482582" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.03999999910593033 0.03400000184774399 0.06499999761581421" class="collision"/>
+							<geom name="Geom_39" type="mesh" pos="0.10001163184642792 -0.020029213279485703 -0.1130211353302002" quat="0.5996879935264587 -1.1865022315760143e-05 -7.427438504237216e-06 0.8002339005470276" mesh="anymal_foot_0" material="carbon_fibre" class="visual"/>
+							<geom name="Geom_40" type="mesh" pos="0.09997981041669846 -0.020006485283374786 -0.2951372265815735" quat="0.7229586243629456 0.0015402176650241017 -0.0027780511882156134 0.690883994102478" mesh="anymal_foot_1" material="foam_dark" class="visual"/>
+							<geom name="Geom_41" type="mesh" pos="0.09995251893997192 -0.020017089322209358 -0.0912998840212822" quat="0.9993923902511597 4.832047852687538e-05 0.00021866326278541237 0.034854739904403687" mesh="anymal_foot_2" material="dark_gray" class="visual"/>
+							<geom name="Geom_42" type="mesh" pos="0.10000000149011612 -0.019999999552965164 0.03200000151991844" quat="1.0 0.0 0.0 0.0" mesh="anymal_foot_3" material="light_gray" class="visual"/>
+							<geom name="Geom_43" type="cylinder" pos="0.10000000149011612 -0.019999999552965164 -0.16062499582767487" quat="1.0 0.0 0.0 0.0" size="0.014999999664723873 0.14000000059604645 0.0" class="collision"/>
+							<geom name="Geom_44" type="sphere" pos="0.10000000149011612 -0.019999999552965164 -0.2980000078678131" quat="1.0 0.0 0.0 0.0" size="0.03099999949336052 0.0 0.0" class="collision"/>
+							<joint name="LF_KFE" type="hinge" pos="0.0 0.0 0.0" range="0.0 0.0" axis="0.0 1.0 0.0"/>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+	</worldbody>
+	<equality/>
+</mujoco>

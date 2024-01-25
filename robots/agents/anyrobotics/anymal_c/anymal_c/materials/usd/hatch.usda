@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    defaultPrim = "hatch"
+    upAxis = "Z"
+)
+
+def Material "hatch"
+{
+    token inputs:frame:stPrimvarName = "st"
+    token outputs:surface.connect = </hatch/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor.connect = </hatch/DiffuseTexture.outputs:rgb>
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+
+    def Shader "PrimvarReader"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        token inputs:varname.connect = </hatch.inputs:frame:stPrimvarName>
+        float2 outputs:result
+    }
+
+    def Shader "DiffuseTexture"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @../../textures/hatch.png@
+        float2 inputs:st.connect = </hatch/PrimvarReader.outputs:result>
+        float3 outputs:rgb
+    }
+}
+

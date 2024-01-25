@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<robot name="Skydio_X2" version="1.0">
+  <link name="Skydio_X2"/>
+  <joint name="x2_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="Skydio_X2"/>
+    <child link="x2"/>
+  </joint>
+  <link name="x2">
+    <visual name="Geom_0">
+      <origin xyz="-0.004080660175532103 -0.0002564114984124899 0.06291300058364868" rpy="1.5858886241912842 -1.524275779724121 3.128009796142578"/>
+      <geometry>
+        <mesh filename="file://Skydio X2/meshes/obj/X2_lowpoly.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="0.03999999910593033 0.0 0.019999999552965164" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.11999999731779099 0.05400000140070915 0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="0.03999999910593033 0.0 0.05999999865889549" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.11999999731779099 0.05400000140070915 0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="-0.07000000029802322 0.0 0.06499999761581421" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.05400000140070915 0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="-0.13699999451637268 0.00800000037997961 0.06499999761581421" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <box size="0.04600000008940697 0.03400000184774399 0.019999999552965164"/>
+      </geometry>
+    </collision>
+    <collision name="rotor1">
+      <origin xyz="-0.14000000059604645 -0.18000000715255737 0.05000000074505806" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.12999999523162842"/>
+      </geometry>
+    </collision>
+    <collision name="rotor2">
+      <origin xyz="-0.14000000059604645 0.18000000715255737 0.05000000074505806" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.12999999523162842"/>
+      </geometry>
+    </collision>
+    <collision name="rotor3">
+      <origin xyz="0.14000000059604645 0.18000000715255737 0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.12999999523162842"/>
+      </geometry>
+    </collision>
+    <collision name="rotor4">
+      <origin xyz="0.14000000059604645 -0.18000000715255737 0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.12999999523162842"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_9">
+      <origin xyz="0.0 0.0 0.019999999552965164" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.1599999964237213"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>

@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<mujoco model="ur10e">
+	<compiler meshdir="ur10e/meshes" texturedir="ur10e/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<default>
+		<default class="visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="collision">
+			<geom rgba="1.0 0.0 0.0 0.0"/>
+		</default>
+	</default>
+	<asset>
+		<mesh name="base_0" file="stl/base_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="base_1" file="stl/base_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="shoulder_0" file="stl/shoulder_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="shoulder_1" file="stl/shoulder_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="shoulder_2" file="stl/shoulder_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="upperarm_0" file="stl/upperarm_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="upperarm_1" file="stl/upperarm_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="upperarm_2" file="stl/upperarm_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="upperarm_3" file="stl/upperarm_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="forearm_0" file="stl/forearm_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="forearm_1" file="stl/forearm_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="forearm_2" file="stl/forearm_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="forearm_3" file="stl/forearm_3.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist1_0" file="stl/wrist1_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist1_1" file="stl/wrist1_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist1_2" file="stl/wrist1_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist2_0" file="stl/wrist2_0.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist2_1" file="stl/wrist2_1.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist2_2" file="stl/wrist2_2.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="wrist3" file="stl/wrist3.stl" scale="1.0 1.0 1.0"/>
+		<material name="black" rgba="0.032999999821186066 0.032999999821186066 0.032999999821186066 1.0" emission="0.0" specular="0.5"/>
+		<material name="jointgray" rgba="0.27799999713897705 0.27799999713897705 0.27799999713897705 1.0" emission="0.0" specular="0.5"/>
+		<material name="urblue" rgba="0.49000000953674316 0.6779999732971191 0.800000011920929 1.0" emission="0.0" specular="0.5"/>
+		<material name="linkgray" rgba="0.8199999928474426 0.8199999928474426 0.8199999928474426 1.0" emission="0.0" specular="0.5"/>
+	</asset>
+	<worldbody>
+		<body name="ur10e" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+			<body name="base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+				<geom name="Geom_0" type="mesh" pos="-3.125204557363759e-06 -4.992584194951633e-07 0.09375101327896118" quat="0.5703510046005249 0.4179709553718567 -0.5703510046005249 0.4179709553718567" mesh="base_0" material="black" class="visual"/>
+				<geom name="Geom_1" type="mesh" pos="-1.3645167484810372e-07 2.6099980914295884e-06 0.03139932453632355" quat="0.348185271024704 0.6154395341873169 -0.3482106924057007 0.6154271364212036" mesh="base_1" material="jointgray" class="visual"/>
+				<body name="shoulder_link" pos="0.0 0.0 0.1809999942779541" quat="1.0 0.0 0.0 0.0">
+					<inertial mass="7.7779998779296875" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.03147429972887039 0.03147429972887039 0.021875599399209023"/>
+					<geom name="Geom_2" type="mesh" pos="3.244896652176976e-05 -0.010769808664917946 0.07042538374662399" quat="-0.08668580651283264 0.7018937468528748 -0.09221332520246506 0.7009475231170654" mesh="shoulder_0" material="urblue" class="visual"/>
+					<geom name="Geom_3" type="mesh" pos="-1.6731273717596196e-06 0.08903753757476807 -0.00030296118347905576" quat="0.6819482445716858 -0.186933234333992 -0.18693652749061584 0.681951105594635" mesh="shoulder_1" material="black" class="visual"/>
+					<geom name="Geom_4" type="mesh" pos="-9.345800208393484e-06 0.0016752078663557768 -0.01781303435564041" quat="0.6707771420478821 -0.22292205691337585 0.21157848834991455 0.6749802231788635" mesh="shoulder_2" material="jointgray" class="visual"/>
+					<geom name="Geom_5" type="capsule" pos="0.0 0.0 -0.05000000074505806" quat="1.0 0.0 0.0 0.0" size="0.07800000160932541 0.07999999821186066 0.0" class="collision"/>
+					<joint name="shoulder_pan_joint" type="hinge" pos="0.0 0.0 0.0" range="-6.28318977355957 6.28318977355957" axis="0.0 0.0 1.0"/>
+					<body name="upper_arm_link" pos="0.0 0.17599999904632568 0.0" quat="0.7071067690849304 0.0 0.7071067690849304 0.0">
+						<inertial mass="12.930000305175781" pos="0.0 0.0 0.30649998784065247" quat="1.0 0.0 0.0 0.0" diaginertia="0.42307400703430176 0.42307400703430176 0.03636559844017029"/>
+						<geom name="Geom_6" type="mesh" pos="-5.568376764131244e-06 -0.025972411036491394 0.41198819875717163" quat="0.6960460543632507 0.0431213304400444 -0.04434560611844063 0.715327799320221" mesh="upperarm_0" material="black" class="visual"/>
+						<geom name="Geom_7" type="mesh" pos="0.0003072679101023823 -0.021370388567447662 0.2412535846233368" quat="0.6867386698722839 -0.0009567410452291369 0.000387406355002895 0.7269036769866943" mesh="upperarm_1" material="jointgray" class="visual"/>
+						<geom name="Geom_8" type="mesh" pos="-0.0006588933756574988 0.05708777904510498 0.27944114804267883" quat="0.7030136585235596 0.011557461693882942 -0.010392889380455017 0.7110065221786499" mesh="upperarm_2" material="urblue" class="visual"/>
+						<geom name="Geom_9" type="mesh" pos="7.534561154898256e-05 -1.8876577087212354e-05 0.3043956160545349" quat="0.9119481444358826 -1.3257318641990423e-05 -0.00043278399971313775 0.4103052020072937" mesh="upperarm_3" material="linkgray" class="visual"/>
+						<geom name="Geom_10" type="capsule" pos="0.0 -0.05000000074505806 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.07800000160932541 0.07999999821186066 0.0" class="collision"/>
+						<geom name="Geom_11" type="capsule" pos="0.0 0.0 0.30000001192092896" quat="1.0 0.0 0.0 0.0" size="0.05999999865889549 0.30000001192092896 0.0" class="collision"/>
+						<joint name="shoulder_lift_joint" type="hinge" pos="0.0 0.0 0.0" range="-6.28318977355957 6.28318977355957" axis="0.0 1.0 0.0"/>
+						<body name="forearm_link" pos="0.0 -0.13699999451637268 0.6129999756813049" quat="1.0 0.0 0.0 0.0">
+							<inertial mass="3.869999885559082" pos="0.0 0.0 0.2854999899864197" quat="1.0 0.0 0.0 0.0" diaginertia="0.11059000343084335 0.11059000343084335 0.010884400457143784"/>
+							<geom name="Geom_12" type="mesh" pos="-1.3935309652879369e-06 -0.040280960500240326 0.5763769745826721" quat="0.6975369453430176 -0.11606183648109436 0.09624465554952621 0.7005060911178589" mesh="forearm_0" material="urblue" class="visual"/>
+							<geom name="Geom_13" type="mesh" pos="-2.1910651412326843e-05 0.024394892156124115 0.3868485689163208" quat="0.9982979893684387 -0.05802230164408684 -0.0003626399557106197 -0.005866236053407192" mesh="forearm_1" material="black" class="visual"/>
+							<geom name="Geom_14" type="mesh" pos="1.7753389329300262e-05 0.0125293442979455 0.249954491853714" quat="0.7049124240875244 -0.007895069196820259 0.007925815880298615 0.7092061042785645" mesh="forearm_2" material="jointgray" class="visual"/>
+							<geom name="Geom_15" type="mesh" pos="0.00011829264258267358 -0.00020199685241095722 0.27932435274124146" quat="0.5598878860473633 -2.863386362150777e-05 -0.0002012703916989267 0.8285683393478394" mesh="forearm_3" material="linkgray" class="visual"/>
+							<geom name="Geom_16" type="capsule" pos="0.0 0.07999999821186066 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.057999998331069946 0.06499999761581421 0.0" class="collision"/>
+							<geom name="Geom_17" type="capsule" pos="0.0 0.0 0.28999999165534973" quat="1.0 0.0 0.0 0.0" size="0.0430000014603138 0.2800000011920929 0.0" class="collision"/>
+							<joint name="elbow_joint" type="hinge" pos="0.0 0.0 0.0" range="-3.1414999961853027 3.1414999961853027" axis="0.0 1.0 0.0"/>
+							<body name="wrist_1_link" pos="0.0 0.0 0.5709999799728394" quat="0.7071067690849304 0.0 0.7071067690849304 0.0">
+								<inertial mass="1.9600000381469727" pos="0.0 0.13500000536441803 0.0" quat="0.5 0.5 -0.5 0.5" diaginertia="0.0055125001817941666 0.005108249839395285 0.005108249839395285"/>
+								<geom name="Geom_18" type="mesh" pos="-9.982719348045066e-06 0.13517743349075317 0.06050030142068863" quat="0.48062780499458313 0.5185896754264832 -0.48065462708473206 0.5186837315559387" mesh="wrist1_0" material="black" class="visual"/>
+								<geom name="Geom_19" type="mesh" pos="-2.7701032649929402e-06 0.14092853665351868 -0.04046843945980072" quat="0.42435628175735474 0.5656287670135498 -0.5731666088104248 0.41408440470695496" mesh="wrist1_1" material="urblue" class="visual"/>
+								<geom name="Geom_20" type="mesh" pos="-2.188484586440609e-06 0.12703046202659607 0.019669165834784508" quat="0.30686652660369873 0.6372891664505005 -0.6369754076004028 0.3065253794193268" mesh="wrist1_2" material="jointgray" class="visual"/>
+								<geom name="Geom_21" type="capsule" pos="0.0 0.05999999865889549 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.05000000074505806 0.07000000029802322 0.0" class="collision"/>
+								<joint name="wrist_1_joint" type="hinge" pos="0.0 0.0 0.0" range="-6.28318977355957 6.28318977355957" axis="0.0 1.0 0.0"/>
+								<body name="wrist_2_link" pos="0.0 0.13500000536441803 0.0" quat="1.0 0.0 0.0 0.0">
+									<inertial mass="1.9600000381469727" pos="0.0 0.0 0.11999999731779099" quat="0.5 0.5 -0.5 0.5" diaginertia="0.0055125001817941666 0.005108249839395285 0.005108249839395285"/>
+									<geom name="Geom_22" type="mesh" pos="1.7371668945997953e-05 0.06140662357211113 0.11943358182907104" quat="0.6631446480751038 0.24550370872020721 0.24561698734760284 0.6630530953407288" mesh="wrist2_0" material="black" class="visual"/>
+									<geom name="Geom_23" type="mesh" pos="3.399424485905911e-06 -0.03994759917259216 0.12525595724582672" quat="0.6983300447463989 -0.11105317622423172 0.10123603045940399 0.6998240351676941" mesh="wrist2_1" material="urblue" class="visual"/>
+									<geom name="Geom_24" type="mesh" pos="1.572869564370194e-06 0.02357337810099125 0.11706835776567459" quat="0.6533523797988892 -0.2704598903656006 0.2703809142112732 0.653357744216919" mesh="wrist2_2" material="jointgray" class="visual"/>
+									<geom name="Geom_25" type="capsule" pos="0.0 0.0 0.05000000074505806" quat="1.0 0.0 0.0 0.0" size="0.04600000008940697 0.06499999761581421 0.0" class="collision"/>
+									<geom name="Geom_26" type="capsule" pos="0.0 0.02800000086426735 0.11999999731779099" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.04600000008940697 0.0430000014603138 0.0" class="collision"/>
+									<joint name="wrist_2_joint" type="hinge" pos="0.0 0.0 0.0" range="-6.28318977355957 6.28318977355957" axis="0.0 0.0 1.0"/>
+									<body name="wrist_3_link" pos="0.0 0.0 0.11999999731779099" quat="1.0 0.0 0.0 0.0">
+										<inertial mass="0.20200000703334808" pos="0.0 0.09200000017881393 0.0" quat="0.0 0.7071067690849304 -0.7071067690849304 0.0" diaginertia="0.00020452500029932708 0.00014434600598178804 0.00014434600598178804"/>
+										<geom name="Geom_27" type="mesh" pos="-2.434160705888644e-06 0.0956597551703453 -0.0005147928604856133" quat="0.7069690823554993 0.01596463844180107 0.0177699476480484 0.7068408727645874" mesh="wrist3" material="linkgray" class="visual"/>
+										<geom name="Geom_28" type="cylinder" pos="0.0 0.09700000286102295 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.04600000008940697 0.019999999552965164 0.0" class="collision"/>
+										<joint name="wrist_3_joint" type="hinge" pos="0.0 0.0 0.0" range="-6.28318977355957 6.28318977355957" axis="0.0 1.0 0.0"/>
+									</body>
+								</body>
+							</body>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+	</worldbody>
+	<equality/>
+</mujoco>

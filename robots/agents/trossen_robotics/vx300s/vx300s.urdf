@@ -1,0 +1,363 @@
+<?xml version="1.0" ?>
+<robot name="vx300s" version="1.0">
+  <link name="vx300s"/>
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="vx300s"/>
+    <child link="base_link"/>
+  </joint>
+  <link name="base_link">
+    <visual name="Geom_0">
+      <origin xyz="-0.03784382715821266 2.87049459757327e-08 0.029133988544344902" rpy="0.0 -1.5421757698059082 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_1_base.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="-0.03784382715821266 2.87049459757327e-08 0.029133988544344902" rpy="0.0 -1.5421757698059082 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_1_base.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="waist" type="revolute">
+    <origin xyz="0.0 0.0 0.07900000363588333" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="base_link"/>
+    <child link="shoulder_link"/>
+    <limit effort="1000.0" lower="-3.1415798664093018" upper="3.1415798664093018" velocity="1000.0"/>
+  </joint>
+  <link name="shoulder_link">
+    <inertial>
+      <origin xyz="0.0002592329983599484 -3.3552000786585268e-06 0.011612899601459503" rpy="1.5700255632400513 -1.4773483276367188 -3.140821933746338"/>
+      <mass value="0.7986140251159668"/>
+      <inertia ixx="0.0012015600223094225" ixy="0.0" ixz="0.0" iyy="0.0011374399764463305" iyz="0.0" izz="0.0009387999889440835"/>
+    </inertial>
+    <visual name="Geom_2">
+      <origin xyz="0.0006325716967694461 -2.2884038414217045e-12 0.02039145678281784" rpy="-1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_2_shoulder.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_3">
+      <origin xyz="0.0006325716967694461 -2.2884038414217045e-12 0.02039145678281784" rpy="-1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_2_shoulder.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="shoulder" type="revolute">
+    <origin xyz="0.0 0.0 0.04805000126361847" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="shoulder_link"/>
+    <child link="upper_arm_link"/>
+    <limit effort="1000.0" lower="-1.8500499725341797" upper="1.2566399574279785" velocity="1000.0"/>
+  </joint>
+  <link name="upper_arm_link">
+    <inertial>
+      <origin xyz="0.020694900304079056 4.000000053405728e-10 0.22645899653434753" rpy="0.0 -0.14582079648971558 3.1415927410125732"/>
+      <mass value="0.7925919890403748"/>
+      <inertia ixx="0.009113379754126072" ixy="0.0" ixz="0.0" iyy="0.008925000205636024" iyz="0.0" izz="0.0007593170157633722"/>
+    </inertial>
+    <visual name="Geom_4">
+      <origin xyz="0.018794847652316093 9.543430490310811e-10 0.20381388068199158" rpy="0.0 -0.1374703347682953 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_3_upper_arm.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_5">
+      <origin xyz="0.018794847652316093 9.543430490310811e-10 0.20381388068199158" rpy="0.0 -0.1374703347682953 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_3_upper_arm.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elbow" type="revolute">
+    <origin xyz="0.05954999849200249 0.0 0.30000001192092896" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="upper_arm_link"/>
+    <child link="upper_forearm_link"/>
+    <limit effort="1000.0" lower="-1.7627800703048706" upper="1.6057000160217285" velocity="1000.0"/>
+  </joint>
+  <link name="upper_forearm_link">
+    <inertial>
+      <origin xyz="0.10572300106287003 0.0 0.0" rpy="1.1374648809432983 -1.5553008317947388 2.019897937774658"/>
+      <mass value="0.32222801446914673"/>
+      <inertia ixx="0.0014410699950531125" ixy="0.0" ixz="0.0" iyy="0.0013422799529507756" iyz="0.0" izz="0.0001520469959359616"/>
+    </inertial>
+    <visual name="Geom_6">
+      <origin xyz="0.09150298684835434 4.662075525629916e-08 5.335134645179096e-08" rpy="1.7215973002748797e-06 -1.570794701576233 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_4_upper_forearm.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_7">
+      <origin xyz="0.09150298684835434 4.662075525629916e-08 5.335134645179096e-08" rpy="1.7215973002748797e-06 -1.570794701576233 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_4_upper_forearm.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="forearm_roll" type="revolute">
+    <origin xyz="0.20000000298023224 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="upper_forearm_link"/>
+    <child link="lower_forearm_link"/>
+    <limit effort="1000.0" lower="-3.1415798664093018" upper="3.1415798664093018" velocity="1000.0"/>
+  </joint>
+  <link name="lower_forearm_link">
+    <inertial>
+      <origin xyz="0.051347699016332626 0.006804619915783405 0.0" rpy="0.22582712769508362 1.5707963705062866 0.0"/>
+      <mass value="0.4148229956626892"/>
+      <inertia ixx="0.0005911000189371407" ixy="0.0" ixz="0.0" iyy="0.0005464929854497313" iyz="0.0" izz="0.00015570700634270906"/>
+    </inertial>
+    <visual name="Geom_8">
+      <origin xyz="0.04686346650123596 0.0060616107657551765 -3.6068836379854474e-06" rpy="-1.744075894355774 1.5696839094161987 -1.9146448373794556"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_5_lower_forearm.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_9">
+      <origin xyz="0.04686346650123596 0.0060616107657551765 -3.6068836379854474e-06" rpy="-1.744075894355774 1.5696839094161987 -1.9146448373794556"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_5_lower_forearm.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wrist_angle" type="revolute">
+    <origin xyz="0.10000000149011612 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="lower_forearm_link"/>
+    <child link="wrist_link"/>
+    <limit effort="1000.0" lower="-1.8675000667572021" upper="2.2340199947357178" velocity="1000.0"/>
+  </joint>
+  <link name="wrist_link">
+    <inertial>
+      <origin xyz="0.0467430017888546 -7.665200428164098e-06 0.010564999654889107" rpy="0.008277755230665207 -1.1517912149429321 3.1386070251464844"/>
+      <mass value="0.11539500206708908"/>
+      <inertia ixx="5.457070074044168e-05" ixy="0.0" ixz="0.0" iyy="4.631009869626723e-05" iyz="0.0" izz="4.326919952291064e-05"/>
+    </inertial>
+    <visual name="Geom_10">
+      <origin xyz="0.04164133220911026 -0.00016056399908848107 0.007847931236028671" rpy="0.0 -1.3314862251281738 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_6_wrist.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_11">
+      <origin xyz="0.04164133220911026 -0.00016056399908848107 0.007847931236028671" rpy="0.0 -1.3314862251281738 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_6_wrist.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wrist_rotate" type="revolute">
+    <origin xyz="0.06974399834871292 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="wrist_link"/>
+    <child link="gripper_link"/>
+    <limit effort="1000.0" lower="-3.1415798664093018" upper="3.1415798664093018" velocity="1000.0"/>
+  </joint>
+  <link name="gripper_link">
+    <inertial>
+      <origin xyz="0.039566200226545334 -2.5631101152612246e-07 0.004006490111351013" rpy="1.5696061849594116 -1.0024837255477905 0.0009536814759485424"/>
+      <mass value="0.2516520023345947"/>
+      <inertia ixx="0.0006895459955558181" ixy="0.0" ixz="0.0" iyy="0.0006503160111606121" iyz="0.0" izz="0.00046814201050437987"/>
+    </inertial>
+    <visual name="Geom_12">
+      <origin xyz="0.019865669310092926 -7.045326544385944e-09 0.010150989517569542" rpy="0.5043851733207703 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_7_gripper.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_13">
+      <origin xyz="0.019865669310092926 -7.045326544385944e-09 0.010150989517569542" rpy="0.5043851733207703 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_7_gripper.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_14">
+      <origin xyz="0.04932825639843941 -4.465221081773052e-07 -0.0012095709098502994" rpy="1.5706207752227783 -0.19393156468868256 -3.141575574874878"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_9_gripper_bar.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_15">
+      <origin xyz="0.04932825639843941 -4.465221081773052e-07 -0.0012095709098502994" rpy="1.5706207752227783 -0.19393156468868256 -3.141575574874878"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_9_gripper_bar.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_prop_link_joint" type="fixed">
+    <origin xyz="0.0485 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="gripper_link"/>
+    <child link="gripper_prop_link"/>
+  </joint>
+  <link name="gripper_prop_link">
+    <inertial>
+      <origin xyz="0.002377999946475029 2.8500000581743734e-08 0.0" rpy="2.229034185409546 0.0 3.1415927410125732"/>
+      <mass value="0.00800899975001812"/>
+      <inertia ixx="4.297899977245834e-06" ixy="0.0" ixz="0.0" iyy="2.8868000754300738e-06" iyz="0.0" izz="1.53140001657448e-06"/>
+    </inertial>
+    <visual name="Geom_16">
+      <origin xyz="2.7583901829331126e-09 0.00024063170712906867 -0.0005006406572647393" rpy="-0.05592092126607895 0.0 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_8_gripper_prop.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_17">
+      <origin xyz="2.7583901829331126e-09 0.00024063170712906867 -0.0005006406572647393" rpy="-0.05592092126607895 0.0 3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/stl/vx300s_8_gripper_prop.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_finger" type="prismatic">
+    <origin xyz="0.06870000064373016 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="gripper_link"/>
+    <child link="left_finger_link"/>
+    <limit effort="1000.0" lower="0.020999999716877937" upper="0.05700000002980232" velocity="1000.0"/>
+  </joint>
+  <link name="left_finger_link">
+    <inertial>
+      <origin xyz="0.017343999817967415 -0.006069200113415718 0.0" rpy="1.5707963705062866 0.0 -1.7642899751663208"/>
+      <mass value="0.03479599952697754"/>
+      <inertia ixx="2.4800299797789194e-05" ixy="0.0" ixz="0.0" iyy="1.4170000213198364e-05" iyz="0.0" izz="1.2079700354661327e-05"/>
+    </inertial>
+    <visual name="Geom_18">
+      <origin xyz="0.017321372404694557 -0.005584105383604765 3.1368177499935257e-10" rpy="0.0 0.0 -1.7501531839370728"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_10_gripper_finger.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="left_finger_pad_0">
+      <origin xyz="0.04780000075697899 -0.012500000186264515 0.010599999688565731" rpy="1.5707963705062866 -0.7873964309692383 0.0"/>
+      <geometry>
+        <box size="0.02810000069439411 0.02810000069439411 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_1">
+      <origin xyz="0.04780000075697899 -0.012500000186264515 -0.010599999688565731" rpy="1.5707963705062866 -0.7873964309692383 0.0"/>
+      <geometry>
+        <box size="0.02810000069439411 0.02810000069439411 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_2">
+      <origin xyz="0.057100001722574234 -0.012500000186264515 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.021159999072551727 0.021159999072551727 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_3">
+      <origin xyz="0.03779999911785126 -0.012500000186264515 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_4">
+      <origin xyz="0.012799999676644802 -0.012500000186264515 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.029999999329447746 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_5">
+      <origin xyz="0.03779999911785126 -0.012500000186264515 0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_6">
+      <origin xyz="0.012799999676644802 -0.012500000186264515 0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.029999999329447746 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_7">
+      <origin xyz="0.03779999911785126 -0.012500000186264515 -0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="left_finger_pad_8">
+      <origin xyz="0.012799999676644802 -0.012500000186264515 -0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.029999999329447746 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_finger" type="prismatic">
+    <origin xyz="0.06870000064373016 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="gripper_link"/>
+    <child link="right_finger_link"/>
+    <limit effort="1000.0" lower="-0.05700000002980232" upper="-0.020999999716877937" velocity="1000.0"/>
+  </joint>
+  <link name="right_finger_link">
+    <inertial>
+      <origin xyz="0.017343999817967415 0.006069200113415718 0.0" rpy="-1.5707963705062866 0.0 -1.764267921447754"/>
+      <mass value="0.03479599952697754"/>
+      <inertia ixx="2.4800199753372e-05" ixy="0.0" ixz="0.0" iyy="1.4170000213198364e-05" iyz="0.0" izz="1.2079800399078522e-05"/>
+    </inertial>
+    <visual name="Geom_28">
+      <origin xyz="0.017321372404694557 0.005584105383604765 -3.1368177499935257e-10" rpy="3.1415927410125732 0.0 1.7501531839370728"/>
+      <geometry>
+        <mesh filename="file://vx300s/meshes/obj/vx300s_10_gripper_finger.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="right_finger_pad_0">
+      <origin xyz="0.04780000075697899 0.012500000186264515 0.010599999688565731" rpy="1.5707963705062866 -0.7873964309692383 0.0"/>
+      <geometry>
+        <box size="0.02810000069439411 0.02810000069439411 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_1">
+      <origin xyz="0.04780000075697899 0.012500000186264515 -0.010599999688565731" rpy="1.5707963705062866 -0.7873964309692383 0.0"/>
+      <geometry>
+        <box size="0.02810000069439411 0.02810000069439411 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_2">
+      <origin xyz="0.057100001722574234 0.012500000186264515 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.021159999072551727 0.021159999072551727 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_3">
+      <origin xyz="0.03779999911785126 0.012500000186264515 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_4">
+      <origin xyz="0.012799999676644802 0.012500000186264515 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.029999999329447746 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_5">
+      <origin xyz="0.03779999911785126 0.012500000186264515 0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_6">
+      <origin xyz="0.012799999676644802 0.012500000186264515 0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.029999999329447746 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_7">
+      <origin xyz="0.03779999911785126 0.012500000186264515 -0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+    <collision name="right_finger_pad_8">
+      <origin xyz="0.012799999676644802 0.012500000186264515 -0.019999999552965164" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <box size="0.029999999329447746 0.020999999716877937 0.0020000000949949026"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

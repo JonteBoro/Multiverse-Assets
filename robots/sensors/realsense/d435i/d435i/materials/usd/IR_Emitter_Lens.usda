@@ -1,0 +1,22 @@
+#usda 1.0
+(
+    defaultPrim = "IR_Emitter_Lens"
+    upAxis = "Z"
+)
+
+def Material "IR_Emitter_Lens"
+{
+    token outputs:surface.connect = </IR_Emitter_Lens/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.28744, 0.665387, 0.327778)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 1
+        color3f inputs:specularColor = (0, 0, 0)
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

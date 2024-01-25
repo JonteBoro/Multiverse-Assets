@@ -1,0 +1,479 @@
+<?xml version="1.0" ?>
+<robot name="a1" version="1.0">
+  <link name="a1"/>
+  <joint name="trunk_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="a1"/>
+    <child link="trunk"/>
+  </joint>
+  <link name="trunk">
+    <visual name="Geom_0">
+      <origin xyz="0.052101269364356995 -0.004562626592814922 0.00041792113916017115" rpy="0.12238837033510208 -1.5621297359466553 3.0493240356445312"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/trunk.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.25 0.07999999821186066 0.11400000005960464"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="0.0 -0.03999999910593033 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.057999998331069946" length="0.25"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="0.0 0.03999999910593033 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.057999998331069946" length="0.25"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="0.25 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.009999999776482582 0.11999999731779099 0.10000000149011612"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_5">
+      <origin xyz="0.25 0.05999999865889549 -0.009999999776482582" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.07000000029802322"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_6">
+      <origin xyz="0.25 -0.05999999865889549 -0.009999999776482582" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.07000000029802322"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_7">
+      <origin xyz="0.25 0.0 -0.05000000074505806" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.004999999888241291" length="0.11999999731779099"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_8">
+      <origin xyz="0.2549999952316284 0.0 0.03550000116229057" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.020999999716877937" length="0.10400000214576721"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_hip_joint" type="revolute">
+    <origin xyz="0.18299999833106995 -0.04699999839067459 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="FR_hip"/>
+    <limit effort="1000.0" lower="-0.8028509616851807" upper="0.8028509616851807" velocity="1000.0"/>
+  </joint>
+  <link name="FR_hip">
+    <inertial>
+      <origin xyz="-0.0033110000658780336 -0.0006350000039674342 3.099999958067201e-05" rpy="1.5665688514709473 -0.001790932146832347 1.5430091619491577"/>
+      <mass value="0.6959999799728394"/>
+      <inertia ixx="0.0008077520178630948" ixy="0.0" ixz="0.0" iyy="0.000552929996047169" iyz="0.0" izz="0.00046898299478925765"/>
+    </inertial>
+    <visual name="Geom_9">
+      <origin xyz="-0.008014652878046036 -0.00012613194121513516 1.8650268884812249e-06" rpy="-1.5710233449935913 1.8156291844206862e-05 -1.5751171112060547"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_10">
+      <origin xyz="0.0 -0.054999999701976776 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_thigh_joint" type="revolute">
+    <origin xyz="0.0 -0.08505000174045563 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FR_hip"/>
+    <child link="FR_thigh"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="4.1887898445129395" velocity="1000.0"/>
+  </joint>
+  <link name="FR_thigh">
+    <inertial>
+      <origin xyz="-0.0032369999680668116 0.02232700027525425 -0.027326000854372978" rpy="-0.004478187300264835 -0.08196766674518585 -0.01595195196568966"/>
+      <mass value="1.0130000114440918"/>
+      <inertia ixx="0.005557389929890633" ixy="0.0" ixz="0.0" iyy="0.005139360204339027" iyz="0.0" izz="0.0013394400011748075"/>
+    </inertial>
+    <visual name="Geom_11">
+      <origin xyz="-0.0031076984014362097 0.021799704059958458 -0.027041105553507805" rpy="0.11500068753957748 0.16191914677619934 1.7350640296936035"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/thigh_mirror.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_12">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_13">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_14">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FR_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FR_thigh"/>
+    <child link="FR_calf"/>
+    <limit effort="1000.0" lower="-2.6965298652648926" upper="-0.916297972202301" velocity="1000.0"/>
+  </joint>
+  <link name="FR_calf">
+    <inertial>
+      <origin xyz="0.004726590123027563 0.0 -0.131974995136261" rpy="0.049935437738895416 0.0 1.5707963705062866"/>
+      <mass value="0.22599999606609344"/>
+      <inertia ixx="0.003403439885005355" ixy="0.0" ixz="0.0" iyy="0.0033939299173653126" iyz="0.0" izz="3.548340100678615e-05"/>
+    </inertial>
+    <visual name="Geom_15">
+      <origin xyz="0.006395931821316481 2.4358414520975202e-05 -0.12493624538183212" rpy="-0.002296654274687171 0.0002816323540173471 1.5723999738693237"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_16">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_17">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_18">
+      <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.019999999552965164"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_hip_joint" type="revolute">
+    <origin xyz="0.18299999833106995 0.04699999839067459 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="FL_hip"/>
+    <limit effort="1000.0" lower="-0.8028509616851807" upper="0.8028509616851807" velocity="1000.0"/>
+  </joint>
+  <link name="FL_hip">
+    <inertial>
+      <origin xyz="-0.0033110000658780336 0.0006350000039674342 3.099999958067201e-05" rpy="1.5665688514709473 0.001790932146832347 1.598583459854126"/>
+      <mass value="0.6959999799728394"/>
+      <inertia ixx="0.0008077520178630948" ixy="0.0" ixz="0.0" iyy="0.000552929996047169" iyz="0.0" izz="0.00046898299478925765"/>
+    </inertial>
+    <visual name="Geom_19">
+      <origin xyz="-0.008014652878046036 0.00012613194121513516 -1.8650268884812249e-06" rpy="1.5705692768096924 -1.8156291844206862e-05 1.5751171112060547"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_20">
+      <origin xyz="0.0 0.054999999701976776 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_21">
+      <origin xyz="0.0 0.054999999701976776 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_thigh_joint" type="revolute">
+    <origin xyz="0.0 0.08505000174045563 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FL_hip"/>
+    <child link="FL_thigh"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="4.1887898445129395" velocity="1000.0"/>
+  </joint>
+  <link name="FL_thigh">
+    <inertial>
+      <origin xyz="-0.0032369999680668116 -0.02232700027525425 -0.027326000854372978" rpy="0.004478187300264835 -0.08196766674518585 0.01595195196568966"/>
+      <mass value="1.0130000114440918"/>
+      <inertia ixx="0.005557389929890633" ixy="0.0" ixz="0.0" iyy="0.005139360204339027" iyz="0.0" izz="0.0013394400011748075"/>
+    </inertial>
+    <visual name="Geom_22">
+      <origin xyz="-0.003107831347733736 -0.02179619111120701 -0.02706850692629814" rpy="0.1148669496178627 -0.1618994027376175 1.4064452648162842"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_23">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_24">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_25">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FL_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="FL_thigh"/>
+    <child link="FL_calf"/>
+    <limit effort="1000.0" lower="-2.6965298652648926" upper="-0.916297972202301" velocity="1000.0"/>
+  </joint>
+  <link name="FL_calf">
+    <inertial>
+      <origin xyz="0.004726590123027563 0.0 -0.131974995136261" rpy="0.049935437738895416 0.0 1.5707963705062866"/>
+      <mass value="0.22599999606609344"/>
+      <inertia ixx="0.003403439885005355" ixy="0.0" ixz="0.0" iyy="0.0033939299173653126" iyz="0.0" izz="3.548340100678615e-05"/>
+    </inertial>
+    <visual name="Geom_26">
+      <origin xyz="0.006395931821316481 2.4358414520975202e-05 -0.12493624538183212" rpy="-0.002296654274687171 0.0002816323540173471 1.5723999738693237"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_27">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_28">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_29">
+      <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.019999999552965164"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_hip_joint" type="revolute">
+    <origin xyz="-0.18299999833106995 -0.04699999839067459 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="RR_hip"/>
+    <limit effort="1000.0" lower="-0.8028509616851807" upper="0.8028509616851807" velocity="1000.0"/>
+  </joint>
+  <link name="RR_hip">
+    <inertial>
+      <origin xyz="0.0033110000658780336 -0.0006350000039674342 3.099999958067201e-05" rpy="1.575023889541626 -0.001790932146832347 1.598583459854126"/>
+      <mass value="0.6959999799728394"/>
+      <inertia ixx="0.0008077520178630948" ixy="0.0" ixz="0.0" iyy="0.000552929996047169" iyz="0.0" izz="0.00046898299478925765"/>
+    </inertial>
+    <visual name="Geom_30">
+      <origin xyz="0.008014652878046036 -0.00012613194121513516 -1.8650268884812249e-06" rpy="1.5705692768096924 -1.8156291844206862e-05 -1.566475510597229"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_31">
+      <origin xyz="0.0 -0.054999999701976776 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_thigh_joint" type="revolute">
+    <origin xyz="0.0 -0.08505000174045563 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RR_hip"/>
+    <child link="RR_thigh"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="4.1887898445129395" velocity="1000.0"/>
+  </joint>
+  <link name="RR_thigh">
+    <inertial>
+      <origin xyz="-0.0032369999680668116 0.02232700027525425 -0.027326000854372978" rpy="-0.004478187300264835 -0.08196766674518585 -0.01595195196568966"/>
+      <mass value="1.0130000114440918"/>
+      <inertia ixx="0.005557389929890633" ixy="0.0" ixz="0.0" iyy="0.005139360204339027" iyz="0.0" izz="0.0013394400011748075"/>
+    </inertial>
+    <visual name="Geom_32">
+      <origin xyz="-0.0031076984014362097 0.021799704059958458 -0.027041105553507805" rpy="0.11500068753957748 0.16191914677619934 1.7350640296936035"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/thigh_mirror.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_33">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_34">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_35">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RR_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RR_thigh"/>
+    <child link="RR_calf"/>
+    <limit effort="1000.0" lower="-2.6965298652648926" upper="-0.916297972202301" velocity="1000.0"/>
+  </joint>
+  <link name="RR_calf">
+    <inertial>
+      <origin xyz="0.004726590123027563 0.0 -0.131974995136261" rpy="0.049935437738895416 0.0 1.5707963705062866"/>
+      <mass value="0.22599999606609344"/>
+      <inertia ixx="0.003403439885005355" ixy="0.0" ixz="0.0" iyy="0.0033939299173653126" iyz="0.0" izz="3.548340100678615e-05"/>
+    </inertial>
+    <visual name="Geom_36">
+      <origin xyz="0.006395931821316481 2.4358414520975202e-05 -0.12493624538183212" rpy="-0.002296654274687171 0.0002816323540173471 1.5723999738693237"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_37">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_38">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_39">
+      <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.019999999552965164"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_hip_joint" type="revolute">
+    <origin xyz="-0.18299999833106995 0.04699999839067459 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="trunk"/>
+    <child link="RL_hip"/>
+    <limit effort="1000.0" lower="-0.8028509616851807" upper="0.8028509616851807" velocity="1000.0"/>
+  </joint>
+  <link name="RL_hip">
+    <inertial>
+      <origin xyz="0.0033110000658780336 0.0006350000039674342 3.099999958067201e-05" rpy="1.575023889541626 0.001790932146832347 1.5430091619491577"/>
+      <mass value="0.6959999799728394"/>
+      <inertia ixx="0.0008077520178630948" ixy="0.0" ixz="0.0" iyy="0.000552929996047169" iyz="0.0" izz="0.00046898299478925765"/>
+    </inertial>
+    <visual name="Geom_40">
+      <origin xyz="0.008014652878046036 0.00012613194121513516 1.8650268884812249e-06" rpy="-1.5710233449935913 1.8156291844206862e-05 1.566475510597229"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/hip.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_41">
+      <origin xyz="0.0 0.054999999701976776 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.07999999821186066"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_thigh_joint" type="revolute">
+    <origin xyz="0.0 0.08505000174045563 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RL_hip"/>
+    <child link="RL_thigh"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="4.1887898445129395" velocity="1000.0"/>
+  </joint>
+  <link name="RL_thigh">
+    <inertial>
+      <origin xyz="-0.0032369999680668116 -0.02232700027525425 -0.027326000854372978" rpy="0.004478187300264835 -0.08196766674518585 0.01595195196568966"/>
+      <mass value="1.0130000114440918"/>
+      <inertia ixx="0.005557389929890633" ixy="0.0" ixz="0.0" iyy="0.005139360204339027" iyz="0.0" izz="0.0013394400011748075"/>
+    </inertial>
+    <visual name="Geom_42">
+      <origin xyz="-0.003107831347733736 -0.02179619111120701 -0.02706850692629814" rpy="0.1148669496178627 -0.1618994027376175 1.4064452648162842"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/thigh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_43">
+      <origin xyz="-0.019999999552965164 0.0 -0.07999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.1599999964237213"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_44">
+      <origin xyz="-0.009999999776482582 0.0 -0.05000000074505806" rpy="0.0 0.19739556312561035 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.10198038816452026"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_45">
+      <origin xyz="-0.009999999776482582 0.0 -0.18000000715255737" rpy="0.0 -0.46364760398864746 0.0"/>
+      <geometry>
+        <cylinder radius="0.014999999664723873" length="0.04472136124968529"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RL_calf_joint" type="revolute">
+    <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="RL_thigh"/>
+    <child link="RL_calf"/>
+    <limit effort="1000.0" lower="-2.6965298652648926" upper="-0.916297972202301" velocity="1000.0"/>
+  </joint>
+  <link name="RL_calf">
+    <inertial>
+      <origin xyz="0.004726590123027563 0.0 -0.131974995136261" rpy="0.049935437738895416 0.0 1.5707963705062866"/>
+      <mass value="0.22599999606609344"/>
+      <inertia ixx="0.003403439885005355" ixy="0.0" ixz="0.0" iyy="0.0033939299173653126" iyz="0.0" izz="3.548340100678615e-05"/>
+    </inertial>
+    <visual name="Geom_46">
+      <origin xyz="0.006395931821316481 2.4358414520975202e-05 -0.12493624538183212" rpy="-0.002296654274687171 0.0002816323540173471 1.5723999738693237"/>
+      <geometry>
+        <mesh filename="file://a1/meshes/obj/calf.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_47">
+      <origin xyz="0.009999999776482582 0.0 -0.06499999761581421" rpy="0.0 -0.15264932811260223 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.13152946531772614"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_48">
+      <origin xyz="0.009999999776482582 0.0 -0.16500000655651093" rpy="0.0 0.2782996594905853 0.0"/>
+      <geometry>
+        <cylinder radius="0.009999999776482582" length="0.07280109822750092"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_49">
+      <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.019999999552965164"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

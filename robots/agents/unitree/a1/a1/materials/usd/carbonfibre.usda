@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    defaultPrim = "carbonfibre"
+    upAxis = "Z"
+)
+
+def Material "carbonfibre"
+{
+    token inputs:frame:stPrimvarName = "st"
+    token outputs:surface.connect = </carbonfibre/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor.connect = </carbonfibre/DiffuseTexture.outputs:rgb>
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+
+    def Shader "PrimvarReader"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        token inputs:varname.connect = </carbonfibre.inputs:frame:stPrimvarName>
+        float2 outputs:result
+    }
+
+    def Shader "DiffuseTexture"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @../../textures/trunk_A1.png@
+        float2 inputs:st.connect = </carbonfibre/PrimvarReader.outputs:result>
+        float3 outputs:rgb
+    }
+}
+

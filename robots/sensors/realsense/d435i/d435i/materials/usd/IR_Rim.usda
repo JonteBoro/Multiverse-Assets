@@ -1,0 +1,22 @@
+#usda 1.0
+(
+    defaultPrim = "IR_Rim"
+    upAxis = "Z"
+)
+
+def Material "IR_Rim"
+{
+    token outputs:surface.connect = </IR_Rim/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.799102, 0.806952, 0.799103)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 1
+        color3f inputs:specularColor = (0, 0, 0)
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

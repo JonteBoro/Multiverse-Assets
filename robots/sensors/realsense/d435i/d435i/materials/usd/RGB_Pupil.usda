@@ -1,0 +1,22 @@
+#usda 1.0
+(
+    defaultPrim = "RGB_Pupil"
+    upAxis = "Z"
+)
+
+def Material "RGB_Pupil"
+{
+    token outputs:surface.connect = </RGB_Pupil/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.08714, 0.002866, 0.009346)
+        color3f inputs:emissiveColor = (0, 0, 0)
+        float inputs:opacity = 1
+        color3f inputs:specularColor = (0, 0, 0)
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+}
+

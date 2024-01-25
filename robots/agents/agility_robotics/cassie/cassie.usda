@@ -1,0 +1,2638 @@
+#usda 1.0
+(
+    defaultPrim = "cassie"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Mujoco "mujoco" (
+    prepend apiSchemas = ["MujocoOptionAPI"]
+)
+{
+    string mujoco:model = "cassie"
+    float mujoco:option:timestep = 0.0005
+
+    def MujocoAsset "asset"
+    {
+        def MujocoMesh "meshes"
+        {
+            def MujocoMesh "cassie_pelvis"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/cassie_pelvis.obj@
+            }
+
+            def MujocoMesh "left_hip_roll"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_hip_roll.obj@
+            }
+
+            def MujocoMesh "left_hip_yaw"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_hip_yaw.obj@
+            }
+
+            def MujocoMesh "left_hip_pitch"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_hip_pitch.obj@
+            }
+
+            def MujocoMesh "left_achilles_rod"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_achilles_rod.obj@
+            }
+
+            def MujocoMesh "left_knee"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_knee.obj@
+            }
+
+            def MujocoMesh "left_knee_spring"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_knee_spring.obj@
+            }
+
+            def MujocoMesh "left_shin"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_shin.obj@
+            }
+
+            def MujocoMesh "left_tarsus"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_tarsus.obj@
+            }
+
+            def MujocoMesh "left_heel_spring"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_heel_spring.obj@
+            }
+
+            def MujocoMesh "left_foot_crank"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_foot_crank.obj@
+            }
+
+            def MujocoMesh "left_plantar_rod"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_plantar_rod.obj@
+            }
+
+            def MujocoMesh "left_foot"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/left_foot.obj@
+            }
+
+            def MujocoMesh "right_hip_roll"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_hip_roll.obj@
+            }
+
+            def MujocoMesh "right_hip_yaw"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_hip_yaw.obj@
+            }
+
+            def MujocoMesh "right_hip_pitch"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_hip_pitch.obj@
+            }
+
+            def MujocoMesh "right_achilles_rod"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_achilles_rod.obj@
+            }
+
+            def MujocoMesh "right_knee"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_knee.obj@
+            }
+
+            def MujocoMesh "right_knee_spring"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_knee_spring.obj@
+            }
+
+            def MujocoMesh "right_shin"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_shin.obj@
+            }
+
+            def MujocoMesh "right_tarsus"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_tarsus.obj@
+            }
+
+            def MujocoMesh "right_heel_spring"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_heel_spring.obj@
+            }
+
+            def MujocoMesh "right_foot_crank"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_foot_crank.obj@
+            }
+
+            def MujocoMesh "right_plantar_rod"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_plantar_rod.obj@
+            }
+
+            def MujocoMesh "right_foot"
+            {
+                asset mujoco:mesh:file = @cassie/meshes/obj/right_foot.obj@
+            }
+        }
+
+        def MujocoMaterial "materials"
+        {
+            def MujocoMaterial "cassie"
+            {
+                rel mujoco:material:texture = </mujoco/asset/textures/cassie>
+            }
+        }
+
+        def MujocoTexture "textures"
+        {
+            def MujocoTexture "cassie"
+            {
+                asset mujoco:texture:file = @cassie.png@
+                string mujoco:texture:type = "2d"
+            }
+        }
+    }
+
+    def MujocoEquality "equality"
+    {
+    }
+}
+
+def Xform "cassie" (
+    prepend apiSchemas = ["MujocoBodyAPI"]
+)
+{
+    point3f mujoco:body:pos = (0, 0, 0)
+    quatf mujoco:body:quat = (1, 0, 0, 0)
+
+    def Xform "cassie_pelvis" (
+        prepend apiSchemas = ["MujocoBodyAPI"]
+    )
+    {
+        point3f mujoco:body:pos = (0, 0, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+
+        def Mesh "Geom_0" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/cassie-pelvis.usda@</cassie_pelvis>
+        )
+        {
+            rel material:binding = </cassie/cassie_pelvis/Geom_0/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/cassie_pelvis>
+            point3f mujoco:geom:pos = (0.015332476, -0.000045823806, 0.036431648)
+            quatf mujoco:geom:quat = (0.53341675, 0.53330255, -0.4641541, 0.4643447)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/cassie-pelvis.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5686293, -1.4324653, 0.0022436094)
+            point3f urdf:visual:origin:xyz = (0.015332476, -0.000045823806, 0.036431648)
+            matrix4d xformOp:transform = ( (0.13788995554980055, 0.00030937172722750317, 0.9904475071641143, 0), (-0.9904475507030492, -0.0000551548333966867, 0.13788997883920012, 0), (0.00009728722816676472, -0.9999999506235382, 0.000298811171963953, 0), (0.015332476038311454, -0.00004582380698971047, 0.03643164728356814, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Sphere "Geom_1" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometrySphereAPI"]
+        )
+        {
+            float3[] extent = [(-0.15, -0.15, -0.15), (0.15, 0.15, 0.15)]
+            point3f mujoco:geom:pos = (0.03, 0, 0.03)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.15, 0.12, 0.13)
+            uniform token mujoco:geom:type = "ellipsoid"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.15
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0.03, 0, 0.03)
+            float urdf:geometry:sphere:radius = 0.15
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.03, 0, 0.03, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_2" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.095, -0.095, -0.03), (0.095, 0.095, 0.03)]
+            double height = 0.06
+            point3f mujoco:geom:pos = (-0.01, 0.14, 0.01)
+            quatf mujoco:geom:quat = (0.70710677, 0, -0.70710677, 0)
+            vector3f mujoco:geom:size = (0.095, 0.03, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.095
+            float3 urdf:collision:origin:rpy = (0, -1.5707964, 0)
+            point3f urdf:collision:origin:xyz = (-0.01, 0.14, 0.01)
+            float urdf:geometry:cylinder:length = 0.06
+            float urdf:geometry:cylinder:radius = 0.095
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 2.220446049250313e-16, 0), (-0.01, 0.14, 0.01, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_3" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.095, -0.095, -0.03), (0.095, 0.095, 0.03)]
+            double height = 0.06
+            point3f mujoco:geom:pos = (-0.01, -0.14, 0.01)
+            quatf mujoco:geom:quat = (0.70710677, 0, -0.70710677, 0)
+            vector3f mujoco:geom:size = (0.095, 0.03, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.095
+            float3 urdf:collision:origin:rpy = (0, -1.5707964, 0)
+            point3f urdf:collision:origin:xyz = (-0.01, -0.14, 0.01)
+            float urdf:geometry:cylinder:length = 0.06
+            float urdf:geometry:cylinder:radius = 0.095
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 2.220446049250313e-16, 0), (-0.01, -0.14, 0.01, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "left_hip_roll" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.2617994, 0.3926991)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/cassie_pelvis>
+            rel physics:body1 = </cassie/left_hip_roll>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.021, 0.135, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0, 0.70710677, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -15
+            float physics:upperLimit = 22.5
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_hip_roll>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.2617994
+            float urdf:joint:limit:upper = 0.3926991
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-0, 1.5707963, 0)
+            point3f urdf:joint:origin:xyz = (0.021, 0.135, 0)
+            prepend rel urdf:joint:parent = </cassie/cassie_pelvis>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "right_hip_roll" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.3926991, 0.2617994)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/cassie_pelvis>
+            rel physics:body1 = </cassie/right_hip_roll>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.021, -0.135, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0, 0.70710677, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -22.5
+            float physics:upperLimit = 15
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_hip_roll>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.3926991
+            float urdf:joint:limit:upper = 0.2617994
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-0, 1.5707963, 0)
+            point3f urdf:joint:origin:xyz = (0.021, -0.135, 0)
+            prepend rel urdf:joint:parent = </cassie/cassie_pelvis>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_hip_roll" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.0038440067, 0.0037928964, 0.001722097)
+        float mujoco:body:inertial:mass = 1.82
+        point3f mujoco:body:inertial:pos = (-0.01793, 0.0001, -0.04428)
+        quatf mujoco:body:inertial:quat = (0.9737592, -0.004455351, 0.22640549, -0.022667818)
+        point3f mujoco:body:pos = (0.021, 0.135, 0)
+        quatf mujoco:body:quat = (0.70710677, 0, 0.70710677, 0)
+        point3f physics:centerOfMass = (-0.01793, 0.0001, -0.04428)
+        float3 physics:diagonalInertia = (0.0038440067, 0.0037928964, 0.001722097)
+        float physics:mass = 1.82
+        quatf physics:principalAxes = (0.9737592, -0.004455351, 0.22640549, -0.022667818)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.0038440067
+        float urdf:link:inertial:inertia:iyy = 0.0037928964
+        float urdf:link:inertial:inertia:izz = 0.001722097
+        float urdf:link:inertial:mass = 1.82
+        float3 urdf:link:inertial:origin:rpy = (-0.02110255, 0.45640823, -0.051450167)
+        point3f urdf:link:inertial:origin:xyz = (-0.01793, 0.0001, -0.04428)
+        matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, -1, 0), (0, 1, 0, 0), (1, 0, 2.220446049250313e-16, 0), (0.021, 0.135, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_4" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-hip-roll.usda@</left_hip_roll>
+        )
+        {
+            rel material:binding = </cassie/left_hip_roll/Geom_4/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_hip_roll>
+            point3f mujoco:geom:pos = (-0.030032242, 0.002730238, -0.06367003)
+            quatf mujoco:geom:quat = (-0.028151806, 0.5061759, -0.107612416, 0.8552269)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-hip-roll.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.429247, -1.0347437, -2.8289468)
+            point3f urdf:visual:origin:xyz = (-0.030032242, 0.002730238, -0.06367003)
+            matrix4d xformOp:transform = ( (-0.4859869669388428, -0.15709397712159762, 0.8597314408102701, 0), (-0.0607892511868653, -0.9752540868378898, -0.21256559704273303, 0), (0.8718493762719133, -0.1555665402910032, 0.46441115042186853, 0), (-0.030032240849974707, 0.0027302379650207174, -0.06367003197044073, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "left_hip_yaw" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.3926991, 0.3926991)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_hip_roll>
+            rel physics:body1 = </cassie/left_hip_yaw>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (7.70372e-34, 0, -0.07)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0, -0.70710677, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -22.5
+            float physics:upperLimit = 22.5
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_hip_yaw>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.3926991
+            float urdf:joint:limit:upper = 0.3926991
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, -1.5707963, 0)
+            point3f urdf:joint:origin:xyz = (7.70372e-34, 0, -0.07)
+            prepend rel urdf:joint:parent = </cassie/left_hip_roll>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_hip_yaw" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.002803, 0.002443, 0.00084199995)
+        float mujoco:body:inertial:mass = 1.171
+        point3f mujoco:body:inertial:pos = (0, -0.00001, -0.034277)
+        quatf mujoco:body:inertial:quat = (0.7070675, -0.000059257152, -0.00004948148, 0.70714605)
+        point3f mujoco:body:pos = (0, 0, -0.07)
+        quatf mujoco:body:quat = (0.70710677, 0, -0.70710677, 0)
+        point3f physics:centerOfMass = (0, -0.00001, -0.034277)
+        float3 physics:diagonalInertia = (0.002803, 0.002443, 0.00084199995)
+        float physics:mass = 1.171
+        quatf physics:principalAxes = (0.7070675, -0.000059257152, -0.00004948148, 0.70714605)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.002803
+        float urdf:link:inertial:inertia:iyy = 0.002443
+        float urdf:link:inertial:inertia:izz = 0.00084199995
+        float urdf:link:inertial:mass = 1.171
+        float3 urdf:link:inertial:origin:rpy = (-0.00015377888, 0.000013833429, 1.5709075)
+        point3f urdf:link:inertial:origin:xyz = (0, -0.00001, -0.034277)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.049, 0.135, -1.5543122344752193e-17, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_5" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-hip-yaw.usda@</left_hip_yaw>
+        )
+        {
+            rel material:binding = </cassie/left_hip_yaw/Geom_5/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_hip_yaw>
+            point3f mujoco:geom:pos = (0.0000064624733, 0.000011435089, -0.07286112)
+            quatf mujoco:geom:quat = (0.00026251093, 0.70706105, -0.7071524, -0.00012019568)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-hip-yaw.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (3.1410515, -0.0002012991, -1.5709255)
+            point3f urdf:visual:origin:xyz = (0.0000064624733, 0.000011435089, -0.07286112)
+            matrix4d xformOp:transform = ( (-0.00012913860526242438, -0.9999999714009453, 0.00020129910457084325, 0), (-0.9999998451902359, 0.0001292475352292488, 0.0005412158344019681, 0), (-0.0005412418363368165, -0.00020122918154977582, -0.9999998332820321, 0), (0.000006462473143453072, 0.000011435088791586135, -0.0728611175444911, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "left_hip_pitch" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.87266463, 1.3962634)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_hip_yaw>
+            rel physics:body1 = </cassie/left_hip_pitch>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, 0, -0.09)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.5, -0.5, -0.5, 0.5)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -50
+            float physics:upperLimit = 80
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_hip_pitch>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.87266463
+            float urdf:joint:limit:upper = 1.3962634
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707964, 1.5707964, 0)
+            point3f urdf:joint:origin:xyz = (0, 0, -0.09)
+            prepend rel urdf:joint:parent = </cassie/left_hip_yaw>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_hip_pitch" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.030257354, 0.0297176, 0.010894046)
+        float mujoco:body:inertial:mass = 5.52
+        point3f mujoco:body:inertial:pos = (0.05946, 0.00005, -0.03581)
+        quatf mujoco:body:inertial:quat = (0.0015279553, 0.70596963, 0.011534488, 0.7081465)
+        point3f mujoco:body:pos = (0, 0, -0.09)
+        quatf mujoco:body:quat = (-0.5, -0.5, -0.5, 0.5)
+        point3f physics:centerOfMass = (0.05946, 0.00005, -0.03581)
+        float3 physics:diagonalInertia = (0.030257354, 0.0297176, 0.010894046)
+        float physics:mass = 5.52
+        quatf physics:principalAxes = (0.0015279553, 0.70596963, 0.011534488, 0.7081465)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.030257354
+        float urdf:link:inertial:inertia:iyy = 0.0297176
+        float urdf:link:inertial:inertia:izz = 0.010894046
+        float urdf:link:inertial:mass = 5.52
+        float3 urdf:link:inertial:origin:rpy = (1.4127381, -1.5520682, 1.7430067)
+        point3f urdf:link:inertial:origin:xyz = (0.05946, 0.00005, -0.03581)
+        matrix4d xformOp:transform = ( (0, 0, -1, 0), (1, 0, 0, 0), (0, -1, 0, 0), (-0.049, 0.135, -0.09000000000000001, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_6" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-hip-pitch.usda@</left_hip_pitch>
+        )
+        {
+            rel material:binding = </cassie/left_hip_pitch/Geom_6/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_hip_pitch>
+            point3f mujoco:geom:pos = (0.060519118, 0.0006756202, -0.055080265)
+            quatf mujoco:geom:quat = (-0.5233864, 0.52354956, -0.48246756, 0.4681747)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-hip-pitch.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.5845565, 0.014809125, -1.4745623)
+            point3f urdf:visual:origin:xyz = (0.060519118, 0.0006756202, -0.055080265)
+            matrix4d xformOp:transform = ( (0.09607499735142144, -0.995263935212368, -0.014808583643138695, 0), (-0.015118833823902778, 0.013416557832639286, -0.9997956875480755, 0), (0.9952592706163204, 0.09627925654841196, -0.01375823428916334, 0), (0.060519117919114955, 0.0006756202218081205, -0.05508026447594726, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_7" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.08, -0.08, -0.06), (0.08, 0.08, 0.06)]
+            double height = 0.12
+            point3f mujoco:geom:pos = (0.06, 0, -0.05)
+            quatf mujoco:geom:quat = (0.70710677, 0, -0.70710677, 0)
+            vector3f mujoco:geom:size = (0.08, 0.06, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.08
+            float3 urdf:collision:origin:rpy = (0, -1.5707964, 0)
+            point3f urdf:collision:origin:xyz = (0.06, 0, -0.05)
+            float urdf:geometry:cylinder:length = 0.12
+            float urdf:geometry:cylinder:radius = 0.08
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 2.220446049250313e-16, 0), (0.06, 0, -0.05, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsSphericalJoint "left_achilles_rod" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            uniform token mujoco:joint:type = "ball"
+            rel physics:body0 = </cassie/left_hip_pitch>
+            rel physics:body1 = </cassie/left_achilles_rod>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, 0, 0.045)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.9465142, -0.0145065095, 0.042981047, -0.31945756)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            prepend rel urdf:joint:child = </cassie/left_achilles_rod>
+            float3 urdf:joint:origin:rpy = (-0.055093635, 0.072158515, -0.6529979)
+            point3f urdf:joint:origin:xyz = (0, 0, 0.045)
+            prepend rel urdf:joint:parent = </cassie/left_hip_pitch>
+            uniform token urdf:joint:type = "fixed"
+        }
+
+        def PhysicsRevoluteJoint "left_knee" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.86234, -0.6457718)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_hip_pitch>
+            rel physics:body1 = </cassie/left_knee>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.12, 0, 0.0045)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.9238795, 0, 0, -0.38268343)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -164
+            float physics:upperLimit = -37
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_knee>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.86234
+            float urdf:joint:limit:upper = -0.6457718
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -0.7853982)
+            point3f urdf:joint:origin:xyz = (0.12, 0, 0.0045)
+            prepend rel urdf:joint:parent = </cassie/left_hip_pitch>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_achilles_rod" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.004488, 0.004487, 0.0000037539996)
+        float mujoco:body:inertial:mass = 0.1567
+        point3f mujoco:body:inertial:pos = (0.24719, 0, 0)
+        quatf mujoco:body:inertial:quat = (-0.0000029494097, 0.7071055, 0.000002949399, 0.707108)
+        point3f mujoco:body:pos = (0, 0, 0.045)
+        quatf mujoco:body:quat = (0.9465142, -0.0145065095, 0.042981047, -0.31945756)
+        point3f physics:centerOfMass = (0.24719, 0, 0)
+        float3 physics:diagonalInertia = (0.004488, 0.004487, 0.0000037539996)
+        float physics:mass = 0.1567
+        quatf physics:principalAxes = (-0.0000029494097, 0.7071055, 0.000002949399, 0.707108)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.004488
+        float urdf:link:inertial:inertia:iyy = 0.004487
+        float urdf:link:inertial:inertia:izz = 0.0000037539996
+        float urdf:link:inertial:mass = 0.1567
+        float3 urdf:link:inertial:origin:rpy = (-9.774019e-8, -1.5707928, -3.1415842)
+        point3f urdf:link:inertial:origin:xyz = (0.24719, 0, 0)
+        matrix4d xformOp:transform = ( (-0.6059892263595001, 0.07209590795824108, -0.7921989886334692, 0), (0.7954728515393938, 0.054922473834340325, -0.6034952065523815, 0), (-6.6400276249600765e-9, -0.995884381805234, -0.0906327649164855, 0), (-0.049, 0.09000000000000001, -0.09000000000000001, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_8" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-achilles-rod.usda@</left_achilles_rod>
+        )
+        {
+            rel material:binding = </cassie/left_achilles_rod/Geom_8/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_achilles_rod>
+            point3f mujoco:geom:pos = (0.25052682, 9.1350773e-7, -0.000001771809)
+            quatf mujoco:geom:quat = (-0.0004622503, 0.70711017, -0.00046693633, 0.70710313)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-achilles-rod.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.5783623, -1.5694822, -1.563237)
+            point3f urdf:visual:origin:xyz = (0.25052682, 9.1350773e-7, -0.000001771809)
+            matrix4d xformOp:transform = ( (0.000009933794772543081, -0.0013140680637195165, 0.9999991365628491, 0), (-0.000006633603572408662, -0.9999991365902734, -0.0013140679978586405, 0), (0.9999999999286575, -0.000006620544162900871, -0.00000994250320229817, 0), (0.25052681045635006, 9.135077056921112e-7, -0.0000017718089821450435, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "left_knee" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.0021669911, 0.001637475, 0.00076873397)
+        float mujoco:body:inertial:mass = 0.7578
+        point3f mujoco:body:inertial:pos = (0.023, 0.03207, -0.002181)
+        quatf mujoco:body:inertial:quat = (0.6058588, 0.3406891, -0.63878274, 0.32988274)
+        point3f mujoco:body:pos = (0.12, 0, 0.0045)
+        quatf mujoco:body:quat = (0.9238795, 0, -0, -0.38268343)
+        point3f physics:centerOfMass = (0.023, 0.03207, -0.002181)
+        float3 physics:diagonalInertia = (0.0021669911, 0.001637475, 0.00076873397)
+        float physics:mass = 0.7578
+        quatf physics:principalAxes = (0.6058588, 0.3406891, -0.63878274, 0.32988274)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.0021669911
+        float urdf:link:inertial:inertia:iyy = 0.001637475
+        float urdf:link:inertial:inertia:izz = 0.00076873397
+        float urdf:link:inertial:mass = 0.7578
+        float3 urdf:link:inertial:origin:rpy = (-2.9645576, -1.5217861, -2.3302715)
+        point3f urdf:link:inertial:origin:xyz = (0.023, 0.03207, -0.002181)
+        matrix4d xformOp:transform = ( (-0.7071067811865476, 0, -0.7071067811865475, 0), (0.7071067811865475, 0, -0.7071067811865476, 0), (0, -1, 0, 0), (-0.049, 0.1305, -0.21000000000000002, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_9" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-knee.usda@</left_knee>
+        )
+        {
+            rel material:binding = </cassie/left_knee/Geom_9/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_knee>
+            point3f mujoco:geom:pos = (0.019954698, 0.036387973, -0.0024124563)
+            quatf mujoco:geom:quat = (0.58634645, 0.3811158, -0.6153824, 0.36366618)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-knee.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-3.1279004, -1.522884, -2.045642)
+            point3f urdf:visual:origin:xyz = (0.019954698, 0.036387973, -0.0024124563)
+            matrix4d xformOp:transform = ( (-0.021897182718540797, -0.04259514827463734, 0.9988524249019232, 0), (-0.8955326607386969, 0.4449953073205518, -0.0006557537324335394, 0), (-0.4444567098596449, -0.8945193289170162, -0.047889490022236636, 0), (0.019954697646326115, 0.03638797076505328, -0.002412456300063052, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Xform "left_knee_spring" (
+            prepend apiSchemas = ["PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+        )
+        {
+            float3 mujoco:body:inertial:diaginertia = (0.00041218108, 0.0003669, 0.00005201891)
+            float mujoco:body:inertial:mass = 0.186
+            point3f mujoco:body:inertial:pos = (0.0836, 0.0034, 0)
+            quatf mujoco:body:inertial:quat = (0.50474703, 0.50474703, 0.4952075, 0.4952075)
+            point3f mujoco:body:pos = (0.06068, 0.08241, 0)
+            quatf mujoco:body:quat = (1, 0, 0, 0)
+            point3f physics:centerOfMass = (0.0836, 0.0034, 0)
+            float3 physics:diagonalInertia = (0.00041218108, 0.0003669, 0.00005201891)
+            float physics:mass = 0.186
+            quatf physics:principalAxes = (0.50474703, 0.50474703, 0.4952075, 0.4952075)
+            float urdf:link:inertial:inertia:ixx = 0.00041218108
+            float urdf:link:inertial:inertia:iyy = 0.0003669
+            float urdf:link:inertial:inertia:izz = 0.00005201891
+            float urdf:link:inertial:mass = 0.186
+            float3 urdf:link:inertial:origin:rpy = (1.5707964, 0, 1.5517169)
+            point3f urdf:link:inertial:origin:xyz = (0.0836, 0.0034, 0)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.06068, 0.08241, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Geom_10" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./cassie/meshes/usd/left-knee-spring.usda@</left_knee_spring>
+            )
+            {
+                rel material:binding = </cassie/left_knee/left_knee_spring/Geom_10/Materials/cassie>
+                rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/left_knee_spring>
+                point3f mujoco:geom:pos = (0.09774613, 0.002023302, -0.000003439321)
+                quatf mujoco:geom:quat = (-0.48987442, 0.4898914, -0.5099207, 0.5099121)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-knee-spring.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (-1.5708218, -0.0000088797415, -1.610866)
+                point3f urdf:visual:origin:xyz = (0.09774613, 0.002023302, -0.000003439321)
+                matrix4d xformOp:transform = ( (-0.04005890172460824, -0.9991973200093004, 0.000008879741860923218, 0), (-0.000025735183410202644, -0.000007855123825173393, -0.9999999996379987, 0), (0.9991973197173412, -0.040058901938628655, -0.000025399858659902463, 0), (0.09774612841032951, 0.0020233020073849826, -0.0000034393211249708427, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "cassie" (
+                        prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                    )
+                    {
+                    }
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "left_shin" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.34906584, 0.34906584)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_knee>
+            rel physics:body1 = </cassie/left_shin>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.06068, 0.04741, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -20
+            float physics:upperLimit = 20
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_shin>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.34906584
+            float urdf:joint:limit:upper = 0.34906584
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, 0)
+            point3f urdf:joint:origin:xyz = (0.06068, 0.04741, 0)
+            prepend rel urdf:joint:parent = </cassie/left_knee>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_shin" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.014731072, 0.014707027, 0.00035629125)
+        float mujoco:body:inertial:mass = 0.577
+        point3f mujoco:body:inertial:pos = (0.18338, 0.001169, 0.0002123)
+        quatf mujoco:body:inertial:quat = (0.5006417, 0.4919814, 0.50866854, 0.49856645)
+        point3f mujoco:body:pos = (0.06068, 0.04741, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.18338, 0.001169, 0.0002123)
+        float3 physics:diagonalInertia = (0.014731072, 0.014707027, 0.00035629125)
+        float physics:mass = 0.577
+        quatf physics:principalAxes = (0.5006417, 0.4919814, 0.50866854, 0.49856645)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.014731072
+        float urdf:link:inertial:inertia:iyy = 0.014707027
+        float urdf:link:inertial:inertia:izz = 0.00035629125
+        float urdf:link:inertial:mass = 0.577
+        float3 urdf:link:inertial:origin:rpy = (1.5723753, 0.018751644, 1.5854238)
+        point3f urdf:link:inertial:origin:xyz = (0.18338, 0.001169, 0.0002123)
+        matrix4d xformOp:transform = ( (-0.7071067811865476, 0, -0.7071067811865475, 0), (0.7071067811865475, 0, -0.7071067811865476, 0), (0, -1, 0, 0), (-0.05838330698634549, 0.1305, -0.2864311719784539, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_11" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-shin.usda@</left_shin>
+        )
+        {
+            rel material:binding = </cassie/left_shin/Geom_11/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_shin>
+            point3f mujoco:geom:pos = (0.15889369, 0.0055857217, 0.00067266735)
+            quatf mujoco:geom:quat = (0.04382703, 0.7087695, 0.027477527, 0.70354104)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-shin.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.632415, -1.4696426, 1.4860258)
+            point3f urdf:visual:origin:xyz = (0.15889369, 0.0055857217, 0.00067266735)
+            matrix4d xformOp:transform = ( (0.008549992566063813, 0.1006186948914736, 0.9948883233134547, 0), (-0.02271776269943771, -0.9946483537796831, 0.10078966009119521, 0), (0.9997053570352881, -0.02346338768599235, -0.006218404396992394, 0), (0.15889368909148663, 0.005585721642639364, 0.000672667330720457, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_12" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.04, -0.04, -0.11510865), (0.04, 0.04, 0.11510865)]
+            double height = 0.23021728866442678
+            point3f mujoco:geom:pos = (0.055, -0.005, 0)
+            quatf mujoco:geom:quat = (0.70710677, -0.030714756, -0.7064394, 0)
+            vector3f mujoco:geom:size = (0.04, 0.11510865, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.04
+            float3 urdf:collision:origin:rpy = (-1.5707964, -1.5273454, 1.5273454)
+            point3f urdf:collision:origin:xyz = (0.055, -0.005, 0)
+            float urdf:geometry:cylinder:length = 0.2302173
+            float urdf:geometry:cylinder:radius = 0.04
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.0018867924528301883, 0.04339622641509434, 0.9990561583550596, 0), (0.04339622641509434, 0.9981132075471698, -0.04343722427630694, 0), (-0.9990561583550596, 0.04343722427630694, 0, 0), (0.05500000000000001, -0.005, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_13" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.027, -0.027, -0.10562789), (0.027, 0.027, 0.10562789)]
+            double height = 0.21125576915199262
+            point3f mujoco:geom:pos = (0.275, -0.0115, 0)
+            quatf mujoco:geom:quat = (0.70710677, 0.076984674, -0.7029035, 0)
+            vector3f mujoco:geom:size = (0.027, 0.10562789, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.027
+            float3 urdf:collision:origin:rpy = (1.5707964, -1.4617074, -1.4617074)
+            point3f urdf:collision:origin:xyz = (0.275, -0.0115, 0)
+            float urdf:geometry:cylinder:length = 0.21125577
+            float urdf:geometry:cylinder:radius = 0.027
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.01185327925788171, -0.10822559322413676, 0.9940556929780737, 0), (-0.10822559322413676, 0.9881467207421184, 0.10887276637378902, 0), (-0.9940556929780737, -0.10887276637378902, 1.1102230246251565e-16, 0), (0.275, -0.0115, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_14" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.025, -0.025, -0.24093291), (0.025, 0.025, 0.24093291)]
+            double height = 0.48186580870611684
+            point3f mujoco:geom:pos = (0.19488, 0.0225, 0)
+            quatf mujoco:geom:quat = (0.70710677, -0.06603458, -0.7040166, 0)
+            vector3f mujoco:geom:size = (0.025, 0.24093291, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.025
+            float3 urdf:collision:origin:rpy = (-1.5707964, -1.4772731, 1.4772731)
+            point3f urdf:collision:origin:xyz = (0.19488, 0.0225, 0)
+            float urdf:geometry:cylinder:length = 0.48186582
+            float urdf:geometry:cylinder:radius = 0.025
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.008721130886174211, 0.09297888342113172, 0.995629885607009, 0), (0.09297888342113172, 0.9912788691138258, -0.09338699527329374, 0), (-0.995629885607009, 0.09338699527329374, 0, 0), (0.19488, 0.0225, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "left_tarsus" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0.87266463, 2.9670596)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_shin>
+            rel physics:body1 = </cassie/left_tarsus>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.43476, 0.02, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.8746196, 0, 0, 0.4848098)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 50
+            float physics:upperLimit = 170
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_tarsus>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0.87266463
+            float urdf:joint:limit:upper = 2.9670596
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, 1.0122913)
+            point3f urdf:joint:origin:xyz = (0.43476, 0.02, 0)
+            prepend rel urdf:joint:parent = </cassie/left_shin>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_tarsus" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.01367462, 0.0135988025, 0.00038795808)
+        float mujoco:body:inertial:mass = 0.782
+        point3f mujoco:body:inertial:pos = (0.11046, -0.03058, -0.00131)
+        quatf mujoco:body:inertial:quat = (-0.020444112, 0.7050092, -0.032995183, 0.7081351)
+        point3f mujoco:body:pos = (0.43476, 0.02, 0)
+        quatf mujoco:body:quat = (0.8746196, 0, 0, 0.4848098)
+        point3f physics:centerOfMass = (0.11046, -0.03058, -0.00131)
+        float3 physics:diagonalInertia = (0.01367462, 0.0135988025, 0.00038795808)
+        float physics:mass = 0.782
+        quatf physics:principalAxes = (-0.020444112, 0.7050092, -0.032995183, 0.7081351)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.01367462
+        float urdf:link:inertial:inertia:iyy = 0.0135988025
+        float urdf:link:inertial:inertia:izz = 0.00038795808
+        float urdf:link:inertial:mass = 0.782
+        float3 urdf:link:inertial:origin:rpy = (-1.5212498, -1.4950745, -1.6381058)
+        point3f urdf:link:inertial:origin:xyz = (0.11046, -0.03058, -0.00131)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.35166291555127793, 0.1305, -0.6079950517908482, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_15" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-tarsus.usda@</left_tarsus>
+        )
+        {
+            rel material:binding = </cassie/left_tarsus/Geom_15/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_tarsus>
+            point3f mujoco:geom:pos = (0.14572288, -0.03727946, -0.0011771517)
+            quatf mujoco:geom:quat = (0.020050837, 0.70492595, 0.017517762, 0.708781)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-tarsus.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.4667495, -1.517381, 1.6712595)
+            point3f urdf:visual:origin:xyz = (0.14572288, -0.03727946, -0.0011771517)
+            matrix4d xformOp:transform = ( (-0.005354707051516749, 0.05312075669682212, 0.9985737390500261, 0), (-0.0037258526546431643, -0.998582183777289, 0.05310122658260243, 0), (0.9999787223408249, -0.0034361971040704486, 0.005545035173346591, 0), (0.14572287362874556, -0.037279462084656705, -0.0011771516338105977, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_16" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.028, -0.028, -0.110101536), (0.028, 0.028, 0.110101536)]
+            double height = 0.2202030755916002
+            point3f mujoco:geom:pos = (0.12, -0.035295, 0.00046)
+            quatf mujoco:geom:quat = (0.7085824, -0.030154068, -0.70498353, 0)
+            vector3f mujoco:geom:size = (0.028, 0.110101536, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.028
+            float3 urdf:collision:origin:rpy = (-1.4733378, -1.5278461, 1.4306804)
+            point3f urdf:collision:origin:xyz = (0.12, -0.035295, 0.00046)
+            float urdf:geometry:cylinder:length = 0.22020307
+            float urdf:geometry:cylinder:radius = 0.028
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.005996497196697592, 0.04251624073354126, 0.9990777804031363, 0), (0.04251624073354126, 0.9981814644304426, -0.04273328142542507, 0), (-0.9990777804031363, 0.04273328142542507, 0.0041779616271402364, 0), (0.12000000000000001, -0.035295, 0.00046, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_17" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.033, -0.033, -0.08533002), (0.033, 0.033, 0.08533002)]
+            double height = 0.17066003164185806
+            point3f mujoco:geom:pos = (0.124, -0.055, 0.00046)
+            quatf mujoco:geom:quat = (0.7090102, 0.12396725, -0.6942166, 0)
+            vector3f mujoco:geom:size = (0.033, 0.08533002, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.033
+            float3 urdf:collision:origin:rpy = (1.5401393, -1.3940061, -1.3639079)
+            point3f urdf:collision:origin:xyz = (0.124, -0.055, 0.00046)
+            float urdf:geometry:cylinder:length = 0.17066003
+            float urdf:geometry:cylinder:radius = 0.033
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.03612659370917859, -0.17212025112336102, 0.9844132711316945, 0), (-0.17212025112336102, 0.9692642408708284, 0.1757880841306598, 0), (-0.9844132711316945, -0.1757880841306598, 0.005390834580006998, 0), (0.124, -0.05500000000000001, 0.00046, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_18" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.02, -0.02, -0.111), (0.02, 0.02, 0.111)]
+            double height = 0.222
+            point3f mujoco:geom:pos = (0.319, -0.04, 0)
+            quatf mujoco:geom:quat = (0.70710677, 0, -0.70710677, 0)
+            vector3f mujoco:geom:size = (0.02, 0.111, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.02
+            float3 urdf:collision:origin:rpy = (0, -1.5707964, 0)
+            point3f urdf:collision:origin:xyz = (0.319, -0.04, 0)
+            float urdf:geometry:cylinder:length = 0.222
+            float urdf:geometry:cylinder:radius = 0.02
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 2.220446049250313e-16, 0), (0.319, -0.04, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "left_heel_spring" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 0)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_tarsus>
+            rel physics:body1 = </cassie/left_heel_spring>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.01269, -0.03059, 0.00092)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.20935485, 0.010860572, -0.037555832, 0.97705793)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_heel_spring>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 0
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-0.06894266, -0.036956217, 2.7207093)
+            point3f urdf:joint:origin:xyz = (-0.01269, -0.03059, 0.00092)
+            prepend rel urdf:joint:parent = </cassie/left_tarsus>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "left_foot_crank" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.443461, -0.5235988)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_tarsus>
+            rel physics:body1 = </cassie/left_foot_crank>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.058, -0.034, 0.02275)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, -1.3877788e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -140
+            float physics:upperLimit = -30
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_foot_crank>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.443461
+            float urdf:joint:limit:upper = -0.5235988
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -2.7755576e-17)
+            point3f urdf:joint:origin:xyz = (0.058, -0.034, 0.02275)
+            prepend rel urdf:joint:parent = </cassie/left_tarsus>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "left_foot" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.443461, -0.5235988)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_tarsus>
+            rel physics:body1 = </cassie/left_foot>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.408, -0.04, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, -1.3877788e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -140
+            float physics:upperLimit = -30
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_foot>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.443461
+            float urdf:joint:limit:upper = -0.5235988
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -2.7755576e-17)
+            point3f urdf:joint:origin:xyz = (0.408, -0.04, 0)
+            prepend rel urdf:joint:parent = </cassie/left_tarsus>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_heel_spring" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00022257518, 0.00020070185, 0.000029322971)
+        float mujoco:body:inertial:mass = 0.126
+        point3f mujoco:body:inertial:pos = (0.081, 0.0022, 0)
+        quatf mujoco:body:inertial:quat = (0.50919366, 0.5091446, 0.4888882, 0.49242455)
+        point3f mujoco:body:pos = (-0.01269, -0.03059, 0.00092)
+        quatf mujoco:body:quat = (0.20935485, 0.010860572, -0.037555832, 0.97705793)
+        point3f physics:centerOfMass = (0.081, 0.0022, 0)
+        float3 physics:diagonalInertia = (0.00022257518, 0.00020070185, 0.000029322971)
+        float physics:mass = 0.126
+        quatf physics:principalAxes = (0.50919366, 0.5091446, 0.4888882, 0.49242455)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00022257518
+        float urdf:link:inertial:inertia:iyy = 0.00020070185
+        float urdf:link:inertial:inertia:izz = 0.000029322971
+        float urdf:link:inertial:mass = 0.126
+        float3 urdf:link:inertial:origin:rpy = (1.5672761, -0.0035530634, 1.5337749)
+        point3f urdf:link:inertial:origin:xyz = (0.081, 0.0022, 0)
+        matrix4d xformOp:transform = ( (0.1926440557771025, -0.03694780545361607, 0.9805728567760328, 0), (-0.9784211434376566, 0.06884102073738564, 0.19481524565080408, 0), (-0.0747016321635407, -0.9969432148001192, -0.02288870062075353, 0), (-0.38432352682337306, 0.12958, -0.6025115609927261, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_19" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-heel-spring.usda@</left_heel_spring>
+        )
+        {
+            rel material:binding = </cassie/left_heel_spring/Geom_19/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_heel_spring>
+            point3f mujoco:geom:pos = (0.08624787, 0.0016402404, -0.00019321888)
+            quatf mujoco:geom:quat = (-0.4853956, 0.49272346, -0.509278, 0.5121041)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-heel-spring.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.5750777, -0.010248973, -1.6140414)
+            point3f urdf:visual:origin:xyz = (0.08624787, 0.0016402404, -0.00019321888)
+            matrix4d xformOp:transform = ( (-0.04322938310100577, -0.9990126038570462, 0.010248793659327626, 0), (-0.004720326834174449, -0.010054031963694143, -0.9999383155754419, 0), (0.9990540220384909, -0.04327509417711306, -0.004281036402196792, 0), (0.08624786951953133, 0.0016402403869463587, -0.00019321888110170057, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "left_foot_crank" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00006378809, 0.000049620994, 0.00002651492)
+        float mujoco:body:inertial:mass = 0.1261
+        point3f mujoco:body:inertial:pos = (0.00493, 0.00002, -0.00215)
+        quatf mujoco:body:inertial:quat = (-0.00032570117, 0.66823745, -0.00019792408, 0.743948)
+        point3f mujoco:body:pos = (0.058, -0.034, 0.02275)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.00493, 0.00002, -0.00215)
+        float3 physics:diagonalInertia = (0.00006378809, 0.000049620994, 0.00002651492)
+        float physics:mass = 0.1261
+        quatf physics:principalAxes = (-0.00032570117, 0.66823745, -0.00019792408, 0.743948)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00006378809
+        float urdf:link:inertial:inertia:iyy = 0.000049620994
+        float urdf:link:inertial:inertia:izz = 0.00002651492
+        float urdf:link:inertial:mass = 0.1261
+        float3 urdf:link:inertial:origin:rpy = (-0.0068255556, -1.4636717, -3.134586)
+        point3f urdf:link:inertial:origin:xyz = (0.00493, 0.00002, -0.00215)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.37174431190506385, 0.10775000000000001, -0.6721568591257585, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_20" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-foot-crank.usda@</left_foot_crank>
+        )
+        {
+            rel material:binding = </cassie/left_foot_crank/Geom_20/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_foot_crank>
+            point3f mujoco:geom:pos = (0.0170895, 0.000049604456, 0.0044750855)
+            quatf mujoco:geom:quat = (0.00073496735, 0.7465254, -0.0001308723, 0.6653565)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-foot-crank.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (3.133537, -1.4559399, 0.0068290564)
+            point3f urdf:visual:origin:xyz = (0.0170895, 0.000049604456, 0.0044750855)
+            matrix4d xformOp:transform = ( (0.1146014024810974, 0.0007826316285416906, 0.9934112471867328, 0), (-0.0011734296146522106, -0.9999988853908621, 0.0009231901071811936, 0), (0.9934108624392556, -0.0012714970580171392, -0.11460035638219712, 0), (0.017089499012850378, 0.000049604455415067394, 0.0044750854519619064, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "left_plantar_rod" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 0)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/left_foot_crank>
+            rel physics:body1 = </cassie/left_plantar_rod>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.055, 0, -0.00791)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, -1.3877788e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/left_plantar_rod>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 0
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -2.7755576e-17)
+            point3f urdf:joint:origin:xyz = (0.055, 0, -0.00791)
+            prepend rel urdf:joint:parent = </cassie/left_foot_crank>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "left_plantar_rod" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.001775, 0.001774, 0.0000027789997)
+        float mujoco:body:inertial:mass = 0.1186
+        point3f mujoco:body:inertial:pos = (0.17792, 0, 0)
+        quatf mujoco:body:inertial:quat = (-0.000004670883, 0.70710516, 0.0000046708615, 0.7071084)
+        point3f mujoco:body:pos = (0.055, 0, -0.00791)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.17792, 0, 0)
+        float3 physics:diagonalInertia = (0.001775, 0.001774, 0.0000027789997)
+        float physics:mass = 0.1186
+        quatf physics:principalAxes = (-0.000004670883, 0.70710516, 0.0000046708615, 0.7071084)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.001775
+        float urdf:link:inertial:inertia:iyy = 0.001774
+        float urdf:link:inertial:inertia:izz = 0.0000027789997
+        float urdf:link:inertial:mass = 0.1186
+        float3 urdf:link:inertial:origin:rpy = (-3.4788076e-8, -1.5707917, -3.1415794)
+        point3f urdf:link:inertial:origin:xyz = (0.17792, 0, 0)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.3593719832883149, 0.11566000000000001, -0.7257472079266309, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_21" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-plantar-rod.usda@</left_plantar_rod>
+        )
+        {
+            rel material:binding = </cassie/left_plantar_rod/Geom_21/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_plantar_rod>
+            point3f mujoco:geom:pos = (0.17513572, 4.083418e-7, -1.96161e-7)
+            quatf mujoco:geom:quat = (0.00003855827, 0.7071117, 0.00004209506, 0.7071019)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-plantar-rod.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.692327, -1.5706815, 1.4492706)
+            point3f urdf:visual:origin:xyz = (0.17513572, 4.083418e-7, -1.96161e-7)
+            matrix4d xformOp:transform = ( (0.000013929999023054584, 0.00011406107225174317, 0.9999999933980135, 0), (0.000005002566010321895, -0.9999999934825312, 0.00011406100257564322, 0), (0.9999999998904647, 0.000005000977107640573, -0.000013930569530584691, 0), (0.1751357096957789, 4.0834180852183234e-7, -1.9616099068583738e-7, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "left_foot" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00033262654, 0.00028907138, 0.00005272209)
+        float mujoco:body:inertial:mass = 0.1498
+        point3f mujoco:body:inertial:pos = (0.00474, 0.02748, -0.00014)
+        quatf mujoco:body:inertial:quat = (0.2792679, 0.6551784, -0.27009094, 0.64792097)
+        point3f mujoco:body:pos = (0.408, -0.04, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.00474, 0.02748, -0.00014)
+        float3 physics:diagonalInertia = (0.00033262654, 0.00028907138, 0.00005272209)
+        float physics:mass = 0.1498
+        quatf physics:principalAxes = (0.2792679, 0.6551784, -0.27009094, 0.64792097)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00033262654
+        float urdf:link:inertial:inertia:iyy = 0.00028907138
+        float urdf:link:inertial:inertia:izz = 0.00005272209
+        float urdf:link:inertial:mass = 0.1498
+        float3 urdf:link:inertial:origin:rpy = (1.8409542, -1.55425, 0.50270015)
+        point3f urdf:link:inertial:origin:xyz = (0.00474, 0.02748, -0.00014)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.2988575314858475, 0.1305, -1.0145360600713196, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_22" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/left-foot.usda@</left_foot>
+        )
+        {
+            rel material:binding = </cassie/left_foot/Geom_22/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/left_foot>
+            point3f mujoco:geom:pos = (0.008884769, 0.027471691, 0.00010202054)
+            quatf mujoco:geom:quat = (0.26759616, 0.652894, -0.26977998, 0.6552407)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/left-foot.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.1392459, -1.5662628, -2.7819033)
+            point3f urdf:visual:origin:xyz = (0.008884769, 0.027471691, 0.00010202054)
+            matrix4d xformOp:transform = ( (-0.0042433380362005835, -0.0015956999961035945, 0.9999897238591171, 0), (-0.7029552759471693, -0.7112221337997708, -0.004117816331568214, 0), (0.7112213959804288, -0.7029655255663849, 0.0018962502014501226, 0), (0.008884768923271936, 0.027471691434268863, 0.0001020205372971275, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_23" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.02, -0.02, -0.07999995), (0.02, 0.02, 0.07999995)]
+            double height = 0.15999990376559606
+            point3f mujoco:geom:pos = (0.0084625, 0.041199, 0)
+            quatf mujoco:geom:quat = (0.70710677, -0.45451966, -0.54167503, 0)
+            vector3f mujoco:geom:size = (0.02, 0.07999995, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.02
+            float3 urdf:collision:origin:rpy = (-1.5707964, -0.8726643, 0.8726643)
+            point3f urdf:collision:origin:xyz = (0.0084625, 0.041199, 0)
+            float urdf:geometry:cylinder:length = 0.1599999
+            float urdf:geometry:cylinder:radius = 0.02
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.41317626717824807, 0.4924039392804417, 0.7660442107488, 0), (0.4924039392804417, 0.5868237328217522, -0.642787886614432, 0), (-0.7660442107488, 0.642787886614432, 2.220446049250313e-16, 0), (0.008462500000000001, 0.041199, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Xform "right_hip_roll" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.0038440067, 0.0037928964, 0.001722097)
+        float mujoco:body:inertial:mass = 1.82
+        point3f mujoco:body:inertial:pos = (-0.01793, 0.0001, -0.04428)
+        quatf mujoco:body:inertial:quat = (0.9737592, 0.004455351, 0.22640549, 0.022667818)
+        point3f mujoco:body:pos = (0.021, -0.135, 0)
+        quatf mujoco:body:quat = (0.70710677, 0, 0.70710677, 0)
+        point3f physics:centerOfMass = (-0.01793, 0.0001, -0.04428)
+        float3 physics:diagonalInertia = (0.0038440067, 0.0037928964, 0.001722097)
+        float physics:mass = 1.82
+        quatf physics:principalAxes = (0.9737592, 0.004455351, 0.22640549, 0.022667818)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.0038440067
+        float urdf:link:inertial:inertia:iyy = 0.0037928964
+        float urdf:link:inertial:inertia:izz = 0.001722097
+        float urdf:link:inertial:mass = 1.82
+        float3 urdf:link:inertial:origin:rpy = (0.02110255, 0.45640823, 0.051450167)
+        point3f urdf:link:inertial:origin:xyz = (-0.01793, 0.0001, -0.04428)
+        matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, -1, 0), (0, 1, 0, 0), (1, 0, 2.220446049250313e-16, 0), (0.021, -0.135, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_24" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-hip-roll.usda@</right_hip_roll>
+        )
+        {
+            rel material:binding = </cassie/right_hip_roll/Geom_24/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_hip_roll>
+            point3f mujoco:geom:pos = (-0.030032242, -0.002730238, -0.06367003)
+            quatf mujoco:geom:quat = (0.8552269, -0.10761242, 0.5061759, -0.028151812)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-hip-roll.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.42924702, 1.0347435, -0.31264585)
+            point3f urdf:visual:origin:xyz = (-0.030032242, -0.002730238, -0.06367003)
+            matrix4d xformOp:transform = ( (0.4859869764038268, -0.15709399405099178, -0.8597314323665114, 0), (-0.060789246150237605, 0.9752540831332902, -0.21256561547985925, 0), (0.8718493713471108, 0.15556654641969953, 0.46441115761434437, 0), (-0.030032240978176916, -0.0027302379191849737, -0.06367003211264628, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "right_hip_yaw" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.3926991, 0.3926991)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_hip_roll>
+            rel physics:body1 = </cassie/right_hip_yaw>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (7.70372e-34, 0, -0.07)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0, -0.70710677, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -22.5
+            float physics:upperLimit = 22.5
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_hip_yaw>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.3926991
+            float urdf:joint:limit:upper = 0.3926991
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, -1.5707963, 0)
+            point3f urdf:joint:origin:xyz = (7.70372e-34, 0, -0.07)
+            prepend rel urdf:joint:parent = </cassie/right_hip_roll>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_hip_yaw" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.002803, 0.002443, 0.00084199995)
+        float mujoco:body:inertial:mass = 1.171
+        point3f mujoco:body:inertial:pos = (0, 0.00001, -0.034277)
+        quatf mujoco:body:inertial:quat = (0.70714605, -0.00004948148, -0.000059257152, 0.7070675)
+        point3f mujoco:body:pos = (0, 0, -0.07)
+        quatf mujoco:body:quat = (0.70710677, 0, -0.70710677, 0)
+        point3f physics:centerOfMass = (0, 0.00001, -0.034277)
+        float3 physics:diagonalInertia = (0.002803, 0.002443, 0.00084199995)
+        float physics:mass = 1.171
+        quatf physics:principalAxes = (0.70714605, -0.00004948148, -0.000059257152, 0.7070675)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.002803
+        float urdf:link:inertial:inertia:iyy = 0.002443
+        float urdf:link:inertial:inertia:izz = 0.00084199995
+        float urdf:link:inertial:mass = 1.171
+        float3 urdf:link:inertial:origin:rpy = (-0.00015377888, -0.000013833429, 1.5706853)
+        point3f urdf:link:inertial:origin:xyz = (0, 0.00001, -0.034277)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.049, -0.135, -1.5543122344752193e-17, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_25" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-hip-yaw.usda@</right_hip_yaw>
+        )
+        {
+            rel material:binding = </cassie/right_hip_yaw/Geom_25/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_hip_yaw>
+            point3f mujoco:geom:pos = (0.000006462347, -0.000011435131, -0.07286112)
+            quatf mujoco:geom:quat = (0.70706105, 0.0002625096, 0.0001201948, 0.7071524)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-hip-yaw.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.00054121274, -0.00020129845, 1.5709255)
+            point3f urdf:visual:origin:xyz = (0.000006462347, -0.000011435131, -0.07286112)
+            matrix4d xformOp:transform = ( (-0.00012913759779342726, 0.9999999714012091, 0.0002012984404517131, 0), (-0.9999998451920593, -0.00012924652677193116, 0.0005412127061136613, 0), (0.000541238707759905, -0.0002012285183803534, 0.9999998332838584, 0), (0.000006462346921488207, -0.000011435130148194862, -0.0728611172437705, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "right_hip_pitch" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.87266463, 1.3962634)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_hip_yaw>
+            rel physics:body1 = </cassie/right_hip_pitch>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, 0, -0.09)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.5, -0.5, -0.5, 0.5)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -50
+            float physics:upperLimit = 80
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_hip_pitch>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.87266463
+            float urdf:joint:limit:upper = 1.3962634
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707964, 1.5707964, 0)
+            point3f urdf:joint:origin:xyz = (0, 0, -0.09)
+            prepend rel urdf:joint:parent = </cassie/right_hip_yaw>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_hip_pitch" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.030257354, 0.0297176, 0.010894046)
+        float mujoco:body:inertial:mass = 5.52
+        point3f mujoco:body:inertial:pos = (0.05946, 0.00005, 0.03581)
+        quatf mujoco:body:inertial:quat = (-0.011534488, 0.7081465, -0.0015279553, 0.70596963)
+        point3f mujoco:body:pos = (0, 0, -0.09)
+        quatf mujoco:body:quat = (-0.5, -0.5, -0.5, 0.5)
+        point3f physics:centerOfMass = (0.05946, 0.00005, 0.03581)
+        float3 physics:diagonalInertia = (0.030257354, 0.0297176, 0.010894046)
+        float physics:mass = 5.52
+        quatf physics:principalAxes = (-0.011534488, 0.7081465, -0.0015279553, 0.70596963)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.030257354
+        float urdf:link:inertial:inertia:iyy = 0.0297176
+        float urdf:link:inertial:inertia:izz = 0.010894046
+        float urdf:link:inertial:mass = 5.52
+        float3 urdf:link:inertial:origin:rpy = (-1.7288545, -1.5520682, -1.3985859)
+        point3f urdf:link:inertial:origin:xyz = (0.05946, 0.00005, 0.03581)
+        matrix4d xformOp:transform = ( (0, 0, -1, 0), (1, 0, 0, 0), (0, -1, 0, 0), (-0.049, -0.135, -0.09000000000000001, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_26" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-hip-pitch.usda@</right_hip_pitch>
+        )
+        {
+            rel material:binding = </cassie/right_hip_pitch/Geom_26/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_hip_pitch>
+            point3f mujoco:geom:pos = (0.060519118, 0.0006756202, 0.055080265)
+            quatf mujoco:geom:quat = (0.48246756, 0.4681747, 0.5233864, 0.52354956)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-hip-pitch.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5570362, 0.014809124, 1.6670303)
+            point3f urdf:visual:origin:xyz = (0.060519118, 0.0006756202, 0.055080265)
+            matrix4d xformOp:transform = ( (-0.09607499850771428, 0.9952639351117571, -0.014808582903269862, 0), (-0.015118835957356136, 0.013416556866958751, 0.9997956875287723, 0), (0.9952592704722913, 0.0962792577230212, 0.01375823648825547, 0), (0.06051911793977777, 0.0006756202476642267, 0.05508026443389881, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_27" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.08, -0.08, -0.06), (0.08, 0.08, 0.06)]
+            double height = 0.12
+            point3f mujoco:geom:pos = (0.06, 0, 0.05)
+            quatf mujoco:geom:quat = (0.70710677, 0, -0.70710677, 0)
+            vector3f mujoco:geom:size = (0.08, 0.06, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.08
+            float3 urdf:collision:origin:rpy = (0, -1.5707964, 0)
+            point3f urdf:collision:origin:xyz = (0.06, 0, 0.05)
+            float urdf:geometry:cylinder:length = 0.12
+            float urdf:geometry:cylinder:radius = 0.08
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 2.220446049250313e-16, 0), (0.06, 0, 0.05, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsSphericalJoint "right_achilles_rod" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            uniform token mujoco:joint:type = "ball"
+            rel physics:body0 = </cassie/right_hip_pitch>
+            rel physics:body1 = </cassie/right_achilles_rod>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, 0, -0.045)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.9465142, 0.0145065095, -0.042981047, -0.31945756)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            prepend rel urdf:joint:child = </cassie/right_achilles_rod>
+            float3 urdf:joint:origin:rpy = (0.055093635, -0.072158515, -0.6529979)
+            point3f urdf:joint:origin:xyz = (0, 0, -0.045)
+            prepend rel urdf:joint:parent = </cassie/right_hip_pitch>
+            uniform token urdf:joint:type = "fixed"
+        }
+
+        def PhysicsRevoluteJoint "right_knee" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.86234, -0.6457718)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_hip_pitch>
+            rel physics:body1 = </cassie/right_knee>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.12, 0, -0.0045)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.9238795, 0, 0, -0.38268343)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -164
+            float physics:upperLimit = -37
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_knee>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.86234
+            float urdf:joint:limit:upper = -0.6457718
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -0.7853982)
+            point3f urdf:joint:origin:xyz = (0.12, 0, -0.0045)
+            prepend rel urdf:joint:parent = </cassie/right_hip_pitch>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_achilles_rod" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.004488, 0.004487, 0.0000037539996)
+        float mujoco:body:inertial:mass = 0.1567
+        point3f mujoco:body:inertial:pos = (0.24719, 0, 0)
+        quatf mujoco:body:inertial:quat = (-0.000002949399, 0.707108, 0.0000029494097, 0.7071055)
+        point3f mujoco:body:pos = (0, 0, -0.045)
+        quatf mujoco:body:quat = (0.9465142, 0.0145065095, -0.042981047, -0.31945756)
+        point3f physics:centerOfMass = (0.24719, 0, 0)
+        float3 physics:diagonalInertia = (0.004488, 0.004487, 0.0000037539996)
+        float physics:mass = 0.1567
+        quatf physics:principalAxes = (-0.000002949399, 0.707108, 0.0000029494097, 0.7071055)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.004488
+        float urdf:link:inertial:inertia:iyy = 0.004487
+        float urdf:link:inertial:inertia:izz = 0.0000037539996
+        float urdf:link:inertial:mass = 0.1567
+        float3 urdf:link:inertial:origin:rpy = (3.1415925, -1.5707928, 0.000008439915)
+        point3f urdf:link:inertial:origin:xyz = (0.24719, 0, 0)
+        matrix4d xformOp:transform = ( (-0.6059892263595001, -0.07209590795824108, -0.7921989886334692, 0), (0.7954728515393938, -0.054922473834340325, -0.6034952065523815, 0), (6.6400276249600765e-9, -0.995884381805234, 0.0906327649164855, 0), (-0.049, -0.09000000000000001, -0.09000000000000001, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_28" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-achilles-rod.usda@</right_achilles_rod>
+        )
+        {
+            rel material:binding = </cassie/right_achilles_rod/Geom_28/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_achilles_rod>
+            point3f mujoco:geom:pos = (0.25052682, 9.135011e-7, 0.0000017718426)
+            quatf mujoco:geom:quat = (0.70711017, -0.00046224945, 0.70710313, -0.00046693548)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-achilles-rod.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.5632303, 1.5694822, -1.5632368)
+            point3f urdf:visual:origin:xyz = (0.25052682, 9.135011e-7, 0.0000017718426)
+            matrix4d xformOp:transform = ( (0.000009933817121221544, -0.0013140656551504102, -0.999999136566014, 0), (0.000006633603577714748, 0.9999991365934384, -0.0013140655892893863, 0), (0.9999999999286574, -0.000006620544162786596, 0.000009942525534989421, 0), (0.25052681139299365, 9.135010954590006e-7, 0.000001771842564823746, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "right_knee" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.0021669911, 0.001637475, 0.00076873397)
+        float mujoco:body:inertial:mass = 0.7578
+        point3f mujoco:body:inertial:pos = (0.023, 0.03207, 0.002181)
+        quatf mujoco:body:inertial:quat = (0.63878274, 0.32988274, -0.6058588, 0.3406891)
+        point3f mujoco:body:pos = (0.12, 0, -0.0045)
+        quatf mujoco:body:quat = (0.9238795, 0, -0, -0.38268343)
+        point3f physics:centerOfMass = (0.023, 0.03207, 0.002181)
+        float3 physics:diagonalInertia = (0.0021669911, 0.001637475, 0.00076873397)
+        float physics:mass = 0.7578
+        quatf physics:principalAxes = (0.63878274, 0.32988274, -0.6058588, 0.3406891)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.0021669911
+        float urdf:link:inertial:inertia:iyy = 0.001637475
+        float urdf:link:inertial:inertia:izz = 0.00076873397
+        float urdf:link:inertial:mass = 0.7578
+        float3 urdf:link:inertial:origin:rpy = (0.17703508, -1.5217861, 0.81132126)
+        point3f urdf:link:inertial:origin:xyz = (0.023, 0.03207, 0.002181)
+        matrix4d xformOp:transform = ( (-0.7071067811865476, 0, -0.7071067811865475, 0), (0.7071067811865475, 0, -0.7071067811865476, 0), (0, -1, 0, 0), (-0.049, -0.1305, -0.21000000000000002, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_29" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-knee.usda@</right_knee>
+        )
+        {
+            rel material:binding = </cassie/right_knee/Geom_29/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_knee>
+            point3f mujoco:geom:pos = (0.019954698, 0.036387973, 0.0024124563)
+            quatf mujoco:geom:quat = (0.58634645, -0.3811158, 0.6153824, 0.36366618)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-knee.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (3.1279006, 1.522884, -2.045642)
+            point3f urdf:visual:origin:xyz = (0.019954698, 0.036387973, 0.0024124563)
+            matrix4d xformOp:transform = ( (-0.021897180710718, -0.042595148874364996, -0.9988524249203646, 0), (-0.895532662033904, 0.4449953047168478, 0.0006557518045284816, 0), (0.44445670734886134, 0.8945193301837197, -0.04788948966399631, 0), (0.019954697559195524, 0.036387970820565184, 0.0024124562712657424, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Xform "right_knee_spring" (
+            prepend apiSchemas = ["PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+        )
+        {
+            float3 mujoco:body:inertial:diaginertia = (0.00041218108, 0.0003669, 0.00005201891)
+            float mujoco:body:inertial:mass = 0.186
+            point3f mujoco:body:inertial:pos = (0.0836, 0.0034, 0)
+            quatf mujoco:body:inertial:quat = (0.50474703, 0.50474703, 0.4952075, 0.4952075)
+            point3f mujoco:body:pos = (0.06068, 0.08241, 0)
+            quatf mujoco:body:quat = (1, 0, 0, 0)
+            point3f physics:centerOfMass = (0.0836, 0.0034, 0)
+            float3 physics:diagonalInertia = (0.00041218108, 0.0003669, 0.00005201891)
+            float physics:mass = 0.186
+            quatf physics:principalAxes = (0.50474703, 0.50474703, 0.4952075, 0.4952075)
+            float urdf:link:inertial:inertia:ixx = 0.00041218108
+            float urdf:link:inertial:inertia:iyy = 0.0003669
+            float urdf:link:inertial:inertia:izz = 0.00005201891
+            float urdf:link:inertial:mass = 0.186
+            float3 urdf:link:inertial:origin:rpy = (1.5707964, 0, 1.5517169)
+            point3f urdf:link:inertial:origin:xyz = (0.0836, 0.0034, 0)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.06068, 0.08241, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Geom_30" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./cassie/meshes/usd/right-knee-spring.usda@</right_knee_spring>
+            )
+            {
+                rel material:binding = </cassie/right_knee/right_knee_spring/Geom_30/Materials/cassie>
+                rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/right_knee_spring>
+                point3f mujoco:geom:pos = (0.097746134, 0.002023302, 0.000003439352)
+                quatf mujoco:geom:quat = (0.5099207, 0.5099121, 0.48987442, 0.4898914)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-knee-spring.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (1.570771, -0.000008880367, 1.5307267)
+                point3f urdf:visual:origin:xyz = (0.097746134, 0.002023302, 0.000003439352)
+                matrix4d xformOp:transform = ( (0.040058903374592836, 0.9991973199431452, 0.000008880366982488841, 0), (-0.000025732063689554163, -0.000007855874480267033, 0.9999999996380731, 0), (0.9991973196512718, -0.04005890358860453, 0.00002539671135837196, 0), (0.09774613069262704, 0.0020233020112212603, 0.000003439352079572376, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "cassie" (
+                        prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                    )
+                    {
+                    }
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "right_shin" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.34906584, 0.34906584)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_knee>
+            rel physics:body1 = </cassie/right_shin>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.06068, 0.04741, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -20
+            float physics:upperLimit = 20
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_shin>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.34906584
+            float urdf:joint:limit:upper = 0.34906584
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, 0)
+            point3f urdf:joint:origin:xyz = (0.06068, 0.04741, 0)
+            prepend rel urdf:joint:parent = </cassie/right_knee>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_shin" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.014731072, 0.014707027, 0.00035629125)
+        float mujoco:body:inertial:mass = 0.577
+        point3f mujoco:body:inertial:pos = (0.18338, 0.001169, -0.0002123)
+        quatf mujoco:body:inertial:quat = (0.4919814, 0.5006417, 0.49856645, 0.50866854)
+        point3f mujoco:body:pos = (0.06068, 0.04741, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.18338, 0.001169, -0.0002123)
+        float3 physics:diagonalInertia = (0.014731072, 0.014707027, 0.00035629125)
+        float physics:mass = 0.577
+        quatf physics:principalAxes = (0.4919814, 0.5006417, 0.49856645, 0.50866854)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.014731072
+        float urdf:link:inertial:inertia:iyy = 0.014707027
+        float urdf:link:inertial:inertia:izz = 0.00035629125
+        float urdf:link:inertial:mass = 0.577
+        float3 urdf:link:inertial:origin:rpy = (1.5692173, -0.018751644, 1.5854238)
+        point3f urdf:link:inertial:origin:xyz = (0.18338, 0.001169, -0.0002123)
+        matrix4d xformOp:transform = ( (-0.7071067811865476, 0, -0.7071067811865475, 0), (0.7071067811865475, 0, -0.7071067811865476, 0), (0, -1, 0, 0), (-0.05838330698634549, -0.1305, -0.2864311719784539, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_31" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-shin.usda@</right_shin>
+        )
+        {
+            rel material:binding = </cassie/right_shin/Geom_31/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_shin>
+            point3f mujoco:geom:pos = (0.15889369, 0.0055857217, -0.00067266735)
+            quatf mujoco:geom:quat = (0.7087695, 0.043827027, 0.70354104, 0.027477525)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-shin.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5091776, 1.4696426, 1.4860258)
+            point3f urdf:visual:origin:xyz = (0.15889369, 0.0055857217, -0.00067266735)
+            matrix4d xformOp:transform = ( (0.008549992782060145, 0.10061868973809247, -0.994888323832789, 0), (0.022717763191359222, 0.9946483542897, 0.10078965494718525, 0), (0.999705357022262, -0.023463388164986387, 0.006218404683770107, 0), (0.15889368934281045, 0.00558572171754864, -0.00067266734853049, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_32" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.04, -0.04, -0.11510865), (0.04, 0.04, 0.11510865)]
+            double height = 0.23021728866442678
+            point3f mujoco:geom:pos = (0.055, -0.005, 0)
+            quatf mujoco:geom:quat = (0.70710677, -0.030714756, -0.7064394, 0)
+            vector3f mujoco:geom:size = (0.04, 0.11510865, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.04
+            float3 urdf:collision:origin:rpy = (-1.5707964, -1.5273454, 1.5273454)
+            point3f urdf:collision:origin:xyz = (0.055, -0.005, 0)
+            float urdf:geometry:cylinder:length = 0.2302173
+            float urdf:geometry:cylinder:radius = 0.04
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.0018867924528301883, 0.04339622641509434, 0.9990561583550596, 0), (0.04339622641509434, 0.9981132075471698, -0.04343722427630694, 0), (-0.9990561583550596, 0.04343722427630694, 0, 0), (0.05500000000000001, -0.005, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_33" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.027, -0.027, -0.10562789), (0.027, 0.027, 0.10562789)]
+            double height = 0.21125576915199262
+            point3f mujoco:geom:pos = (0.275, -0.0115, 0)
+            quatf mujoco:geom:quat = (0.70710677, 0.076984674, -0.7029035, 0)
+            vector3f mujoco:geom:size = (0.027, 0.10562789, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.027
+            float3 urdf:collision:origin:rpy = (1.5707964, -1.4617074, -1.4617074)
+            point3f urdf:collision:origin:xyz = (0.275, -0.0115, 0)
+            float urdf:geometry:cylinder:length = 0.21125577
+            float urdf:geometry:cylinder:radius = 0.027
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.01185327925788171, -0.10822559322413676, 0.9940556929780737, 0), (-0.10822559322413676, 0.9881467207421184, 0.10887276637378902, 0), (-0.9940556929780737, -0.10887276637378902, 1.1102230246251565e-16, 0), (0.275, -0.0115, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_34" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.025, -0.025, -0.24093291), (0.025, 0.025, 0.24093291)]
+            double height = 0.48186580870611684
+            point3f mujoco:geom:pos = (0.19488, 0.0225, 0)
+            quatf mujoco:geom:quat = (0.70710677, -0.06603458, -0.7040166, 0)
+            vector3f mujoco:geom:size = (0.025, 0.24093291, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.025
+            float3 urdf:collision:origin:rpy = (-1.5707964, -1.4772731, 1.4772731)
+            point3f urdf:collision:origin:xyz = (0.19488, 0.0225, 0)
+            float urdf:geometry:cylinder:length = 0.48186582
+            float urdf:geometry:cylinder:radius = 0.025
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.008721130886174211, 0.09297888342113172, 0.995629885607009, 0), (0.09297888342113172, 0.9912788691138258, -0.09338699527329374, 0), (-0.995629885607009, 0.09338699527329374, 0, 0), (0.19488, 0.0225, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "right_tarsus" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0.87266463, 2.9670596)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_shin>
+            rel physics:body1 = </cassie/right_tarsus>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.43476, 0.02, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.8746196, 0, 0, 0.4848098)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 50
+            float physics:upperLimit = 170
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_tarsus>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0.87266463
+            float urdf:joint:limit:upper = 2.9670596
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, 1.0122913)
+            point3f urdf:joint:origin:xyz = (0.43476, 0.02, 0)
+            prepend rel urdf:joint:parent = </cassie/right_shin>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_tarsus" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.01367462, 0.0135988025, 0.00038795808)
+        float mujoco:body:inertial:mass = 0.782
+        point3f mujoco:body:inertial:pos = (0.11046, -0.03058, 0.00131)
+        quatf mujoco:body:inertial:quat = (0.032995183, 0.7081351, 0.020444112, 0.7050092)
+        point3f mujoco:body:pos = (0.43476, 0.02, 0)
+        quatf mujoco:body:quat = (0.8746196, 0, 0, 0.4848098)
+        point3f physics:centerOfMass = (0.11046, -0.03058, 0.00131)
+        float3 physics:diagonalInertia = (0.01367462, 0.0135988025, 0.00038795808)
+        float physics:mass = 0.782
+        quatf physics:principalAxes = (0.032995183, 0.7081351, 0.020444112, 0.7050092)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.01367462
+        float urdf:link:inertial:inertia:iyy = 0.0135988025
+        float urdf:link:inertial:inertia:izz = 0.00038795808
+        float urdf:link:inertial:mass = 0.782
+        float3 urdf:link:inertial:origin:rpy = (1.6203429, -1.4950745, 1.503487)
+        point3f urdf:link:inertial:origin:xyz = (0.11046, -0.03058, 0.00131)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.35166291555127793, -0.1305, -0.6079950517908482, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_35" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-tarsus.usda@</right_tarsus>
+        )
+        {
+            rel material:binding = </cassie/right_tarsus/Geom_35/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_tarsus>
+            point3f mujoco:geom:pos = (0.14572287, -0.03727946, 0.0011771516)
+            quatf mujoco:geom:quat = (0.70492595, 0.020050837, 0.708781, 0.017517762)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-tarsus.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.6748431, 1.517381, 1.6712595)
+            point3f urdf:visual:origin:xyz = (0.14572287, -0.03727946, 0.0011771516)
+            matrix4d xformOp:transform = ( (-0.005354706913514473, 0.05312075534075276, -0.9985737391229046, 0), (0.0037258527495748553, 0.9985821838490492, 0.0531012252264694, 0), (0.9999787223412102, -0.0034361972137280615, -0.005545035035914747, 0), (0.1457228731155273, -0.03727946221092832, 0.0011771516054123019, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_36" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.028, -0.028, -0.110101536), (0.028, 0.028, 0.110101536)]
+            double height = 0.2202030755916002
+            point3f mujoco:geom:pos = (0.12, -0.035295, 0.00046)
+            quatf mujoco:geom:quat = (0.7085824, -0.030154068, -0.70498353, 0)
+            vector3f mujoco:geom:size = (0.028, 0.110101536, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.028
+            float3 urdf:collision:origin:rpy = (-1.4733378, -1.5278461, 1.4306804)
+            point3f urdf:collision:origin:xyz = (0.12, -0.035295, 0.00046)
+            float urdf:geometry:cylinder:length = 0.22020307
+            float urdf:geometry:cylinder:radius = 0.028
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.005996497196697592, 0.04251624073354126, 0.9990777804031363, 0), (0.04251624073354126, 0.9981814644304426, -0.04273328142542507, 0), (-0.9990777804031363, 0.04273328142542507, 0.0041779616271402364, 0), (0.12000000000000001, -0.035295, 0.00046, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_37" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.033, -0.033, -0.08533002), (0.033, 0.033, 0.08533002)]
+            double height = 0.17066003164185806
+            point3f mujoco:geom:pos = (0.124, -0.055, 0.00046)
+            quatf mujoco:geom:quat = (0.7090102, 0.12396725, -0.6942166, 0)
+            vector3f mujoco:geom:size = (0.033, 0.08533002, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.033
+            float3 urdf:collision:origin:rpy = (1.5401393, -1.3940061, -1.3639079)
+            point3f urdf:collision:origin:xyz = (0.124, -0.055, 0.00046)
+            float urdf:geometry:cylinder:length = 0.17066003
+            float urdf:geometry:cylinder:radius = 0.033
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.03612659370917859, -0.17212025112336102, 0.9844132711316945, 0), (-0.17212025112336102, 0.9692642408708284, 0.1757880841306598, 0), (-0.9844132711316945, -0.1757880841306598, 0.005390834580006998, 0), (0.124, -0.05500000000000001, 0.00046, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cylinder "Geom_38" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.02, -0.02, -0.111), (0.02, 0.02, 0.111)]
+            double height = 0.222
+            point3f mujoco:geom:pos = (0.319, -0.04, 0)
+            quatf mujoco:geom:quat = (0.70710677, 0, -0.70710677, 0)
+            vector3f mujoco:geom:size = (0.02, 0.111, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.02
+            float3 urdf:collision:origin:rpy = (0, -1.5707964, 0)
+            point3f urdf:collision:origin:xyz = (0.319, -0.04, 0)
+            float urdf:geometry:cylinder:length = 0.222
+            float urdf:geometry:cylinder:radius = 0.02
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (2.220446049250313e-16, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 2.220446049250313e-16, 0), (0.319, -0.04, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "right_heel_spring" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 0)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_tarsus>
+            rel physics:body1 = </cassie/right_heel_spring>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.01269, -0.03059, -0.00092)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.20935485, -0.010860572, 0.037555832, 0.97705793)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_heel_spring>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 0
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0.06894266, 0.036956217, 2.7207093)
+            point3f urdf:joint:origin:xyz = (-0.01269, -0.03059, -0.00092)
+            prepend rel urdf:joint:parent = </cassie/right_tarsus>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "right_foot_crank" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.443461, -0.5235988)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_tarsus>
+            rel physics:body1 = </cassie/right_foot_crank>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.058, -0.034, -0.02275)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, -1.3877788e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -140
+            float physics:upperLimit = -30
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_foot_crank>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.443461
+            float urdf:joint:limit:upper = -0.5235988
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -2.7755576e-17)
+            point3f urdf:joint:origin:xyz = (0.058, -0.034, -0.02275)
+            prepend rel urdf:joint:parent = </cassie/right_tarsus>
+            uniform token urdf:joint:type = "revolute"
+        }
+
+        def PhysicsRevoluteJoint "right_foot" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.443461, -0.5235988)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_tarsus>
+            rel physics:body1 = </cassie/right_foot>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.408, -0.04, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, -1.3877788e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -140
+            float physics:upperLimit = -30
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_foot>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.443461
+            float urdf:joint:limit:upper = -0.5235988
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -2.7755576e-17)
+            point3f urdf:joint:origin:xyz = (0.408, -0.04, 0)
+            prepend rel urdf:joint:parent = </cassie/right_tarsus>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_heel_spring" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00022257518, 0.00020070185, 0.000029322971)
+        float mujoco:body:inertial:mass = 0.126
+        point3f mujoco:body:inertial:pos = (0.081, 0.0022, 0)
+        quatf mujoco:body:inertial:quat = (0.5091446, 0.50919366, 0.49242455, 0.4888882)
+        point3f mujoco:body:pos = (-0.01269, -0.03059, -0.00092)
+        quatf mujoco:body:quat = (0.20935485, -0.010860572, 0.037555832, 0.97705793)
+        point3f physics:centerOfMass = (0.081, 0.0022, 0)
+        float3 physics:diagonalInertia = (0.00022257518, 0.00020070185, 0.000029322971)
+        float physics:mass = 0.126
+        quatf physics:principalAxes = (0.5091446, 0.50919366, 0.49242455, 0.4888882)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00022257518
+        float urdf:link:inertial:inertia:iyy = 0.00020070185
+        float urdf:link:inertial:inertia:izz = 0.000029322971
+        float urdf:link:inertial:mass = 0.126
+        float3 urdf:link:inertial:origin:rpy = (1.5743166, 0.0035530634, 1.5337749)
+        point3f urdf:link:inertial:origin:xyz = (0.081, 0.0022, 0)
+        matrix4d xformOp:transform = ( (0.1926440557771025, 0.03694780545361607, 0.9805728567760328, 0), (-0.9784211434376566, -0.06884102073738564, 0.19481524565080408, 0), (0.0747016321635407, -0.9969432148001192, 0.02288870062075353, 0), (-0.38432352682337306, -0.12958, -0.6025115609927261, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_39" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-heel-spring.usda@</right_heel_spring>
+        )
+        {
+            rel material:binding = </cassie/right_heel_spring/Geom_39/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_heel_spring>
+            point3f mujoco:geom:pos = (0.08624787, 0.0016402404, 0.00019321892)
+            quatf mujoco:geom:quat = (0.509278, 0.5121041, 0.4853956, 0.49272346)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-heel-spring.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5665151, -0.010248975, 1.5275512)
+            point3f urdf:visual:origin:xyz = (0.08624787, 0.0016402404, 0.00019321892)
+            matrix4d xformOp:transform = ( (0.043229381551548984, 0.9990126039036585, 0.01024879565131781, 0), (-0.004720321577729947, -0.010054034191864236, 0.9999383155778518, 0), (0.9990540221303719, -0.04327509258338691, 0.0042810310704182175, 0), (0.08624786923666619, 0.0016402403871365293, 0.00019321892018578897, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "right_foot_crank" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00006378809, 0.000049620994, 0.00002651492)
+        float mujoco:body:inertial:mass = 0.1261
+        point3f mujoco:body:inertial:pos = (0.00493, 0.00002, 0.00215)
+        quatf mujoco:body:inertial:quat = (0.00019792408, 0.743948, 0.00032570117, 0.66823745)
+        point3f mujoco:body:pos = (0.058, -0.034, -0.02275)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.00493, 0.00002, 0.00215)
+        float3 physics:diagonalInertia = (0.00006378809, 0.000049620994, 0.00002651492)
+        float physics:mass = 0.1261
+        quatf physics:principalAxes = (0.00019792408, 0.743948, 0.00032570117, 0.66823745)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00006378809
+        float urdf:link:inertial:inertia:iyy = 0.000049620994
+        float urdf:link:inertial:inertia:izz = 0.00002651492
+        float urdf:link:inertial:mass = 0.1261
+        float3 urdf:link:inertial:origin:rpy = (3.134767, -1.4636717, 0.0070065195)
+        point3f urdf:link:inertial:origin:xyz = (0.00493, 0.00002, 0.00215)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.37174431190506385, -0.10775000000000001, -0.6721568591257585, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_40" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-foot-crank.usda@</right_foot_crank>
+        )
+        {
+            rel material:binding = </cassie/right_foot_crank/Geom_40/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_foot_crank>
+            point3f mujoco:geom:pos = (0.0170895, 0.00004960442, -0.0044750855)
+            quatf mujoco:geom:quat = (0.7465254, 0.0007349675, 0.6653565, -0.00013087252)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-foot-crank.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.00805556, 1.4559399, 0.0068290555)
+            point3f urdf:visual:origin:xyz = (0.0170895, 0.00004960442, -0.0044750855)
+            matrix4d xformOp:transform = ( (0.1146014058026914, 0.0007826315042743377, -0.9934112468036465, 0), (0.0011734301498951437, 0.999998885390288, 0.00092319004811527, 0), (0.9934108620554389, -0.0012714975855813888, 0.11460035970344806, 0), (0.01708949881072648, 0.000049604420638857426, -0.004475085452475292, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def PhysicsRevoluteJoint "right_plantar_rod" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (0, 0)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </cassie/right_foot_crank>
+            rel physics:body1 = </cassie/right_plantar_rod>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.055, 0, 0.00791)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, -1.3877788e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </cassie/right_plantar_rod>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = 0
+            float urdf:joint:limit:upper = 0
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, -2.7755576e-17)
+            point3f urdf:joint:origin:xyz = (0.055, 0, 0.00791)
+            prepend rel urdf:joint:parent = </cassie/right_foot_crank>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "right_plantar_rod" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.001775, 0.001774, 0.0000027789997)
+        float mujoco:body:inertial:mass = 0.1186
+        point3f mujoco:body:inertial:pos = (0.17792, 0, 0)
+        quatf mujoco:body:inertial:quat = (-0.0000046708615, 0.7071084, 0.000004670883, 0.70710516)
+        point3f mujoco:body:pos = (0.055, 0, 0.00791)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.17792, 0, 0)
+        float3 physics:diagonalInertia = (0.001775, 0.001774, 0.0000027789997)
+        float physics:mass = 0.1186
+        quatf physics:principalAxes = (-0.0000046708615, 0.7071084, 0.000004670883, 0.70710516)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.001775
+        float urdf:link:inertial:inertia:iyy = 0.001774
+        float urdf:link:inertial:inertia:izz = 0.0000027789997
+        float urdf:link:inertial:mass = 0.1186
+        float3 urdf:link:inertial:origin:rpy = (3.1415925, -1.5707917, 0.00001324601)
+        point3f urdf:link:inertial:origin:xyz = (0.17792, 0, 0)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.3593719832883149, -0.11566000000000001, -0.7257472079266309, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_41" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-plantar-rod.usda@</right_plantar_rod>
+        )
+        {
+            rel material:binding = </cassie/right_plantar_rod/Geom_41/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_plantar_rod>
+            point3f mujoco:geom:pos = (0.17513572, 4.0834522e-7, 1.9617339e-7)
+            quatf mujoco:geom:quat = (0.7071117, 0.000038557806, 0.7071019, 0.00004209459)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-plantar-rod.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.4492642, 1.5706815, 1.4492692)
+            point3f urdf:visual:origin:xyz = (0.17513572, 4.0834522e-7, 1.9617339e-7)
+            matrix4d xformOp:transform = ( (0.00001392999903004899, 0.00011405974652989431, -0.9999999933981648, 0), (-0.000005002565991824911, 0.9999999934826822, 0.00011405967685379449, 0), (0.9999999998904648, 0.000005000977107610839, 0.000013930569530584691, 0), (0.17513571019922192, 4.083452248519779e-7, 1.961733900130966e-7, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    def Xform "right_foot" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.00033262654, 0.00028907138, 0.00005272209)
+        float mujoco:body:inertial:mass = 0.1498
+        point3f mujoco:body:inertial:pos = (0.00474, 0.02748, 0.00014)
+        quatf mujoco:body:inertial:quat = (0.27009094, 0.64792097, -0.2792679, 0.6551784)
+        point3f mujoco:body:pos = (0.408, -0.04, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.00474, 0.02748, 0.00014)
+        float3 physics:diagonalInertia = (0.00033262654, 0.00028907138, 0.00005272209)
+        float physics:mass = 0.1498
+        quatf physics:principalAxes = (0.27009094, 0.64792097, -0.2792679, 0.6551784)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.00033262654
+        float urdf:link:inertial:inertia:iyy = 0.00028907138
+        float urdf:link:inertial:inertia:izz = 0.00005272209
+        float urdf:link:inertial:mass = 0.1498
+        float3 urdf:link:inertial:origin:rpy = (-1.3006384, -1.55425, -2.6388924)
+        point3f urdf:link:inertial:origin:xyz = (0.00474, 0.02748, 0.00014)
+        matrix4d xformOp:transform = ( (0.2249514293954355, 0, -0.9743699781976815, 0), (0.9743699781976815, 0, 0.2249514293954355, 0), (0, -1, 0, 0), (-0.2988575314858475, -0.1305, -1.0145360600713196, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_42" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./cassie/meshes/usd/right-foot.usda@</right_foot>
+        )
+        {
+            rel material:binding = </cassie/right_foot/Geom_42/Materials/cassie>
+            rel mujoco:geom:material = </mujoco/asset/materials/cassie>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/right_foot>
+            point3f mujoco:geom:pos = (0.008884769, 0.027471691, -0.000102020516)
+            quatf mujoco:geom:quat = (0.652894, 0.26759616, 0.6552407, -0.26977998)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./cassie/meshes/obj/right-foot.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-2.0023468, 1.5662628, -2.7819033)
+            point3f urdf:visual:origin:xyz = (0.008884769, 0.027471691, -0.000102020516)
+            matrix4d xformOp:transform = ( (-0.004243343478081529, -0.0015957025308074302, -0.9999897238319805, 0), (0.7029552997069857, 0.7112221102831713, -0.004117822023170459, 0), (0.7112213724642907, -0.7029655493534415, -0.0018962521523506748, 0), (0.008884769143342904, 0.027471691430192555, -0.00010202051586492675, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "cassie" (
+                    prepend references = @./cassie/materials/usd/cassie.usda@</cassie>
+                )
+                {
+                }
+            }
+        }
+
+        def Cylinder "Geom_43" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryCylinderAPI"]
+        )
+        {
+            float3[] extent = [(-0.02, -0.02, -0.07999995), (0.02, 0.02, 0.07999995)]
+            double height = 0.15999990376559606
+            point3f mujoco:geom:pos = (0.0084625, 0.041199, 0)
+            quatf mujoco:geom:quat = (0.70710677, -0.45451966, -0.54167503, 0)
+            vector3f mujoco:geom:size = (0.02, 0.07999995, 0)
+            uniform token mujoco:geom:type = "capsule"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            double radius = 0.02
+            float3 urdf:collision:origin:rpy = (-1.5707964, -0.8726643, 0.8726643)
+            point3f urdf:collision:origin:xyz = (0.0084625, 0.041199, 0)
+            float urdf:geometry:cylinder:length = 0.1599999
+            float urdf:geometry:cylinder:radius = 0.02
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.41317626717824807, 0.4924039392804417, 0.7660442107488, 0), (0.4924039392804417, 0.5868237328217522, -0.642787886614432, 0), (-0.7660442107488, 0.642787886614432, 2.220446049250313e-16, 0), (0.008462500000000001, 0.041199, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+
+def Urdf "urdf"
+{
+    string urdf:name = "cassie"
+}
+

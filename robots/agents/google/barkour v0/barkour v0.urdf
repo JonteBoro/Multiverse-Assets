@@ -1,0 +1,353 @@
+<?xml version="1.0" ?>
+<robot name="barkour_v0" version="1.0">
+  <link name="barkour_v0"/>
+  <joint name="chassis_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="barkour_v0"/>
+    <child link="chassis"/>
+  </joint>
+  <link name="chassis">
+    <collision name="Geom_0">
+      <origin xyz="0.2530902624130249 8.33469966892153e-05 0.09028945863246918" rpy="1.5717220306396484 0.12712356448173523 3.033903158211615e-05"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/head.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_1">
+      <origin xyz="-0.024854660034179688 0.00014442177780438215 0.11115658283233643" rpy="-3.0823585987091064 -1.5372960567474365 -0.05954951420426369"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/powercable.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="0.0370459221303463 -0.0015246681869029999 0.1166631281375885" rpy="-1.747438907623291 -1.5459612607955933 -1.0434772968292236"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/handle.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="0.14102284610271454 -8.848850848153234e-05 0.07858497649431229" rpy="1.3232133388519287 0.0006447830237448215 1.5674816370010376"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/head_mount.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="-0.0022199309896677732 -6.688345365546411e-06 0.0506247952580452" rpy="-2.9933149814605713 -1.5682233572006226 -0.14686091244220734"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/body.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="abduction_front_right" type="revolute">
+    <origin xyz="0.13053299486637115 -0.0560000017285347 0.05079999938607216" rpy="-1.9103152219812625e-12 -0.323715478181839 3.141590118408203"/>
+    <axis xyz="-0.9480598568916321 0.0 0.3180919587612152"/>
+    <parent link="chassis"/>
+    <child link="abduction_1"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="1.0471999645233154" velocity="1000.0"/>
+  </joint>
+  <link name="abduction_1">
+    <inertial>
+      <origin xyz="-0.052115198224782944 0.0035091699101030827 0.017191199585795403" rpy="1.9862935543060303 0.004346785135567188 1.5683512687683105"/>
+      <mass value="0.6394370198249817"/>
+      <inertia ixx="0.0008660079911351204" ixy="0.0" ixz="0.0" iyy="0.000565866008400917" iyz="0.0" izz="0.0004797670117113739"/>
+    </inertial>
+    <collision name="Geom_5">
+      <origin xyz="-0.05088985711336136 -0.0035264857579022646 0.016803786158561707" rpy="1.959183692932129 -0.008566933684051037 1.6270054578781128"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/abduction.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hip_front_right" type="revolute">
+    <origin xyz="-0.054039400070905685 0.021700000390410423 0.018131200224161148" rpy="-1.570799469947815 -0.8285546898841858 3.141589403152466"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <parent link="abduction_1"/>
+    <child link="upper_right_asm_1"/>
+    <limit effort="1000.0" lower="-1.2217299938201904" upper="3.246309995651245" velocity="1000.0"/>
+  </joint>
+  <link name="upper_right_asm_1">
+    <inertial>
+      <origin xyz="-0.025365499779582024 -0.017937399446964264 -0.046502698212862015" rpy="-0.6108500957489014 -1.4036206007003784 -1.9565833806991577"/>
+      <mass value="0.9421550035476685"/>
+      <inertia ixx="0.005394029896706343" ixy="0.0" ixz="0.0" iyy="0.005194029770791531" iyz="0.0" izz="0.0007952980231493711"/>
+    </inertial>
+    <collision name="Geom_6">
+      <origin xyz="-0.02156836912035942 -0.022057760506868362 -0.06744057685136795" rpy="-1.4155744314193726 -1.5076208114624023 -1.082810640335083"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_right_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_7">
+      <origin xyz="-0.17723383009433746 -0.1111007109284401 -0.06725139915943146" rpy="0.5221234560012817 -1.5625207424163818 -3.1167192459106445"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_right_3.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_8">
+      <origin xyz="0.0005172314122319221 -0.001469491864554584 -0.024606628343462944" rpy="0.37549009919166565 -1.5205516815185547 2.0199317932128906"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_right_1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="knee_front_right" type="revolute">
+    <origin xyz="-0.19352300465106964 -0.10463699698448181 -0.07919999957084656" rpy="-0.07757876068353653 1.1870268679103901e-07 -2.5049400329589844"/>
+    <axis xyz="0.0 -0.07750092446804047 0.996992290019989"/>
+    <parent link="upper_right_asm_1"/>
+    <child link="lower_leg_1to1_front_right"/>
+    <limit effort="1000.0" lower="0.0" upper="2.513200044631958" velocity="1000.0"/>
+  </joint>
+  <link name="lower_leg_1to1_front_right">
+    <inertial>
+      <origin xyz="-0.057750899344682693 -0.009703399613499641 0.011462399736046791" rpy="-1.5124454498291016 -1.4896273612976074 -1.5769754648208618"/>
+      <mass value="0.169623002409935"/>
+      <inertia ixx="0.0008287410018965602" ixy="0.0" ixz="0.0" iyy="0.000813963997643441" iyz="0.0" izz="3.499009835650213e-05"/>
+    </inertial>
+    <collision name="Geom_9">
+      <origin xyz="-0.0702187716960907 -0.009942793287336826 0.011464185081422329" rpy="-1.5042052268981934 -1.4838659763336182 -1.5714441537857056"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/lower_leg_1to1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_10">
+      <origin xyz="-0.19568970799446106 -0.021809188649058342 0.010466543026268482" rpy="-0.5480735301971436 -0.028827965259552002 0.38076409697532654"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/foot.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="abduction_front_left" type="revolute">
+    <origin xyz="0.13053299486637115 0.0560000017285347 0.05079999938607216" rpy="3.141590118408203 0.323715478181839 3.141590118408203"/>
+    <axis xyz="0.9480598568916321 0.0 -0.3180919587612152"/>
+    <parent link="chassis"/>
+    <child link="abduction_2"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="1.0471999645233154" velocity="1000.0"/>
+  </joint>
+  <link name="abduction_2">
+    <inertial>
+      <origin xyz="-0.052115198224782944 0.0035091699101030827 0.017191199585795403" rpy="1.9862935543060303 0.004346785135567188 1.5683512687683105"/>
+      <mass value="0.6394370198249817"/>
+      <inertia ixx="0.0008660079911351204" ixy="0.0" ixz="0.0" iyy="0.000565866008400917" iyz="0.0" izz="0.0004797670117113739"/>
+    </inertial>
+    <collision name="Geom_11">
+      <origin xyz="-0.05088985711336136 -0.0035264857579022646 0.016803786158561707" rpy="1.959183692932129 -0.008566933684051037 1.6270054578781128"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/abduction.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hip_front_left" type="revolute">
+    <origin xyz="-0.054039400070905685 0.021700000390410423 0.018131200224161148" rpy="1.5708009004592896 0.6345058679580688 -4.4610479199569397e-10"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="abduction_2"/>
+    <child link="upper_left_asm_1"/>
+    <limit effort="1000.0" lower="-1.2217299938201904" upper="3.246309995651245" velocity="1000.0"/>
+  </joint>
+  <link name="upper_left_asm_1">
+    <inertial>
+      <origin xyz="0.030656199902296066 0.006291890051215887 -0.046600498259067535" rpy="-2.512340545654297 -1.4029533863067627 -0.3889615535736084"/>
+      <mass value="0.9387909770011902"/>
+      <inertia ixx="0.0053815701976418495" ixy="0.0" ixz="0.0" iyy="0.005184450186789036" iyz="0.0" izz="0.0007903469959273934"/>
+    </inertial>
+    <collision name="Geom_12">
+      <origin xyz="0.0312926322221756 0.0005465516005642712 -0.06781699508428574" rpy="-1.659976840019226 -1.519444227218628 -1.305442452430725"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_left_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_13">
+      <origin xyz="0.0004683269071392715 -0.0013757734559476376 -0.02472984977066517" rpy="0.3887156844139099 -1.523193597793579 2.0207679271698"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_left_1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_14">
+      <origin xyz="0.20238028466701508 0.05293074622750282 -0.06724870949983597" rpy="2.647404432296753 -1.5625938177108765 0.7627449035644531"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_left_3.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="knee_front_left" type="revolute">
+    <origin xyz="0.20883500576019287 0.06919539719820023 -0.07919999957084656" rpy="3.06400990486145 -7.097943566236609e-09 0.1789781004190445"/>
+    <axis xyz="0.0 -0.07750092446804047 0.996992290019989"/>
+    <parent link="upper_left_asm_1"/>
+    <child link="lower_leg_1to1_front_left"/>
+    <limit effort="1000.0" lower="0.0" upper="2.513200044631958" velocity="1000.0"/>
+  </joint>
+  <link name="lower_leg_1to1_front_left">
+    <inertial>
+      <origin xyz="-0.057750899344682693 -0.007804629858583212 -0.012963900342583656" rpy="-1.5124454498291016 -1.4896273612976074 -1.5769754648208618"/>
+      <mass value="0.169623002409935"/>
+      <inertia ixx="0.0008287410018965602" ixy="0.0" ixz="0.0" iyy="0.000813963997643441" iyz="0.0" izz="3.499009835650213e-05"/>
+    </inertial>
+    <collision name="Geom_15">
+      <origin xyz="-0.19568970799446106 -0.01991048827767372 -0.013959757052361965" rpy="-0.5480735301971436 -0.028827965259552002 0.38076409697532654"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/foot.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_16">
+      <origin xyz="-0.0702187716960907 -0.008044092915952206 -0.012962114997208118" rpy="-1.5042052268981934 -1.4838659763336182 -1.5714441537857056"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/lower_leg_1to1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="abduction_hind_right" type="revolute">
+    <origin xyz="-0.13466699421405792 -0.0560000017285347 0.05079999938607216" rpy="3.141590118408203 0.323715478181839 1.9900138394784994e-12"/>
+    <axis xyz="0.9480598568916321 0.0 -0.3180919587612152"/>
+    <parent link="chassis"/>
+    <child link="abduction_3"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="1.0471999645233154" velocity="1000.0"/>
+  </joint>
+  <link name="abduction_3">
+    <inertial>
+      <origin xyz="-0.052115198224782944 0.0035091699101030827 0.017191199585795403" rpy="1.9862935543060303 0.004346785135567188 1.5683512687683105"/>
+      <mass value="0.6394370198249817"/>
+      <inertia ixx="0.0008660079911351204" ixy="0.0" ixz="0.0" iyy="0.000565866008400917" iyz="0.0" izz="0.0004797670117113739"/>
+    </inertial>
+    <collision name="Geom_17">
+      <origin xyz="-0.05088985711336136 -0.0035264857579022646 0.016803786158561707" rpy="1.959183692932129 -0.008566933684051037 1.6270054578781128"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/abduction.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hip_hind_right" type="revolute">
+    <origin xyz="-0.054039400070905685 0.021700000390410423 0.018131200224161148" rpy="1.5707993507385254 0.828554093837738 -2.339435809517454e-07"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <parent link="abduction_3"/>
+    <child link="upper_right_asm_2"/>
+    <limit effort="1000.0" lower="-1.9896800518035889" upper="2.4609100818634033" velocity="1000.0"/>
+  </joint>
+  <link name="upper_right_asm_2">
+    <inertial>
+      <origin xyz="-0.025365499779582024 -0.017937399446964264 -0.046502698212862015" rpy="-0.6108500957489014 -1.4036206007003784 -1.9565833806991577"/>
+      <mass value="0.9421550035476685"/>
+      <inertia ixx="0.005394029896706343" ixy="0.0" ixz="0.0" iyy="0.005194029770791531" iyz="0.0" izz="0.0007952980231493711"/>
+    </inertial>
+    <collision name="Geom_18">
+      <origin xyz="-0.02156836912035942 -0.022057760506868362 -0.06744057685136795" rpy="-1.4155744314193726 -1.5076208114624023 -1.082810640335083"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_right_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_19">
+      <origin xyz="-0.17723383009433746 -0.1111007109284401 -0.06725139915943146" rpy="0.5221234560012817 -1.5625207424163818 -3.1167192459106445"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_right_3.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_20">
+      <origin xyz="0.0005172314122319221 -0.001469491864554584 -0.024606628343462944" rpy="0.37549009919166565 -1.5205516815185547 2.0199317932128906"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_right_1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="knee_hind_right" type="revolute">
+    <origin xyz="-0.19352300465106964 -0.10463699698448181 -0.07919999957084656" rpy="-0.07757876068353653 1.1870268679103901e-07 -2.5049400329589844"/>
+    <axis xyz="0.0 -0.07750092446804047 0.996992290019989"/>
+    <parent link="upper_right_asm_2"/>
+    <child link="lower_leg_1to1_hind_right"/>
+    <limit effort="1000.0" lower="0.0" upper="2.513200044631958" velocity="1000.0"/>
+  </joint>
+  <link name="lower_leg_1to1_hind_right">
+    <inertial>
+      <origin xyz="-0.057750899344682693 -0.009703399613499641 0.011462399736046791" rpy="-1.5124454498291016 -1.4896273612976074 -1.5769754648208618"/>
+      <mass value="0.169623002409935"/>
+      <inertia ixx="0.0008287410018965602" ixy="0.0" ixz="0.0" iyy="0.000813963997643441" iyz="0.0" izz="3.499009835650213e-05"/>
+    </inertial>
+    <collision name="Geom_21">
+      <origin xyz="-0.0702187716960907 -0.009942793287336826 0.011464185081422329" rpy="-1.5042052268981934 -1.4838659763336182 -1.5714441537857056"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/lower_leg_1to1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_22">
+      <origin xyz="-0.19568970799446106 -0.021809188649058342 0.010466543026268482" rpy="-0.5480735301971436 -0.028827965259552002 0.38076409697532654"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/foot.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="abduction_hind_left" type="revolute">
+    <origin xyz="-0.13466699421405792 0.0560000017285347 0.05079999938607216" rpy="0.0 -0.323715478181839 0.0"/>
+    <axis xyz="-0.9480598568916321 0.0 0.3180919587612152"/>
+    <parent link="chassis"/>
+    <child link="abduction_4"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="1.0471999645233154" velocity="1000.0"/>
+  </joint>
+  <link name="abduction_4">
+    <inertial>
+      <origin xyz="-0.052115198224782944 0.0035091699101030827 0.017191199585795403" rpy="1.9862935543060303 0.004346785135567188 1.5683512687683105"/>
+      <mass value="0.6394370198249817"/>
+      <inertia ixx="0.0008660079911351204" ixy="0.0" ixz="0.0" iyy="0.000565866008400917" iyz="0.0" izz="0.0004797670117113739"/>
+    </inertial>
+    <collision name="Geom_23">
+      <origin xyz="-0.05088985711336136 -0.0035264857579022646 0.016803786158561707" rpy="1.959183692932129 -0.008566933684051037 1.6270054578781128"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/abduction.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hip_hind_left" type="revolute">
+    <origin xyz="-0.054039400070905685 0.021700000390410423 0.018131200224161148" rpy="-1.5708003044128418 -0.6345062851905823 -3.141589879989624"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="abduction_4"/>
+    <child link="upper_left_asm_2"/>
+    <limit effort="1000.0" lower="-1.9896800518035889" upper="2.4609100818634033" velocity="1000.0"/>
+  </joint>
+  <link name="upper_left_asm_2">
+    <inertial>
+      <origin xyz="0.030656199902296066 0.006291890051215887 -0.046600498259067535" rpy="-2.512340545654297 -1.4029533863067627 -0.3889615535736084"/>
+      <mass value="0.9387909770011902"/>
+      <inertia ixx="0.0053815701976418495" ixy="0.0" ixz="0.0" iyy="0.005184450186789036" iyz="0.0" izz="0.0007903469959273934"/>
+    </inertial>
+    <collision name="Geom_24">
+      <origin xyz="0.0004683269071392715 -0.0013757734559476376 -0.02472984977066517" rpy="0.3887156844139099 -1.523193597793579 2.0207679271698"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_left_1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_25">
+      <origin xyz="0.20238028466701508 0.05293074622750282 -0.06724870949983597" rpy="2.647404432296753 -1.5625938177108765 0.7627449035644531"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_left_3.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_26">
+      <origin xyz="0.0312926322221756 0.0005465516005642712 -0.06781699508428574" rpy="-1.659976840019226 -1.519444227218628 -1.305442452430725"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/upper_left_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="knee_hind_left" type="revolute">
+    <origin xyz="0.20883500576019287 0.06919539719820023 -0.07919999957084656" rpy="3.06400990486145 -7.097943566236609e-09 0.1789781004190445"/>
+    <axis xyz="0.0 -0.07750092446804047 0.996992290019989"/>
+    <parent link="upper_left_asm_2"/>
+    <child link="lower_leg_1to1_hind_left"/>
+    <limit effort="1000.0" lower="0.0" upper="2.513200044631958" velocity="1000.0"/>
+  </joint>
+  <link name="lower_leg_1to1_hind_left">
+    <inertial>
+      <origin xyz="-0.057750899344682693 -0.007804629858583212 -0.012963900342583656" rpy="-1.5124454498291016 -1.4896273612976074 -1.5769754648208618"/>
+      <mass value="0.169623002409935"/>
+      <inertia ixx="0.0008287410018965602" ixy="0.0" ixz="0.0" iyy="0.000813963997643441" iyz="0.0" izz="3.499009835650213e-05"/>
+    </inertial>
+    <collision name="Geom_27">
+      <origin xyz="-0.19568970799446106 -0.01991048827767372 -0.013959757052361965" rpy="-0.5480735301971436 -0.028827965259552002 0.38076409697532654"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/foot.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_28">
+      <origin xyz="-0.0702187716960907 -0.008044092915952206 -0.012962114997208118" rpy="-1.5042052268981934 -1.4838659763336182 -1.5714441537857056"/>
+      <geometry>
+        <mesh filename="file://barkour v0/meshes/stl/lower_leg_1to1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

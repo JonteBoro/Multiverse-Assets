@@ -1,0 +1,179 @@
+<?xml version="1.0" ?>
+<robot name="ufactory_lite6" version="1.0">
+  <link name="ufactory_lite6"/>
+  <joint name="link_base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="ufactory_lite6"/>
+    <child link="link_base"/>
+  </joint>
+  <link name="link_base">
+    <visual name="Geom_0">
+      <origin xyz="-0.00811403151601553 0.00012629086268134415 0.060304343700408936" rpy="0.16129879653453827 1.907275327539537e-05 1.5452044010162354"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link_base.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="-0.008289423771202564 0.0001413146819686517 0.06018092855811119" rpy="0.16271765530109406 -0.0002933260693680495 1.5435646772384644"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link_base_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <origin xyz="0.0 0.0 0.2434999942779541" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link_base"/>
+    <child link="link1"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link1">
+    <inertial>
+      <origin xyz="-0.0003600000054575503 0.04194999858736992 -0.0024999999441206455" rpy="1.8343678712844849 -0.08971711248159409 -0.04188765212893486"/>
+      <mass value="1.4110000133514404"/>
+      <inertia ixx="0.001452759956009686" ixy="0.0" ixz="0.0" iyy="0.0013527499977499247" iyz="0.0" izz="0.0008533549844287336"/>
+    </inertial>
+    <visual name="Geom_2">
+      <origin xyz="-1.670528763497714e-05 0.018966035917401314 -0.012274348177015781" rpy="2.1888885498046875 -0.0008315254817716777 -0.0015678502386435866"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_3">
+      <origin xyz="-7.627058948855847e-05 0.018666492775082588 -0.012476584874093533" rpy="2.185725212097168 -0.0033300239592790604 -0.0029506655409932137"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link1_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963705062866 -1.5707963705062866 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <limit effort="1000.0" lower="-2.6179897785186768" upper="2.6179897785186768" velocity="1000.0"/>
+  </joint>
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.17900000512599945 0.0 0.058400001376867294" rpy="1.8779547214508057 -0.0018495473777875304 1.5685853958129883"/>
+      <mass value="1.340000033378601"/>
+      <inertia ixx="0.005609709769487381" ixy="0.0" ixz="0.0" iyy="0.005215200129896402" iyz="0.0" izz="0.0012201799545437098"/>
+    </inertial>
+    <visual name="Geom_4">
+      <origin xyz="0.11914435029029846 -2.0014167034787533e-07 0.09462665766477585" rpy="1.6890292167663574 -0.00016930910351220518 1.5707727670669556"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_5">
+      <origin xyz="0.11872807890176773 -3.716583159985021e-05 0.09475217014551163" rpy="1.6870125532150269 0.014703243970870972 1.5720884799957275"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link2_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3" type="revolute">
+    <origin xyz="0.20020000636577606 0.0 0.0" rpy="3.141585350036621 1.332933763364963e-12 1.570800542831421"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <limit effort="1000.0" lower="-0.061086997389793396" upper="5.235990047454834" velocity="1000.0"/>
+  </joint>
+  <link name="link3">
+    <inertial>
+      <origin xyz="0.07199999690055847 -0.0357000008225441 -0.0010000000474974513" rpy="-0.8240481615066528 -1.4749400615692139 -2.7390596866607666"/>
+      <mass value="0.953000009059906"/>
+      <inertia ixx="0.0018521000165492296" ixy="0.0" ixz="0.0" iyy="0.0017554600490257144" iyz="0.0" izz="0.0007038069888949394"/>
+    </inertial>
+    <visual name="Geom_6">
+      <origin xyz="0.03540295362472534 -0.0005778800114057958 -0.0002281995548401028" rpy="1.5422635078430176 0.0688415914773941 1.5150474309921265"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_7">
+      <origin xyz="0.035833150148391724 -0.0006497979629784822 -0.0007481405045837164" rpy="1.529111385345459 0.07269872725009918 1.5115513801574707"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link3_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4" type="revolute">
+    <origin xyz="0.08699999749660492 -0.2276100069284439 4.235164736271502e-22" rpy="1.570800542831421 0.0 -4.235180892142841e-22"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link4">
+    <inertial>
+      <origin xyz="-0.0020000000949949026 -0.02850000001490116 -0.08129999786615372" rpy="0.4458555281162262 0.00512853916734457 -0.004214009735733271"/>
+      <mass value="1.284000039100647"/>
+      <inertia ixx="0.0037050300743430853" ixy="0.0" ixz="0.0" iyy="0.0034909099340438843" iyz="0.0" izz="0.001095860032364726"/>
+    </inertial>
+    <visual name="Geom_8">
+      <origin xyz="6.908006184858095e-07 -0.02948177233338356 -0.08226402848958969" rpy="0.47060427069664 -2.5713186914799735e-05 0.00018228305270895362"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_9">
+      <origin xyz="-0.0004215897643007338 -0.027776189148426056 -0.08668722212314606" rpy="0.46259576082229614 -0.020237555727362633 0.007390053942799568"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link4_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5" type="revolute">
+    <origin xyz="0.0 4.235164736271502e-22 2.7755575615628914e-17" rpy="1.5707963705062866 0.0 -4.235164736271502e-22"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <limit effort="1000.0" lower="-2.1642000675201416" upper="2.1642000675201416" velocity="1000.0"/>
+  </joint>
+  <link name="link5">
+    <inertial>
+      <origin xyz="0.0 0.009999999776482582 0.0019000000320374966" rpy="1.546124815940857 -0.1400919109582901 -0.008893406949937344"/>
+      <mass value="0.8040000200271606"/>
+      <inertia ixx="0.0005675529828295112" ixy="0.0" ixz="0.0" iyy="0.0005292660207487643" iyz="0.0" izz="0.000507680990267545"/>
+    </inertial>
+    <visual name="Geom_10">
+      <origin xyz="-1.1146202041345532e-06 -0.0012134675635024905 0.00042929037590511143" rpy="-0.014600295573472977 -1.3897782564163208 1.585736632347107"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_11">
+      <origin xyz="-1.1064570571761578e-05 -0.0012402086285874248 0.00046095746802166104" rpy="0.1805362105369568 -1.3817143440246582 1.3860470056533813"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link5_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint6" type="revolute">
+    <origin xyz="-1.3877787807814457e-17 0.0625 4.235164736271502e-22" rpy="-1.5707963705062866 0.0 4.235164736271502e-22"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link5"/>
+    <child link="link6"/>
+    <limit effort="1000.0" lower="-6.2831902503967285" upper="6.2831902503967285" velocity="1000.0"/>
+  </joint>
+  <link name="link6">
+    <inertial>
+      <origin xyz="0.0 -0.0019399999873712659 -0.010200000368058681" rpy="1.149648904800415 -1.55950927734375 2.108381509780884"/>
+      <mass value="0.12999999523162842"/>
+      <inertia ixx="0.00014814799942541867" ixy="0.0" ixz="0.0" iyy="8.57756967889145e-05" iyz="0.0" izz="7.71412014728412e-05"/>
+    </inertial>
+    <visual name="Geom_12">
+      <origin xyz="-3.579038931889045e-08 0.0011157860280945897 -0.011585084721446037" rpy="-3.1415631771087646 -1.5632507801055908 -1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/obj/link6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_13">
+      <origin xyz="5.991408397676423e-05 3.235737676732242e-05 -0.011802943423390388" rpy="-1.4769822359085083 -1.5678455829620361 -2.5211822986602783"/>
+      <geometry>
+        <mesh filename="file://ufactory_lite6/meshes/stl/link6_c.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

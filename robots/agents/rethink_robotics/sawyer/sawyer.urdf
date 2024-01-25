@@ -1,0 +1,469 @@
+<?xml version="1.0" ?>
+<robot name="sawyer" version="1.0">
+  <link name="sawyer"/>
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="sawyer"/>
+    <child link="base"/>
+  </joint>
+  <link name="base">
+    <visual name="Geom_0">
+      <origin xyz="-0.07485772669315338 -1.478894091633265e-06 0.04059053584933281" rpy="1.5708541870117188 0.026257047429680824 7.63541505213485e-17"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/base_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_1">
+      <origin xyz="0.0020945481956005096 -3.3228158713427547e-07 0.032897233963012695" rpy="1.5702382326126099 -1.5671502351760864 0.0008510278421454132"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/base_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_j0" type="revolute">
+    <origin xyz="0.0 0.0 0.07999999821186066" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="base"/>
+    <child link="right_l0"/>
+    <limit effort="1000.0" lower="-3.050300121307373" upper="3.050300121307373" velocity="1000.0"/>
+  </joint>
+  <link name="right_l0">
+    <inertial>
+      <origin xyz="0.024364499375224113 0.010968799702823162 0.1436309963464737" rpy="-0.13133110105991364 -0.3174680769443512 0.8850977420806885"/>
+      <mass value="5.321300029754639"/>
+      <inertia ixx="0.06515990197658539" ixy="0.0" ixz="0.0" iyy="0.051095400005578995" iyz="0.0" izz="0.018622100353240967"/>
+    </inertial>
+    <visual name="Geom_2">
+      <origin xyz="-0.041641995310783386 0.015453800559043884 0.21742893755435944" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_3">
+      <origin xyz="0.04999122396111488 -0.07890910655260086 0.17386884987354279" rpy="2.034827470779419 -0.0722293108701706 1.7140040397644043"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_4">
+      <origin xyz="0.024971013888716698 -0.005032683257013559 0.17073991894721985" rpy="0.24989742040634155 0.08614867925643921 1.6542564630508423"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_5">
+      <origin xyz="-0.06431664526462555 -0.01801265962421894 0.05516261234879494" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_6">
+      <origin xyz="-0.06594432145357132 0.018639573827385902 0.04154329001903534" rpy="2.3351354598999023 0.16839535534381866 -0.1730637550354004"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_7">
+      <origin xyz="0.00893645454198122 0.009335929527878761 0.07952547073364258" rpy="0.2341730296611786 0.08977927267551422 1.8859883546829224"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_8">
+      <origin xyz="0.04399951174855232 -0.03097422979772091 0.1974749118089676" rpy="0.7167026400566101 0.11524644494056702 1.2256503105163574"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l0_6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_9">
+      <origin xyz="0.0 0.0 0.12250000238418579" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.07000000029802322" length="0.2549999952316284"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.2965" rpy="0.0 0.0 0.0"/>
+    <parent link="right_l0"/>
+    <child link="head"/>
+  </joint>
+  <link name="head">
+    <inertial>
+      <origin xyz="0.005322259850800037 -2.654730087670032e-05 0.10209999978542328" rpy="0.00014618645946029574 -0.007196167949587107 -0.0012530686799436808"/>
+      <mass value="1.5794999599456787"/>
+      <inertia ixx="0.011833400465548038" ixy="0.0" ixz="0.0" iyy="0.008270969614386559" iyz="0.0" izz="0.004965819884091616"/>
+    </inertial>
+    <visual name="Geom_10">
+      <origin xyz="3.682423965756243e-08 3.697168438066001e-08 0.001067510456778109" rpy="2.148860454559326 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_11">
+      <origin xyz="0.006682465318590403 0.018973087891936302 0.05824505537748337" rpy="0.3087865114212036 0.13006646931171417 0.022666551172733307"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_12">
+      <origin xyz="0.01214071549475193 -0.0018325537675991654 0.09827320277690887" rpy="-0.08165158331394196 -0.002723848447203636 -0.007740836124867201"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_13">
+      <origin xyz="-0.007736013736575842 -3.1440943075722316e-06 0.10534539073705673" rpy="0.00011902702681254596 -0.03571249917149544 0.0004402032063808292"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_14">
+      <origin xyz="0.01654263772070408 2.3454672373190988e-06 0.14433149993419647" rpy="0.0002468613092787564 -0.13380105793476105 2.723279430938419e-05"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_15">
+      <origin xyz="0.02796252630650997 1.1137315595988184e-05 0.1012677326798439" rpy="1.5708322525024414 6.074206612538546e-05 -3.3881317890172014e-21"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_7.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_16">
+      <origin xyz="0.006564076989889145 6.432921054511098e-06 0.03852730244398117" rpy="-0.00036806720891036093 0.11396919190883636 2.5699435354908928e-05"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_8.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_17">
+      <origin xyz="0.028526650741696358 -0.04999541863799095 0.1081274151802063" rpy="-0.7216590642929077 -0.0004369982343632728 0.0003845617175102234"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/head_9.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_18">
+      <origin xyz="-0.004999999888241291 0.0 0.11249999701976776" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.03999999910593033" length="0.1850000023841858"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_19">
+      <origin xyz="0.02500000037252903 0.0 0.10000000149011612" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.25999999046325684 0.1599999964237213"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_j1" type="revolute">
+    <origin xyz="0.08100000023841858 0.05000000074505806 0.2370000034570694" rpy="-1.5707963705062866 1.5707963705062866 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_l0"/>
+    <child link="right_l1"/>
+    <limit effort="1000.0" lower="-3.809499979019165" upper="2.2736001014709473" velocity="1000.0"/>
+  </joint>
+  <link name="right_l1">
+    <inertial>
+      <origin xyz="-0.00308490009047091 -0.02681099995970726 0.09252099692821503" rpy="2.2752151489257812 0.25699952244758606 0.17525920271873474"/>
+      <mass value="4.505000114440918"/>
+      <inertia ixx="0.022433899343013763" ixy="0.0" ixz="0.0" iyy="0.02216240018606186" iyz="0.0" izz="0.009709710255265236"/>
+    </inertial>
+    <visual name="Geom_20">
+      <origin xyz="-7.629238098161295e-06 0.016234004870057106 0.15072041749954224" rpy="-0.00011367945262463763 -0.9722858667373657 1.5711240768432617"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l1_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_21">
+      <origin xyz="-4.439407803147333e-06 -0.020526036620140076 0.09934993833303452" rpy="-0.00019799171423073858 -0.8262700438499451 1.5713919401168823"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l1_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_22">
+      <origin xyz="-3.6162049354970804e-07 -0.0600593127310276 0.07451558858156204" rpy="-1.5457235349458642e-05 -0.7550147771835327 1.570829153060913"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l1_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_23">
+      <origin xyz="0.0 0.0 0.03500000014901161" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.06800000369548798" length="0.1899999976158142"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_j2" type="revolute">
+    <origin xyz="0.0 -0.14000000059604645 0.14249999821186066" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_l1"/>
+    <child link="right_l2"/>
+    <limit effort="1000.0" lower="-3.04259991645813" upper="3.04259991645813" velocity="1000.0"/>
+  </joint>
+  <link name="right_l2">
+    <inertial>
+      <origin xyz="-0.00016044000221882015 -0.014967000111937523 0.13582000136375427" rpy="-0.0018053209641948342 0.1473141610622406 1.5631558895111084"/>
+      <mass value="1.7450000047683716"/>
+      <inertia ixx="0.02579279989004135" ixy="0.0" ixz="0.0" iyy="0.025505999103188515" iyz="0.0" izz="0.0029251601081341505"/>
+    </inertial>
+    <visual name="Geom_24">
+      <origin xyz="0.00020539479737635702 0.011755594052374363 0.23551559448242188" rpy="1.5707494020462036 -0.40083539485931396 1.570785403251648"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l2_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_25">
+      <origin xyz="-0.00020235597912687808 0.011688808910548687 0.23461543023586273" rpy="1.5900112390518188 -0.3970913290977478 1.5712724924087524"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l2_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_26">
+      <origin xyz="2.1128652161195305e-09 -0.009260267950594425 0.05906962975859642" rpy="-2.811635871160004e-17 -0.16037066280841827 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l2_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_27">
+      <origin xyz="-1.680450736785133e-06 0.01580784283578396 0.25848978757858276" rpy="0.00019628529844339937 -0.3499514162540436 1.5708158016204834"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l2_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_28">
+      <origin xyz="1.8811221025316627e-06 -0.0024170365650206804 0.13505710661411285" rpy="5.283226346364245e-05 -0.10328023135662079 1.5698667764663696"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l2_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_29">
+      <origin xyz="0.0 0.0 0.054999999701976776" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.054999999701976776" length="0.4099999964237213"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_j3" type="revolute">
+    <origin xyz="0.0 -0.041999999433755875 0.25999999046325684" rpy="-1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_l2"/>
+    <child link="right_l3"/>
+    <limit effort="1000.0" lower="-3.0439000129699707" upper="3.0439000129699707" velocity="1000.0"/>
+  </joint>
+  <link name="right_l3">
+    <inertial>
+      <origin xyz="-0.004813500214368105 -0.02810000069439411 -0.08415400236845016" rpy="0.7698472142219543 -0.29294416308403015 0.24902062118053436"/>
+      <mass value="2.509700059890747"/>
+      <inertia ixx="0.010240400210022926" ixy="0.0" ixz="0.0" iyy="0.009699700400233269" iyz="0.0" izz="0.0036962199956178665"/>
+    </inertial>
+    <visual name="Geom_30">
+      <origin xyz="0.0008621378801763058 0.04723334684967995 -0.06765618175268173" rpy="1.5707963705062866 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l3_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_31">
+      <origin xyz="-8.467022780678235e-06 -0.02452612854540348 -0.08430895209312439" rpy="-7.337240094784647e-05 0.7376211881637573 1.5710270404815674"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l3_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_32">
+      <origin xyz="-1.0522006732571754e-06 -0.05722404643893242 -0.06923932582139969" rpy="-7.71748527768068e-05 0.7530812621116638 1.5706799030303955"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l3_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_33">
+      <origin xyz="1.524305616840138e-06 0.014440644532442093 -0.13098832964897156" rpy="-3.1415481567382812 -0.8308817744255066 -1.5707298517227173"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l3_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_34">
+      <origin xyz="0.0 0.0 -0.042500000447034836" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.054999999701976776" length="0.14499999582767487"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_j4" type="revolute">
+    <origin xyz="0.0 -0.125 -0.1264999955892563" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_l3"/>
+    <child link="right_l4"/>
+    <limit effort="1000.0" lower="-2.976100206375122" upper="2.976100206375122" velocity="1000.0"/>
+  </joint>
+  <link name="right_l4">
+    <inertial>
+      <origin xyz="-0.0018891700310632586 0.006899479776620865 0.1340949982404709" rpy="0.014791863039135933 -0.08516483008861542 1.2729861736297607"/>
+      <mass value="1.1136000156402588"/>
+      <inertia ixx="0.013655499555170536" ixy="0.0" ixz="0.0" iyy="0.013549800030887127" iyz="0.0" izz="0.001273849979043007"/>
+    </inertial>
+    <visual name="Geom_35">
+      <origin xyz="-0.04113747924566269 -0.0004640524566639215 0.07782932370901108" rpy="0.015433603897690773 0.002591918222606182 4.000577246188186e-05"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_36">
+      <origin xyz="-0.0385700948536396 0.0036621461622416973 0.08737674355506897" rpy="-0.19063477218151093 0.026353344321250916 -0.20398040115833282"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_37">
+      <origin xyz="-0.03828736022114754 -0.00014584316522814333 0.08496664464473724" rpy="0.0040107001550495625 0.013090340420603752 -0.01659313216805458"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_38">
+      <origin xyz="-0.041894566267728806 0.0001418930769432336 0.08472036570310593" rpy="-0.01027712319046259 0.012692293152213097 -0.017822125926613808"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_39">
+      <origin xyz="-0.03830757737159729 -2.7441590191301657e-06 0.08568595349788666" rpy="-0.0009573563002049923 0.01089016068726778 -0.02239050157368183"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_40">
+      <origin xyz="-0.009125388227403164 0.002550688339397311 0.19675889611244202" rpy="0.13172206282615662 0.06537159532308578 1.4709875583648682"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_41">
+      <origin xyz="0.0007641560514457524 0.008371501229703426 0.12936623394489288" rpy="-0.003680218243971467 0.09581506252288818 1.5546222925186157"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_6.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_42">
+      <origin xyz="0.0005165478796698153 -0.002769012004137039 0.1395190805196762" rpy="-0.003562819678336382 -0.03742855787277222 1.5721782445907593"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l4_7.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_43">
+      <origin xyz="0.0 0.0 0.07000000029802322" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04500000178813934" length="0.4000000059604645"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_j5" type="revolute">
+    <origin xyz="0.0 0.03099999949336052 0.2750000059604645" rpy="-1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_l4"/>
+    <child link="right_l5"/>
+    <limit effort="1000.0" lower="-2.976100206375122" upper="2.976100206375122" velocity="1000.0"/>
+  </joint>
+  <link name="right_l5">
+    <inertial>
+      <origin xyz="0.00611330009996891 -0.02369699999690056 0.0764160007238388" rpy="2.3102188110351562 0.0353502482175827 0.08788740634918213"/>
+      <mass value="1.5625"/>
+      <inertia ixx="0.004741310141980648" ixy="0.0" ixz="0.0" iyy="0.004228570032864809" iyz="0.0" izz="0.0019067199900746346"/>
+    </inertial>
+    <visual name="Geom_44">
+      <origin xyz="0.04532376676797867 -0.03356976807117462 0.08241508156061172" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l5_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_45">
+      <origin xyz="-0.0050115324556827545 5.399343081080588e-06 0.009804404340684414" rpy="1.584116816520691 -1.5680679082870483 2.0345390885803498e-14"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l5_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_46">
+      <origin xyz="0.0093096774071455 -0.006783002987504005 0.01736132614314556" rpy="0.036423783749341965 0.8437601923942566 -0.5886277556419373"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l5_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_47">
+      <origin xyz="-0.00015255381003953516 -0.016654599457979202 0.07227076590061188" rpy="-0.02738276869058609 -0.7497318387031555 1.659733772277832"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l5_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_48">
+      <origin xyz="0.002254846040159464 0.009424086660146713 0.11999830603599548" rpy="0.1556513011455536 -1.0447509288787842 1.4301611185073853"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l5_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_49">
+      <origin xyz="0.0 0.0 0.03999999910593033" rpy="3.1415927410125732 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04500000178813934" length="0.11999999731779099"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_50">
+      <origin xyz="0.0 -0.04100000113248825 0.10499999672174454" rpy="-1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04500000178813934" length="0.0820000022649765"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_j6" type="revolute">
+    <origin xyz="0.0 -0.10999999940395355 0.10530000180006027" rpy="-1.5707969665527344 -0.17453007400035858 -3.141585111618042"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="right_l5"/>
+    <child link="right_l6"/>
+    <limit effort="1000.0" lower="-4.712399959564209" upper="4.712399959564209" velocity="1000.0"/>
+  </joint>
+  <link name="right_l6">
+    <inertial>
+      <origin xyz="-8.072600394370966e-06 0.008583799935877323 -0.0049565997906029224" rpy="-2.9692418575286865 -1.5116451978683472 -1.7282965183258057"/>
+      <mass value="0.32919999957084656"/>
+      <inertia ixx="0.0003602679935283959" ixy="0.0" ixz="0.0" iyy="0.00031107800896279514" iyz="0.0" izz="0.00021498400019481778"/>
+    </inertial>
+    <visual name="Geom_51">
+      <origin xyz="-0.003610120387747884 0.06668666750192642 -0.0009112398256547749" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l6_0.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_52">
+      <origin xyz="5.573861017182935e-06 0.06600774824619293 0.000615371682215482" rpy="1.5666489601135254 -0.03538742661476135 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l6_1.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_53">
+      <origin xyz="0.004251166246831417 0.06655088067054749 0.0012765834107995033" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l6_2.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_54">
+      <origin xyz="-1.0324153087992727e-08 4.289119104328165e-08 -0.03616039454936981" rpy="1.7069144248962402 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l6_3.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_55">
+      <origin xyz="9.632401543058222e-07 0.008206682279706001 -0.028984084725379944" rpy="3.125138759613037 -1.505756139755249 -1.5546869039535522"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l6_4.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="Geom_56">
+      <origin xyz="-9.154856343229767e-06 0.010640062391757965 -0.006468773819506168" rpy="0.04026340693235397 -1.5281994342803955 1.5298559665679932"/>
+      <geometry>
+        <mesh filename="file://sawyer/meshes/obj/l6_5.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_57">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.04500000178813934" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

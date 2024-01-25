@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+<robot name="z1" version="1.0">
+  <link name="z1"/>
+  <joint name="link00_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="z1"/>
+    <child link="link00"/>
+  </joint>
+  <link name="link00">
+    <visual name="Geom_0">
+      <origin xyz="-0.005520758684724569 1.8631500608989882e-07 0.0215991772711277" rpy="-3.0027951652300544e-05 -1.4959837198257446 -3.1415927410125732"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link00.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_1">
+      <origin xyz="0.0 0.0 0.025499999523162842" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.032499998807907104" length="0.050999999046325684"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <origin xyz="0.0 0.0 0.05849999934434891" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link00"/>
+    <child link="link01"/>
+    <limit effort="1000.0" lower="-2.6179897785186768" upper="2.6179897785186768" velocity="1000.0"/>
+  </joint>
+  <link name="link01">
+    <inertial>
+      <origin xyz="2.4700000267330324e-06 -0.00025198000366799533 0.023171700537204742" rpy="1.5666314363479614 0.0009011824731715024 -0.00010718629346229136"/>
+      <mass value="0.6733260154724121"/>
+      <inertia ixx="0.001283279969356954" ixy="0.0" ixz="0.0" iyy="0.0008393619791604578" iyz="0.0" izz="0.0007193079800345004"/>
+    </inertial>
+    <visual name="Geom_2">
+      <origin xyz="-1.1448399561686529e-08 1.5960639032641666e-08 0.02298690192401409" rpy="1.5707963705062866 -1.5707963705062866 0.0"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link01.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="joint2" type="revolute">
+    <origin xyz="0.0 0.0 0.04500000178813934" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="link01"/>
+    <child link="link02"/>
+    <limit effort="1000.0" lower="0.0" upper="2.967060089111328" velocity="1000.0"/>
+  </joint>
+  <link name="link02">
+    <inertial>
+      <origin xyz="-0.11012600362300873 0.002400289988145232 0.0015826600138098001" rpy="-1.6098999977111816 -1.5651847124099731 -1.5584616661071777"/>
+      <mass value="1.1913199424743652"/>
+      <inertia ixx="0.024661200121045113" ixy="0.0" ixz="0.0" iyy="0.024311300367116928" iyz="0.0" izz="0.001004679943434894"/>
+    </inertial>
+    <visual name="Geom_3">
+      <origin xyz="-0.12055718153715134 0.0042074634693562984 -1.9866467937390553e-06" rpy="-1.3923248052597046 -1.5706959962844849 -1.8039218187332153"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link02.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_4">
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.032499998807907104" length="0.10199999809265137"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_5">
+      <origin xyz="-0.16249999403953552 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.02250000089406967" length="0.23499999940395355"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_6">
+      <origin xyz="-0.3499999940395355 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.032499998807907104" length="0.050999999046325684"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3" type="revolute">
+    <origin xyz="-0.3499999940395355 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="link02"/>
+    <child link="link03"/>
+    <limit effort="1000.0" lower="-2.8797900676727295" upper="0.0" velocity="1000.0"/>
+  </joint>
+  <link name="link03">
+    <inertial>
+      <origin xyz="0.10609199851751328 -0.005418150220066309 0.03476380184292793" rpy="1.3250616788864136 -0.04820047318935394 1.5929021835327148"/>
+      <mass value="0.8394089937210083"/>
+      <inertia ixx="0.009543649852275848" ixy="0.0" ixz="0.0" iyy="0.009387110359966755" iyz="0.0" izz="0.0005584320169873536"/>
+    </inertial>
+    <visual name="Geom_7">
+      <origin xyz="0.1013498529791832 -0.005292060319334269 0.03454930707812309" rpy="1.3323416709899902 0.06161562725901604 1.5674269199371338"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link03.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_8">
+      <origin xyz="0.12800000607967377 0.0 0.054999999701976776" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.019999999552965164" length="0.11599999666213989"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_9">
+      <origin xyz="0.22050000727176666 0.0 0.054999999701976776" rpy="-1.5707963705062866 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.032499998807907104" length="0.05900000035762787"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4" type="revolute">
+    <origin xyz="0.21799999475479126 0.0 0.05700000002980232" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="link03"/>
+    <child link="link04"/>
+    <limit effort="1000.0" lower="-1.5184400081634521" upper="1.5184400081634521" velocity="1000.0"/>
+  </joint>
+  <link name="link04">
+    <inertial>
+      <origin xyz="0.04366679862141609 0.003647380042821169 -0.0017019199440255761" rpy="-2.8959829807281494 -1.5078728199005127 -0.37553659081459045"/>
+      <mass value="0.5640460252761841"/>
+      <inertia ixx="0.0009816560195758939" ixy="0.0" ixz="0.0" iyy="0.0009405299788340926" iyz="0.0" izz="0.0003026550111826509"/>
+    </inertial>
+    <visual name="Geom_10">
+      <origin xyz="0.05102463439106941 0.007050307933241129 -0.005275116767734289" rpy="1.654254674911499 0.07458031177520752 1.225265622138977"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link04.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_11">
+      <origin xyz="0.07199999690055847 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.032499998807907104" length="0.06700000166893005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5" type="revolute">
+    <origin xyz="0.07000000029802322 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="link04"/>
+    <child link="link05"/>
+    <limit effort="1000.0" lower="-1.3439000844955444" upper="1.3439000844955444" velocity="1000.0"/>
+  </joint>
+  <link name="link05">
+    <inertial>
+      <origin xyz="0.031215300783514977 0.0 0.006463159807026386" rpy="1.7228469848632812 0.005925556179136038 1.5706318616867065"/>
+      <mass value="0.38938501477241516"/>
+      <inertia ixx="0.0005589610082097352" ixy="0.0" ixz="0.0" iyy="0.0005473169730976224" iyz="0.0" izz="0.0001673319929977879"/>
+    </inertial>
+    <visual name="Geom_12">
+      <origin xyz="0.022277723997831345 3.547329470166005e-07 0.01343035139143467" rpy="-3.141583204269409 -0.9411082863807678 1.625986442377325e-05"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link05.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="joint6" type="revolute">
+    <origin xyz="0.04919999837875366 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="link05"/>
+    <child link="link06"/>
+    <limit effort="1000.0" lower="-2.792530059814453" upper="2.792530059814453" velocity="1000.0"/>
+  </joint>
+  <link name="link06">
+    <inertial>
+      <origin xyz="0.024156900122761726 -0.0001735499972710386 -0.0014387599658221006" rpy="0.09134187549352646 -0.014847458340227604 0.034069955348968506"/>
+      <mass value="0.2887580096721649"/>
+      <inertia ixx="0.0001833300048019737" ixy="0.0" ixz="0.0" iyy="0.00014746400120202452" iyz="0.0" izz="0.00014678599836770445"/>
+    </inertial>
+    <visual name="Geom_13">
+      <origin xyz="0.024687860161066055 4.7171302867354825e-05 1.948836143128574e-05" rpy="1.9638711214065552 0.006657148711383343 -0.016066476702690125"/>
+      <geometry>
+        <mesh filename="file://z1/meshes/stl/z1_Link06.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="Geom_14">
+      <origin xyz="0.025499999523162842 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.032499998807907104" length="0.050999999046325684"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
