@@ -66,22 +66,22 @@ def Xform "tiago_dual" (
             prepend apiSchemas = ["UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
         )
         {
-            float3 mujoco:body:inertial:diaginertia = (0.15706636, 0.1701486, 0.17544211)
-            float mujoco:body:inertial:mass = 3.530781
-            point3f mujoco:body:inertial:pos = (0.004492053, -0.00022146438, 0.20612037)
-            quatf mujoco:body:inertial:quat = (0.9998728, -0.01364868, 0.008224638, -0.0006493059)
+            float3 mujoco:body:inertial:diaginertia = (0.1943179, 0.2107838, 0.24757026)
+            float mujoco:body:inertial:mass = 4.5830097
+            point3f mujoco:body:inertial:pos = (0.008795303, 0.0000489176, 0.18509966)
+            quatf mujoco:body:inertial:quat = (0.99999696, -0.0009502367, 0.0022169813, -0.00054872973)
             point3f mujoco:body:pos = (0, 0, 0.0985)
             quatf mujoco:body:quat = (1, 0, 0, 0)
-            point3f physics:centerOfMass = (0.004492053, -0.00022146438, 0.20612037)
-            float3 physics:diagonalInertia = (0.15706636, 0.1701486, 0.17544211)
-            float physics:mass = 3.530781
-            quatf physics:principalAxes = (0.9998728, -0.01364868, 0.008224638, -0.0006493059)
-            float urdf:link:inertial:inertia:ixx = 0.15706636
-            float urdf:link:inertial:inertia:iyy = 0.1701486
-            float urdf:link:inertial:inertia:izz = 0.17544211
-            float urdf:link:inertial:mass = 3.530781
-            float3 urdf:link:inertial:origin:rpy = (-0.027311651, 0.0164302, -0.0015231638)
-            point3f urdf:link:inertial:origin:xyz = (0.004492053, -0.00022146438, 0.20612037)
+            point3f physics:centerOfMass = (0.008795303, 0.0000489176, 0.18509966)
+            float3 physics:diagonalInertia = (0.1943179, 0.2107838, 0.24757026)
+            float physics:mass = 4.5830097
+            quatf physics:principalAxes = (0.99999696, -0.0009502367, 0.0022169813, -0.00054872973)
+            float urdf:link:inertial:inertia:ixx = 0.1943179
+            float urdf:link:inertial:inertia:iyy = 0.2107838
+            float urdf:link:inertial:inertia:izz = 0.24757026
+            float urdf:link:inertial:mass = 4.5830097
+            float3 urdf:link:inertial:origin:rpy = (-0.0019029204, 0.0044329204, -0.0011016804)
+            point3f urdf:link:inertial:origin:xyz = (0.008795303, 0.0000489176, 0.18509966)
             matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.0985, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -117,12 +117,12 @@ def Xform "tiago_dual" (
                 }
             }
 
-            def Mesh "base_link_geom_collision_0_base_collision_1" (
+            def Mesh "base_link_geom_collision_0_base_collision" (
                 prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI", "MujocoGeomAPI"]
-                prepend references = @./tiago_dual/meshes/usd/base_collision_1.usda@</base_collision_1>
+                prepend references = @./tiago_dual/meshes/usd/base_collision.usda@</base_collision>
             )
             {
-                rel mujoco:geom:mesh = </mujoco/asset/meshes/base_collision_1>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/base_collision>
                 point3f mujoco:geom:pos = (0, 0, 0)
                 quatf mujoco:geom:quat = (1, 0, 0, 0)
                 vector3f mujoco:geom:size = (1, 1, 1)
@@ -133,7 +133,7 @@ def Xform "tiago_dual" (
                 float[] primvars:displayOpacity = [0]
                 float3 urdf:collision:origin:rpy = (0, -0, 0)
                 point3f urdf:collision:origin:xyz = (0, 0, 0)
-                asset urdf:geometry:mesh:filename = @./tiago_dual/meshes/stl/base_collision_1.stl@
+                asset urdf:geometry:mesh:filename = @./tiago_dual/meshes/stl/base_collision.stl@
                 float3 urdf:geometry:mesh:scale = (1, 1, 1)
                 token visibility = "invisible"
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
@@ -728,22 +728,22 @@ def Xform "tiago_dual" (
                 prepend apiSchemas = ["UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
             )
             {
-                float3 mujoco:body:inertial:diaginertia = (10685.209, 10729.303, 10747.775)
-                float mujoco:body:inertial:mass = 16006.181
-                point3f mujoco:body:inertial:pos = (-0.019491926, 1.382951e-12, 0.22800024)
-                quatf mujoco:body:inertial:quat = (0.697347, 0.697347, -0.11707756, 0.11707756)
+                float3 mujoco:body:inertial:diaginertia = (0.11975406, 0.24629474, 0.30280018)
+                float mujoco:body:inertial:mass = 16.4311
+                point3f mujoco:body:inertial:pos = (-0.017453901, 1.347187e-9, 0.23028)
+                quatf mujoco:body:inertial:quat = (0.99890774, -4.5431294e-9, -0.046725716, 2.8892906e-8)
                 point3f mujoco:body:pos = (-0.062, 0, 0.193)
                 quatf mujoco:body:quat = (1, 0, 0, 0)
-                point3f physics:centerOfMass = (-0.019491926, 1.382951e-12, 0.22800024)
-                float3 physics:diagonalInertia = (10685.209, 10729.303, 10747.775)
-                float physics:mass = 16006.181
-                quatf physics:principalAxes = (0.697347, 0.697347, -0.11707756, 0.11707756)
-                float urdf:link:inertial:inertia:ixx = 10685.209
-                float urdf:link:inertial:inertia:iyy = 10729.303
-                float urdf:link:inertial:inertia:izz = 10747.775
-                float urdf:link:inertial:mass = 16006.181
-                float3 urdf:link:inertial:origin:rpy = (1.5707964, -0.33267733, 0)
-                point3f urdf:link:inertial:origin:xyz = (-0.019491926, 1.382951e-12, 0.22800024)
+                point3f physics:centerOfMass = (-0.017453901, 1.347187e-9, 0.23028)
+                float3 physics:diagonalInertia = (0.11975406, 0.24629474, 0.30280018)
+                float physics:mass = 16.4311
+                quatf physics:principalAxes = (0.99890774, -4.5431294e-9, -0.046725716, 2.8892906e-8)
+                float urdf:link:inertial:inertia:ixx = 0.11975406
+                float urdf:link:inertial:inertia:iyy = 0.24629474
+                float urdf:link:inertial:inertia:izz = 0.30280018
+                float urdf:link:inertial:mass = 16.4311
+                float3 urdf:link:inertial:origin:rpy = (-1.18280665e-8, -0.093485475, 5.8402275e-8)
+                point3f urdf:link:inertial:origin:xyz = (-0.017453901, 1.347187e-9, 0.23028)
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.062, 0, 0.193, 1) )
                 uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -854,20 +854,20 @@ def Xform "tiago_dual" (
                 prepend apiSchemas = ["UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
             )
             {
-                float3 mujoco:body:inertial:diaginertia = (10666.667, 11876.667, 11876.667)
-                float mujoco:body:inertial:mass = 16000
+                float3 mujoco:body:inertial:diaginertia = (0.3759809, 5.111966, 5.1245065)
+                float mujoco:body:inertial:mass = 48.895
                 point3f mujoco:body:inertial:pos = (-0.062, 0, 0.47)
                 quatf mujoco:body:inertial:quat = (0.70710677, 0, 0.70710677, 0)
                 point3f mujoco:body:pos = (-0.062, 0, 0.195)
                 quatf mujoco:body:quat = (1, 0, 0, 0)
                 point3f physics:centerOfMass = (-0.062, 0, 0.47)
-                float3 physics:diagonalInertia = (10666.667, 11876.667, 11876.667)
-                float physics:mass = 16000
+                float3 physics:diagonalInertia = (0.3759809, 5.111966, 5.1245065)
+                float physics:mass = 48.895
                 quatf physics:principalAxes = (0.70710677, 0, 0.70710677, 0)
-                float urdf:link:inertial:inertia:ixx = 10666.667
-                float urdf:link:inertial:inertia:iyy = 11876.667
-                float urdf:link:inertial:inertia:izz = 11876.667
-                float urdf:link:inertial:mass = 16000
+                float urdf:link:inertial:inertia:ixx = 0.3759809
+                float urdf:link:inertial:inertia:iyy = 5.111966
+                float urdf:link:inertial:inertia:izz = 5.1245065
+                float urdf:link:inertial:mass = 48.895
                 float3 urdf:link:inertial:origin:rpy = (-0, 1.5707963, 0)
                 point3f urdf:link:inertial:origin:xyz = (-0.062, 0, 0.47)
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.062, 0, 0.195, 1) )
@@ -3373,23 +3373,23 @@ def Xform "tiago_dual" (
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
     )
     {
-        float3 mujoco:body:inertial:diaginertia = (5333.3335, 5551.334, 5551.334)
-        float mujoco:body:inertial:mass = 8000.046
-        point3f mujoco:body:inertial:pos = (-0.054440048, 1.1800748, 0.6815)
-        quatf mujoco:body:inertial:quat = (-0.124902435, 0.6850218, 0.1287448, 0.7060944)
+        float3 mujoco:body:inertial:diaginertia = (0.00002747981, 0.0024304127, 0.002448169)
+        float mujoco:body:inertial:mass = 0.10103759
+        point3f mujoco:body:inertial:pos = (-0.058255475, 1.1640191, 0.6821131)
+        quatf mujoco:body:inertial:quat = (-0.054663375, 0.6971018, 0.066410996, 0.71179396)
         point3f mujoco:body:pos = (0, 0, 0)
         quatf mujoco:body:quat = (1, 2.773339e-32, -4.9303807e-32, -2.773339e-32)
-        point3f physics:centerOfMass = (-0.054440048, 1.1800748, 0.6815)
-        float3 physics:diagonalInertia = (5333.3335, 5551.334, 5551.334)
-        float physics:mass = 8000.046
-        quatf physics:principalAxes = (-0.124902435, 0.6850218, 0.1287448, 0.7060944)
+        point3f physics:centerOfMass = (-0.058255475, 1.1640191, 0.6821131)
+        float3 physics:diagonalInertia = (0.00002747981, 0.0024304127, 0.002448169)
+        float physics:mass = 0.10103759
+        quatf physics:principalAxes = (-0.054663375, 0.6971018, 0.066410996, 0.71179396)
         bool physics:rigidBodyEnabled = 1
-        float urdf:link:inertial:inertia:ixx = 5333.3335
-        float urdf:link:inertial:inertia:iyy = 5551.334
-        float urdf:link:inertial:inertia:izz = 5551.334
-        float urdf:link:inertial:mass = 8000.046
-        float3 urdf:link:inertial:origin:rpy = (0.36071047, -1.5405027, 3.141587)
-        point3f urdf:link:inertial:origin:xyz = (-0.054440048, 1.1800748, 0.6815)
+        float urdf:link:inertial:inertia:ixx = 0.00002747981
+        float urdf:link:inertial:inertia:iyy = 0.0024304127
+        float urdf:link:inertial:inertia:izz = 0.002448169
+        float urdf:link:inertial:mass = 0.10103759
+        float3 urdf:link:inertial:origin:rpy = (0.7602116, -1.5441923, 2.5528312)
+        point3f urdf:link:inertial:origin:xyz = (-0.058255475, 1.1640191, 0.6821131)
         matrix4d xformOp:transform = ( (-9.957992501029616e-17, 4.440892098500626e-16, -1, 0), (1, 1.2246467991473517e-16, -9.957992501029616e-17, 0), (1.2246467991473502e-16, -1, -4.440892098500626e-16, 0), (-0.05443999947793758, 1.0150750094771386, 0.6864999995529649, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -3450,23 +3450,23 @@ def Xform "tiago_dual" (
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
     )
     {
-        float3 mujoco:body:inertial:diaginertia = (5333.3335, 5551.334, 5551.334)
-        float mujoco:body:inertial:mass = 8000.046
-        point3f mujoco:body:inertial:pos = (-0.054440048, 1.1800748, 0.69149995)
-        quatf mujoco:body:inertial:quat = (-0.19177996, 0.6916393, 0.18605661, 0.6709981)
+        float3 mujoco:body:inertial:diaginertia = (0.000028091548, 0.002429843, 0.0024481271)
+        float mujoco:body:inertial:mass = 0.10103759
+        point3f mujoco:body:inertial:pos = (-0.058255475, 1.1640191, 0.6875566)
+        quatf mujoco:body:inertial:quat = (0.6956858, -0.091258466, 0.70776117, 0.08226366)
         point3f mujoco:body:pos = (0, 0, 0)
         quatf mujoco:body:quat = (1, 2.773339e-32, -4.9303807e-32, -2.773339e-32)
-        point3f physics:centerOfMass = (-0.054440048, 1.1800748, 0.69149995)
-        float3 physics:diagonalInertia = (5333.3335, 5551.334, 5551.334)
-        float physics:mass = 8000.046
-        quatf physics:principalAxes = (-0.19177996, 0.6916393, 0.18605661, 0.6709981)
+        point3f physics:centerOfMass = (-0.058255475, 1.1640191, 0.6875566)
+        float3 physics:diagonalInertia = (0.000028091548, 0.002429843, 0.0024481271)
+        float physics:mass = 0.10103759
+        quatf physics:principalAxes = (0.6956858, -0.091258466, 0.70776117, 0.08226366)
         bool physics:rigidBodyEnabled = 1
-        float urdf:link:inertial:inertia:ixx = 5333.3335
-        float urdf:link:inertial:inertia:iyy = 5551.334
-        float urdf:link:inertial:inertia:izz = 5551.334
-        float urdf:link:inertial:mass = 8000.046
-        float3 urdf:link:inertial:origin:rpy = (-2.6006227, -1.5405027, 0.0000053763883)
-        point3f urdf:link:inertial:origin:xyz = (-0.054440048, 1.1800748, 0.69149995)
+        float urdf:link:inertial:inertia:ixx = 0.000028091548
+        float urdf:link:inertial:inertia:iyy = 0.002429843
+        float urdf:link:inertial:inertia:izz = 0.0024481271
+        float urdf:link:inertial:mass = 0.10103759
+        float3 urdf:link:inertial:origin:rpy = (-2.6243865, 1.5495018, -2.378355)
+        point3f urdf:link:inertial:origin:xyz = (-0.058255475, 1.1640191, 0.6875566)
         matrix4d xformOp:transform = ( (-9.957992501029616e-17, 4.440892098500626e-16, -1, 0), (1, 1.2246467991473517e-16, -9.957992501029616e-17, 0), (1.2246467991473502e-16, -1, -4.440892098500626e-16, 0), (-0.05443999947793758, 1.0150750094771386, 0.6864999995529649, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -4561,23 +4561,23 @@ def Xform "tiago_dual" (
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
     )
     {
-        float3 mujoco:body:inertial:diaginertia = (5333.3335, 5551.334, 5551.334)
-        float mujoco:body:inertial:mass = 8000.046
-        point3f mujoco:body:inertial:pos = (-0.057440046, -1.1800748, 0.6915)
-        quatf mujoco:body:inertial:quat = (-0.124902435, 0.6850218, 0.1287448, 0.7060944)
+        float3 mujoco:body:inertial:diaginertia = (0.00002747981, 0.0024304127, 0.002448169)
+        float mujoco:body:inertial:mass = 0.10103759
+        point3f mujoco:body:inertial:pos = (-0.061255477, -1.1640191, 0.69088686)
+        quatf mujoco:body:inertial:quat = (-0.054663375, 0.6971018, 0.066410996, 0.71179396)
         point3f mujoco:body:pos = (0, -1.3877788e-17, 0)
         quatf mujoco:body:quat = (1, 1.540744e-32, 1.2325952e-32, -8.180104e-33)
-        point3f physics:centerOfMass = (-0.057440046, -1.1800748, 0.6915)
-        float3 physics:diagonalInertia = (5333.3335, 5551.334, 5551.334)
-        float physics:mass = 8000.046
-        quatf physics:principalAxes = (-0.124902435, 0.6850218, 0.1287448, 0.7060944)
+        point3f physics:centerOfMass = (-0.061255477, -1.1640191, 0.69088686)
+        float3 physics:diagonalInertia = (0.00002747981, 0.0024304127, 0.002448169)
+        float physics:mass = 0.10103759
+        quatf physics:principalAxes = (-0.054663375, 0.6971018, 0.066410996, 0.71179396)
         bool physics:rigidBodyEnabled = 1
-        float urdf:link:inertial:inertia:ixx = 5333.3335
-        float urdf:link:inertial:inertia:iyy = 5551.334
-        float urdf:link:inertial:inertia:izz = 5551.334
-        float urdf:link:inertial:mass = 8000.046
-        float3 urdf:link:inertial:origin:rpy = (0.36071047, -1.5405027, 3.141587)
-        point3f urdf:link:inertial:origin:xyz = (-0.057440046, -1.1800748, 0.6915)
+        float urdf:link:inertial:inertia:ixx = 0.00002747981
+        float urdf:link:inertial:inertia:iyy = 0.0024304127
+        float urdf:link:inertial:inertia:izz = 0.002448169
+        float urdf:link:inertial:mass = 0.10103759
+        float3 urdf:link:inertial:origin:rpy = (0.7602116, -1.5441923, 2.5528312)
+        point3f urdf:link:inertial:origin:xyz = (-0.061255477, -1.1640191, 0.69088686)
         matrix4d xformOp:transform = ( (5.551115123125762e-17, -3.330669073875471e-16, 1, 0), (1, -4.000204360710246e-16, -7.141499168368867e-32, 0), (4.555315873022825e-16, 1, 3.885780586188051e-16, 0), (-0.05743999950401461, -1.0150750094771386, 0.6864999995529651, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -4638,23 +4638,23 @@ def Xform "tiago_dual" (
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "UrdfLinkAPI", "PhysicsMassAPI", "UrdfLinkInertialAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
     )
     {
-        float3 mujoco:body:inertial:diaginertia = (5333.3335, 5551.334, 5551.334)
-        float mujoco:body:inertial:mass = 8000.046
-        point3f mujoco:body:inertial:pos = (-0.057440046, -1.1800748, 0.6815001)
-        quatf mujoco:body:inertial:quat = (-0.19177996, 0.6916393, 0.18605661, 0.6709981)
+        float3 mujoco:body:inertial:diaginertia = (0.000028091548, 0.002429843, 0.0024481271)
+        float mujoco:body:inertial:mass = 0.10103759
+        point3f mujoco:body:inertial:pos = (-0.061255477, -1.1640191, 0.68544334)
+        quatf mujoco:body:inertial:quat = (0.6956858, -0.091258466, 0.70776117, 0.08226366)
         point3f mujoco:body:pos = (0, -1.3877788e-17, 0)
         quatf mujoco:body:quat = (1, 1.540744e-32, 1.2325952e-32, -8.180104e-33)
-        point3f physics:centerOfMass = (-0.057440046, -1.1800748, 0.6815001)
-        float3 physics:diagonalInertia = (5333.3335, 5551.334, 5551.334)
-        float physics:mass = 8000.046
-        quatf physics:principalAxes = (-0.19177996, 0.6916393, 0.18605661, 0.6709981)
+        point3f physics:centerOfMass = (-0.061255477, -1.1640191, 0.68544334)
+        float3 physics:diagonalInertia = (0.000028091548, 0.002429843, 0.0024481271)
+        float physics:mass = 0.10103759
+        quatf physics:principalAxes = (0.6956858, -0.091258466, 0.70776117, 0.08226366)
         bool physics:rigidBodyEnabled = 1
-        float urdf:link:inertial:inertia:ixx = 5333.3335
-        float urdf:link:inertial:inertia:iyy = 5551.334
-        float urdf:link:inertial:inertia:izz = 5551.334
-        float urdf:link:inertial:mass = 8000.046
-        float3 urdf:link:inertial:origin:rpy = (-2.6006227, -1.5405027, 0.0000053763883)
-        point3f urdf:link:inertial:origin:xyz = (-0.057440046, -1.1800748, 0.6815001)
+        float urdf:link:inertial:inertia:ixx = 0.000028091548
+        float urdf:link:inertial:inertia:iyy = 0.002429843
+        float urdf:link:inertial:inertia:izz = 0.0024481271
+        float urdf:link:inertial:mass = 0.10103759
+        float3 urdf:link:inertial:origin:rpy = (-2.6243865, 1.5495018, -2.378355)
+        point3f urdf:link:inertial:origin:xyz = (-0.061255477, -1.1640191, 0.68544334)
         matrix4d xformOp:transform = ( (5.551115123125762e-17, -3.330669073875471e-16, 1, 0), (1, -4.000204360710246e-16, -7.141499168368867e-32, 0), (4.555315873022825e-16, 1, 3.885780586188051e-16, 0), (-0.05743999950401461, -1.0150750094771386, 0.6864999995529651, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -4726,9 +4726,9 @@ def Mujoco "mujoco"
                 float3 mujoco:mesh:scale = (1, 1, 1)
             }
 
-            def MujocoMesh "base_collision_1"
+            def MujocoMesh "base_collision"
             {
-                asset mujoco:mesh:file = @tiago_dual/meshes/stl/base_collision_1.stl@
+                asset mujoco:mesh:file = @tiago_dual/meshes/stl/base_collision.stl@
                 float3 mujoco:mesh:scale = (1, 1, 1)
             }
 
