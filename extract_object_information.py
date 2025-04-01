@@ -9,7 +9,9 @@ import os
 import xml.etree.ElementTree as ET
 import csv
 import argparse
+import json
 
+EXTRACTED_FILE_NAME = "extracted.json"
 
 def get_total_mass(xml_path):
     """Extract and sum all mass values from a MuJoCo XML file."""
@@ -28,34 +30,37 @@ def process_directories(base_dir):
     """Process all XML files in subdirectories and collect mass data."""
     results = []
 
-    # Walk through all subdirectories
-    for dirpath, dirnames, filenames in os.walk(base_dir):
+    for sub_directory in os.listdir(base_dir):
 
-        dirnames.sort()  # Sort directories for consistency
-        filenames.sort()  # Sort files within each directory
+        object_name = sub_directory
+        sub_dir_path = os.path.join(base_dir, sub_directory)
+        total_mass = 0
+        json_data = {}
 
-        # Get the object name (subfolder name)
-        object_name = os.path.basename(dirpath)
+        # Process all FBX files in directory
+        for file in os.listdir(sub_dir_path):
 
-        xml_files = [f for f in filenames if f.endswith('.xml')]
+            # Get the object name (subfolder name)
 
-        if len(xml_files) == 0:
-            raise Exception('No XML files found')
-        elif len(xml_files) > 1:
-            raise Exception('Multiple XML files found')
+            if file.endswith(".xml"):
+                # Full path to XML file
+                xml_path = os.path.join(sub_dir_path, file)
+                # Get total mass from the XML file
+                total_mass = get_total_mass(xml_path)
 
-        xml_file = xml_files[0]
-        # Full path to XML file
-        xml_path = os.path.join(dirpath, xml_file)
-        # Get total mass from the XML file
-        total_mass = get_total_mass(xml_path)
-
+            elif file == EXTRACTED_FILE_NAME:
+                extracted_file_path = os.path.join(sub_dir_path, EXTRACTED_FILE_NAME)
+                with open(extracted_file_path, "r") as extracted_file:
+                    json_data = json.load(extracted_file)
 
 
         # Create object list as base for csv file
         results.append({
             'object_name': object_name,
-            'mass': total_mass
+            'mass': total_mass,
+            'width' : json_data['width'],
+            'depth' : json_data['depth'],
+            'height' : json_data['height'],
         })
 
     return results
@@ -67,7 +72,7 @@ def save_to_csv(results, output_file):
         return
 
     with open(output_file, 'w', newline='') as csvfile:
-        fieldnames = ['object_name', 'mass']
+        fieldnames = ['object_name', 'mass', 'width', 'depth', 'height']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
