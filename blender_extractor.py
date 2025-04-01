@@ -18,7 +18,6 @@ for sub_directory in os.listdir(base_directory_path):
     # Process all FBX files in directory
     for file in os.listdir(sub_directory_path):
         if file.endswith(".fbx"):
-            dimensions_data = {}
 
             # Clear existing objects
             bpy.ops.object.select_all(action='SELECT')
@@ -33,6 +32,7 @@ for sub_directory in os.listdir(base_directory_path):
             # Select all objects
             bpy.ops.object.select_all(action='SELECT')
 
+            dimensions_data = {}
             # Make one object active (required for join)
             if bpy.context.selected_objects:
                 bpy.context.view_layer.objects.active = bpy.context.selected_objects[0]
@@ -47,7 +47,7 @@ for sub_directory in os.listdir(base_directory_path):
                 height = obj.dimensions.z
 
                 # Store dimensions
-                dimensions_data[file] = {
+                dimensions_data = {
                     "width": width,
                     "depth": depth,
                     "height": height
